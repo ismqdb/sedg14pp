@@ -4,7 +4,7 @@ tree_node* build_parse_tree(){
     tree_node *x;
     char c;
 
-    stack_a stack = stack_init(TREE_NODE, 50);
+    stack_a stack = stack_a_init(TREE_NODE, 50);
 
     while(1){
         c = getchar();
@@ -18,17 +18,17 @@ tree_node* build_parse_tree(){
         x = n_init(c);
 
         if(c == '+' || c == '*'){
-            if(!is_empty(stack)){
-                x->right = pop_t_node(&stack);
+            if(!stack_a_is_empty(stack)){
+                x->right = stack_a_pop_t_node(&stack);
             }
-            if(!is_empty(stack)){
-                x->left = pop_t_node(&stack);
+            if(!stack_a_is_empty(stack)){
+                x->left = stack_a_pop_t_node(&stack);
             }
         }
 
-        push_t_node(&stack, x);
+        stack_a_push_t_node(&stack, x);
     }
 
-    tree_node *returnValue = pop_t_node(&stack);
+    tree_node *returnValue = stack_a_pop_t_node(&stack);
     return returnValue;
 }

@@ -1,36 +1,36 @@
 #include "./22. recursion_removal.h"
-
+/*
 void pre_order(tree_node *t){
-    stack_a stack = stack_init(TREE_NODE, 50);
+    stack_a stack = stack_a_init(TREE_NODE, 50);
 
-    push_t_node(&stack, t);
+    stack_a_push_t_node(&stack, t);
 
-    while(is_empty(stack)){
-        t = pop_t_node(&stack);
+    while(stack_a_is_empty(stack)){
+        t = stack_a_pop_t_node(&stack);
 
         visit_n_f(t);
 
         if(t->right != NULL)
-            push_t_node(&stack, t->right);
+            stack_a_push_t_node(&stack, t->right);
 
         if(t->left != NULL)
-            push_t_node(&stack, t->left);
+            stack_a_push_t_node(&stack, t->left);
     }
 
-    stack_deinit(stack);
-}
+    stack_a_deinit(stack);
+}*/
 
 void pre_order_iter(tree_node *t){
-    stack_a stack = stack_init(TREE_NODE, 50);
+    stack_a stack = stack_a_init(TREE_NODE, 50);
 
-    push_t_node(&stack, t);
+    stack_a_push_t_node(&stack, t);
 
-    while(is_empty(stack)){
-        t = pop_t_node(&stack);
+    while(stack_a_is_empty(stack)){
+        t = stack_a_pop_t_node(&stack);
 
         while(t != NULL){
             visit_n_f(t);
-            push_t_node(&stack, t->right);
+            stack_a_push_t_node(&stack, t->right);
             t = t->left;
         }
     }
@@ -68,13 +68,13 @@ void remove_recursion_1(tree_node *t){
 }
 
 void remove_recursion_2(tree_node *t){
-    stack_a stack = stack_init(TREE_NODE, 50);
+    stack_a stack = stack_a_init(TREE_NODE, 50);
 
     l:
         if(t == NULL)
             goto s;
         visit_n_f(t);
-        push_t_node(&stack, t->right);
+        stack_a_push_t_node(&stack, t->right);
         t = t->left;
         goto l;
 
@@ -83,33 +83,33 @@ void remove_recursion_2(tree_node *t){
         goto l;
 
     s:
-        if(is_empty(stack))
+        if(stack_a_is_empty(stack))
             goto x;
-        t = pop_t_node(&stack);
+        t = stack_a_pop_t_node(&stack);
         goto r;
 
     x: 
-        stack_deinit(stack);
+        stack_a_deinit(stack);
 }
 
 void remove_recursion_3(tree_node *t){
-    stack_a stack = stack_init(TREE_NODE, 50);
+    stack_a stack = stack_a_init(TREE_NODE, 50);
 
     l:
         while(t != NULL){
             visit_n_f(t);
-            push_t_node(&stack, t->right);
+            stack_a_push_t_node(&stack, t->right);
             t = t->left;
         }
 
-        if(is_empty(stack))
+        if(stack_a_is_empty(stack))
             goto x;
 
-        t = pop_t_node(&stack);
+        t = stack_a_pop_t_node(&stack);
         goto l;
 
     x: 
-        stack_deinit(stack);
+        stack_a_deinit(stack);
 } 
 
 int remove_recursion_main(){

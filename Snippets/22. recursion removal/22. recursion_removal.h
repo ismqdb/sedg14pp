@@ -7,7 +7,7 @@
 #include "../12. stack array/12. stack_a.h"
 #include "../13. queue array/13. queue_a.h"
 
-void pre_order(tree_node*);
+//void pre_order(tree_node*);
 void pre_order_iter(tree_node*);
 void pre_order_recursive(tree_node*);
 void in_order_recursive(tree_node*);

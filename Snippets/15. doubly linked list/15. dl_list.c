@@ -1,5 +1,9 @@
 #include "./15. dl_list.h"
 
+dll_node* dl_list_alloc(){
+    return (dll_node*)malloc(sizeof(dll_node));
+}
+
 dl_list dl_list_init(){
     dl_list dl_list;
 

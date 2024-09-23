@@ -7,6 +7,7 @@ typedef struct dl_list {
     dll_node *tail;
 } dl_list;
 
+dll_node* dl_list_alloc();
 dl_list dl_list_init();
 void dl_list_deinit(dl_list);
 dll_node* dl_list_insert_after(dll_node*, int);
