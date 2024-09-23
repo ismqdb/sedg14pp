@@ -1,67 +1,7 @@
-#include <stdio.h>
-#include <stdlib.h>
-
-struct node {
+typedef struct node {
     int key;
-    struct node *next;
-};
-
-struct node *head, *z;
-
-struct node* n_alloc(){
-    return (struct node*)malloc(sizeof(*head));
-}
-
-void n_dealloc(struct node *node){
-    if(node != NULL)
-        free(node);
-}
-
-void list_initialize(){
-    head = n_alloc();
-    z = n_alloc();
-
-    head->next = z;
-    z->next = z;
-}
-
-void delete_next(struct node *t){
-    struct node *x = t->next;
-    t->next = t->next->next;
-    n_dealloc(x);
-}
-
-struct node* insert_after(int v, struct node *t){
-    if(t == NULL)
-        return NULL;
-
-    struct node *x = n_alloc();
-    x->key = v;
-    x->next = t->next;
-    t->next = x;
-    return x;
-}
-
-struct node* move_next_to_front(struct node *t){
-    struct node *temp = t->next;
-    t->next = t->next->next;
-    
-    temp->next = head->next;
-    head->next = temp;
-    return temp;
-}
-
-void exchange(struct node *t, struct node *u){
-    struct node *temp = t->next;
-    
-    t->next = t->next->next;
-    temp->next = u->next->next;
-    
-    u->next->next = t->next;
-    t->next = u->next;
-
-    u->next = temp;
-}
+    node *next;
+} node;
 
 void mass_suicide(int n, int m){
     if(n <= 0 || m <= 0)
@@ -71,9 +11,9 @@ void mass_suicide(int n, int m){
         return;
 
     int i;
-    struct node *head;
+    node *head;
 
-    struct node *t = n_alloc();
+    node *t = n_alloc();
     t->key = 0;
     head = t;
 
@@ -97,7 +37,7 @@ void mass_suicide(int n, int m){
     printf("%d\n", t->key);
 }
 
-int mass_suicide_Array(int n, int m){
+int mass_suicide_array(int n, int m){
     if(n <= 0 || m <= 0)
         return -1;
 

@@ -1,36 +1,40 @@
 
 
-struct dl_list {
+typedef struct dll_node {
     int key;
-    struct dl_list *prev;
-    struct dl_list *next;
-};
+    dll_node *prev;
+    dll_node *next;
+} dll_node;
 
-struct dl_list* dl_list_alloc(){
-    return (struct dl_list*)malloc(sizeof(struct dl_list));
+dll_node* dl_list_alloc(){
+    return (dll_node*)malloc(sizeof(dll_node));
 }
 
-struct dl_list *head;
-struct dl_list *tail;
+typedef struct dl_list {
+    dll_node *head;
+    dll_node *tail;
+} dl_list;
 
-void dl_list_init(){
-    head = dl_list_alloc();
-    tail = dl_list_alloc();
+dl_list dl_list_init(){
+    dl_list dl_list;
 
-    head->prev = head;
-    head->next = tail;
+    dl_list.head = dl_list_alloc();
+    dl_list.tail = dl_list_alloc();
 
-    tail->prev = head;
-    tail->next = tail;
+    dl_list.head->prev = dl_list.head;
+    dl_list.head->next = dl_list.tail;
+
+    dl_list.tail->prev = dl_list.head;
+    dl_list.tail->next = dl_list.tail;
 }
 
-void dl_list_deinit(){
-    free(head);
-    free(tail);
+void dl_list_deinit(dl_list list){
+    free(list.head);
+    free(list.tail);
 }
 
-struct dl_list* dl_list_insert_after(struct dl_list *node, int value){
-    struct dl_list *new = dl_list_alloc();
+dll_node* dl_list_insert_after(dll_node *node, int value){
+    dll_node *new = dl_list_alloc();
     new->key = value;
 
     new->next = node->next;
@@ -40,7 +44,7 @@ struct dl_list* dl_list_insert_after(struct dl_list *node, int value){
     return new;
 }
 
-void dl_list_remove_next(struct dl_list *node){
+void dl_list_remove_next(dll_node *node){
     node->next = node->next->next;
     node->next->prev = node;
 }
