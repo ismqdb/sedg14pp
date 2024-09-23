@@ -12,7 +12,7 @@ struct node {
     struct node *right;
 };
 
-struct node *nalloc(){
+struct node *n_alloc(){
     return (struct node*)malloc(sizeof(struct node));
 }
 
@@ -28,7 +28,7 @@ struct node* pop(){
     return stack[--p];
 }
 
-void stackinit(int size){
+void stack_init(int size){
     if(size <= 0)
         return;
     stack = (struct node**)malloc(size*sizeof(struct node*));
@@ -40,8 +40,8 @@ int driver(){
     struct node *x;
     struct node *z;
     char c;
-    for(stackinit(25); (c = getchar()) != EOF;){
-        x = nalloc();
+    for(stack_init(25); (c = getchar()) != EOF;){
+        x = n_alloc();
         x->info = c;
         x->left = z;
         x->right = z;

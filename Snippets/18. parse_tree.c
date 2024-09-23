@@ -7,7 +7,7 @@ struct node {
     struct node *right;
 };
 
-struct node *nalloc(){
+struct node *n_alloc(){
     return (struct node*)malloc(sizeof(struct node));
 }
 
@@ -15,9 +15,9 @@ struct node *x;
 struct node *z;
 char c;
 
-void stackinit(){
-    x = nalloc();
-    z = nalloc();
+void stack_init(){
+    x = n_alloc();
+    z = n_alloc();
 
 
 }
@@ -31,12 +31,12 @@ struct node* pop(){
 }
 
 int main(){
-    z = nalloc();
+    z = n_alloc();
     z->left = z;
     z->right = z;
 
-    for(stackinit(); (c = getchar()) != EOF;){
-        x = nalloc();
+    for(stack_init(); (c = getchar()) != EOF;){
+        x = n_alloc();
         x->info = c;
         x->left = z;
         x->right = z;

@@ -13,13 +13,13 @@ static struct node {
 
 static struct node *head, *z;
 
-struct node *nalloc(){
+struct node *n_alloc(){
     return (struct node*)malloc(sizeof(*head));
 }
 
-void stackinit(){
-    head = nalloc();
-    z = nalloc();
+void stack_init(){
+    head = n_alloc();
+    z = n_alloc();
 
     head->next = z;
     head->key = 0;
@@ -27,7 +27,7 @@ void stackinit(){
 }
 
 void push(int v){
-    struct node *t = nalloc();
+    struct node *t = n_alloc();
     t->key = v;
     t->next = head->next;
     head->next = t; 
@@ -42,13 +42,13 @@ int pop(){
     return x;
 }
 
-int isStackEmpty(){
+int is_empty(){
     return head->next == z;
 }
 
-struct array getPostfix(){
+struct array get_postfix(){
     char c;
-    stackinit();
+    stack_init();
 
     struct array array = createArray();
 
@@ -77,7 +77,7 @@ struct array getPostfix(){
             
     }
 
-    while(!isStackEmpty())
+    while(!is_empty())
         //printf("%1c", (char)pop());
         insert(&array, (char)pop());
 
@@ -90,7 +90,7 @@ int evaluate(struct array *array){
     int x;
     int sum = 0;
 
-    stackinit();
+    stack_init();
     for(int i = 0; i < array->currentSize; i++){
         c = array->start[i];
 

@@ -8,41 +8,41 @@ struct node {
 
 struct node *head, *z;
 
-struct node *nalloc(){
+struct node* n_alloc(){
     return (struct node*)malloc(sizeof(*head));
 }
 
-void ndealloc(struct node *node){
+void n_dealloc(struct node *node){
     if(node != NULL)
         free(node);
 }
 
-void listinitialize(){
-    head = nalloc();
-    z = nalloc();
+void list_initialize(){
+    head = n_alloc();
+    z = n_alloc();
 
     head->next = z;
     z->next = z;
 }
 
-void deletenext(struct node *t){
+void delete_next(struct node *t){
     struct node *x = t->next;
     t->next = t->next->next;
-    ndealloc(x);
+    n_dealloc(x);
 }
 
-struct node* insertafter(int v, struct node *t){
+struct node* insert_after(int v, struct node *t){
     if(t == NULL)
         return NULL;
 
-    struct node *x = nalloc();
+    struct node *x = n_alloc();
     x->key = v;
     x->next = t->next;
     t->next = x;
     return x;
 }
 
-struct node *movenexttofront(struct node *t){
+struct node* move_next_to_front(struct node *t){
     struct node *temp = t->next;
     t->next = t->next->next;
     
@@ -63,7 +63,7 @@ void exchange(struct node *t, struct node *u){
     u->next = temp;
 }
 
-void masssuicide(int n, int m){
+void mass_suicide(int n, int m){
     if(n <= 0 || m <= 0)
         return;
 
@@ -73,12 +73,12 @@ void masssuicide(int n, int m){
     int i;
     struct node *head;
 
-    struct node *t = nalloc();
+    struct node *t = n_alloc();
     t->key = 0;
     head = t;
 
     for(i = 0; i < n; i++){
-        t->next = nalloc();
+        t->next = n_alloc();
         t = t->next;
         t->key = (i+1);
     }
@@ -97,7 +97,7 @@ void masssuicide(int n, int m){
     printf("%d\n", t->key);
 }
 
-int masssuicideArray(int n, int m){
+int mass_suicide_Array(int n, int m){
     if(n <= 0 || m <= 0)
         return -1;
 

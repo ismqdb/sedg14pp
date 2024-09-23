@@ -23,7 +23,7 @@ int get(){
     return t;
 }
 
-void queueinit(int size){
+void queue_init(int size){
     if(size <= 0)
         return;
     currentSize = size;
@@ -32,11 +32,11 @@ void queueinit(int size){
     tail = 0;
 }
 
-int queueempty(){
+int is_empty(){
     return head == tail;
 }
 
-void queuedeinit(){
+void queue_deinit(){
     head = 0;
     tail = 0;
     free(queue);

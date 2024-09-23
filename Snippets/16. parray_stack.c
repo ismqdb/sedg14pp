@@ -10,7 +10,7 @@ struct node **key_array;
 int *next;
 int current, head, z;
 
-struct node *nalloc(){
+struct node *n_alloc(){
     return (struct node*)malloc(sizeof(struct node*));
 }
 

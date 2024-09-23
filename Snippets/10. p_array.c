@@ -2,7 +2,7 @@ char *key;
 char *next;
 char current, head, z;
 
-void listinitialize(int size){
+void list_initialize(int size){
     key = (char*)malloc(size*sizeof(char));
     next = (char*)malloc(size*sizeof(char));
 
@@ -19,11 +19,11 @@ void listdeinit(){
     free(next);
 }
 
-void deletenext(char t){
+void delete_next(char t){
     next[t] = next[next[t]];
 }
 
-char insertafter(char new, char existing){
+char insert_after(char new, char existing){
     key[current] = new;
 
     next[current] = next[existing];
@@ -32,7 +32,7 @@ char insertafter(char new, char existing){
     return current++;
 }
 
-void printAll(){
+void print_all(){
     char x = next[head];
 
     while(x != next[x]){

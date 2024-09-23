@@ -17,7 +17,7 @@ int pop(){
     return stack[--p];
 }
 
-void stackinit(int size){
+void stack_init(int size){
     if(size <= 0)
         return;
     stack = (int*)malloc(size*sizeof(int));
@@ -25,11 +25,11 @@ void stackinit(int size){
     currentSize += size;
 }
 
-void stackdeinit(){
+void stack_deinit(){
     p = 0;
     free(stack);
 }
 
-int stackEmpty(){
+int is_empty(){
     return !p;
 }
