@@ -7,10 +7,10 @@
 #include "../12. stack array/12. stack_a.h"
 #include "../13. queue array/13. queue_a.h"
 
-void pre_order_iter(tree_node*);
+void pre_order_iterative(tree_node*);
 void pre_order_recursive(tree_node*);
 void in_order_recursive(tree_node*);
-void remove_recursion_1(tree_node*);
-void remove_recursion_2(tree_node*);
-void remove_recursion_3(tree_node*);
+void remove_recursion_1_pre_order(tree_node*);
+void remove_recursion_2_pre_order(tree_node*);
+void remove_recursion_3_pre_order(tree_node*);
 int remove_recursion_main();
