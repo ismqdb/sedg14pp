@@ -6,9 +6,9 @@ typedef struct node {
     node *next;
 } node;
 
-typedef struct queue_ll {
+typedef struct queue_a {
     node *head;
-} queue_ll;
+} queue_a;
 
 node* n_alloc(int value){
     node *l = (node*)malloc(sizeof(node));
@@ -16,15 +16,14 @@ node* n_alloc(int value){
     return l;
 }
 
-
-queue_ll queue_ll_init(){
-    queue_ll queue;
+queue_a queue_ll_init(){
+    queue_a queue;
     queue.head = NULL;
 
     return queue;
 }
 
-void put(queue_ll queue, int value){
+void put(queue_a queue, int value){
     node *item = n_alloc(value);
     node **p = &queue.head;
 
@@ -40,19 +39,19 @@ void put(queue_ll queue, int value){
     (*p) = item;
 }
 
-node* get(queue_ll queue){
+node* get(queue_a queue){
     node *item = queue.head;
 
     queue.head = queue.head->next;
     return item;
 }
 
-int is_queue_empty(queue_ll queue){
+int is_queue_empty(queue_a queue){
     return queue.head == NULL;
 }
 
 int main(){
-    queue_ll queue = queue_ll_init();
+    queue_a queue = queue_ll_init();
 
     int size = 5;
 

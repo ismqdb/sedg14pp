@@ -1,14 +1,14 @@
 #include <stdlib.h>
 
-typedef struct queue_ll {
+typedef struct queue_a {
     int* queue;
     int head;
     int tail;
     int chunk_size;
     int current_size;
-} queue_ll;
+} queue_a;
 
-void put(queue_ll queue, int v){
+void put(queue_a queue, int v){
     if(queue.tail == queue.current_size){
         queue.current_size += queue.chunk_size;
         queue.queue = (int*)realloc(queue.queue, queue.current_size*sizeof(int));
@@ -16,7 +16,7 @@ void put(queue_ll queue, int v){
     queue.queue[queue.tail++] = v;
 }
 
-int get(queue_ll queue){
+int get(queue_a queue){
     int t = queue.queue[queue.head++];
     if(queue.head == queue.tail){
         queue.head = 0;
@@ -25,8 +25,8 @@ int get(queue_ll queue){
     return t;
 }
 
-queue_ll queue_init(int size){
-    queue_ll queue;
+queue_a queue_init(int size){
+    queue_a queue;
     queue.chunk_size = 25;
     queue.current_size = 0;
 
@@ -41,11 +41,11 @@ queue_ll queue_init(int size){
     return queue;
 }
 
-int is_empty(queue_ll queue){
+int is_queue_empty(queue_a queue){
     return queue.head == queue.tail;
 }
 
-void queue_deinit(queue_ll queue){
+void queue_deinit(queue_a queue){
     queue.head = 0;
     queue.tail = 0;
     free(queue.queue);
