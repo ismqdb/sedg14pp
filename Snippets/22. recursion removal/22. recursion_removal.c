@@ -1,24 +1,4 @@
 #include "./22. recursion_removal.h"
-/*
-void pre_order(tree_node *t){
-    stack_a stack = stack_a_init(TREE_NODE, 50);
-
-    stack_a_push_t_node(&stack, t);
-
-    while(stack_a_is_empty(stack)){
-        t = stack_a_pop_t_node(&stack);
-
-        visit_n_f(t);
-
-        if(t->right != NULL)
-            stack_a_push_t_node(&stack, t->right);
-
-        if(t->left != NULL)
-            stack_a_push_t_node(&stack, t->left);
-    }
-
-    stack_a_deinit(stack);
-}*/
 
 void pre_order_iter(tree_node *t){
     stack_a stack = stack_a_init(TREE_NODE, 50);
