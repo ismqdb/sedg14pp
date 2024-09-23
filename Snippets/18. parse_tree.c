@@ -44,17 +44,17 @@ tree_node* build_parse_tree(){
 
         if(c == '+' || c == '*'){
             if(!is_empty(stack)){
-                x->right = pop_t_node(stack);
+                x->right = pop_t_node(&stack);
             }
             if(!is_empty(stack)){
-                x->left = pop_t_node(stack);
+                x->left = pop_t_node(&stack);
             }
         }
 
-        push_t_node(stack, x);
+        push_t_node(&stack, x);
     }
 
-    tree_node *returnValue = pop_t_node(stack);
+    tree_node *returnValue = pop_t_node(&stack);
     return returnValue;
 }
 
@@ -108,19 +108,19 @@ void level_order(tree_node *t){
 void pre_order(tree_node *t){
     stack_a stack = stack_init(TREE_NODE, 50);
 
-    push_t_node(stack, t);
+    push_t_node(&stack, t);
 
     while(is_empty(stack)){
-        t = pop_t_node(stack);
-        pop_t_node(stack);
+        t = pop_t_node(&stack);
+        pop_t_node(&stack);
 
         visit_n_f(t);
 
         if(t->right != NULL)
-            push_t_node(stack, t->right);
+            push_t_node(&stack, t->right);
 
         if(t->left != NULL)
-            push_t_node(stack, t->left);
+            push_t_node(&stack, t->left);
     }
 
     stack_deinit(stack);
@@ -134,15 +134,15 @@ void in_order(tree_node *t){
         if(t->left != NULL){
             temp = t->left;
             t->left = NULL;
-            push_t_node(stack, t);
+            push_t_node(&stack, t);
             t = temp;
         } else {
             visit_n_f(t);
-            t = pop_t_node(stack);
-            pop_t_node(stack);
+            t = pop_t_node(&stack);
+            pop_t_node(&stack);
             
             if(t->right != NULL){
-                push_t_node(stack, t->right);
+                push_t_node(&stack, t->right);
                 t->right = NULL;
             }
         }
@@ -159,13 +159,13 @@ void post_order(tree_node *t){
         if(t->left != NULL && t->right != NULL){
             temp = t->right;
             t->right = NULL;
-            push_t_node(stack, t);
-            push_t_node(stack, temp);
+            push_t_node(&stack, t);
+            push_t_node(&stack, temp);
             t = t->left;
         } else {
             visit_n_f(t);
-            t = pop_t_node(stack);
-            pop_t_node(stack);
+            t = pop_t_node(&stack);
+            pop_t_node(&stack);
         }
     } while(is_empty(stack));
 

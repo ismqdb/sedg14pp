@@ -13,28 +13,28 @@ typedef struct stack_a {
     int chunk_size;
 } stack_a;
 
-void push_int(stack_a stack, int v){
-    if(stack.p == stack.current_size){
-        stack.current_size += stack.chunk_size;
-        stack.data.integer = (int*)realloc(stack.data.integer, stack.current_size*sizeof(int));
+void push_int(stack_a *stack, int v){
+    if(stack->p == stack->current_size){
+        stack->current_size += stack->chunk_size;
+        stack->data.integer = (int*)realloc(stack->data.integer, stack->current_size*sizeof(int));
     }
-    stack.data.integer[stack.p++] = v;
+    stack->data.integer[stack->p++] = v;
 }
 
-void push_t_node(stack_a stack, tree_node* t_node){
-    if(stack.p == stack.current_size){
-        stack.current_size += stack.chunk_size;
-        stack.data.t_node = (tree_node**)realloc(stack.data.t_node, stack.current_size*sizeof(tree_node));
+void push_t_node(stack_a *stack, tree_node* t_node){
+    if(stack->p == stack->current_size){
+        stack->current_size += stack->chunk_size;
+        stack->data.t_node = (tree_node**)realloc(stack->data.t_node, stack->current_size*sizeof(tree_node));
     }
-    stack.data.t_node[stack.p++] = t_node;
+    stack->data.t_node[stack->p++] = t_node;
 }
 
-int pop_int(stack_a stack){
-    return stack.data.integer[--stack.p];
+int pop_int(stack_a *stack){
+    return stack->data.integer[--stack->p];
 }
 
-tree_node* pop_t_node(stack_a stack){
-    return stack.data.t_node[--stack.p];
+tree_node* pop_t_node(stack_a *stack){
+    return stack->data.t_node[--stack->p];
 }
 
 stack_a stack_init(data_type type, int size){
@@ -54,6 +54,8 @@ stack_a stack_init(data_type type, int size){
 
     stack.p = 0;
     stack.current_size += size;
+
+    return stack;
 }
 
 void stack_deinit(stack_a stack){
