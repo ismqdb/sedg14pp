@@ -3,7 +3,7 @@
 
 typedef struct node {
     int key;
-    node *next;
+    struct node *next;
 } node;
 
 typedef struct linked_list {

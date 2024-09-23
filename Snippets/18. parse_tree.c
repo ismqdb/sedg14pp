@@ -3,26 +3,20 @@
 #include "./12. stack_a.c"
 #include "./13. queue_a.c"
 
-typedef struct node {
-    char info;
-    node *left;
-    node *right;
-} node;
-
-node* n_init(char c){
-    node *n = (node*)malloc(sizeof(node));
+tree_node* n_init(char c){
+    tree_node *n = (tree_node*)malloc(sizeof(tree_node));
     n->info = c;
     return n;
 };
 
-void n_deinit(node *n){
+void n_deinit(tree_node *n){
     free(n);
 }
 
-typedef struct nodeF {
+typedef struct node_f {
     char info;
-    node_f *child;
-    node_f *sibling;
+    struct node_f *child;
+    struct node_f *sibling;
 } node_f;
 
 node_f n_f_init(char c){
@@ -31,11 +25,11 @@ node_f n_f_init(char c){
     return n;
 }
 
-node* build_parse_tree(){
-    node *x;
+tree_node* build_parse_tree(){
+    tree_node *x;
     char c;
 
-    stack_a stack = stack_init(50);
+    stack_a stack = stack_init(TREE_NODE, 50);
 
     while(1){
         c = getchar();
@@ -50,108 +44,105 @@ node* build_parse_tree(){
 
         if(c == '+' || c == '*'){
             if(!is_empty(stack)){
-                x->right = top(stack);
-                pop(stack);
+                x->right = pop_t_node(stack);
             }
             if(!is_empty(stack)){
-                x->left = top(stack);
-                pop(stack);
+                x->left = pop_t_node(stack);
             }
         }
 
-        push(stack, x);
+        push_t_node(stack, x);
     }
 
-    node *returnValue = top(stack);
-    pop(stack);
+    tree_node *returnValue = pop_t_node(stack);
     return returnValue;
 }
 
-void visit(node *t){
+void visit_n_f(tree_node *t){
     printf("%s\n", t->info);
 }
 
 void visit(node_f *t){
     printf("%s\n", t->info);
 }
-
+/*
 void node_f_level_order(node_f *t){
-    queue_a queue = queue_init(50);
+    queue_a queue = queue_init(TREE_NODE, 50);
 
-    put(queue, t);
+    put_tree_node(queue, t);
 
     while(t != NULL){
-        t = get(queue);
+        t = get_tree_node(queue);
 
         put(queue, t->child);
 
         while(t != NULL){
-            visit(t);
+            visit_n_f(t);
             t = t->sibling;
         }
     }
 
     queue_deinit(queue);
-}
+}*/
 
-void level_order(node *t){
-    queue_a queue = queue_init(50);
+void level_order(tree_node *t){
+    queue_a queue = queue_init(TREE_NODE, 50);
 
-    put(queue, t);
+    put_tree_node(queue, t);
 
     while(is_queue_empty(queue)){
-        t = get(queue);
+        t = get_tree_node(queue);
         
-        visit(t);
+        visit_n_f(t);
 
         if(t->left != NULL)
-            put(queue, t->left);
+            put_tree_node(queue, t->left);
 
         if(t->right != NULL)
-            put(queue, t->right);
+            put_tree_node(queue, t->right);
     }
 
     queue_deinit(queue);
 }
 
-void pre_order(node *t){
-    stack_a stack = stack_init(50);
+void pre_order(tree_node *t){
+    stack_a stack = stack_init(TREE_NODE, 50);
 
-    push(stack, t);
+    push_t_node(stack, t);
 
     while(is_empty(stack)){
-        t = top(stack);
-        pop(stack);
+        t = pop_t_node(stack);
+        pop_t_node(stack);
 
-        visit(t);
+        visit_n_f(t);
 
         if(t->right != NULL)
-            push(stack, t->right);
+            push_t_node(stack, t->right);
 
         if(t->left != NULL)
-            push(stack, t->left);
+            push_t_node(stack, t->left);
     }
 
     stack_deinit(stack);
 }
 
-void in_order(node *t){
-    stack_a stack = stack_init(50);
-    node *temp;
+void in_order(tree_node *t){
+    stack_a stack = stack_init(TREE_NODE, 50);
+    tree_node *temp;
     
     do {
         if(t->left != NULL){
             temp = t->left;
             t->left = NULL;
-            push(stack, t);
+            push_t_node(stack, t);
             t = temp;
         } else {
-            visit(t);
-            t = top(stack);
-            pop(stack);
+            visit_n_f(t);
+            t = pop_t_node(stack);
+            pop_t_node(stack);
             
             if(t->right != NULL){
-                push(stack, t->right);
+                push_t_node(stack, t->right);
                 t->right = NULL;
             }
         }
@@ -160,31 +151,25 @@ void in_order(node *t){
     stack_deinit(stack);
 }
 
-void post_order(node *t){
-    stack_a stack = stack_init(50);
-    node *temp;
+void post_order(tree_node *t){
+    stack_a stack = stack_init(TREE_NODE, 50);
+    tree_node *temp;
 
     do {
         if(t->left != NULL && t->right != NULL){
             temp = t->right;
             t->right = NULL;
-            push(stack, t);
-            push(stack, temp);
+            push_t_node(stack, t);
+            push_t_node(stack, temp);
             t = t->left;
         } else {
-            visit(t);
-            t = top(stack);
-            pop(stack);
+            visit_n_f(t);
+            t = pop_t_node(stack);
+            pop_t_node(stack);
         }
     } while(is_empty(stack));
 
-    visit(t);
+    visit_n_f(t);
 
     stack_deinit(stack);
-}
-
-int main(){
-    // A * (((B+C) * (D*E)) + F)
-    // A B C + D E * * F + *
-
 }
