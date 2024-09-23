@@ -6,7 +6,7 @@
 #include <string.h>
 #include <errno.h>
 
-#include "./01. gcd/01. gcd.h"
+#include "../01. gcd/01. gcd.h"
 
 int convert();
 int convert_main();

@@ -9,4 +9,4 @@ typedef struct node_f {
 } node_f;
 
 node_f n_f_init(char);
-void visit(node_f*);
+void visit_f(node_f*);

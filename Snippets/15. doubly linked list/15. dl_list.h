@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../Snippets/00. Includes/dll node/dll_node.h"
+#include "../00. Includes/dll node/dll_node.h"
 
 typedef struct dl_list {
     dll_node *head;

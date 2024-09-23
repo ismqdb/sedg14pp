@@ -6,6 +6,6 @@ node_f n_f_init(char c){
     return n;
 }
 
-void visit(node_f *t){
+void visit_f(node_f *t){
     printf("%s\n", t->info);
 }

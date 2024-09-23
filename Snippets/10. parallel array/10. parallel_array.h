@@ -1,5 +1,8 @@
 #pragma once
 
+#include <stdio.h>
+#include <stdlib.h>
+
 typedef struct parallel_array {
     char *key;
     char *next;

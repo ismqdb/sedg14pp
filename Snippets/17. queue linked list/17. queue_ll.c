@@ -40,7 +40,7 @@ int queue_ll_main(){
     int size = 5;
 
     for(int i = 0; i < size; i++)
-        put(queue, i*i);
+        queue_ll_put(&queue, i*i);
 
     for(int i = 0; i < size; i++)
         printf("%d\n", queue_ll_get(&queue)->key);
