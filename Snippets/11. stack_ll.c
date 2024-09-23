@@ -2,20 +2,12 @@
 #include <ctype.h>
 
 #include "../array.c"
-
-typedef struct node {
-    int key;
-    node *next;
-} node;
+#include "./Includes/node.c"
 
 typedef struct stack_ll {
     node *head;
     node *tail;
 } stack_ll;
-
-node *n_alloc(){
-    return (node*)malloc(sizeof(node));
-}
 
 stack_ll stack_init(){
     stack_ll stack;

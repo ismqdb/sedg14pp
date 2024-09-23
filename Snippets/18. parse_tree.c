@@ -3,16 +3,6 @@
 #include "./12. stack_a.c"
 #include "./13. queue_a.c"
 
-tree_node* n_init(char c){
-    tree_node *n = (tree_node*)malloc(sizeof(tree_node));
-    n->info = c;
-    return n;
-};
-
-void n_deinit(tree_node *n){
-    free(n);
-}
-
 typedef struct node_f {
     char info;
     struct node_f *child;

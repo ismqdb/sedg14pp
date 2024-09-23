@@ -1,7 +1,4 @@
-typedef struct node {
-    int key;
-    node *next;
-} node;
+#include "./Includes/node.c"
 
 void mass_suicide(int n, int m){
     if(n <= 0 || m <= 0)

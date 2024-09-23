@@ -7,3 +7,13 @@ typedef struct tree_node {
     struct tree_node* left;
     struct tree_node* right;
 } tree_node;
+
+tree_node* n_init(char c){
+    tree_node *n = (tree_node*)malloc(sizeof(tree_node));
+    n->info = c;
+    return n;
+};
+
+void n_deinit(tree_node *n){
+    free(n);
+}

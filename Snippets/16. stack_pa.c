@@ -1,10 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct node {
-    int key;
-    node *next;
-} node;
+#include "./Includes/node.c"
 
 typedef struct stack_pa {
     node **key_array;

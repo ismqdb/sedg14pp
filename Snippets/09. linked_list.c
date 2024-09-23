@@ -1,24 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct node {
-    int key;
-    struct node *next;
-} node;
+#include "./Includes/node.c"
 
 typedef struct linked_list {
     node *head;
     node *z;
 } linked_list;
-
-node* n_alloc(){
-    return (node*)malloc(sizeof(node));
-}
-
-void n_dealloc(node *node){
-    if(node != NULL)
-        free(node);
-}
 
 linked_list list_initialize(){
     linked_list list;

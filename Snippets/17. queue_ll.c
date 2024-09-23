@@ -1,20 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct node {
-    int value;
-    node *next;
-} node;
+#include "./Includes/node.c"
 
 typedef struct queue_a {
     node *head;
 } queue_a;
-
-node* n_alloc(int value){
-    node *l = (node*)malloc(sizeof(node));
-    l->value = value;
-    return l;
-}
 
 queue_a queue_ll_init(){
     queue_a queue;
@@ -59,7 +50,7 @@ int main(){
         put(queue, i*i);
 
     for(int i = 0; i < size; i++)
-        printf("%d\n", get(queue)->value);
+        printf("%d\n", get(queue)->key);
 
     printf("%s\n", is_queue_empty(queue) ? "Queue is empty." : "Queue is not empty.");
 
