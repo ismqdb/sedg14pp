@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "../00. Includes/node/node.h"
+#include "../00. includes/node/node.h"
 
 typedef struct linked_list {
     node *head;

@@ -2,7 +2,7 @@
 
 #include <stdlib.h>
 
-#include "../00. Includes/tree node/tree_node.h"
+#include "../00. includes/tree node/tree_node.h"
 
 typedef struct queue_a {
     data_type type;

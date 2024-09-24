@@ -3,8 +3,8 @@
 #include <stdio.h>
 #include <ctype.h>
 
-#include "../00. Includes/array/array.h"
-#include "../00. Includes/node/node.h"
+#include "../00. includes/array/array.h"
+#include "../00. includes/node/node.h"
 
 typedef struct stack_ll {
     node *head;
