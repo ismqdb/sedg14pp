@@ -5,11 +5,11 @@ include(CTest)
 enable_testing()
 
 add_executable(sedg14 main.c 
-    "Snippets/00. Includes/array/array.c"
-    "Snippets/00. Includes/dll node/dll_node.c"
-    "Snippets/00. Includes/node/node.c"
-    "Snippets/00. Includes/node f/node_f.c"
-    "Snippets/00. Includes/tree node/tree_node.c"
+    "Snippets/00. includes/array/array.c"
+    "Snippets/00. includes/dll node/dll_node.c"
+    "Snippets/00. includes/node/node.c"
+    "Snippets/00. includes/node f/node_f.c"
+    "Snippets/00. includes/tree node/tree_node.c"
 
     "Snippets/01. gcd/01. gcd.c"
     "Snippets/03. fraction/03. fraction.c"
@@ -34,11 +34,6 @@ add_executable(sedg14 main.c
     "Snippets/20. ruler/20. ruler.c"
     "Snippets/21. fractal/21. fractal.c"
     "Snippets/22. recursion removal/22. recursion_removal.c"
-
-
-    "Snippets/12. stack array/12. stack_a.c"
-    "Snippets/13. queue array/13. queue_a.c"
-    "Snippets/18a. parse tree/18a. parse_tree.c"
 )
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
