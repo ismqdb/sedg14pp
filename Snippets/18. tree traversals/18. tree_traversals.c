@@ -1,15 +1,17 @@
 #include "../18a. parse tree/18a. parse_tree.h"
 
 tree_node* convert_to_forest_binary_tree(tree_node *t){
-    stack_a stack = stack_a_init(TREE_NODE, 50);
+    queue_a queue = queue_a__init(TREE_NODE, 50);
 
-    stack_a_push_t_node(&stack, t);
+    queue_a_put_tree_node(&queue, t);
 
-    while(!stack_a_is_empty(&stack)){
+    while(!queue_a_is_empty(&queue)){
 
     }
 
-    stack_a_deinit(&stack);
+    queue_a_deinit(&queue);
+
+    return NULL;
 }
 
 void level_order(tree_node *t){
@@ -17,7 +19,7 @@ void level_order(tree_node *t){
 
     queue_a_put_tree_node(&queue, t);
 
-    while(queue_a_is_empty(&queue)){
+    while(!queue_a_is_empty(&queue)){
         t = queue_a_get_tree_node(&queue);
         
         tree_node_visit(t);
@@ -37,7 +39,7 @@ void pre_order(tree_node *t){
 
     stack_a_push_t_node(&stack, t);
 
-    while(stack_a_is_empty(&stack)){
+    while(!stack_a_is_empty(&stack)){
         t = stack_a_pop_t_node(&stack);
         stack_a_pop_t_node(&stack);
 
@@ -94,7 +96,7 @@ void post_order(tree_node *t){
             t = stack_a_pop_t_node(&stack);
             stack_a_pop_t_node(&stack);
         }
-    } while(stack_a_is_empty(&stack));
+    } while(!stack_a_is_empty(&stack));
 
     tree_node_visit(t);
 
