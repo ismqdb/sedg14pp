@@ -1,4 +1,4 @@
-int s = insertafter('S', head);
+    int s = insertafter('S', head);
     int l = insertafter('L', head);
     int a = insertafter('A', head);
 
