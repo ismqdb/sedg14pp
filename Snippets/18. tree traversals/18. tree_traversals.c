@@ -1,43 +1,23 @@
 #include "../18a. parse tree/18a. parse_tree.h"
 
-/*
-void node_f_level_order(node_f *t){
-    queue_a queue = queue_init(TREE_NODE, 50);
-
-    put_tree_node(queue, t);
-
-    while(t != NULL){
-        t = get_tree_node(queue);
-
-        put(queue, t->child);
-
-        while(t != NULL){
-            visit_n_f(t);
-            t = t->sibling;
-        }
-    }
-
-    queue_deinit(queue);
-}*/
-
 void level_order(tree_node *t){
-    queue_a queue = queue_init(TREE_NODE, 50);
+    queue_a queue = queue_a__init(TREE_NODE, 50);
 
-    put_tree_node(&queue, t);
+    queue_a_put_tree_node(&queue, t);
 
-    while(is_queue_empty(&queue)){
-        t = get_tree_node(&queue);
+    while(queue_a_is_empty(&queue)){
+        t = queue_a_get_tree_node(&queue);
         
-        visit_n_f(t);
+        tree_node_visit(t);
 
         if(t->left != NULL)
-            put_tree_node(&queue, t->left);
+            queue_a_put_tree_node(&queue, t->left);
 
         if(t->right != NULL)
-            put_tree_node(&queue, t->right);
+            queue_a_put_tree_node(&queue, t->right);
     }
 
-    queue_deinit(&queue);
+    queue_a_deinit(&queue);
 }
 
 void pre_order(tree_node *t){
@@ -49,7 +29,7 @@ void pre_order(tree_node *t){
         t = stack_a_pop_t_node(&stack);
         stack_a_pop_t_node(&stack);
 
-        visit_n_f(t);
+        tree_node_visit(t);
 
         if(t->right != NULL)
             stack_a_push_t_node(&stack, t->right);
@@ -72,7 +52,7 @@ void in_order(tree_node *t){
             stack_a_push_t_node(&stack, t);
             t = temp;
         } else {
-            visit_n_f(t);
+            tree_node_visit(t);
             t = stack_a_pop_t_node(&stack);
             stack_a_pop_t_node(&stack);
             
@@ -98,13 +78,13 @@ void post_order(tree_node *t){
             stack_a_push_t_node(&stack, temp);
             t = t->left;
         } else {
-            visit_n_f(t);
+            tree_node_visit(t);
             t = stack_a_pop_t_node(&stack);
             stack_a_pop_t_node(&stack);
         }
     } while(stack_a_is_empty(stack));
 
-    visit_n_f(t);
+    tree_node_visit(t);
 
     stack_a_deinit(stack);
 }

@@ -30,7 +30,7 @@ node* queue_ll_get(queue_a *queue){
     return item;
 }
 
-int is_queue_ll_empty(queue_a *queue){
+int queue_ll_is_empty(queue_a *queue){
     return queue->head == NULL;
 }
 
@@ -45,7 +45,7 @@ int queue_ll_main(){
     for(int i = 0; i < size; i++)
         printf("%d\n", queue_ll_get(&queue)->key);
 
-    printf("%s\n", is_queue_ll_empty(&queue) ? "Queue is empty." : "Queue is not empty.");
+    printf("%s\n", queue_ll_is_empty(&queue) ? "Queue is empty." : "Queue is not empty.");
 
     putchar(10);
 }

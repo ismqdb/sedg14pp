@@ -2,7 +2,7 @@
 
 array get_postfix(){
     char c;
-    stack_ll stack_ll = stack_init();
+    stack_ll stack_ll = stack_ll_init();
 
     array array = createArray();
 
@@ -12,14 +12,14 @@ array get_postfix(){
             break;
 
         if(c == ')'){
-            insert(&array, (char)pop(stack_ll));
+            insert(&array, (char)stack_ll_pop_int(stack_ll));
         }
 
         if(c == '+')
-            push(stack_ll, (int)c);
+            stack_ll_push_int(stack_ll, (int)c);
 
         if(c == '*')
-            push(stack_ll, (int)c);
+            stack_ll_push_int(stack_ll, (int)c);
 
         while(c >= '0' && c <= '9'){
             insert(&array, c);
@@ -31,9 +31,9 @@ array get_postfix(){
             
     }
 
-    while(!is_empty(stack_ll))
+    while(!stack_ll_is_empty(stack_ll))
         //printf("%1c", (char)pop());
-        insert(&array, (char)pop(stack_ll));
+        insert(&array, (char)stack_ll_pop_int(stack_ll));
 
     //printf("\n");
     return array;
@@ -44,7 +44,7 @@ int evaluate(array *array){
     int x;
     int sum = 0;
 
-    stack_ll stack_ll = stack_init();
+    stack_ll stack_ll = stack_ll_init();
     for(int i = 0; i < array->currentSize; i++){
         c = array->start[i];
 
@@ -54,17 +54,17 @@ int evaluate(array *array){
         x = 0;
 
         if(c == '+')
-            x = pop(stack_ll) + pop(stack_ll); 
+            x = stack_ll_pop_int(stack_ll) + stack_ll_pop_int(stack_ll); 
 
         if(c == '*')
-            x = pop(stack_ll) * pop(stack_ll);
+            x = stack_ll_pop_int(stack_ll) * stack_ll_pop_int(stack_ll);
 
         while(c>='0' && c<='9'){
             x = 10*x + (c-'0');
             i++;
             c = array->start[i];
         }
-        push(stack_ll, x);
+        stack_ll_push_int(stack_ll, x);
     }
 
     return x;

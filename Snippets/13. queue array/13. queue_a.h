@@ -16,10 +16,10 @@ typedef struct queue_a {
     int current_size;
 } queue_a;
 
-void put_int(queue_a*, int);
-void put_tree_node(queue_a*, tree_node*);
-int get_int(queue_a*);
-tree_node* get_tree_node(queue_a*);
-queue_a queue_init(data_type, int);
-int is_queue_empty(queue_a*);
-void queue_deinit(queue_a*);
+void queue_a_put_int(queue_a*, int);
+void queue_a_put_tree_node(queue_a*, tree_node*);
+int queue_a_get_int(queue_a*);
+tree_node* queue_a_get_tree_node(queue_a*);
+queue_a queue_a__init(data_type, int);
+int queue_a_is_empty(queue_a*);
+void queue_a_deinit(queue_a*);

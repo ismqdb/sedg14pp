@@ -10,6 +10,6 @@ void n_deinit(tree_node *n){
     free(n);
 }
 
-void visit_n_f(tree_node *t){
+void tree_node_visit(tree_node *t){
     printf("%s\n", t->info);
 }

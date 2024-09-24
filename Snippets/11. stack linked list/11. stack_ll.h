@@ -11,7 +11,7 @@ typedef struct stack_ll {
     node *tail;
 } stack_ll;
 
-stack_ll stack_init();
-void push(stack_ll, int);
-int pop(stack_ll);
-int is_empty(stack_ll);
+stack_ll stack_ll_init();
+void stack_ll_push_int(stack_ll, int);
+int stack_ll_pop_int(stack_ll);
+int stack_ll_is_empty(stack_ll);

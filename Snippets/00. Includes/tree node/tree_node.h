@@ -13,4 +13,4 @@ typedef struct tree_node {
 
 tree_node* n_init(char);
 void n_deinit(tree_node*);
-void visit_n_f(tree_node*);
+void tree_node_visit(tree_node*);
