@@ -1,6 +1,6 @@
-#include "../18a. parse tree/18a. parse_tree.h"
+#include "./18. tree_traversals.h"
 
-tree_node* convert_to_forest_binary_tree(tree_node *t){
+tree_node_rs* convert_to_forest_binary_tree(tree_node *t){
     queue_a queue = queue_a__init(TREE_NODE, 50);
 
     queue_a_put_tree_node(&queue, t);

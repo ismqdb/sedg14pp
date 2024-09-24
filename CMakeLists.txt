@@ -9,6 +9,7 @@ add_executable(sedg14 main.c
     "Snippets/00. includes/dll node/dll_node.c"
     "Snippets/00. includes/node/node.c"
     "Snippets/00. includes/tree node/tree_node.c"
+    "Snippets/00. includes/tree node right sibling/tree_node_rs.c"
 
     "Snippets/01. gcd/01. gcd.c"
     "Snippets/03. fraction/03. fraction.c"
