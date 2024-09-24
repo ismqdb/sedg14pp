@@ -2,6 +2,7 @@
 
 #include <stdlib.h>
 
+#include "../00. includes/tree_node_data_type.h"
 #include "../00. includes/tree node/tree_node.h"
 
 typedef struct stack_a {

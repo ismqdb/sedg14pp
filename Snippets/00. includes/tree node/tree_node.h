@@ -3,8 +3,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef enum {INT, TREE_NODE} data_type;
-
 typedef struct tree_node {
     char info;
     struct tree_node* left;
