@@ -3,14 +3,14 @@
 void pre_order_iterative(tree_node *t){
     stack_a stack = stack_a_init(TREE_NODE, 50);
 
-    stack_a_push_t_node(&stack, t);
+    stack_a_push_tree_node(&stack, t);
 
     while(stack_a_is_empty(&stack)){
-        t = stack_a_pop_t_node(&stack);
+        t = stack_a_pop_tree_node(&stack);
 
         while(t != NULL){
             tree_node_visit(t);
-            stack_a_push_t_node(&stack, t->right);
+            stack_a_push_tree_node(&stack, t->right);
             t = t->left;
         }
     }
@@ -52,7 +52,7 @@ void remove_recursion_2_pre_order(tree_node *t){
         if(t == NULL)
             goto s;
         tree_node_visit(t);
-        stack_a_push_t_node(&stack, t->right);
+        stack_a_push_tree_node(&stack, t->right);
         t = t->left;
         goto l;
 
@@ -63,7 +63,7 @@ void remove_recursion_2_pre_order(tree_node *t){
     s:
         if(stack_a_is_empty(&stack))
             goto x;
-        t = stack_a_pop_t_node(&stack);
+        t = stack_a_pop_tree_node(&stack);
         goto r;
 
     x: 
@@ -76,14 +76,14 @@ void remove_recursion_3_pre_order(tree_node *t){
     l:
         while(t != NULL){
             tree_node_visit(t);
-            stack_a_push_t_node(&stack, t->right);
+            stack_a_push_tree_node(&stack, t->right);
             t = t->left;
         }
 
         if(stack_a_is_empty(&stack))
             goto x;
 
-        t = stack_a_pop_t_node(&stack);
+        t = stack_a_pop_tree_node(&stack);
         goto l;
 
     x: 

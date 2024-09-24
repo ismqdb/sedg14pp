@@ -8,7 +8,7 @@ void stack_a_push_int(stack_a *stack, int v){
     stack->data.integer[stack->p++] = v;
 }
 
-void stack_a_push_t_node(stack_a *stack, tree_node* t_node){
+void stack_a_push_tree_node(stack_a *stack, tree_node* t_node){
     if(stack->p == stack->current_size){
         stack->current_size += stack->chunk_size;
         stack->data.t_node = (tree_node**)realloc(stack->data.t_node, stack->current_size*sizeof(tree_node));
@@ -20,7 +20,7 @@ int stack_a_pop_int(stack_a *stack){
     return stack->data.integer[--stack->p];
 }
 
-tree_node* stack_a_pop_t_node(stack_a *stack){
+tree_node* stack_a_pop_tree_node(stack_a *stack){
     return stack->data.t_node[--stack->p];
 }
 

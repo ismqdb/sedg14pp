@@ -34,7 +34,7 @@ tree_node* queue_a_get_tree_node(queue_a *queue){
     return t;
 }
 
-queue_a queue_a__init(data_type type, int size){
+queue_a queue_a_init(data_type type, int size){
     queue_a queue;
     queue.chunk_size = 25;
     queue.current_size = 0;

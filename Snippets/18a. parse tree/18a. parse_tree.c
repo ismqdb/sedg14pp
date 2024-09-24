@@ -19,16 +19,16 @@ tree_node* build_parse_tree(){
 
         if(c == '+' || c == '*'){
             if(!stack_a_is_empty(&stack)){
-                x->right = stack_a_pop_t_node(&stack);
+                x->right = stack_a_pop_tree_node(&stack);
             }
             if(!stack_a_is_empty(&stack)){
-                x->left = stack_a_pop_t_node(&stack);
+                x->left = stack_a_pop_tree_node(&stack);
             }
         }
 
-        stack_a_push_t_node(&stack, x);
+        stack_a_push_tree_node(&stack, x);
     }
 
-    tree_node *returnValue = stack_a_pop_t_node(&stack);
+    tree_node *returnValue = stack_a_pop_tree_node(&stack);
     return returnValue;
 }

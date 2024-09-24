@@ -1,7 +1,7 @@
 #include "./18. tree_traversals.h"
 
 tree_node_rs* convert_to_forest_binary_tree(tree_node *t){
-    queue_a queue = queue_a__init(TREE_NODE, 50);
+    queue_a queue = queue_a_init(TREE_NODE, 50);
 
     queue_a_put_tree_node(&queue, t);
 
@@ -15,7 +15,7 @@ tree_node_rs* convert_to_forest_binary_tree(tree_node *t){
 }
 
 void level_order(tree_node *t){
-    queue_a queue = queue_a__init(TREE_NODE, 50);
+    queue_a queue = queue_a_init(TREE_NODE, 50);
 
     queue_a_put_tree_node(&queue, t);
 
@@ -37,19 +37,19 @@ void level_order(tree_node *t){
 void pre_order(tree_node *t){
     stack_a stack = stack_a_init(TREE_NODE, 50);
 
-    stack_a_push_t_node(&stack, t);
+    stack_a_push_tree_node(&stack, t);
 
     while(!stack_a_is_empty(&stack)){
-        t = stack_a_pop_t_node(&stack);
-        stack_a_pop_t_node(&stack);
+        t = stack_a_pop_tree_node(&stack);
+        stack_a_pop_tree_node(&stack);
 
         tree_node_visit(t);
 
         if(t->right != NULL)
-            stack_a_push_t_node(&stack, t->right);
+            stack_a_push_tree_node(&stack, t->right);
 
         if(t->left != NULL)
-            stack_a_push_t_node(&stack, t->left);
+            stack_a_push_tree_node(&stack, t->left);
     }
 
     stack_a_deinit(&stack);
@@ -63,15 +63,15 @@ void in_order(tree_node *t){
         if(t->left != NULL){
             temp = t->left;
             t->left = NULL;
-            stack_a_push_t_node(&stack, t);
+            stack_a_push_tree_node(&stack, t);
             t = temp;
         } else {
             tree_node_visit(t);
-            t = stack_a_pop_t_node(&stack);
-            stack_a_pop_t_node(&stack);
+            t = stack_a_pop_tree_node(&stack);
+            stack_a_pop_tree_node(&stack);
             
             if(t->right != NULL){
-                stack_a_push_t_node(&stack, t->right);
+                stack_a_push_tree_node(&stack, t->right);
                 t->right = NULL;
             }
         }
@@ -88,13 +88,13 @@ void post_order(tree_node *t){
         if(t->left != NULL && t->right != NULL){
             temp = t->right;
             t->right = NULL;
-            stack_a_push_t_node(&stack, t);
-            stack_a_push_t_node(&stack, temp);
+            stack_a_push_tree_node(&stack, t);
+            stack_a_push_tree_node(&stack, temp);
             t = t->left;
         } else {
             tree_node_visit(t);
-            t = stack_a_pop_t_node(&stack);
-            stack_a_pop_t_node(&stack);
+            t = stack_a_pop_tree_node(&stack);
+            stack_a_pop_tree_node(&stack);
         }
     } while(!stack_a_is_empty(&stack));
 

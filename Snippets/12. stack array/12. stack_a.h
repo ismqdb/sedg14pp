@@ -17,9 +17,9 @@ typedef struct stack_a {
 } stack_a;
 
 void stack_a_push_int(stack_a*, int);
-void stack_a_push_t_node(stack_a*, tree_node*);
+void stack_a_push_tree_node(stack_a*, tree_node*);
 int stack_a_pop_int(stack_a*);
-tree_node* stack_a_pop_t_node(stack_a*);
+tree_node* stack_a_pop_tree_node(stack_a*);
 stack_a stack_a_init(data_type, int);
 void stack_a_deinit(stack_a*);
 int stack_a_is_empty(stack_a*);
