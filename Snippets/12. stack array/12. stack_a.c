@@ -45,19 +45,19 @@ stack_a stack_a_init(data_type type, int size){
     return stack;
 }
 
-void stack_a_deinit(stack_a stack){
-    stack.p = 0;
+void stack_a_deinit(stack_a *stack){
+    stack->p = 0;
 
-    switch(stack.type){
+    switch(stack->type){
         case INT:
-            free(stack.data.integer);
+            free(stack->data.integer);
             break;
         case TREE_NODE:
-            free(stack.data.t_node);
+            free(stack->data.t_node);
             break;
     }
 }
 
-int stack_a_is_empty(stack_a stack){
-    return !stack.p;
+int stack_a_is_empty(stack_a *stack){
+    return !stack->p;
 }

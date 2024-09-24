@@ -25,7 +25,7 @@ void pre_order(tree_node *t){
 
     stack_a_push_t_node(&stack, t);
 
-    while(stack_a_is_empty(stack)){
+    while(stack_a_is_empty(&stack)){
         t = stack_a_pop_t_node(&stack);
         stack_a_pop_t_node(&stack);
 
@@ -38,7 +38,7 @@ void pre_order(tree_node *t){
             stack_a_push_t_node(&stack, t->left);
     }
 
-    stack_a_deinit(stack);
+    stack_a_deinit(&stack);
 }
 
 void in_order(tree_node *t){
@@ -61,9 +61,9 @@ void in_order(tree_node *t){
                 t->right = NULL;
             }
         }
-    } while(stack_a_is_empty(stack));
+    } while(stack_a_is_empty(&stack));
 
-    stack_a_deinit(stack);
+    stack_a_deinit(&stack);
 }
 
 void post_order(tree_node *t){
@@ -82,9 +82,9 @@ void post_order(tree_node *t){
             t = stack_a_pop_t_node(&stack);
             stack_a_pop_t_node(&stack);
         }
-    } while(stack_a_is_empty(stack));
+    } while(stack_a_is_empty(&stack));
 
     tree_node_visit(t);
 
-    stack_a_deinit(stack);
+    stack_a_deinit(&stack);
 }
