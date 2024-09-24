@@ -1,5 +1,17 @@
 #include "../18a. parse tree/18a. parse_tree.h"
 
+tree_node* convert_to_forest_binary_tree(tree_node *t){
+    stack_a stack = stack_a_init(TREE_NODE, 50);
+
+    stack_a_push_t_node(&stack, t);
+
+    while(!stack_a_is_empty(&stack)){
+
+    }
+
+    stack_a_deinit(&stack);
+}
+
 void level_order(tree_node *t){
     queue_a queue = queue_a__init(TREE_NODE, 50);
 

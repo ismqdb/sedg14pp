@@ -32,9 +32,3 @@ tree_node* build_parse_tree(){
     tree_node *returnValue = stack_a_pop_t_node(&stack);
     return returnValue;
 }
-
-tree_node* convert_to_forest_binary_tree(tree_node *t){
-    stack_a stack = stack_a_init(TREE_NODE, 50);
-
-    stack_a_deinit(&stack);
-}
