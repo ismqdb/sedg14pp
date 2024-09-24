@@ -8,7 +8,6 @@ add_executable(sedg14 main.c
     "Snippets/00. includes/array/array.c"
     "Snippets/00. includes/dll node/dll_node.c"
     "Snippets/00. includes/node/node.c"
-    "Snippets/00. includes/node f/node_f.c"
     "Snippets/00. includes/tree node/tree_node.c"
 
     "Snippets/01. gcd/01. gcd.c"
