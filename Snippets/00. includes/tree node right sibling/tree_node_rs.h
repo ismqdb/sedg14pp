@@ -6,7 +6,10 @@
 typedef struct tree_node_rs {
     char info;
     struct tree_node_rs* child;
-    struct tree_node_rs* sibling;
+    struct sibling {
+        char info;
+        struct sibling *next;
+    } sibling;
 } tree_node_rs;
 
 tree_node_rs* tree_node_rs_init(char);
