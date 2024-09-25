@@ -1,6 +1,11 @@
 #include "./tree_node.h"
 
-tree_node* tree_node_init(char c){
+tree_node* tree_node_init(){
+    tree_node *n = (tree_node*)malloc(sizeof(tree_node));
+    return n;
+};
+
+tree_node* tree_node_init_char(char c){
     tree_node *n = (tree_node*)malloc(sizeof(tree_node));
     n->info = c;
     return n;

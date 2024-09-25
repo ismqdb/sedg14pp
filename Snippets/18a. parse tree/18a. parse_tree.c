@@ -15,7 +15,7 @@ tree_node* build_parse_tree(){
         if(c == '(' || c == ')' || c == ' ')
             continue;
 
-        x = tree_node_init(c);
+        x = tree_node_init_char(c);
 
         if(c == '+' || c == '*'){
             if(!stack_a_is_empty(&stack)){
