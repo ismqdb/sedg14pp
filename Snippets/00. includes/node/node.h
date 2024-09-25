@@ -8,6 +8,6 @@ typedef struct node {
     struct node *next;
 } node;
 
-node* n_alloc();
-node* nalloc_i(int);
-void n_dealloc(node*);
+node* node_alloc();
+node* node_alloc_int(int);
+void node_dealloc(node*);

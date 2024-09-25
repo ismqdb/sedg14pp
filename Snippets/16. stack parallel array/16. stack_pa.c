@@ -17,7 +17,7 @@ stack_pa stack_pa_init(int size){
 }
 
 void stack_pa_push(stack_pa *stack, int v){
-    node *new = nalloc_i(v);
+    node *new = node_alloc_int(v);
     stack->key_array[stack->current] = new;
 
     stack->next[stack->current] = stack->next[stack->head];

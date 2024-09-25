@@ -3,8 +3,8 @@
 stack_ll stack_ll_init(){
     stack_ll stack;
     
-    stack.head = n_alloc();
-    stack.tail = n_alloc();
+    stack.head = node_alloc();
+    stack.tail = node_alloc();
 
     stack.head->next = stack.tail;
     stack.head->key = 0;
@@ -14,7 +14,7 @@ stack_ll stack_ll_init(){
 }
 
 void stack_ll_push_int(stack_ll stack, int v){
-    node *t = n_alloc();
+    node *t = node_alloc();
     t->key = v;
     t->next = stack.head->next;
     stack.head->next = t; 

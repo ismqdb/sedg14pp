@@ -10,12 +10,12 @@ void mass_suicide(int n, int m){
     int i;
     node *head;
 
-    node *t = n_alloc();
+    node *t = node_alloc();
     t->key = 0;
     head = t;
 
     for(i = 0; i < n; i++){
-        t->next = n_alloc();
+        t->next = node_alloc();
         t = t->next;
         t->key = (i+1);
     }
