@@ -6,5 +6,5 @@
 
 int main(){
     tree_node *t = build_parse_tree();
-    tree_node_rs *f = convert_to_forest_binary_tree(t);
+    
 }

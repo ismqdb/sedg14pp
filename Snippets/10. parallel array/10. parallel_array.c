@@ -25,8 +25,8 @@ void parallel_array_delete_next(parallel_array *array, char t){
     array->next[t] = array->next[array->next[t]];
 }
 
-char parallel_array_insert_after(parallel_array *array, char new, char existing){
-    array->key[array->current] = new;
+char parallel_array_insert_after(parallel_array *array, char newValue, char existing){
+    array->key[array->current] = newValue;
 
     array->next[array->current] = array->next[existing];
     array->next[existing] = array->current;

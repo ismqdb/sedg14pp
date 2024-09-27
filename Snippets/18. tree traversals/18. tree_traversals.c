@@ -1,19 +1,5 @@
 #include "./18. tree_traversals.h"
 
-tree_node_rs* convert_to_forest_binary_tree(tree_node *t){
-    queue_a queue = queue_a_init(TREE_NODE, 50);
-
-    queue_a_put_tree_node(&queue, t);
-
-    while(!queue_a_is_empty(&queue)){
-
-    }
-
-    queue_a_deinit(&queue);
-
-    return NULL;
-}
-
 void level_order(tree_node *t){
     queue_a queue = queue_a_init(TREE_NODE, 50);
 

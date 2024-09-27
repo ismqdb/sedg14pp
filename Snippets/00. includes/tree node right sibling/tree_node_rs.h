@@ -3,15 +3,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+static const int blockSize = 25;
+
 typedef struct tree_node_rs {
-    char info;
-    struct tree_node_rs* child;
-    struct sibling {
-        char info;
-        struct sibling *next;
-    } sibling;
+    int idx;
+    int parentIdx;
 } tree_node_rs;
 
-tree_node_rs* tree_node_rs_init(char);
+tree_node_rs* tree_node_rs_init(int, int);
 void tree_node_rs_deinit(tree_node_rs*);
 void tree_node_rs_visit(tree_node_rs*);
