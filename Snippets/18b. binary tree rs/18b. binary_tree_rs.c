@@ -9,25 +9,30 @@ binary_tree_rs* binary_tree_rs_init(int size){
     binary_tree_rs *bt_rs = (binary_tree_rs*)malloc(sizeof(binary_tree_rs));
     bt_rs->currentSize = 0;
     bt_rs->allocatedSize = alloc_size;
-    bt_rs->values = (char*)malloc(alloc_size* sizeof(char));
+    bt_rs->nodes = (tree_node_rs**)malloc(alloc_size* sizeof(tree_node_rs));
 
     return bt_rs;
 }
 
 void binary_tree_rs_deinit(binary_tree_rs *bt_rs){
-    free(bt_rs->values);
+    free(bt_rs->nodes);
     free(bt_rs);
 }
 
-int binary_tree_rs_add_node(binary_tree_rs *b_tree, tree_node_rs *t_node, char value){
+int binary_tree_rs_add_node(binary_tree_rs *b_tree, tree_node_rs *t_node){
     if(t_node->idx <= 0 || b_tree == NULL)
         return 0;
 
     if(b_tree->currentSize == (b_tree->allocatedSize)){
-        realloc(b_tree->values, b_tree->allocatedSize + blockSize);
+        b_tree->nodes = realloc(b_tree->nodes, b_tree->allocatedSize + blockSize);
         b_tree->allocatedSize += blockSize;
     }
 
-    b_tree->values[t_node->idx] = t_node->value;
+    b_tree->nodes[t_node->idx] = t_node;
+    
     return 1;
+}
+
+tree_node_rs* tree_node_rs_get_parent(binary_tree_rs *b_tree, tree_node_rs *t_node){
+    return b_tree->nodes[t_node->parentIdx];
 }

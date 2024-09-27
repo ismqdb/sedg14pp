@@ -1,12 +1,10 @@
 #include "./tree_node_rs.h"
 
-tree_node_rs* tree_node_rs_init(int idx, int p_idx){
-    if(idx < 0 || p_idx < 0)
-        return NULL;
-
+tree_node_rs* tree_node_rs_init(int idx, int parent, char v){
     tree_node_rs *n = (tree_node_rs*)malloc(sizeof(tree_node_rs));
     n->idx = idx;
-    n->parentIdx = p_idx;
+    n->parentIdx = parent;
+    n->value = v;
 
     return n;
 };
