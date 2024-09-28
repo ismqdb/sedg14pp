@@ -7,11 +7,11 @@ parallel_array init_parallel_array(int size){
     array.next = (char*)malloc(size*sizeof(char));
 
     array.head = 0;
-    array.z = 1;
+    array.tail = 1;
     array.current = 2;
 
-    array.next[array.head] = array.z;
-    array.next[array.z] = array.z;
+    array.next[array.head] = array.tail;
+    array.next[array.tail] = array.tail;
 
     return array;
 }

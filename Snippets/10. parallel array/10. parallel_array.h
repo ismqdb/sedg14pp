@@ -6,7 +6,9 @@
 typedef struct parallel_array {
     char *key;
     char *next;
-    char current, head, z; 
+    int current;
+    int head;
+    int tail; 
 } parallel_array;
 
 parallel_array init_parallel_array(int);
