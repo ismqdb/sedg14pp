@@ -20,19 +20,17 @@ void binary_tree_rs_deinit(binary_tree_rs *bt_rs){
 }
 
 int binary_tree_rs_add_node(binary_tree_rs *b_tree, tree_node_rs *t_node){
-    if(t_node->idx <= 0 || b_tree == NULL)
-        return 0;
 
     if(b_tree->currentSize == (b_tree->allocatedSize)){
         b_tree->nodes = realloc(b_tree->nodes, b_tree->allocatedSize + blockSize);
         b_tree->allocatedSize += blockSize;
     }
 
-    b_tree->nodes[t_node->idx] = t_node;
+    
     
     return 1;
 }
 
 tree_node_rs* tree_node_rs_get_parent(binary_tree_rs *b_tree, tree_node_rs *t_node){
-    return b_tree->nodes[t_node->parentIdx];
+    
 }
