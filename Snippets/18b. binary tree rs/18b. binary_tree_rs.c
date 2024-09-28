@@ -37,10 +37,6 @@ int binary_tree_rs_add_node(binary_tree_rs *b_tree, tree_node_rs *t_node){
     return 1;
 }
 
-tree_node_rs* tree_node_rs_get_parent(binary_tree_rs *b_tree, tree_node_rs *t_node){
-    
-}
-
 int binary_tree_rs_driver(){
     binary_tree_rs *b_tree = binary_tree_rs_init(50);
 
