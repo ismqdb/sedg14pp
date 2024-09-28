@@ -7,8 +7,10 @@ static const int block_size = 25;
 typedef struct {
     tree_node_rs **nodes;
     int *parents;
-    int currentSize;
-    int allocatedSize;
+    int *siblings;
+    int *children;
+    int current_size;
+    int allocated_size;
 } binary_tree_rs;
 
 binary_tree_rs* binary_tree_rs_init(int);
