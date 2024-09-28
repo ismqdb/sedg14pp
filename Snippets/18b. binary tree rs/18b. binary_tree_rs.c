@@ -40,11 +40,16 @@ int binary_tree_rs_add_node(binary_tree_rs *b_tree, tree_node_rs *t_node){
     b_tree->siblings[t_node->idx] = t_node->siblingIdx;
     b_tree->children[t_node->idx] = t_node->childIdx;
    
+    b_tree->current_size++;
+
     return 1;
 }
 
 void binary_tree_rs_traverse(binary_tree_rs *b_tree){
-    queue_a queue = queue_a_init(TREE_NODE_RS, 50);
+    for(int i = 0; i < b_tree->current_size; i++)
+        printf("%c ", b_tree->nodes[i]->value);
+
+    putchar(10);
 }
 
 int binary_tree_rs_driver(){
