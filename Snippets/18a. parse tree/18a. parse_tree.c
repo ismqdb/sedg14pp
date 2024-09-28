@@ -32,3 +32,7 @@ tree_node* build_parse_tree(){
     tree_node *returnValue = stack_a_pop_tree_node(&stack);
     return returnValue;
 }
+
+tree_node_rs *build_parse_tree_rs(){
+    
+}

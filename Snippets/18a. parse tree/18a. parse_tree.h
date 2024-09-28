@@ -6,3 +6,4 @@
 #include "../13. queue array/13. queue_a.h"
 
 tree_node* build_parse_tree();
+tree_node_rs *build_parse_tree_rs();
