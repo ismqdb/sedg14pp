@@ -33,6 +33,6 @@ tree_node* build_parse_tree(){
     return returnValue;
 }
 
-tree_node_rs *build_parse_tree_rs(){
-    
+binary_tree_rs *build_parse_tree_rs(){
+
 }
