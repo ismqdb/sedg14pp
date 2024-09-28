@@ -11,9 +11,17 @@ void queue_a_put_int(queue_a *queue, int v){
 void queue_a_put_tree_node(queue_a *queue, tree_node *v){
     if(queue->tail == queue->current_size){
         queue->current_size += queue->chunk_size;
-        queue->data.t_node = (tree_node**)realloc(queue->data.t_node, queue->current_size*sizeof(tree_node));
+        queue->data.tree_node = (tree_node**)realloc(queue->data.tree_node, queue->current_size*sizeof(tree_node));
     }
-    queue->data.t_node[queue->tail++] = v;
+    queue->data.tree_node[queue->tail++] = v;
+}
+
+void queue_a_put_tree_node_rs(queue_a *queue, tree_node_rs *v){
+    if(queue->tail == queue->current_size){
+        queue->current_size += queue->chunk_size;
+        queue->data.tree_node_rs = (tree_node_rs**)realloc(queue->data.tree_node_rs, queue->current_size*sizeof(tree_node_rs));
+    }
+    queue->data.tree_node_rs[queue->tail++] = v;
 }
 
 int queue_a_get_int(queue_a *queue){
@@ -26,7 +34,16 @@ int queue_a_get_int(queue_a *queue){
 }
 
 tree_node* queue_a_get_tree_node(queue_a *queue){
-    tree_node *t = queue->data.t_node[queue->head++];
+    tree_node *t = queue->data.tree_node[queue->head++];
+    if(queue->head == queue->tail){
+        queue->head = 0;
+        queue->tail = 0;
+    }
+    return t;
+}
+
+tree_node_rs* queue_a_get_tree_node_rs(queue_a *queue){
+    tree_node_rs *t = queue->data.tree_node_rs[queue->head++];
     if(queue->head == queue->tail){
         queue->head = 0;
         queue->tail = 0;
@@ -45,10 +62,15 @@ queue_a queue_a_init(data_type type, int size){
     switch(type){
         case INT:
             queue.data.integer = (int*)malloc(queue.current_size*sizeof(int));
-            break;
+        break;
+
         case TREE_NODE:
-            queue.data.t_node = (tree_node**)malloc(queue.current_size*sizeof(tree_node));
-            break;
+            queue.data.tree_node = (tree_node**)malloc(queue.current_size*sizeof(tree_node));
+        break;
+
+        case TREE_NODE_RS:
+            queue.data.tree_node_rs = (tree_node_rs**)malloc(queue.current_size*sizeof(tree_node_rs));
+        break;
     }
 
     queue.head = 0;
@@ -67,9 +89,14 @@ void queue_a_deinit(queue_a *queue){
     switch(queue->type){
         case INT:
             free(queue->data.integer);
-            break;
+        break;
+
         case TREE_NODE:
-            free(queue->data.t_node);
-            break;
+            free(queue->data.tree_node);
+        break;
+
+        case TREE_NODE_RS:
+            free(queue->data.tree_node_rs);
+        break;
     }
 }

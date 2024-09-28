@@ -43,6 +43,10 @@ int binary_tree_rs_add_node(binary_tree_rs *b_tree, tree_node_rs *t_node){
     return 1;
 }
 
+void binary_tree_rs_traverse(binary_tree_rs *b_tree){
+    queue_a queue = queue_a_init(TREE_NODE_RS, 50);
+}
+
 int binary_tree_rs_driver(){
     binary_tree_rs *b_tree = binary_tree_rs_init(50);
 
@@ -69,4 +73,6 @@ int binary_tree_rs_driver(){
     binary_tree_rs_add_node(b_tree, c);
     binary_tree_rs_add_node(b_tree, d);
     binary_tree_rs_add_node(b_tree, e);
+
+    binary_tree_rs_traverse(b_tree);
 }

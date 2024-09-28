@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../00. includes/tree node right sibling/tree_node_rs.h"
+#include "../13. queue array/13. queue_a.h"
 
 static const int block_size = 25;
 
@@ -16,5 +17,7 @@ typedef struct {
 binary_tree_rs* binary_tree_rs_init(int);
 int binary_tree_rs_add_node(binary_tree_rs*, tree_node_rs*);
 void binary_tree_rs_deinit(binary_tree_rs*);
+
+void binary_tree_rs_traverse(binary_tree_rs*);
 
 int binary_tree_rs_driver();

@@ -11,9 +11,9 @@ void stack_a_push_int(stack_a *stack, int v){
 void stack_a_push_tree_node(stack_a *stack, tree_node* t_node){
     if(stack->p == stack->current_size){
         stack->current_size += stack->chunk_size;
-        stack->data.t_node = (tree_node**)realloc(stack->data.t_node, stack->current_size*sizeof(tree_node));
+        stack->data.tree_node = (tree_node**)realloc(stack->data.tree_node, stack->current_size*sizeof(tree_node));
     }
-    stack->data.t_node[stack->p++] = t_node;
+    stack->data.tree_node[stack->p++] = t_node;
 }
 
 int stack_a_pop_int(stack_a *stack){
@@ -21,7 +21,7 @@ int stack_a_pop_int(stack_a *stack){
 }
 
 tree_node* stack_a_pop_tree_node(stack_a *stack){
-    return stack->data.t_node[--stack->p];
+    return stack->data.tree_node[--stack->p];
 }
 
 stack_a stack_a_init(data_type type, int size){
@@ -35,7 +35,7 @@ stack_a stack_a_init(data_type type, int size){
             stack.data.integer = (int*)malloc(size*sizeof(int));
             break;
         case TREE_NODE:
-            stack.data.t_node = (tree_node**)malloc(size*sizeof(tree_node));
+            stack.data.tree_node = (tree_node**)malloc(size*sizeof(tree_node));
             break;
     }
 
@@ -53,7 +53,7 @@ void stack_a_deinit(stack_a *stack){
             free(stack->data.integer);
             break;
         case TREE_NODE:
-            free(stack->data.t_node);
+            free(stack->data.tree_node);
             break;
     }
 }

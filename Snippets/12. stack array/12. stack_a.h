@@ -9,7 +9,7 @@ typedef struct stack_a {
     data_type type;
     union {
         int* integer;
-        tree_node** t_node;
+        tree_node** tree_node;
     } data;
     int p;
     int current_size;
