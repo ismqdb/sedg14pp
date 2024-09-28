@@ -34,5 +34,23 @@ tree_node* build_parse_tree(){
 }
 
 binary_tree_rs *build_parse_tree_rs(){
+    binary_tree_rs *b_tree = binary_tree_rs_init(25);
+    tree_node_rs *tree_node_rs;
+    char c;
+
+    stack_a stack = stack_a_init(TREE_NODE_RS, 50);
+
+    while(1){
+        c = getchar();
+
+        if(c == EOF || c == '\n')
+            break;
+
+        if(c == '(' || c == ')' || c == ' ')
+            continue;
+
+        tree_node_rs = tree_node_rs_init_char(c);
+    }
+
 
 }

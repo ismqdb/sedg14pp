@@ -55,17 +55,17 @@ void binary_tree_rs_traverse(binary_tree_rs *b_tree){
 int binary_tree_rs_driver(){
     binary_tree_rs *b_tree = binary_tree_rs_init(50);
 
-    tree_node_rs *mul1  =   tree_node_rs_init(0, 0, -1, 1, '*');
-    tree_node_rs *a     =   tree_node_rs_init(1, 0, 2, -1, 'A');
-    tree_node_rs *add1  =   tree_node_rs_init(2, -1, -1, 3, '+');
-    tree_node_rs *mul2  =   tree_node_rs_init(3, 2, 4, 5, '*');
-    tree_node_rs *f     =   tree_node_rs_init(4, -1, -1, -1, 'F');
-    tree_node_rs *add2  =   tree_node_rs_init(5, 3, 6, 7, '*');
-    tree_node_rs *mul3  =   tree_node_rs_init(6, -1, -1, 9, '*');
-    tree_node_rs *b     =   tree_node_rs_init(7, 5, 8, -1, 'B');
-    tree_node_rs *c     =   tree_node_rs_init(8, -1, -1, -1, 'C');
-    tree_node_rs *d     =   tree_node_rs_init(9, 6, 10, -1, 'D');
-    tree_node_rs *e     =   tree_node_rs_init(10, -1, -1, -1, 'E');
+    tree_node_rs *mul1  =   tree_node_rs_init_all(0, 0, -1, 1, '*');
+    tree_node_rs *a     =   tree_node_rs_init_all(1, 0, 2, -1, 'A');
+    tree_node_rs *add1  =   tree_node_rs_init_all(2, -1, -1, 3, '+');
+    tree_node_rs *mul2  =   tree_node_rs_init_all(3, 2, 4, 5, '*');
+    tree_node_rs *f     =   tree_node_rs_init_all(4, -1, -1, -1, 'F');
+    tree_node_rs *add2  =   tree_node_rs_init_all(5, 3, 6, 7, '*');
+    tree_node_rs *mul3  =   tree_node_rs_init_all(6, -1, -1, 9, '*');
+    tree_node_rs *b     =   tree_node_rs_init_all(7, 5, 8, -1, 'B');
+    tree_node_rs *c     =   tree_node_rs_init_all(8, -1, -1, -1, 'C');
+    tree_node_rs *d     =   tree_node_rs_init_all(9, 6, 10, -1, 'D');
+    tree_node_rs *e     =   tree_node_rs_init_all(10, -1, -1, -1, 'E');
     
     binary_tree_rs_add_node(b_tree, mul1);
     binary_tree_rs_add_node(b_tree, a);
