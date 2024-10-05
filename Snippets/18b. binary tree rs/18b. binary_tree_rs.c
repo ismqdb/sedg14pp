@@ -28,3 +28,15 @@ binary_tree_rs* binary_tree_rs_init(int size){
 void binary_tree_rs_deinit(binary_tree_rs *bt_rs){
     free(bt_rs);
 }
+
+void convert_to_bt_rs(binary_tree_rs *result, tree_node *t){
+    if(t == NULL)
+        return;
+
+    while(t != NULL){
+        convert_to_bt_rs(result, t->left);
+        convert_to_bt_rs(result, t->right);
+
+        // do stuff with t
+    }
+}
