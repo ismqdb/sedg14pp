@@ -32,23 +32,3 @@ tree_node* build_parse_tree(){
     tree_node *returnValue = stack_a_pop_tree_node(&stack);
     return returnValue;
 }
-
-binary_tree_rs *build_parse_tree_rs(){
-    binary_tree_rs *b_tree = binary_tree_rs_init(25);
-    char c;
-
-    
-
-    while(1){
-        c = getchar();
-
-        if(c == EOF || c == '\n')
-            break;
-
-        if(c == '(' || c == ')' || c == ' ')
-            continue;
-
-    }
-
-
-}

@@ -6,30 +6,25 @@ binary_tree_rs* binary_tree_rs_init(int size){
 
     int alloc_size = (size/block_size+1)*block_size;
 
-    binary_tree_rs *bt_rs = (binary_tree_rs*)malloc(sizeof(binary_tree_rs));
+    binary_tree_rs *bt_rs = heap_alloc_sized(binary_tree_rs, 1);
     bt_rs->current_size = 0;
     bt_rs->allocated_size = alloc_size;
-    //bt_rs->nodes = (tree_node_rs**)malloc(alloc_size* sizeof(tree_node_rs));
-    bt_rs->parents = (int*)malloc(size*sizeof(int));
-    bt_rs->siblings = (int*)malloc(size*sizeof(int));
-    bt_rs->children = (int*)malloc(size*sizeof(int));
+    
+    bt_rs->key =            heap_alloc_sized(char, size);
+    bt_rs->next_parent =    heap_alloc_sized(char, size);
+    bt_rs->next_sibling =   heap_alloc_sized(char, size);
+    bt_rs->next_children =  heap_alloc_sized(char, size);
+
+    bt_rs->current_parent = 2;
+    bt_rs->current_sibling = 2;
+    bt_rs->current_child = 2;
+
+    bt_rs->head = 0;
+    bt_rs->tail = 1;
 
     return bt_rs;
 }
 
 void binary_tree_rs_deinit(binary_tree_rs *bt_rs){
-   
     free(bt_rs);
-}
-
-void binary_tree_rs_traverse(binary_tree_rs *b_tree){
-    
-}
-
-int binary_tree_rs_driver(){
-    binary_tree_rs *b_tree = binary_tree_rs_init(50);
-
-    
-
-    binary_tree_rs_traverse(b_tree);
 }
