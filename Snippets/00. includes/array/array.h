@@ -15,7 +15,8 @@ typedef struct array {
     } data;
 
     int current_size;
-    int max_size;
+    int allocated_size;
+    int block_size;
 } array;
 
 array create_array(data_type);
