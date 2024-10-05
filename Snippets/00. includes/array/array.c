@@ -9,7 +9,7 @@ array create_array(data_type type){
     switch(type){
         case INT:
             a.data.ints = heap_alloc_sized(int, 50);
-            break;
+        break;
     }
 
     return a;
@@ -21,7 +21,7 @@ void destroy_array(array *a){
     switch(a->type){
         case INT:
             free(a->data.ints);
-            break;
+        break;
     }
 }
 
