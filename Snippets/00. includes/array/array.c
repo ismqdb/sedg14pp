@@ -1,28 +1,40 @@
 #include "./array.h"
 
-array createArray(){
+array create_array(data_type type){
     array a;
-    a.currentSize = 0;
-    a.maxSize = 25;
-    a.start = (char*)malloc(25*sizeof(char));
+
+    a.current_size = 0;
+    a.max_size = 25;
+    
+    switch(type){
+        case INT:
+            a.data.ints = heap_alloc_sized(int, 50);
+            break;
+    }
+
     return a;
 }
 
-void destroyArray(array *a){
-    a->currentSize = 0;
-    free(a->start);
+void destroy_array(array *a){
+    a->current_size = 0;
+
+    switch(a->type){
+        case INT:
+            free(a->data.ints);
+            break;
+    }
 }
 
-int insert(array *a, int value){
-    if(a->currentSize == a->maxSize){
-        a->maxSize += 25;
-        a->start = (char*)realloc(a->start, a->maxSize*sizeof(char));
+int insert_int(array *a, int value){
+    if(a->current_size == a->max_size){
+        a->max_size += 25;
+        a->data.ints = (int*)realloc(a->data.ints, a->max_size*sizeof(int));
     }
-    a->start[a->currentSize] = value;
-    a->currentSize++;
+    a->data.ints[a->current_size] = value;
+    a->current_size++;
 }
 
 void populate(array *a, char *values){
     for(int i = 0; values[i] != '\0'; i++)
-        insert(a, values[i]);
+        insert_int(a, values[i]);
 }
