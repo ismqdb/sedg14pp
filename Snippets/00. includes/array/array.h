@@ -3,13 +3,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct array {
-    char *start;
-    int currentSize;
-    int maxSize;
-} array;
+#include "../array_macros.h"
 
-array createArray();
-void destroyArray(array*);
-int insert(array*, int);
-void populate(array*, char*);
+define_array(char);

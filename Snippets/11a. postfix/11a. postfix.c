@@ -1,10 +1,10 @@
 #include "./11a. postfix.h"
 
-array get_postfix(){
+array_char get_postfix(){
     char c;
     stack_ll stack_ll = stack_ll_init();
 
-    array array = createArray();
+    array_char array = create_array_char(25);
 
     while(1){
         int readResult = scanf("%1c", &c);
@@ -12,7 +12,7 @@ array get_postfix(){
             break;
 
         if(c == ')'){
-            insert(&array, (char)stack_ll_pop_int(stack_ll));
+            insert_array_char(&array, (char)stack_ll_pop_int(stack_ll));
         }
 
         if(c == '+')
@@ -22,31 +22,29 @@ array get_postfix(){
             stack_ll_push_int(stack_ll, (int)c);
 
         while(c >= '0' && c <= '9'){
-            insert(&array, c);
+            insert_array_char(&array, c);
             scanf("%1c", &c);
         }
 
         if(c != '(')
-            insert(&array, ' ');
+            insert_array_char(&array, ' ');
             
     }
 
     while(!stack_ll_is_empty(stack_ll))
-        //printf("%1c", (char)pop());
-        insert(&array, (char)stack_ll_pop_int(stack_ll));
+        insert_array_char(&array, (char)stack_ll_pop_int(stack_ll));
 
-    //printf("\n");
     return array;
 }
 
-int evaluate(array *array){
+int evaluate(array_char *array){
     char c;
     int x;
     int sum = 0;
 
     stack_ll stack_ll = stack_ll_init();
-    for(int i = 0; i < array->currentSize; i++){
-        c = array->start[i];
+    for(int i = 0; i < array->current_size; i++){
+        c = array->data[i];
 
         if(c == ' ')
             continue;
@@ -62,7 +60,7 @@ int evaluate(array *array){
         while(c>='0' && c<='9'){
             x = 10*x + (c-'0');
             i++;
-            c = array->start[i];
+            c = array->data[i];
         }
         stack_ll_push_int(stack_ll, x);
     }
