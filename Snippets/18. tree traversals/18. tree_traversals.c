@@ -88,3 +88,35 @@ void post_order(tree_node *t){
 
     stack_a_deinit(&stack);
 }
+
+void pre_order_iterative(tree_node *t){
+    stack_a stack = stack_a_init(TREE_NODE, 50);
+
+    stack_a_push_tree_node(&stack, t);
+
+    while(stack_a_is_empty(&stack)){
+        t = stack_a_pop_tree_node(&stack);
+
+        while(t != NULL){
+            tree_node_visit(t);
+            stack_a_push_tree_node(&stack, t->right);
+            t = t->left;
+        }
+    }
+}
+
+void pre_order_recursive(tree_node *t){
+    if(t != NULL){
+        tree_node_visit(t);
+        pre_order_recursive(t->left);
+        pre_order_recursive(t->right);
+    }
+}
+
+void in_order_recursive(tree_node *t){
+    if(t != NULL){
+        pre_order_recursive(t->left);
+        tree_node_visit(t);
+        pre_order_recursive(t->right);
+    }
+}

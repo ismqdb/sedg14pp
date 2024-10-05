@@ -12,3 +12,6 @@ void level_order(tree_node*);
 void pre_order(tree_node*);
 void in_order(tree_node*);
 void post_order(tree_node*);
+void pre_order_iterative(tree_node*);
+void pre_order_recursive(tree_node*);
+void in_order_recursive(tree_node*);
