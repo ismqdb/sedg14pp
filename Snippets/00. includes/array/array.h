@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 #include "../tree_node_data_type.h"
-#include "../macros.h"
+#include "../alloc_macros.h"
 
 typedef struct array {
     data_type type;
@@ -21,6 +21,5 @@ typedef struct array {
 array create_array(data_type);
 void destroy_array(array*);
 int insert_int(array*, int);
-void populate(array*, char*);
 
 #endif

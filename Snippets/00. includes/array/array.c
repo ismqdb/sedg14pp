@@ -33,8 +33,3 @@ int insert_int(array *a, int value){
     a->data.ints[a->current_size] = value;
     a->current_size++;
 }
-
-void populate(array *a, char *values){
-    for(int i = 0; values[i] != '\0'; i++)
-        insert_int(a, values[i]);
-}

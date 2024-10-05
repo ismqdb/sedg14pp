@@ -1,1 +1,0 @@
-#define heap_alloc_sized(type, size) ((type*)malloc(size*sizeof(type)))
