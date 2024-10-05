@@ -1,26 +1,15 @@
-#ifndef ARRAY_H
-#define ARRAY_H
+#pragma once
 
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "../tree_node_data_type.h"
-#include "../macros.h"
-
 typedef struct array {
-    data_type type;
-
-    union {
-        int *ints;
-    } data;
-
-    int current_size;
-    int max_size;
+    char *start;
+    int currentSize;
+    int maxSize;
 } array;
 
-array create_array(data_type);
-void destroy_array(array*);
-int insert_int(array*, int);
+array createArray();
+void destroyArray(array*);
+int insert(array*, int);
 void populate(array*, char*);
-
-#endif
