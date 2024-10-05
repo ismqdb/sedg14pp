@@ -2,8 +2,6 @@
     "files.associations": {
         "stdio.h": "c",
         "18b. binary_tree_rs.h": "c",
-        "tree_node_rs.h": "c",
-        "18. tree_traversals.h": "c",
-        "stdlib.h": "c"
+        "tree_node_rs.h": "c"
     }
 }
