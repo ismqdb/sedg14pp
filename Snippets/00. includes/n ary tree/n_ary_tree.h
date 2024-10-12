@@ -15,6 +15,8 @@ typedef struct {
         char *chars;
     } keys;
 
+    int *parents;
+
     int current_index;
     int current_size;
     int allocated_size;
@@ -23,6 +25,6 @@ typedef struct {
 
 n_ary_tree n_ary_tree_create(data_type);
 void n_ary_tree_destroy(n_ary_tree*);
-int n_ary_tree_insert_char(n_ary_tree*, char, int, int);
+int n_ary_tree_insert_char(n_ary_tree*, char, int);
 
 #endif

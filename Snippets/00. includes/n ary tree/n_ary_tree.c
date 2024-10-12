@@ -11,9 +11,11 @@ n_ary_tree n_ary_tree_create(data_type type){
     tree.block_size = 50;
     tree.allocated_size = tree.block_size;
 
+    tree.parents = heap_alloc_sized(int, tree.block_size);
+
     switch(type){
         case N_ARY_TREE:
-            tree.keys.chars =   heap_alloc_sized(char, 50);
+            tree.keys.chars =   heap_alloc_sized(char, tree.block_size);
         break;
     }
 
@@ -33,8 +35,10 @@ void n_ary_tree_destroy(n_ary_tree *tree){
     }
 }
 
-int n_ary_tree_insert_char(n_ary_tree *tree, char value, int parent_, int child_){
+int n_ary_tree_insert_char(n_ary_tree *tree, char value, int parent_){
     tree->keys.chars[tree->current_index] = value;
 
-    tree->current_index++;
+    tree->parents[tree->current_index] = parent_;
+
+    return tree->current_index++;
 }
