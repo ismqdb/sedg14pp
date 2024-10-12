@@ -6,14 +6,14 @@ n_ary_tree n_ary_tree_create(data_type type){
     tree.type = type;
 
     tree.current_size = 0;
+    tree.current_index = 0;
+
     tree.block_size = 50;
     tree.allocated_size = tree.block_size;
 
     switch(type){
-        case N_ARY_NODE:
-            tree.keys.ints = heap_alloc_sized(int, 50);
-            tree.child.ints = heap_alloc_sized(int, 50);
-            tree.parent.ints = heap_alloc_sized(int, 50);
+        case N_ARY_TREE:
+            tree.keys.chars =   heap_alloc_sized(char, 50);
         break;
     }
 
@@ -24,12 +24,17 @@ void n_ary_tree_destroy(n_ary_tree *tree){
     tree->current_size = 0;
     tree->block_size = 0;
     tree->allocated_size = 0;
+    tree->current_index = 0;
 
     switch(tree->type){
-        case N_ARY_NODE:
-            free(tree->keys.ints);
-            free(tree->child.ints);
-            free(tree->parent.ints);
+        case N_ARY_TREE:
+            free(tree->keys.chars);
         break;
     }
+}
+
+int n_ary_tree_insert_char(n_ary_tree *tree, char value, int parent_, int child_){
+    tree->keys.chars[tree->current_index] = value;
+
+    tree->current_index++;
 }

@@ -9,7 +9,7 @@ array create_array(data_type type){
     
     switch(type){
         case INT:
-            a.data.ints = heap_alloc_sized(int, 50);
+            a.data.ints = heap_alloc_sized(int, a.current_size);
         break;
     }
 
