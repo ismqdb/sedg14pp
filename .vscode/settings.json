@@ -3,6 +3,7 @@
         "stdio.h": "c",
         "18b. binary_tree_rs.h": "c",
         "tree_node_rs.h": "c",
-        "array.h": "c"
+        "array.h": "c",
+        "12. stack_a.h": "c"
     }
 }
