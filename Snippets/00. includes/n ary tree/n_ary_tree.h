@@ -29,9 +29,9 @@ typedef struct {
 
 n_ary_tree n_ary_tree_create(data_type);
 void n_ary_tree_destroy(n_ary_tree*);
-int n_ary_tree_insert_char(n_ary_tree*, char, int);
-int n_ary_tree_insert_char_child(n_ary_tree*, int, char);
-int n_ary_tree_insert_char_sibling(n_ary_tree*, int, int, char);
+int n_ary_tree_insert_char(n_ary_tree*, char);
+int n_ary_tree_insert_child_char(n_ary_tree*, int, char);
+int n_ary_tree_insert_sibling_char(n_ary_tree*, int, int, char);
 
 int n_ary_tree_level_order(n_ary_tree*);
 

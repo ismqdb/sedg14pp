@@ -6,19 +6,19 @@
 int main(){
     n_ary_tree tree = n_ary_tree_create(N_ARY_TREE);
 
-    int root = n_ary_tree_insert_char(&tree, 'E', -1);
+    int root = n_ary_tree_insert_char(&tree, 'E');
 
-    int a1 = n_ary_tree_insert_char(&tree, 'A', root);
-    int r1 = n_ary_tree_insert_char(&tree, 'R', root);
-    int e1 = n_ary_tree_insert_char(&tree, 'E', root);
+    int a1 = n_ary_tree_insert_child_char(&tree, root, 'A');
+    int r1 = n_ary_tree_insert_sibling_char(&tree, root, a1, 'R');
+    int e1 = n_ary_tree_insert_sibling_char(&tree, root, r1, 'E');
 
-    int a2 = n_ary_tree_insert_char(&tree, 'A', a1);
-    int s1 = n_ary_tree_insert_char(&tree, 'S', a1);
+    int a2 = n_ary_tree_insert_child_char(&tree, a1, 'A');
+    int s1 = n_ary_tree_insert_sibling_char(&tree, a1, a2, 'S');
 
-    int t1 = n_ary_tree_insert_char(&tree, 'T', r1);
+    int t1 = n_ary_tree_insert_child_char(&tree, r1, 'T');
 
-    int m1 = n_ary_tree_insert_char(&tree, 'M', t1);
-    int p1 = n_ary_tree_insert_char(&tree, 'P', t1);
-    int l1 = n_ary_tree_insert_char(&tree, 'L', t1);
-    int e2 = n_ary_tree_insert_char(&tree, 'E', t1);
+    int m1 = n_ary_tree_insert_child_char(&tree, t1, 'M');
+    int p1 = n_ary_tree_insert_sibling_char(&tree, t1, m1, 'P');
+    int l1 = n_ary_tree_insert_sibling_char(&tree, t1, p1, 'L');
+    int e2 = n_ary_tree_insert_sibling_char(&tree, t1, l1, 'E');
 }

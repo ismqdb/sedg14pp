@@ -42,23 +42,35 @@ void n_ary_tree_destroy(n_ary_tree *tree){
     }
 }
 
-int n_ary_tree_insert_char(n_ary_tree *tree, char value, int parent_){
+int n_ary_tree_insert_char(n_ary_tree *tree, char value){
     tree->keys.chars[tree->current_index] = value;
-
-    tree->parent[tree->current_index] = parent_;
-
-    if(parent_ > -1)
-        tree->child[parent_] = tree->current_index;
 
     return tree->current_index++;
 }
 
-int n_ary_tree_insert_char_child(n_ary_tree* tree, int parent, char child){
+int n_ary_tree_insert_child_char(n_ary_tree* tree, int parent, char child){
+    tree->keys.chars[tree->current_index] = child;
 
+    tree->parent[tree->current_index] = parent;
+    tree->child[parent] = tree->current_index;
+
+    return tree->current_index++;
 }
 
-int n_ary_tree_insert_char_sibling(n_ary_tree* tree, int parent, int existing_node, char sibling){
+int n_ary_tree_insert_sibling_char(
+        n_ary_tree* tree, 
+        int parent, 
+        int existing_node, 
+        char sibling
+    ){
+    tree->keys.chars[tree->current_index] = sibling;
 
+    tree->parent[existing_node] = -1;
+    tree->parent[tree->current_index] = parent;
+
+    tree->sibling[existing_node] = tree->current_index;
+
+    return tree->current_index++;
 }
 
 int n_ary_tree_level_order(n_ary_tree *tree){
