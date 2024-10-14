@@ -74,7 +74,31 @@ int n_ary_tree_insert_sibling_char(
 }
 
 int n_ary_tree_level_order(n_ary_tree *tree){
-    stack_a stack = stack_a_init(INT, 50);
+    queue_a queue = queue_a_init(INT, 50);
 
-    stack_a_deinit(&stack);
+    int current_node = 0;
+    int current_sibling;
+
+    while(!(
+        tree->sibling[current_node] == -1 && 
+        tree->child[current_node] == -1 && 
+        queue_a_is_empty(&queue))){
+        for(
+            current_sibling = tree->sibling[current_node];
+            current_sibling != -1;
+            current_sibling = tree->sibling[current_sibling]
+        )
+            queue_a_put_int(&queue, current_sibling);
+
+        if(tree->child[current_node] != -1)
+            queue_a_put_int(&queue, tree->child[current_node]);
+
+        printf("%c ", tree->keys.chars[current_node]);
+
+        current_node = queue_a_get_int(&queue);
+    }
+
+    putchar(10);
+
+    queue_a_deinit(&queue);
 }

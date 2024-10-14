@@ -21,4 +21,6 @@ int main(){
     int p1 = n_ary_tree_insert_sibling_char(&tree, t1, m1, 'P');
     int l1 = n_ary_tree_insert_sibling_char(&tree, t1, p1, 'L');
     int e2 = n_ary_tree_insert_sibling_char(&tree, t1, l1, 'E');
+
+    n_ary_tree_level_order(&tree);
 }

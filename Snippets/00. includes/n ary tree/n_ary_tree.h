@@ -8,7 +8,7 @@
 #include "../tree_node_data_type.h"
 #include "../alloc_macros.h"
 
-#include "../../12. stack array/12. stack_a.h"
+#include "../../13. queue array/13. queue_a.h"
 
 typedef struct {
     data_type type;
