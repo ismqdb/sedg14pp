@@ -30,7 +30,6 @@ add_executable(sedg14 main.c
     "Snippets/17. queue linked list/17. queue_ll.c"
     "Snippets/18. tree traversals/18. tree_traversals.c"
     "Snippets/18a. parse tree/18a. parse_tree.c"
-    "Snippets/18b. binary tree rs/18b. binary_tree_rs.c"
     "Snippets/19. fibonacci/19. fibonacci.c"
     "Snippets/20. ruler/20. ruler.c"
     "Snippets/21. fractal/21. fractal.c"
