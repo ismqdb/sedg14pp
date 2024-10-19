@@ -10,6 +10,7 @@ add_executable(sedg14 main.c
     "Snippets/00. includes/node/node.c"
     "Snippets/00. includes/tree node/tree_node.c"
     "Snippets/00. includes/n ary tree/n_ary_tree.c"
+    "Snippets/00. includes/parse tree/parse_tree.c"
 
     "Snippets/01. gcd/01. gcd.c"
     "Snippets/03. fraction/03. fraction.c"
@@ -29,7 +30,6 @@ add_executable(sedg14 main.c
     "Snippets/16. stack parallel array/16. stack_pa.c"
     "Snippets/17. queue linked list/17. queue_ll.c"
     "Snippets/18. tree traversals/18. tree_traversals.c"
-    "Snippets/18a. parse tree/18a. parse_tree.c"
     "Snippets/19. fibonacci/19. fibonacci.c"
     "Snippets/20. ruler/20. ruler.c"
     "Snippets/21. fractal/21. fractal.c"
