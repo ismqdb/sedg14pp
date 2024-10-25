@@ -1,6 +1,8 @@
 #include "./20. ruler.h"
 
-void mark(int, int){}
+void mark(int position, int size){
+    
+}
 
 int no_of_trailing_zeroes(int num){
     if(num < 1)
