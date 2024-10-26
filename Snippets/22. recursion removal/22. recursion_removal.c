@@ -1,5 +1,9 @@
 #include "./22. recursion_removal.h"
 
+void traverse_preorder(){
+    
+}
+
 void remove_recursion_1(tree_node *t){
     l:
         if(t == NULL)
