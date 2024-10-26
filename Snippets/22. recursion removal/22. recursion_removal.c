@@ -1,11 +1,11 @@
 #include "./22. recursion_removal.h"
 
-void remove_recursion_1_pre_order(tree_node *t){
+void remove_recursion_1(tree_node *t){
     l:
         if(t == NULL)
             goto x;
         tree_node_visit(t);
-        remove_recursion_1_pre_order(t->left);
+        remove_recursion_1(t->left);
         t = t->right;
         goto l;
     
@@ -13,7 +13,7 @@ void remove_recursion_1_pre_order(tree_node *t){
         ;
 }
 
-void remove_recursion_2_pre_order(tree_node *t){
+void remove_recursion_2(tree_node *t){
     stack_a stack = stack_a_init(TREE_NODE, 50);
 
     l:
@@ -38,7 +38,7 @@ void remove_recursion_2_pre_order(tree_node *t){
         stack_a_deinit(&stack);
 }
 
-void remove_recursion_3_pre_order(tree_node *t){
+void remove_recursion_3(tree_node *t){
     stack_a stack = stack_a_init(TREE_NODE, 50);
 
     l:
