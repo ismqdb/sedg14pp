@@ -61,3 +61,21 @@ void remove_recursion_3(tree_node *t){
     x: 
         stack_a_deinit(&stack);
 }
+
+void remove_recursion_4(tree_node *t){
+    stack_a stack = stack_a_init(TREE_NODE, 50);
+
+    stack_a_push_tree_node(&stack, t);
+
+    while(!stack_a_is_empty(&stack)){
+        t = stack_a_pop_tree_node(&stack);
+
+        while(t != NULL){
+           tree_node_visit(t); 
+           stack_a_push_tree_node(&stack, t->right);
+           t = t->left;
+        }
+    }
+
+    stack_a_deinit(&stack);
+}
