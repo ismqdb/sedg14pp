@@ -16,5 +16,8 @@ void tree_node_deinit(tree_node *n){
 }
 
 void tree_node_visit(tree_node *t){
-    printf("%s\n", t->info);
+    if(t == NULL)
+        return;
+    
+    printf("%c ", t->info);
 }

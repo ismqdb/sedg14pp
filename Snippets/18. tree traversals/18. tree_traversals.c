@@ -27,7 +27,6 @@ void pre_order(tree_node *t){
 
     while(!stack_a_is_empty(&stack)){
         t = stack_a_pop_tree_node(&stack);
-        stack_a_pop_tree_node(&stack);
 
         tree_node_visit(t);
 

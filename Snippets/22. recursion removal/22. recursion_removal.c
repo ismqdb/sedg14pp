@@ -32,15 +32,11 @@ void remove_recursion_2(tree_node *t){
         t = t->left;
         goto l;
 
-    r:
-        t = t->right;
-        goto l;
-
     s:
         if(stack_a_is_empty(&stack))
             goto x;
         t = stack_a_pop_tree_node(&stack);
-        goto r;
+        goto l;
 
     x: 
         stack_a_deinit(&stack);
