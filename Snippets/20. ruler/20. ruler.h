@@ -1,7 +1,12 @@
 #pragma once
 
 void mark(int, int);
-int no_of_trailing_zeroes(int);
+
+/*
+* Height of a individual mark of a ruler.
+* Implemented as a number of trailing zeroes of a number.
+*/
+int ruler_mark_height(int);
 void rule_level_order(int, int, int);
 void rule_pre_order(int, int, int);
 void rule_in_order(int, int, int);

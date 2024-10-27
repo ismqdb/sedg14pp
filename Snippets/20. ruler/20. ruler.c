@@ -1,10 +1,8 @@
 #include "./20. ruler.h"
 
-void mark(int position, int size){
-    
-}
+void mark(int position, int size){}
 
-int no_of_trailing_zeroes(int num){
+int ruler_mark_height(int num){
     if(num < 1)
         return 1;
 
@@ -18,10 +16,10 @@ int no_of_trailing_zeroes(int num){
     return count;
 }
 
-void rule_level_order(int left, int right, int height){
-    for(int i = 1, j = 1; i <= height; i++, j += j)
+void rule_level_order(int left, int right, int tree_height){
+    for(int i = 1, j = 1; i <= tree_height; i++, j <<= 1)
         for(int t = 0; t <= (left + right)/j; t++)
-            mark(left + j + t * (j+j), i);
+            mark(left + j + t * (j+j), ruler_mark_height(i));
 }
 
 void rule_pre_order(int left, int right, int height){
