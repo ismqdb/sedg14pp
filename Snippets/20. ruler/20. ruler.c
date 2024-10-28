@@ -41,3 +41,8 @@ void rule_in_order(int left, int right, int height){
         rule_in_order(middle, right, height-1);
     }
 }
+
+void rule_iterative(int left, int right, int height){
+    for(int i = 1; i <= (right-left); i++)
+        mark(i, ruler_mark_height(i));
+}
