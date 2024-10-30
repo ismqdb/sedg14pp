@@ -8,14 +8,7 @@
 int main(){
     tree_node *t = build_parse_tree();
 
-    pre_order(t);
-    putchar(10);
-    remove_recursion_2(t);
-    putchar(10);
-    remove_recursion_3(t);
-    putchar(10);
-    remove_recursion_4(t);
-    putchar(10);
+    
 }
 
 // A B C + D E * * F + *
