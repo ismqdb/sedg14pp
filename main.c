@@ -37,6 +37,12 @@ void draw_binary_tree(tree_node *t){
     queue_a_put_tree_node(&queue, t);
 
     while(!queue_a_is_empty(&queue)){
+        if(is_new_level(nodes_per_level, nodes_visited)){
+            current_level++;
+            no_of_blank_space = screen_width / nodes_per_level[current_level];
+            putchar(10);
+        }
+        
         nodes_visited++;
 
         t = queue_a_get_tree_node(&queue);
@@ -53,12 +59,6 @@ void draw_binary_tree(tree_node *t){
             queue_a_put_tree_node(&queue, t->left);
             queue_a_put_tree_node(&queue, t->right);
             nodes_per_level[current_level+1] += 2;
-        }
-
-        if(is_new_level(nodes_per_level, nodes_visited)){
-            current_level++;
-            no_of_blank_space = screen_width / pow(2, current_level);
-            putchar(10);
         }
     }
 
