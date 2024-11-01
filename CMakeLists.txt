@@ -36,6 +36,8 @@ add_executable(sedg14 main.c
     "Snippets/22. recursion removal/22. recursion_removal.c"
 )
 
+target_link_libraries(sedg14 m) # Link libmath
+
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
 include(CPack)
