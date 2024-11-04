@@ -46,7 +46,7 @@ int is_new_level(int *nodes_per_level, int nodes_visited){
     return 0;
 }
 
-void draw_binary_tree(tree_node *t){
+void draw_binary_tree_iterative(tree_node *t){
     putchar(10);
 
     const int screen_width = 80;
@@ -109,4 +109,8 @@ void draw_binary_tree(tree_node *t){
     queue_a_deinit(&queue);
 
     putchar(10);
+}
+
+void draw_binary_tree_iterative(tree_node *t){
+    
 }
