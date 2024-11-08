@@ -28,10 +28,10 @@ add_executable(sedg14pp main.cpp
     "Snippets/16. stackPA/16. stackPA.cpp"
     "Snippets/17. queueL/17. queueL.cpp"
     "Snippets/18. tree traversals/18. treeTraversals.cpp"
-    #"Snippets/19. fibonacci/19. fibonacci.cpp"
-    #"Snippets/20. ruler/20. ruler.cpp"
-    #"Snippets/21. fractal/21. fractal.cpp"
-    #"Snippets/22. recursion removal/22. recursion_removal.cpp"
+    "Snippets/19. fibonacci/19. fibonacci.cpp"
+    "Snippets/20. ruler/20. ruler.cpp"
+    "Snippets/21. fractal/21. fractal.cpp"
+    "Snippets/22. recursion removal/22. recursionRemoval.cpp"
 )
 
 target_link_libraries(sedg14pp m) # Link libmath
