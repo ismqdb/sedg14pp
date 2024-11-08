@@ -1,0 +1,11 @@
+Preorder (root, left subtree, right subtree):
+    E O blank A C P M L T E T blank E R E
+
+Inorder (left subtree, root, right subtree):
+    A blank C O M P L E T E blank T R E E
+
+Postorder (right subtree, root, left subtree):
+    E E R T blank E T E L P M O C blank A
+
+Level order:
+    E O T blanl P E E A C M L T blank R E

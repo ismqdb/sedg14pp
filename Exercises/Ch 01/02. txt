@@ -1,0 +1,6 @@
+The function doesn't do any calculation and incorrectly returns
+v as gcd. 
+
+If one or both numbers are negative, gcd is still positive. 
+We can extend the gcd algorithms to use absolute values 
+of u and v.
