@@ -14,7 +14,7 @@ template<typename T>
             int insert(T);
             int insertChild(T, T);
             int insertSibling(T, T, T);
-            int levelOrderTraversal();
+            void levelOrderTraversal();
         private:
             std::vector<T> keys;
 
@@ -25,6 +25,8 @@ template<typename T>
             int currentIndex;
     };
 
-int n_ary_tree_level_order_driver();
+/* ******************************************************************************** */
+
+void nAryTreeLevelOrderDriver();
 
 /* ******************************************************************************** */

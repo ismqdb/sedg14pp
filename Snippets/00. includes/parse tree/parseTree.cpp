@@ -76,7 +76,7 @@ template<typename T>
         for(int i = 0; i < offset; i++)
             putchar(0x20);
 
-        while(!queue_a_is_empty(&queue)){
+        while(!queue.empty()){
             if(isNewLevel(nodesPerLevel, nodesVisited)){
                 currentLevel++;
                 distance /= 2;

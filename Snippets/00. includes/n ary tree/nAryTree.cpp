@@ -48,7 +48,7 @@ template<typename T>
 /* ******************************************************************************** */
 
 template<typename T>
-    int nAryTree<T>::levelOrderTraversal(){
+    void nAryTree<T>::levelOrderTraversal(){
         std::queue<int> queue{};
 
         int currentNode = 0;
@@ -82,7 +82,7 @@ template<typename T>
 
 /* ******************************************************************************** */
 
-int n_ary_tree_level_order_driver(){
+void nAryTreeLevelOrderDriver(){
     nAryTree<char> tree{};
 
     int root = tree.insert('E');
