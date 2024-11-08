@@ -5,31 +5,23 @@
 #include <iostream>
 #include <vector>
 
-/* ******************************************************************************** */
-
-struct node {
-    public:
-        node(int val) : key{val}, next{NULL}{}
-        node() : key{0}, next{NULL}{}
-
-        int key;
-        struct node *next;
-};
+#include "../00. includes/node/node.hpp"
 
 /* ******************************************************************************** */
 
-class linkedList {
-    public:
-        linkedList();
-        ~linkedList();
+template<typename T>
+    class linkedList {
+        public:
+            linkedList();
+            ~linkedList();
 
-        void deleteNext(struct node*);
-        struct node* insertAfter(int, struct node*);
-        struct node* moveNextToFront(struct node*);
-        void exchange(struct node*, struct node*);
-    private:
-        struct node* head;
-        struct node* tail;
-};
+            void deleteNext(node<T>*);
+            node<T>* insertAfter(int, node<T>*);
+            node<T>* moveNextToFront(node<T>*);
+            void exchange(node<T>*, node<T>*);
+        private:
+            node<T>* head;
+            node<T>* tail;
+    };
 
 /* ******************************************************************************** */

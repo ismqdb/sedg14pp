@@ -4,44 +4,49 @@
 
 /* ******************************************************************************** */
 
-queueL::queueL(){
-    this->head = NULL;
-    this->current = NULL;
-}
-
-queueL::~queueL(){
-
-}
-
-/* ******************************************************************************** */
-
-void queueL::put(int value){
-    node *item = new node{value};
-
-    if(this->head == NULL){
-        this->head = item;
-        this->current = this->head;
-        return;
+template<typename T>
+    queueL<T>::queueL(){
+        this->head = NULL;
+        this->current = NULL;
     }
 
-    current->next = item;
-    current = current->next;
+template<typename T>
+    queueL<T>::~queueL(){
 
-    item = NULL;
-    delete(item);
-}
-
-node* queueL::get(){
-    node *item = this->head;
-
-    this->head = this->head->next;
-    return item;
-}
+    }
 
 /* ******************************************************************************** */
 
-bool queueL::isEmpty(){
-    return this->head == NULL;
-}
+template<typename T>
+    void queueL<T>::put(int value){
+        node<T> *item = new node<T>{value};
+
+        if(this->head == NULL){
+            this->head = item;
+            this->current = this->head;
+            return;
+        }
+
+        current->next = item;
+        current = current->next;
+
+        item = NULL;
+        delete(item);
+    }
+
+template<typename T>
+    node<T>* queueL<T>::get(){
+        node<T> *item = this->head;
+
+        this->head = this->head->next;
+        return item;
+    }
+
+/* ******************************************************************************** */
+
+template<typename T>
+    bool queueL<T>::isEmpty(){
+        return this->head == NULL;
+    }
 
 /* ******************************************************************************** */

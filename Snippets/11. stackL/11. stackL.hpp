@@ -5,31 +5,23 @@
 #include <iostream>
 #include <vector>
 
-/* ******************************************************************************** */
-
-struct node {
-    public:
-        node(int val) : key{val}, next{NULL}{}
-        node() : key{0}, next{NULL}{}
-
-        int key;
-        struct node *next;
-};
+#include "../00. includes/node/node.hpp"
 
 /* ******************************************************************************** */
 
-class stackL {
-    public:
-        stackL();
-        ~stackL();
+template<typename T>
+    class stackL {
+        public:
+            stackL();
+            ~stackL();
 
-        void push(int v);
-        void pop();
-        struct node* top();
-        bool isEmpty();
-    private:
-        node *head;
-        node *tail;
-};
+            void push(int v);
+            void pop();
+            node<T>* top();
+            bool isEmpty();
+        private:
+            node<T> *head;
+            node<T> *tail;
+    };
 
 /* ******************************************************************************** */

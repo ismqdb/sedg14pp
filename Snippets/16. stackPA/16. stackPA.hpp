@@ -5,34 +5,26 @@
 #include <iostream>
 #include <vector>
 
-/* ******************************************************************************** */
-
-struct node {
-    public:
-        node(int val) : key{val}, next{NULL}{}
-        node() : key{0}, next{NULL}{}
-
-        int key;
-        struct node *next;
-};
+#include "../00. includes/node/node.hpp"
 
 /* ******************************************************************************** */
 
-class stackPA {
-    public:
-        stackPA();
-        ~stackPA();
+template<typename T>
+    class stackPA {
+        public:
+            stackPA();
+            ~stackPA();
 
-        void push(int);
-        struct node* top();
-        void pop();
-        bool isEmpty();
-    private:
-        std::vector<node*> storage;
-        std::vector<int> next;
-        int current;
-        int head;
-        int tail;
-};
+            void push(int);
+            node<T>* top();
+            void pop();
+            bool isEmpty();
+        private:
+            std::vector<node<T>*> storage;
+            std::vector<int> next;
+            int current;
+            int head;
+            int tail;
+    };
 
 /* ******************************************************************************** */

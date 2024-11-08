@@ -5,30 +5,22 @@
 #include <iostream>
 #include <vector>
 
-/* ******************************************************************************** */
-
-struct node {
-    public:
-        node(int val) : key{val}, next{NULL}{}
-        node() : key{0}, next{NULL}{}
-
-        int key;
-        struct node *next;
-};
+#include "../00. includes/node/node.hpp"
 
 /* ******************************************************************************** */
 
-class queueL {
-    public:
-        queueL();
-        ~queueL();
+template<typename T>
+    class queueL {
+        public:
+            queueL();
+            ~queueL();
 
-        void put(int);
-        node* get();
-        bool isEmpty();
-    private:
-        node *head;
-        node *current;
-};
+            void put(int);
+            node<T>* get();
+            bool isEmpty();
+        private:
+            node<T> *head;
+            node<T> *current;
+    };
 
 /* ******************************************************************************** */

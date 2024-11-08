@@ -4,57 +4,63 @@
 
 /* ******************************************************************************** */
 
-linkedList::~linkedList(){
-    delete(head);
-    delete(tail);
-}
+template<typename T>
+    linkedList<T>::~linkedList(){
+        delete(head);
+        delete(tail);
+    }
 
-linkedList::linkedList(){
-    this->head = new node{};
-    this->tail = new node{};
+template<typename T>
+    linkedList<T>::linkedList(){
+        this->head = new node<T>{};
+        this->tail = new node<T>{};
 
-    head->next = tail;
-    tail->next = tail;
-}
+        head->next = tail;
+        tail->next = tail;
+    }
 
 /* ******************************************************************************** */
 
-void linkedList::deleteNext(struct node *t){
-    struct node *x = t->next;
-    t->next = t->next->next;
-    delete(x);
-}
+template<typename T>
+    void linkedList<T>::deleteNext(node<T> *t){
+        node<T> *x = t->next;
+        t->next = t->next->next;
+        delete(x);
+    }
 
-struct node* linkedList::insertAfter(int v, struct node *t){
-    if(t == NULL)
-        return NULL;
+template<typename T>
+    node<T>* linkedList<T>::insertAfter(int v, node<T> *t){
+        if(t == NULL)
+            return NULL;
 
-    struct node *x = new node{};
-    x->key = v;
-    x->next = t->next;
-    t->next = x;
-    return x;
-}
+        node<T> *x = new node<T>{};
+        x->key = v;
+        x->next = t->next;
+        t->next = x;
+        return x;
+    }
 
-struct node* linkedList::moveNextToFront(struct node *t){
-    struct node *temp = t->next;
-    t->next = t->next->next;
-    
-    temp->next = head->next;
-    head->next = temp;
-    return temp;
-}
+template<typename T>
+    node<T>* linkedList<T>::moveNextToFront(node<T> *t){
+        node<T> *temp = t->next;
+        t->next = t->next->next;
+        
+        temp->next = head->next;
+        head->next = temp;
+        return temp;
+    }
 
-void linkedList::exchange(struct node *t, struct node *u){
-    struct node *temp = t->next;
-    
-    t->next = t->next->next;
-    temp->next = u->next->next;
-    
-    u->next->next = t->next;
-    t->next = u->next;
+template<typename T>
+    void linkedList<T>::exchange(node<T> *t, node<T> *u){
+        node<T> *temp = t->next;
+        
+        t->next = t->next->next;
+        temp->next = u->next->next;
+        
+        u->next->next = t->next;
+        t->next = u->next;
 
-    u->next = temp;
-}
+        u->next = temp;
+    }
 
 /* ******************************************************************************** */
