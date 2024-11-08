@@ -6,16 +6,14 @@
 
 /* ******************************************************************************** */
 
-typedef struct node {
-    int key;
-    struct node *next;
-} node;
-
-/* ******************************************************************************** */
-
 template<typename T>
-    node* nodeAlloc(T value);
-    
-void nodeDealloc(node*);
+    class node {
+        public:
+            node(T value, node<T>* n);
+
+        private:
+            int key;
+            node<T> *next;
+    };
 
 /* ******************************************************************************** */

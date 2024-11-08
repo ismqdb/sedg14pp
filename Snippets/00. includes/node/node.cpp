@@ -5,14 +5,9 @@
 /* ******************************************************************************** */
 
 template<typename T>
-    node* nodeAlloc(T value){
-        node *n = new node{value};
-        return n;
+    node<T>::node(T value, node<T>* n){
+        this->key = value;
+        this->next = n;
     }
-
-void nodeDealloc(node *n){
-    if(n != NULL)
-        delete(n);
-}
 
 /* ******************************************************************************** */

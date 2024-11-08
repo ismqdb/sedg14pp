@@ -5,7 +5,7 @@
 /* ******************************************************************************** */
 
 template<typename T>
-    treeNode::treeNode(T value, treeNode<T> *l, treeNode<T> *r){
+    treeNode<T>::treeNode(T value, treeNode<T> *l, treeNode<T> *r){
         this->info = value;
         this->left = l;
         this->right = r;
@@ -14,7 +14,7 @@ template<typename T>
 /* ******************************************************************************** */
 
 template<typename T>
-    void treeNode::visit(){
+    void treeNode<T>::visit(){
         if(this->info == NULL)
             return;
         

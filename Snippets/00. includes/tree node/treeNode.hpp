@@ -10,9 +10,9 @@ template<typename T>
     class treeNode {
         public:
             treeNode(T value, treeNode *l, treeNode *r);
-            visit();
+            void visit();
         private:
-            T info;
+            int info;
             treeNode* left;
             treeNode* right;
     };
