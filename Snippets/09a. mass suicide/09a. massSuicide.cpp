@@ -1,6 +1,6 @@
-#include "./09a. mass_suicide.hpp"
+#include "./09a. massSuicide.hpp"
 
-void mass_suicide(int n, int m){
+void massSuicide(int n, int m){
     if(n <= 0 || m <= 0)
         return;
 
@@ -8,14 +8,15 @@ void mass_suicide(int n, int m){
         return;
 
     int i;
-    node *head;
 
-    node *t = node_alloc();
+    node<char> *t = new node<char>{};
+    node<char> *head = new node<char>{};
+
     t->key = 0;
     head = t;
 
     for(i = 0; i < n; i++){
-        t->next = node_alloc();
+        t->next = new node<char>{};
         t = t->next;
         t->key = (i+1);
     }
@@ -34,7 +35,7 @@ void mass_suicide(int n, int m){
     printf("%d\n", t->key);
 }
 
-int mass_suicide_array(int n, int m){
+int massSuicideArray(int n, int m){
     if(n <= 0 || m <= 0)
         return -1;
 

@@ -1,6 +1,6 @@
 /* ******************************************************************************** */
 
-#pragram once
+#pragma once
 
 #include <iostream>
 #include <queue>
@@ -14,6 +14,7 @@ template<typename T>
             int insert(T);
             int insertChild(T, T);
             int insertSibling(T, T, T);
+            int levelOrderTraversal();
         private:
             std::vector<T> keys;
 
@@ -24,9 +25,6 @@ template<typename T>
             int currentIndex;
     };
 
-int n_ary_tree_insert_sibling_char(n_ary_tree*, int, int, char);
-
-int n_ary_tree_level_order(n_ary_tree*);
 int n_ary_tree_level_order_driver();
 
 /* ******************************************************************************** */

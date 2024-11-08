@@ -173,7 +173,7 @@ int evaluate(std::string& input){
 
 // (((3 + 6) * (2 - 4)) + 7)
 // "3 6 + 2 4 - * 7 + "
-
+/*
 int main(){
     //std::string postfix = getPostfix();
     std::string postfix{"3 6 + 2 4 - * 7 + "};
@@ -181,5 +181,5 @@ int main(){
 
     std::cout << result << '\n';
 }
-
+*/
 /* ******************************************************************************** */

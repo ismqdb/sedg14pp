@@ -3,17 +3,12 @@
 #pragma once
 
 #include <iostream>
-#include <cmath>
-#include <stack>
-#include <queue>
 
-#include "../tree node/treeNode.hpp"
+#include "../00. includes/node/node.hpp"
 
 /* ******************************************************************************** */
 
-treeNode* buildParseTree();
-int is_new_level(int*, int);
-void draw_binary_tree_iterative(treeNode*);
-void draw_binary_tree_recursive(treeNode*);
+void massSuicide(int, int);
+int massSuicideArray(int, int);
 
 /* ******************************************************************************** */

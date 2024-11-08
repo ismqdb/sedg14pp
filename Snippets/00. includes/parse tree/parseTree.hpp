@@ -3,19 +3,23 @@
 #pragma once
 
 #include <iostream>
+#include <cmath>
+#include <stack>
+#include <queue>
+
+#include "../tree node/treeNode.hpp"
 
 /* ******************************************************************************** */
 
 template<typename T>
-    struct treeNode {
-        T info;
-        treeNode* left;
-        treeNode* right;
-    };
+    treeNode<T>* buildParseTree();
 
-/* ******************************************************************************** */
+int isNewLevel(int*, int);
 
 template<typename T>
-    void visit(treeNode<T>);
+    void drawBinaryTreeIterative(treeNode<T>*);
+
+template<typename T>
+    void drawBinaryTreeRecursive(treeNode<T>*);
 
 /* ******************************************************************************** */

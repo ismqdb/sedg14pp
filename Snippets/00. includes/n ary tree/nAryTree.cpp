@@ -24,7 +24,7 @@ template<typename T>
     }
 
 template<typename T>
-    int nAryTree<T>::insert(T parent, T child){
+    int nAryTree<T>::insertChild(T parent, T child){
         this->keys[this->currentIndex] = child;
 
         this->parent[this->currentIndex] = parent;
@@ -37,71 +37,70 @@ template<typename T>
     int nAryTree<T>::insertSibling(T parent, T existingNode, T sibling){
         this->keys[this->currentIndex] = sibling;
 
-        this->parent[existing_node] = -1;
+        this->parent[existingNode] = -1;
         this->parent[this->currentIndex] = parent;
 
-        this->sibling[existing_node] = this->currentIndex;
+        this->sibling[existingNode] = this->currentIndex;
 
         return this->currentIndex++;
     }
 
 /* ******************************************************************************** */
 
-int n_ary_tree_level_order(n_ary_tree *tree){
-    queue_a queue = queue_a_init(INT, 50);
+template<typename T>
+    int nAryTree<T>::levelOrderTraversal(){
+        std::queue<int> queue{};
 
-    int current_node = 0;
-    int current_sibling;
+        int currentNode = 0;
+        int currentSibling;
 
-    queue_a_put_int(&queue, current_node);
+        queue.push(currentNode);
 
-    while(1){
-        for(
-            current_sibling = tree->sibling[current_node];
-            current_sibling != -1;
-            current_sibling = tree->sibling[current_sibling]
-        )
-            queue_a_put_int(&queue, current_sibling);
+        while(1){
+            for(
+                currentSibling = this->sibling[currentNode];
+                currentSibling != -1;
+                currentSibling = this->sibling[currentSibling]
+            )
+                queue.push(currentSibling);
 
-        while(tree->child[current_node] == -1)
-            current_node = tree->sibling[current_node];
+            while(this->child[currentNode] == -1)
+                currentNode = this->sibling[currentNode];
 
-        if(current_node == -1)
-            break;
+            if(currentNode == -1)
+                break;
 
-        current_node = tree->child[current_node];
-        queue_a_put_int(&queue, current_node);
+            currentNode = this->child[currentNode];
+            queue.push(currentNode);
+        }
+
+        while(!queue.empty())
+            std::cout << this->keys[static_cast<int>(queue.front())];
+
+        putchar(10);
     }
-
-    while(!queue_a_is_empty(&queue))
-        printf("%c ", (char)tree->keys.chars[queue_a_get_int(&queue)]);
-
-    putchar(10);
-
-    queue_a_deinit(&queue);
-}
 
 /* ******************************************************************************** */
 
 int n_ary_tree_level_order_driver(){
-    n_ary_tree tree = n_ary_tree_create(N_ARY_TREE);
+    nAryTree<char> tree{};
 
-    int root = n_ary_tree_insert_char(&tree, 'E');
+    int root = tree.insert('E');
 
-    int a1 = n_ary_tree_insert_child_char(&tree, root, 'A');
-    int r1 = n_ary_tree_insert_sibling_char(&tree, root, a1, 'R');
-    int e1 = n_ary_tree_insert_sibling_char(&tree, root, r1, 'E');
+    int a1 = tree.insertChild(root, 'A');
+    int r1 = tree.insertSibling(root, a1, 'R');
+    int e1 = tree.insertSibling(root, r1, 'E');
 
-    int a2 = n_ary_tree_insert_child_char(&tree, a1, 'A');
-    int s1 = n_ary_tree_insert_sibling_char(&tree, a1, a2, 'S');
-    int t1 = n_ary_tree_insert_sibling_char(&tree, a1, s1, 'T');
+    int a2 = tree.insertChild(a1, 'A');
+    int s1 = tree.insertSibling(a1, a2, 'S');
+    int t1 = tree.insertSibling(a1, s1, 'T');
 
-    int m1 = n_ary_tree_insert_child_char(&tree, t1, 'M');
-    int p1 = n_ary_tree_insert_sibling_char(&tree, t1, m1, 'P');
-    int l1 = n_ary_tree_insert_sibling_char(&tree, t1, p1, 'L');
-    int e2 = n_ary_tree_insert_sibling_char(&tree, t1, l1, 'E');
+    int m1 = tree.insertChild(t1, 'M');
+    int p1 = tree.insertSibling(t1, m1, 'P');
+    int l1 = tree.insertSibling(t1, p1, 'L');
+    int e2 = tree.insertSibling(t1, l1, 'E');
 
-    n_ary_tree_level_order(&tree);
+    tree.levelOrderTraversal();
 }
 
 /* ******************************************************************************** */
