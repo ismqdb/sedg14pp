@@ -10,6 +10,10 @@ template<typename T>
         public:
             nAryTree();
             ~nAryTree();
+
+            int insert(T);
+            int insertChild(T, T);
+            int insertSibling(T, T, T);
         private:
             std::vector<T> keys;
 
@@ -17,14 +21,9 @@ template<typename T>
             std::vector<int> child;
             std::vector<int> sibling;
 
-            int current_index;
-            int current_size;
-            int allocated_size;
-            int block_size;
+            int currentIndex;
     };
 
-int n_ary_tree_insert_char(n_ary_tree*, char);
-int n_ary_tree_insert_child_char(n_ary_tree*, int, char);
 int n_ary_tree_insert_sibling_char(n_ary_tree*, int, int, char);
 
 int n_ary_tree_level_order(n_ary_tree*);

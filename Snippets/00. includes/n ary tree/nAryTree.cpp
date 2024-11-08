@@ -6,78 +6,46 @@
 
 template<typename T>
     nAryTree<T>::nAryTree(){
-        n_ary_tree tree;
-
-        tree.type = type;
-
-        tree.current_size = 0;
-        tree.current_index = 0;
-
-        tree.block_size = 50;
-        tree.allocated_size = tree.block_size;
-
-        tree.parent     = heap_alloc_sized(int, tree.block_size);
-        tree.child      = heap_alloc_sized(int, tree.block_size);
-        tree.sibling    = heap_alloc_sized(int, tree.block_size);
-
-        for(int i = 0; i < tree.block_size; i++)
-            tree.parent[i] = tree.child[i] = tree.sibling[i] = -1;
-
-        switch(type){
-            case N_ARY_TREE:
-                tree.keys.chars =   heap_alloc_sized(char, tree.block_size);
-            break;
-        }
-
-        return tree;
+        this->currentIndex = 0;
     }
 
 template<typename T>
     nAryTree<T>::~nAryTree(){
-        tree->current_size = 0;
-        tree->block_size = 0;
-        tree->allocated_size = 0;
-        tree->current_index = 0;
-
-        switch(tree->type){
-            case N_ARY_TREE:
-                free(tree->keys.chars);
-                free(tree->parent);
-                free(tree->child);
-            break;
-        }
+        this->currentIndex = 0;
     }
 
-int n_ary_tree_insert_char(n_ary_tree *tree, char value){
-    tree->keys.chars[tree->current_index] = value;
+/* ******************************************************************************** */
 
-    return tree->current_index++;
-}
+template<typename T>
+    int nAryTree<T>::insert(T value){
+        this->keys[this->currentIndex] = value;
 
-int n_ary_tree_insert_child_char(n_ary_tree* tree, int parent, char child){
-    tree->keys.chars[tree->current_index] = child;
+        return this->currentIndex++;
+    }
 
-    tree->parent[tree->current_index] = parent;
-    tree->child[parent] = tree->current_index;
+template<typename T>
+    int nAryTree<T>::insert(T parent, T child){
+        this->keys[this->currentIndex] = child;
 
-    return tree->current_index++;
-}
+        this->parent[this->currentIndex] = parent;
+        this->child[parent] = this->currentIndex;
 
-int n_ary_tree_insert_sibling_char(
-        n_ary_tree* tree, 
-        int parent, 
-        int existing_node, 
-        char sibling
-    ){
-    tree->keys.chars[tree->current_index] = sibling;
+        return this->currentIndex++;
+    }
 
-    tree->parent[existing_node] = -1;
-    tree->parent[tree->current_index] = parent;
+template<typename T>
+    int nAryTree<T>::insertSibling(T parent, T existingNode, T sibling){
+        this->keys[this->currentIndex] = sibling;
 
-    tree->sibling[existing_node] = tree->current_index;
+        this->parent[existing_node] = -1;
+        this->parent[this->currentIndex] = parent;
 
-    return tree->current_index++;
-}
+        this->sibling[existing_node] = this->currentIndex;
+
+        return this->currentIndex++;
+    }
+
+/* ******************************************************************************** */
 
 int n_ary_tree_level_order(n_ary_tree *tree){
     queue_a queue = queue_a_init(INT, 50);
@@ -112,6 +80,8 @@ int n_ary_tree_level_order(n_ary_tree *tree){
 
     queue_a_deinit(&queue);
 }
+
+/* ******************************************************************************** */
 
 int n_ary_tree_level_order_driver(){
     n_ary_tree tree = n_ary_tree_create(N_ARY_TREE);
