@@ -20,7 +20,7 @@ add_executable(sedg14pp main.cpp
     "Snippets/09a. mass suicide/09a. massSuicide.cpp"
     "Snippets/10. parallel array/10. parallelArray.cpp"
     "Snippets/11. stackL/11. stackL.cpp"
-    #"Snippets/11a. postfix/11a. postfix.cpp"
+    "Snippets/12a. postfix/12a. postfix.cpp"
     "Snippets/12. stackA/12. stackA.cpp"
     "Snippets/13. queue/13. queue.cpp"
     "Snippets/14. 2D array/14. 2DArray.cpp"
