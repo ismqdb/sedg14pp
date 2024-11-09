@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5.0)
-project(sedg14 VERSION 0.1.0 LANGUAGES CXX)
+project(sedg14 VERSION 0.1.0 LANGUAGES C CXX)
 
 include(CTest)
 enable_testing()
