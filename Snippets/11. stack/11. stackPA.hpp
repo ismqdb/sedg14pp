@@ -5,26 +5,29 @@
 #include <iostream>
 #include <vector>
 
-#include "../00. includes/node/node.hpp"
+#include "./11. stack.hpp"
+#include "../10. parallel array/10. parallelArray.hpp"
 
 /* ******************************************************************************** */
 
 template<typename T>
-    class stackPA {
+    class stackPA : public stack<T> {
         public:
             stackPA();
-            ~stackPA();
+            ~stackPA() override;
 
-            void push(int);
-            node<T>* top();
-            void pop();
-            bool isEmpty();
+            void push(T) override;
+            T& top() override;
+            void pop() override;
+
+            bool isEmpty() override;
         private:
-            std::vector<node<T>*> storage;
-            std::vector<int> next;
+            parallelArray<T> data;
             int current;
-            int head;
-            int tail;
     };
+
+/* ******************************************************************************** */
+
+template class stackPA<int>;
 
 /* ******************************************************************************** */

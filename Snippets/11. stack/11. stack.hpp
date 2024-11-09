@@ -7,11 +7,11 @@
 template<typename T>
     class stack {
         public:
-            virtual ~stack() = 0;
+            virtual ~stack(){}
 
             virtual void push(T) = 0;
             virtual void pop() = 0;
-            virtual T* top() = 0;
+            virtual T& top() = 0;
 
             virtual bool isEmpty() = 0;
     };

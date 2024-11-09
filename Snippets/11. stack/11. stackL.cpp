@@ -6,48 +6,36 @@
 
 template<typename T>
     stackL<T>::stackL(){
-        head = new T{};
-        tail = new T{};
 
-        head->next = tail;
-        head->key = 0;
-        tail->next = tail;
     }
 
 template<typename T>
     stackL<T>::~stackL(){
-        delete(head);
-        delete(tail);
+
     }
 
 /* ******************************************************************************** */
 
 template<typename T>
     void stackL<T>::push(T v){
-        T *t = new T{v};
-        t->key = v;
-        t->next = head->next;
-        head->next = t; 
-
-        t = NULL;
-        delete(t);
+        this->data.push_back(v);
     }
 
 template<typename T>
     void stackL<T>::pop(){
-        head->next = head->next->next;
+        this->data.pop_back();
     }
 
 template<typename T>
-    T* stackL<T>::top(){
-        return head->next;
+    T& stackL<T>::top(){
+        return this->data.back();
     }
 
 /* ******************************************************************************** */
 
 template<typename T>
     bool stackL<T>::isEmpty(){
-        return head->next == tail;
+        return this->data.empty();
     }
 
 /* ******************************************************************************** */

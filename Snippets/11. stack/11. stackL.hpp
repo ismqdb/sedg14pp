@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <vector>
+#include <list>
 
 #include "./11. stack.hpp"
 
@@ -17,13 +18,16 @@ template<typename T>
 
             void push(T) override;
             void pop() override;
-            T* top() override;
+            T& top() override;
 
             bool isEmpty() override;
 
         private:
-            T *head;
-            T *tail;
+            std::list<T> data;
     };
+
+/* ******************************************************************************** */
+
+template class stackL<int>;
 
 /* ******************************************************************************** */

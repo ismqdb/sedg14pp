@@ -4,59 +4,78 @@
 
 /* ******************************************************************************** */
 
-parallelArray::parallelArray(int size){
-    key = std::vector<char>(size+2);
-    next = std::vector<char>(size+2);
+template<typename T>
+    parallelArray<T>::parallelArray(){
+        int size = 50;
 
-    head = 0;
-    tail = 1;
-    current = 2;
+        key = std::vector<T>(size+2);
+        next = std::vector<int>(size+2);
 
-    next[head] = tail;
-    next[tail] = tail;
-}
+        head = 0;
+        tail = 1;
+        current = 2;
 
-parallelArray::~parallelArray(){
-    
-}
-
-/* ******************************************************************************** */
-
-void parallelArray::deleteNext(char t){
-    next[t] = next[next[t]];
-}
-
-/* ******************************************************************************** */
-
-char parallelArray::insertAfter(char newValue, char existing){
-    if(existing < 0)
-        throw;
-
-    key[current] = newValue;
-
-    next[current] = next[existing];
-    next[existing] = current;
-
-    return current++;
-}
-
-/* ******************************************************************************** */
-
-void parallelArray::printAll(){
-    char x = next[head];
-
-    while(x != next[x]){
-        std::cout << key[x] << '\n';
-        x = next[x];
+        next[head] = tail;
+        next[tail] = tail;
     }
 
-    putchar(10);
+template<typename T>
+    parallelArray<T>::~parallelArray(){
+        
 }
+
+template<typename T>
+    T& parallelArray<T>::operator[](int index){
+        return this->key[index];
+}
+
+/* ******************************************************************************** */
+
+template<typename T>
+    void parallelArray<T>::deleteNext(int t){
+        next[t] = next[next[t]];
+    }
+
+/* ******************************************************************************** */
+
+template<typename T>
+    char parallelArray<T>::insertAfter(T newValue, int existing){
+        if(existing < 0)
+            throw;
+
+        key[current] = newValue;
+
+        next[current] = next[existing];
+        next[existing] = current;
+
+        return current++;
+    }
+
+/* ******************************************************************************** */
+
+template<typename T>
+    bool parallelArray<T>::empty(){
+        return this->current == 2;
+    }
+
+/* ******************************************************************************** */
+
+template<typename T>
+    void parallelArray<T>::printAll(){
+        char x = next[head];
+
+        while(x != next[x]){
+            std::cout << key[x] << '\n';
+            x = next[x];
+        }
+
+        putchar(10);
+    }
 
 /* ******************************************************************************** */
 
 int parallelArrayDriver(){
-    parallelArray parray(10);
+    parallelArray<char> parray{};
 
     int s = parray.insertAfter('S', 0);
     int l = parray.insertAfter('L', 0);

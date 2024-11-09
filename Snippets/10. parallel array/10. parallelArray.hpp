@@ -7,24 +7,33 @@
 
 /* ******************************************************************************** */
 
-class parallelArray {
-    public:
-        parallelArray(int);
-        ~parallelArray();
+template<typename T>
+    class parallelArray {
+        public:
+            parallelArray();
+            ~parallelArray();
 
-        void deleteNext(char);
-        char insertAfter(char, char);
-        void printAll();
-    private:
-        std::vector<char> key;
-        std::vector<char> next;
-        char current;
-        char head;
-        char tail;
-};
+            void deleteNext(int);
+            char insertAfter(T, int);
+            void printAll();
+
+            bool empty();
+
+            T& operator[](int);
+        private:
+            std::vector<T> key;
+            std::vector<int> next;
+            int current;
+            int head;
+            int tail;
+    };
 
 /* ******************************************************************************** */
 
 int parallelArrayDriver();
+
+/* ******************************************************************************** */
+
+template class parallelArray<int>;
 
 /* ******************************************************************************** */

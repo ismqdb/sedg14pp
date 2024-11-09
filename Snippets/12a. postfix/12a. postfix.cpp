@@ -9,7 +9,7 @@ std::string getPostfix(){
     char c;
     char *number;
     
-    stackA stack{};
+    stackA<char> stack{};
     std::string output{};
 
     while(1){
@@ -82,7 +82,7 @@ int evaluate(std::string& input){
 
     int left, right;
 
-    stackA stack{};
+    stackA<char> stack{};
 
     for(int i = 0; i < input.size(); i++){
         c = input[i];
