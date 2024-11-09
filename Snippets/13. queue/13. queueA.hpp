@@ -2,16 +2,24 @@
 
 #pragma once
 
+#include <iostream>
+#include <vector>
+
+#include "./13. queue.hpp"
+
 /* ******************************************************************************** */
 
 template<typename T>
-    class queue {
+    class queueA : public queue<T> {
         public:
-            ~queue(){}
+            queueA();
+            ~queueA() override;
 
-            void put(T) = 0;
-            T& get() = 0;
-            bool isEmpty() = 0;
-    };
+            void put(T) override;
+            T& get() override;
+            bool isEmpty() override;
+    private:
+        std::vector<int> storage;
+};
 
 /* ******************************************************************************** */

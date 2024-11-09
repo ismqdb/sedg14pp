@@ -25,10 +25,12 @@ add_executable(sedg14pp main.cpp
     "Snippets/11. stack/11. stackPA.cpp"
 
     "Snippets/12a. postfix/12a. postfix.cpp"
-    "Snippets/13. queue/13. queue.cpp"
+
+    "Snippets/13. queue/13. queueA.cpp"
+    "Snippets/13. queue/13. queueL.cpp"
+
     "Snippets/14. 2D array/14. 2DArray.cpp"
     "Snippets/15. doubly linked list/15. doublyLinkedList.cpp"
-    "Snippets/17. queueL/17. queueL.cpp"
     "Snippets/18. tree traversals/18. treeTraversals.cpp"
     "Snippets/19. fibonacci/19. fibonacci.cpp"
     "Snippets/20. ruler/20. ruler.cpp"

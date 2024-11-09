@@ -3,24 +3,23 @@
 #pragma once
 
 #include <iostream>
-#include <vector>
+#include <list>
 
-#include "../00. includes/node/node.hpp"
+#include "./13. queue.hpp"
 
 /* ******************************************************************************** */
 
 template<typename T>
-    class queueL {
+    class queueL : public queue<T> {
         public:
             queueL();
-            ~queueL();
+            ~queueL() override;
 
-            void put(int);
-            node<T>* get();
-            bool isEmpty();
+            void put(T) override;
+            T& get() override;
+            bool isEmpty() override;
         private:
-            node<T> *head;
-            node<T> *current;
+            std::list<T> data;
     };
 
 /* ******************************************************************************** */
