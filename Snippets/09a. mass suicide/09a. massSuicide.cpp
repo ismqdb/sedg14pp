@@ -77,4 +77,6 @@ int massSuicideArray(int n, int m){
             free(array);
             return i;
         }
+
+    return 1;
 }

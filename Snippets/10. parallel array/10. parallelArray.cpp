@@ -73,6 +73,8 @@ int parallelArrayDriver(){
     int b2 = parray.insertAfter(' ', w);
 
     parray.printAll();
+
+    return 1;
 }
 
 /* ******************************************************************************** */
