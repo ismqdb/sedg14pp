@@ -6,22 +6,25 @@
 #include <vector>
 
 #include "../00. includes/node/node.hpp"
+#include "./11. stack.hpp"
 
 /* ******************************************************************************** */
 
 template<typename T>
-    class stackL {
+    class stackL : public stack<T> {
         public:
             stackL();
-            ~stackL();
+            ~stackL() override;
 
-            void push(int v);
-            void pop();
-            node<T>* top();
-            bool isEmpty();
+            void push(T) override;
+            void pop() override;
+            T* top() override;
+
+            bool isEmpty() override;
+
         private:
-            node<T> *head;
-            node<T> *tail;
+            T *head;
+            T *tail;
     };
 
 /* ******************************************************************************** */

@@ -6,8 +6,8 @@
 
 template<typename T>
     stackL<T>::stackL(){
-        head = new node<T>{};
-        tail = new node<T>{};
+        head = new T{};
+        tail = new T{};
 
         head->next = tail;
         head->key = 0;
@@ -23,8 +23,8 @@ template<typename T>
 /* ******************************************************************************** */
 
 template<typename T>
-    void stackL<T>::push(int v){
-        node<T> *t = new node<T>{v};
+    void stackL<T>::push(T v){
+        T *t = new T{v};
         t->key = v;
         t->next = head->next;
         head->next = t; 
@@ -39,7 +39,7 @@ template<typename T>
     }
 
 template<typename T>
-    node<T>* stackL<T>::top(){
+    T* stackL<T>::top(){
         return head->next;
     }
 
