@@ -5,7 +5,6 @@
 #include <iostream>
 #include <vector>
 
-#include "../00. includes/node/node.hpp"
 #include "./11. stack.hpp"
 
 /* ******************************************************************************** */
