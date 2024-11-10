@@ -10,6 +10,7 @@ add_executable(sedg14pp main.cpp
     "Snippets/00. includes/n ary tree/nAryTree.cpp"
     "Snippets/00. includes/parse tree/parseTree.cpp"
     "Snippets/00. includes/postfix/postfix.cpp"
+    "Snippets/00. includes/mass suicide/massSuicide.cpp"
 
     "Snippets/01. gcd/01. gcd.cpp"
     "Snippets/03. fraction/03. fraction.cpp"
@@ -18,7 +19,6 @@ add_executable(sedg14pp main.cpp
     "Snippets/06. greatest ints/06. greatestInts.cpp"
     "Snippets/08. sieve/08. sieve.cpp"
     "Snippets/09. linked list/09. linkedList.cpp"
-    "Snippets/09a. mass suicide/09a. massSuicide.cpp"
     "Snippets/10. parallel array/10. parallelArray.cpp"
 
     "Snippets/11. stack/11. stackL.cpp"

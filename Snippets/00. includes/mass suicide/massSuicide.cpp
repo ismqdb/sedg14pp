@@ -1,4 +1,4 @@
-#include "./09a. massSuicide.hpp"
+#include "./massSuicide.hpp"
 
 void massSuicide(int n, int m){
     if(n <= 0 || m <= 0)
