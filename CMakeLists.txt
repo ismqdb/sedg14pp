@@ -9,6 +9,7 @@ add_executable(sedg14pp main.cpp
     "Snippets/00. includes/tree node/treeNode.cpp"
     "Snippets/00. includes/n ary tree/nAryTree.cpp"
     "Snippets/00. includes/parse tree/parseTree.cpp"
+    "Snippets/00. includes/postfix/postfix.cpp"
 
     "Snippets/01. gcd/01. gcd.cpp"
     "Snippets/03. fraction/03. fraction.cpp"
@@ -23,8 +24,6 @@ add_executable(sedg14pp main.cpp
     "Snippets/11. stack/11. stackL.cpp"
     "Snippets/11. stack/11. stackA.cpp"
     "Snippets/11. stack/11. stackPA.cpp"
-
-    "Snippets/12a. postfix/12a. postfix.cpp"
 
     "Snippets/13. queue/13. queueA.cpp"
     "Snippets/13. queue/13. queueL.cpp"

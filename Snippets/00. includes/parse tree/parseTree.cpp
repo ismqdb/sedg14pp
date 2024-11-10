@@ -1,4 +1,8 @@
+/* ******************************************************************************** */
+
 #include "./parseTree.hpp"
+
+/* ******************************************************************************** */
 
 template<typename T>
     treeNode<T>* buildParseTree(){
@@ -37,6 +41,8 @@ template<typename T>
         return returnValue;
     }
 
+/* ******************************************************************************** */
+
 int isNewLevel(int *nodesPerLevel, int nodesVisited){
     int count = 0;
 
@@ -49,6 +55,8 @@ int isNewLevel(int *nodesPerLevel, int nodesVisited){
 
     return 0;
 }
+
+/* ******************************************************************************** */
 
 template<typename T>
     void drawBinaryTreeIterative(treeNode<T> *t){
@@ -113,7 +121,11 @@ template<typename T>
         putchar(10);
     }
 
+/* ******************************************************************************** */
+
 template<typename T>
-    void draw_binary_tree_recursive(treeNode<T> *t){
+    void drawBinaryTreeRecursive(treeNode<T> *t){
         
     }
+
+/* ******************************************************************************** */

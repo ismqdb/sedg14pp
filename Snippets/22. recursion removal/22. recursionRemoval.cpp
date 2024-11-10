@@ -1,4 +1,8 @@
+/* ******************************************************************************** */
+
 #include "./22. recursionRemoval.hpp"
+
+/* ******************************************************************************** */
 
 template<typename T>
     void traversePreorder(treeNode<T> *t){
@@ -8,6 +12,8 @@ template<typename T>
             traverse_preorder(t->right);
         }
     }
+
+/* ******************************************************************************** */
 
 template<typename T>
     void removeRecursion1(treeNode<T> *t){
@@ -22,6 +28,8 @@ template<typename T>
         x:
             ;
     }
+
+/* ******************************************************************************** */
 
 template<typename T>
     void removeRecursion2(treeNode<T> *t){
@@ -46,6 +54,8 @@ template<typename T>
             ;
     }
 
+/* ******************************************************************************** */
+
 template<typename T>
     void removeRecursion3(treeNode<T> *t){
         std::stack<treeNode<T>*> stack;
@@ -68,6 +78,8 @@ template<typename T>
             ;
     }
 
+/* ******************************************************************************** */
+
 template<typename T>
     void removeRecursion4(treeNode<T> *t){
         std::stack<treeNode<T>*> stack;
@@ -85,3 +97,5 @@ template<typename T>
             }
         }
     }
+
+/* ******************************************************************************** */
