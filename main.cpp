@@ -4,12 +4,16 @@
 #include <stack>
 #include <queue>
 
+#include "./Snippets/00. includes/postfix/postfix.hpp"
 #include "./Snippets/00. includes/parse tree/parseTree.hpp"
 
 /* ******************************************************************************** */
 
+// A B C + D E * * F + *
+
 int main(){
-    treeNode<int> *t = buildParseTree<int>();
+    treeNode<char> *t = buildParseTree<char>();
+    drawBinaryTreeIterative(t);
 }
 
 /* ******************************************************************************** */
