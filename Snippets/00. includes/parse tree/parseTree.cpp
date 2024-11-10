@@ -4,12 +4,12 @@
 
 /* ******************************************************************************** */
 
-template<typename T>
-    treeNode<T>* buildParseTree(){
-        treeNode<T> *x;
+template<>
+    treeNode<int>* buildParseTree(){
+        treeNode<int> *x;
         char c;
 
-        std::stack<treeNode<T>*> stack{};
+        std::stack<treeNode<int>*> stack{};
 
         while(1){
             c = getchar();
@@ -20,7 +20,7 @@ template<typename T>
             if(c == '(' || c == ')' || c == ' ')
                 continue;
 
-            x = new treeNode<T>{c};
+            x = new treeNode<int>{c};
 
             if(c == '+' || c == '*'){
                 if(!stack.empty()){
@@ -36,7 +36,7 @@ template<typename T>
             stack.push(x);
         }
 
-        treeNode<T> *returnValue = stack.top();
+        treeNode<int> *returnValue = stack.top();
         stack.pop();
         return returnValue;
     }
@@ -58,8 +58,8 @@ int isNewLevel(int *nodesPerLevel, int nodesVisited){
 
 /* ******************************************************************************** */
 
-template<typename T>
-    void drawBinaryTreeIterative(treeNode<T> *t){
+template<>
+    void drawBinaryTreeIterative(treeNode<int> *t){
         putchar(10);
 
         const int screenWidth = 80;
@@ -78,7 +78,7 @@ template<typename T>
         int nodesPerLevel[100] = {0};
         nodesPerLevel[1] = 1;
 
-        std::queue<treeNode<T>*> queue;
+        std::queue<treeNode<int>*> queue;
         queue.push(t);
 
         for(int i = 0; i < offset; i++)
@@ -123,8 +123,8 @@ template<typename T>
 
 /* ******************************************************************************** */
 
-template<typename T>
-    void drawBinaryTreeRecursive(treeNode<T> *t){
+template<>
+    void drawBinaryTreeRecursive(treeNode<int> *t){
         
     }
 
