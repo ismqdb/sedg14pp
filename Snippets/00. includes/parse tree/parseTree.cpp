@@ -4,6 +4,18 @@
 
 /* ******************************************************************************** */
 
+drawBinaryTreeInfo::drawBinaryTreeInfo(int screenWidth){
+    this->screenWidth = screenWidth;
+    this->nodesVisited = 0;
+    this->currentLevel = 1;
+    this->distance = screenWidth;
+    this->offset = (this->screenWidth/2)-1;
+    this->firstLetterInRow = true;
+    this->nodesPerLevel[1] = 1;
+}
+
+/* ******************************************************************************** */
+
 template<>
     treeNode<char>* buildParseTree(){
         treeNode<char> *x;
@@ -59,53 +71,37 @@ int isNewLevel(int *nodesPerLevel, int nodesVisited){
 /* ******************************************************************************** */
 
 template<>
-    void drawBinaryTreeIterative(treeNode<char> *t){
+    void drawBinaryTreeIterative(treeNode<char> *t, drawBinaryTreeInfo& drawInfo){
         putchar(10);
-
-        const int screenWidth = 80;
-
-        int nodesVisited = 0;
-        int currentLevel = 1;
-
-        /* Distance between two symbols on the same row. */
-        int distance = screenWidth;
-
-        /* Offset to the first letter from terminal start */
-        int offset = (screenWidth/2)-1;
-
-        int firstLetterInRow = 1;
-
-        int nodesPerLevel[100] = {0};
-        nodesPerLevel[1] = 1;
 
         std::queue<treeNode<char>*> queue;
         queue.push(t);
 
-        for(int i = 0; i < offset; i++)
+        for(int i = 0; i < drawInfo.offset; i++)
             putchar(0x20);
 
         while(!queue.empty()){
-            if(isNewLevel(nodesPerLevel, nodesVisited)){
-                currentLevel++;
-                distance /= 2;
-                offset = ((offset+1)/2)-1;
+            if(isNewLevel(drawInfo.nodesPerLevel, drawInfo.nodesVisited)){
+                drawInfo.currentLevel++;
+                drawInfo.distance /= 2;
+                drawInfo.offset = ((drawInfo.offset+1)/2)-1;
                 putchar(10);
-                for(int i = 0; i < offset; i++)
+                for(int i = 0; i < drawInfo.offset; i++)
                     putchar(0x20);
-                firstLetterInRow = 1;
+                drawInfo.firstLetterInRow = 1;
             }
             
-            nodesVisited++;
+            drawInfo.nodesVisited++;
 
             t = queue.front();
             queue.pop();
 
-            if(!firstLetterInRow)
-                for(int i = 0; i < distance-1; i++)
+            if(!drawInfo.firstLetterInRow)
+                for(int i = 0; i < drawInfo.distance-1; i++)
                     putchar(0x20);
 
-            if(firstLetterInRow)
-                firstLetterInRow = 0;
+            if(drawInfo.firstLetterInRow)
+                drawInfo.firstLetterInRow = 0;
 
             if(t != NULL)
                 putchar(t->info);
@@ -115,7 +111,7 @@ template<>
             if(t != NULL){
                 queue.push(t->left);
                 queue.push(t->right);
-                nodesPerLevel[currentLevel+1] += 2;
+                drawInfo.nodesPerLevel[drawInfo.currentLevel+1] += 2;
             }
         }
 
@@ -125,7 +121,7 @@ template<>
 /* ******************************************************************************** */
 
 template<>
-    void drawBinaryTreeRecursive(treeNode<char> *t){
+    void drawBinaryTreeRecursive(treeNode<char> *t, drawBinaryTreeInfo& drawInfo){
         
     }
 

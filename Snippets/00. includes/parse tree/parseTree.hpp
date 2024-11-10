@@ -11,15 +11,33 @@
 
 /* ******************************************************************************** */
 
+struct drawBinaryTreeInfo {
+    drawBinaryTreeInfo(int);
+
+    int screenWidth;
+    int nodesVisited;
+    int currentLevel;
+
+    /* Distance between two symbols on the same row. */
+    int distance = screenWidth;
+
+    /* Offset to the first letter from terminal start */
+    int offset = (screenWidth/2)-1;
+    int firstLetterInRow = true;
+    int nodesPerLevel[100] = {0};
+};
+
+/* ******************************************************************************** */
+
 template<typename T>
     treeNode<T>* buildParseTree();
 
 int isNewLevel(int*, int);
 
 template<typename T>
-    void drawBinaryTreeIterative(treeNode<T>*);
+    void drawBinaryTreeIterative(treeNode<T>*, drawBinaryTreeInfo&);
 
 template<typename T>
-    void drawBinaryTreeRecursive(treeNode<T>*);
+    void drawBinaryTreeRecursive(treeNode<T>*, drawBinaryTreeInfo&);
 
 /* ******************************************************************************** */
