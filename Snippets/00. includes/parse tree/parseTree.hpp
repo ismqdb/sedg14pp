@@ -35,9 +35,9 @@ template<typename T>
 int isNewLevel(int*, int);
 
 template<typename T>
-    void drawBinaryTreeIterative(treeNode<T>*, drawBinaryTreeInfo&);
+    void drawBinaryTreeIterative(std::queue<treeNode<char>*>&, drawBinaryTreeInfo&);
 
 template<typename T>
-    void drawBinaryTreeRecursive(treeNode<T>*, drawBinaryTreeInfo&);
+    void drawBinaryTreeRecursive(std::queue<treeNode<char>*>&, drawBinaryTreeInfo&);
 
 /* ******************************************************************************** */
