@@ -19,6 +19,7 @@ add_executable(sedg14pp main.cpp
     "Snippets/06. greatest ints/06. greatestInts.cpp"
     "Snippets/08. sieve/08. sieve.cpp"
     "Snippets/09. linked list/09. linkedList.cpp"
+    "Snippets/09. linked list/09. linkedListGT.cpp"
     "Snippets/10. parallel array/10. parallelArray.cpp"
 
     "Snippets/11. stack/11. stackL.cpp"
