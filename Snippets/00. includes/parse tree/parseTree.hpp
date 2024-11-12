@@ -38,6 +38,6 @@ template<typename T>
     void drawBinaryTreeIterative(std::queue<treeNode<char>*>&, drawBinaryTreeInfo&);
 
 template<typename T>
-    void drawBinaryTreeRecursive(std::queue<treeNode<char>*>&, drawBinaryTreeInfo&);
+    void drawBinaryTreeRecursive(treeNode<char>*, drawBinaryTreeInfo&);
 
 /* ******************************************************************************** */

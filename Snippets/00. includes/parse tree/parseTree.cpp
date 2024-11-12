@@ -72,9 +72,6 @@ void updateDrawInfo(drawBinaryTreeInfo& drawInfo){
     drawInfo.currentLevel++;
     drawInfo.distance /= 2;
     drawInfo.offset = ((drawInfo.offset+1)/2)-1;
-    putchar(10);
-    for(int i = 0; i < drawInfo.offset; i++)
-        putchar(0x20);
     drawInfo.firstLetterInRow = 1;
 }
 
@@ -93,8 +90,12 @@ template<>
             putchar(0x20);
 
         while(!queue.empty()){
-            if(isNewLevel(drawInfo.nodesPerLevel, drawInfo.nodesVisited))
+            if(isNewLevel(drawInfo.nodesPerLevel, drawInfo.nodesVisited)){
                 updateDrawInfo(drawInfo);
+                putchar(10);
+                for(int i = 0; i < drawInfo.offset; i++)
+                    putchar(0x20);
+            }
             
             drawInfo.nodesVisited++;
 
@@ -126,12 +127,7 @@ template<>
 /* ******************************************************************************** */
 
 template<>
-    void drawBinaryTreeRecursive<char>(std::queue<treeNode<char>*>& queue, drawBinaryTreeInfo& drawInfo){
-        treeNode<char> *t;
-
-        t = queue.front();
-        queue.pop();
-
+    void drawBinaryTreeRecursive<char>(treeNode<char>* t, drawBinaryTreeInfo& drawInfo){
         drawInfo.nodesVisited++;
 
         if(isNewLevel(drawInfo.nodesPerLevel, drawInfo.nodesVisited))
@@ -153,14 +149,12 @@ template<>
             putchar('.');
 
         if(t->left != NULL){
-            queue.push(t->left);
-            drawBinaryTreeRecursive<char>(queue, drawInfo);
+            drawBinaryTreeRecursive<char>(t->left, drawInfo);
             drawInfo.nodesPerLevel[drawInfo.currentLevel]++;
         }
 
         if(t->right){
-            queue.push(t->right);
-            drawBinaryTreeRecursive<char>(queue, drawInfo);
+            drawBinaryTreeRecursive<char>(t->right, drawInfo);
             drawInfo.nodesPerLevel[drawInfo.currentLevel]++;
         }
     }
