@@ -40,6 +40,14 @@ add_executable(sedg14pp main.cpp
 
 target_link_libraries(sedg14pp m) # Link libmath
 
+target_compile_options(sedg14pp PRIVATE 
+    -O0
+    #-Wall 
+    #-Werror 
+    #-pedantic 
+    -std=c++20
+)
+
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
 include(CPack)

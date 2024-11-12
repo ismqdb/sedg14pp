@@ -2,6 +2,8 @@
 
 #include "./parseTree.hpp"
 
+#define DEBUG 1
+
 /* ******************************************************************************** */
 
 drawBinaryTreeInfo::drawBinaryTreeInfo(int screenWidth){
@@ -128,25 +130,41 @@ template<>
 
 template<>
     void drawBinaryTreeRecursive<char>(treeNode<char>* t, drawBinaryTreeInfo& drawInfo){
-        drawInfo.nodesVisited++;
 
-        if(isNewLevel(drawInfo.nodesPerLevel, drawInfo.nodesVisited))
+        if(isNewLevel(drawInfo.nodesPerLevel, drawInfo.nodesVisited)){
             updateDrawInfo(drawInfo);
+            std::cout << std::endl;
+        }
 
         for(int i = 0; i < drawInfo.offset; i++)
             putchar(0x20);
+        
+        #ifdef DEBUG
+            std::flush(std::cout);
+        #endif
 
-        if(!drawInfo.firstLetterInRow)
+        if(!drawInfo.firstLetterInRow){
             for(int i = 0; i < drawInfo.distance-1; i++)
                 putchar(0x20);
+
+            #ifdef DEBUG
+                std::flush(std::cout);
+            #endif
+        }
 
         if(drawInfo.firstLetterInRow)
             drawInfo.firstLetterInRow = 0;
 
         if(t != NULL)
-            putchar(t->info);
+            std::cout << t->info;
         else
-            putchar('.');
+            std::cout << '.';
+
+        #ifdef DEBUG
+            std::flush(std::cout);
+        #endif
+
+        drawInfo.nodesVisited++;
 
         if(t->left != NULL){
             drawBinaryTreeRecursive<char>(t->left, drawInfo);
