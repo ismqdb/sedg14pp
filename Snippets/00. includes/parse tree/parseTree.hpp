@@ -32,12 +32,7 @@ struct drawBinaryTreeInfo {
 template<typename T>
     treeNode<T>* buildParseTree();
 
-int isNewLevel(int*, int);
-
 template<typename T>
-    void drawBinaryTreeIterative(std::queue<treeNode<char>*>&, drawBinaryTreeInfo&);
-
-template<typename T>
-    void drawBinaryTreeRecursive(treeNode<char>*, drawBinaryTreeInfo&);
+    void drawBinaryTreeRecursive(treeNode<char>*, drawBinaryTreeInfo);
 
 /* ******************************************************************************** */

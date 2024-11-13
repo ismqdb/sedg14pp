@@ -17,10 +17,6 @@ int main(){
 
     treeNode<char> *t = buildParseTree<char>();
 
-    std::queue<treeNode<char>*> queue{};
-    queue.push(t);
-
-    //drawBinaryTreeIterative<char>(queue, drawInfo);
     drawBinaryTreeRecursive<char>(t, drawInfo);
 }
 
