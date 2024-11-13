@@ -2,20 +2,6 @@
 
 #include "./parseTree.hpp"
 
-#define DEBUG 1
-
-/* ******************************************************************************** */
-
-drawBinaryTreeInfo::drawBinaryTreeInfo(int screenWidth){
-    this->screenWidth = screenWidth;
-    this->nodesVisited = 0;
-    this->currentLevel = 1;
-    this->distance = screenWidth;
-    this->offset = (this->screenWidth/2)-1;
-    this->firstLetterInRow = true;
-    this->nodesPerLevel[1] = 1;
-}
-
 /* ******************************************************************************** */
 
 template<>
@@ -57,18 +43,60 @@ template<>
 
 /* ******************************************************************************** */
 
-void updateDrawInfo(drawBinaryTreeInfo& drawInfo){
-    drawInfo.currentLevel++;
-    drawInfo.distance /= 2;
-    drawInfo.offset = ((drawInfo.offset+1)/2)-1;
-    drawInfo.firstLetterInRow = 1;
-}
+template<>
+    void drawBinaryTreeRecursive<char>(
+        treeNode<char>* t,
+        std::vector<std::pair<treeNode<char>*, int>>& pairs,
+        int left, int right){
+            if(t == NULL)
+                return;
+            else {
+                auto x = std::make_pair(t, (left+right)/2);
+                pairs.push_back(x);
+            }
+
+            if(t->left != NULL){
+                int middle = (left+right)/2;
+                drawBinaryTreeRecursive(t->left, pairs, left, middle);
+            }
+
+            if(t->right != NULL){
+                int middle = (left+right)/2;
+                drawBinaryTreeRecursive(t->right, pairs, middle, right);
+            }
+    }
 
 /* ******************************************************************************** */
 
-template<>
-    void drawBinaryTreeRecursive<char>(treeNode<char>* t, drawBinaryTreeInfo drawInfo){
+int drawBinaryTreeRecursiveDriver(){
+    int screenWidth = 80;
 
+    treeNode<char> *t = buildParseTree<char>();
+
+    std::vector<std::pair<treeNode<char>*, int>> pairs;
+
+    drawBinaryTreeRecursive<char>(t, pairs, 0, screenWidth);
+
+    std::sort(pairs.begin(), pairs.end(), 
+    [](
+        std::pair<treeNode<char>*, int> p1,
+        std::pair<treeNode<char>*, int> p2){
+            return p1.second < p2.second;
+        }
+    );
+
+    std::cout << std::endl;
+    for(int pos = 0, printed = 0; pos < screenWidth; pos++){
+        if(pairs[printed].second == pos)
+            std::cout << pairs[printed++].first->info;
+        else
+            std::cout << ' ';
     }
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+
+    return 1;
+}
 
 /* ******************************************************************************** */

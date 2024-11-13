@@ -12,12 +12,7 @@
 // A B C + D E * * F + *
 
 int main(){
-    int screenWidth = 80;
-    drawBinaryTreeInfo drawInfo {screenWidth};
-
-    treeNode<char> *t = buildParseTree<char>();
-
-    drawBinaryTreeRecursive<char>(t, drawInfo);
+    drawBinaryTreeRecursiveDriver();
 }
 
 /* ******************************************************************************** */
