@@ -68,6 +68,24 @@ template<>
 
 /* ******************************************************************************** */
 
+template<>
+    void externalPathLength<char>(treeNode<char>* t, int level, int& len){
+        if(t->left || t->right)
+            level++;
+
+        if(t->left)
+            externalPathLength(t->left, level, len);
+        else
+            len += level;
+
+        if(t->right)
+            externalPathLength(t->right, level, len);
+        else
+            len += level;
+    }
+
+/* ******************************************************************************** */
+
 int drawBinaryTreeRecursiveDriver(){
     int screenWidth = 80;
 

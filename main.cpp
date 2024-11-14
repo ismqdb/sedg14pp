@@ -12,7 +12,13 @@
 // A B C + D E * * F + *
 
 int main(){
-    drawBinaryTreeRecursiveDriver();
+    treeNode<char>* t = buildParseTree<char>();
+    
+    int len = 0;
+    int level = 1;
+    externalPathLength(t, level, len);
+
+    std::cout << len << '\n';
 }
 
 /* ******************************************************************************** */

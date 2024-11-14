@@ -24,6 +24,9 @@ template<typename T>
         std::vector<std::pair<treeNode<char>*, int>>&,
         int, int);
 
+template<typename T>
+    void externalPathLength(treeNode<T>*, int, int&);
+
 int drawBinaryTreeRecursiveDriver();
 
 /* ******************************************************************************** */
