@@ -7,6 +7,11 @@
 template<typename T>
     nAryTree<T>::nAryTree(){
         this->currentIndex = 0;
+
+        keys = std::vector<T>(100);
+        child = std::vector<int>(100, -1);
+        parent = std::vector<int>(100, -1);
+        sibling = std::vector<int>(100, -1);
     }
 
 template<typename T>
@@ -93,7 +98,8 @@ void nAryTreeLevelOrderDriver(){
 
     int a2 = tree.insertChild(a1, 'A');
     int s1 = tree.insertSibling(a1, a2, 'S');
-    int t1 = tree.insertSibling(a1, s1, 'T');
+
+    int t1 = tree.insertChild(r1, 'T');
 
     int m1 = tree.insertChild(t1, 'M');
     int p1 = tree.insertSibling(t1, m1, 'P');
