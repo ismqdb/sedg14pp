@@ -12,7 +12,6 @@
 #include <algorithm>
 
 #include "../tree node/treeNode.hpp"
-#include "../n ary tree/nAryTree.hpp"
 
 /* ******************************************************************************** */
 

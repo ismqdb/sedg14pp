@@ -4,32 +4,32 @@
 
 /* ******************************************************************************** */
 
-template<typename T>
-    nAryTree<T>::nAryTree(){
+template<>
+    nAryTree<char>::nAryTree(){
         this->currentIndex = 0;
 
-        keys = std::vector<T>(100);
+        keys = std::vector<char>(100);
         child = std::vector<int>(100, -1);
         parent = std::vector<int>(100, -1);
         sibling = std::vector<int>(100, -1);
     }
 
-template<typename T>
-    nAryTree<T>::~nAryTree(){
+template<>
+    nAryTree<char>::~nAryTree(){
         this->currentIndex = 0;
     }
 
 /* ******************************************************************************** */
 
-template<typename T>
-    int nAryTree<T>::insert(T value){
+template<>
+    int nAryTree<char>::insert(char value){
         this->keys[this->currentIndex] = value;
 
         return this->currentIndex++;
     }
 
-template<typename T>
-    int nAryTree<T>::insertChild(T parent, T child){
+template<>
+    int nAryTree<char>::insertChild(char parent, char child){
         this->keys[this->currentIndex] = child;
 
         this->parent[this->currentIndex] = parent;
@@ -38,8 +38,8 @@ template<typename T>
         return this->currentIndex++;
     }
 
-template<typename T>
-    int nAryTree<T>::insertSibling(T parent, T existingNode, T sibling){
+template<>
+    int nAryTree<char>::insertSibling(char parent, char existingNode, char sibling){
         this->keys[this->currentIndex] = sibling;
 
         this->parent[existingNode] = -1;
@@ -52,8 +52,8 @@ template<typename T>
 
 /* ******************************************************************************** */
 
-template<typename T>
-    void nAryTree<T>::levelOrderTraversal(){
+template<>
+    void nAryTree<char>::levelOrderTraversal(){
         std::queue<int> queue{};
 
         int currentNode = 0;
@@ -87,32 +87,30 @@ template<typename T>
 
 /* ******************************************************************************** */
 
-template<typename T>
-    int nAryTree<T>::externalPathLength(){
+template<>
+    int nAryTree<char>::externalPathLength(){
         
     }
 
 /* ******************************************************************************** */
 
-template<typename T>
-    void nAryTree<T>::sampleData(){
-        nAryTree<char> tree{};
+template<>
+    void nAryTree<char>::sampleData(){
+        int root = this->insert('E');
 
-        int root = tree.insert('E');
+        int a1 = this->insertChild(root, 'A');
+        int r1 = this->insertSibling(root, a1, 'R');
+        int e1 = this->insertSibling(root, r1, 'E');
 
-        int a1 = tree.insertChild(root, 'A');
-        int r1 = tree.insertSibling(root, a1, 'R');
-        int e1 = tree.insertSibling(root, r1, 'E');
+        int a2 = this->insertChild(a1, 'A');
+        int s1 = this->insertSibling(a1, a2, 'S');
 
-        int a2 = tree.insertChild(a1, 'A');
-        int s1 = tree.insertSibling(a1, a2, 'S');
+        int t1 = this->insertChild(r1, 'T');
 
-        int t1 = tree.insertChild(r1, 'T');
-
-        int m1 = tree.insertChild(t1, 'M');
-        int p1 = tree.insertSibling(t1, m1, 'P');
-        int l1 = tree.insertSibling(t1, p1, 'L');
-        int e2 = tree.insertSibling(t1, l1, 'E');
+        int m1 = this->insertChild(t1, 'M');
+        int p1 = this->insertSibling(t1, m1, 'P');
+        int l1 = this->insertSibling(t1, p1, 'L');
+        int e2 = this->insertSibling(t1, l1, 'E');
     }
 
 /* ******************************************************************************** */
