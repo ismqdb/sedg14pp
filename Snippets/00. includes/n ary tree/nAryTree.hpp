@@ -14,7 +14,9 @@ template<typename T>
             int insert(T);
             int insertChild(T, T);
             int insertSibling(T, T, T);
+            int externalPathLength();
             void levelOrderTraversal();
+            void sampleData();
         private:
             std::vector<T> keys;
 
@@ -24,9 +26,5 @@ template<typename T>
 
             int currentIndex;
     };
-
-/* ******************************************************************************** */
-
-void nAryTreeLevelOrderDriver();
 
 /* ******************************************************************************** */
