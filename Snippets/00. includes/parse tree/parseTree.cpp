@@ -4,12 +4,12 @@
 
 /* ******************************************************************************** */
 
-template<>
-    treeNode<char>* buildParseTree(){
-        treeNode<char> *x;
+template<typename T>
+    treeNode<T>* buildParseTree(){
+        treeNode<T> *x;
         char c;
 
-        std::stack<treeNode<char>*> stack{};
+        std::stack<treeNode<T>*> stack{};
 
         while(1){
             c = getchar();
@@ -20,7 +20,7 @@ template<>
             if(c == '(' || c == ')' || c == ' ')
                 continue;
 
-            x = new treeNode<char>{c};
+            x = new treeNode<T>{c};
 
             if(c == '+' || c == '*'){
                 if(!stack.empty()){
@@ -36,17 +36,17 @@ template<>
             stack.push(x);
         }
 
-        treeNode<char> *returnValue = stack.top();
+        treeNode<T> *returnValue = stack.top();
         stack.pop();
         return returnValue;
     }
 
 /* ******************************************************************************** */
 
-template<>
-    void drawBinaryTreeRecursive<char>(
-        treeNode<char>* t,
-        std::vector<std::pair<treeNode<char>*, int>>& pairs,
+template<typename T>
+    void drawBinaryTreeRecursive(
+        treeNode<T>* t,
+        std::vector<std::pair<treeNode<T>*, int>>& pairs,
         int left, int right){
             if(t == NULL)
                 return;
@@ -68,8 +68,8 @@ template<>
 
 /* ******************************************************************************** */
 
-template<>
-    void externalPathLength<char>(treeNode<char>* t, int level, int& len){
+template<typename T>
+    void externalPathLength(treeNode<T>* t, int level, int& len){
         if(t->left || t->right)
             level++;
 

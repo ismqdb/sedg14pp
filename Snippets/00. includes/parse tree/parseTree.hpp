@@ -21,7 +21,7 @@ template<typename T>
 template<typename T>
     void drawBinaryTreeRecursive(
         treeNode<T>*,
-        std::vector<std::pair<treeNode<char>*, int>>&,
+        std::vector<std::pair<treeNode<T>*, int>>&,
         int, int);
 
 template<typename T>
