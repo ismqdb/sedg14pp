@@ -93,24 +93,3 @@ template<>
     }
 
 /* ******************************************************************************** */
-
-template<>
-    void nAryTree<char>::sampleData(){
-        int root = this->insert('E');
-
-        int a1 = this->insertChild(root, 'A');
-        int r1 = this->insertSibling(root, a1, 'R');
-        int e1 = this->insertSibling(root, r1, 'E');
-
-        int a2 = this->insertChild(a1, 'A');
-        int s1 = this->insertSibling(a1, a2, 'S');
-
-        int t1 = this->insertChild(r1, 'T');
-
-        int m1 = this->insertChild(t1, 'M');
-        int p1 = this->insertSibling(t1, m1, 'P');
-        int l1 = this->insertSibling(t1, p1, 'L');
-        int e2 = this->insertSibling(t1, l1, 'E');
-    }
-
-/* ******************************************************************************** */

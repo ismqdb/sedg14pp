@@ -16,7 +16,6 @@ template<typename T>
             int insertSibling(T, T, T);
             int externalPathLength();
             void levelOrderTraversal();
-            void sampleData();
         private:
             std::vector<T> keys;
 
