@@ -13,7 +13,7 @@ template<typename T>
 
             int insert(T);
             int insertChild(T, T);
-            int insertSibling(T, T, T);
+            int insertSibling(int, int, T);
             int externalPathLength();
             void levelOrderTraversal();
         private:
@@ -25,5 +25,9 @@ template<typename T>
 
             int currentIndex;
     };
+
+/* ******************************************************************************** */
+
+template class nAryTree<char>;
 
 /* ******************************************************************************** */

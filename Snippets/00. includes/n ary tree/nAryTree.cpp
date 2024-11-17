@@ -4,32 +4,32 @@
 
 /* ******************************************************************************** */
 
-template<>
-    nAryTree<char>::nAryTree(){
+template<typename T>
+    nAryTree<T>::nAryTree(){
         this->currentIndex = 0;
 
-        keys = std::vector<char>(100);
+        keys = std::vector<T>(100);
         child = std::vector<int>(100, -1);
         parent = std::vector<int>(100, -1);
         sibling = std::vector<int>(100, -1);
     }
 
-template<>
-    nAryTree<char>::~nAryTree(){
+template<typename T>
+    nAryTree<T>::~nAryTree(){
         this->currentIndex = 0;
     }
 
 /* ******************************************************************************** */
 
-template<>
-    int nAryTree<char>::insert(char value){
+template<typename T>
+    int nAryTree<T>::insert(T value){
         this->keys[this->currentIndex] = value;
 
         return this->currentIndex++;
     }
 
-template<>
-    int nAryTree<char>::insertChild(char parent, char child){
+template<typename T>
+    int nAryTree<T>::insertChild(T parent, T child){
         this->keys[this->currentIndex] = child;
 
         this->parent[this->currentIndex] = parent;
@@ -38,8 +38,8 @@ template<>
         return this->currentIndex++;
     }
 
-template<>
-    int nAryTree<char>::insertSibling(char parent, char existingNode, char sibling){
+template<typename T>
+    int nAryTree<T>::insertSibling(int parent, int existingNode, T sibling){
         this->keys[this->currentIndex] = sibling;
 
         this->parent[existingNode] = -1;
@@ -52,8 +52,8 @@ template<>
 
 /* ******************************************************************************** */
 
-template<>
-    void nAryTree<char>::levelOrderTraversal(){
+template<typename T>
+    void nAryTree<T>::levelOrderTraversal(){
         std::queue<int> queue{};
 
         int currentNode = 0;
@@ -87,9 +87,9 @@ template<>
 
 /* ******************************************************************************** */
 
-template<>
-    int nAryTree<char>::externalPathLength(){
-        
+template<typename T>
+    int nAryTree<T>::externalPathLength(){
+        return 1;
     }
 
 /* ******************************************************************************** */
