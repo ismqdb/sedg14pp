@@ -29,7 +29,7 @@ int main(){
     int l1 = tree->insertSibling(t1, p1, 'L');
     int e2 = tree->insertSibling(t1, l1, 'E');
 
-    int x = tree->externalPathLength();
+    tree->levelOrderTraversal();
 }
 
 /* ******************************************************************************** */

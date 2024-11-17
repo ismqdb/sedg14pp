@@ -59,28 +59,26 @@ template<typename T>
         int currentNode = 0;
         int currentSibling;
 
-        queue.push(currentNode);
+        do {
+            std::cout << this->keys[currentNode] << ' ';
 
-        while(1){
+            if(this->child[currentNode] != -1)
+                queue.push(this->child[currentNode]);
+
             for(
                 currentSibling = this->sibling[currentNode];
                 currentSibling != -1;
                 currentSibling = this->sibling[currentSibling]
-            )
-                queue.push(currentSibling);
+            ){
+                std::cout << this->keys[currentSibling] << ' ';
+                
+                if(this->child[currentSibling] != -1)
+                    queue.push(this->child[currentSibling]);
+            }
 
-            while(this->child[currentNode] == -1)
-                currentNode = this->sibling[currentNode];
-
-            if(currentNode == -1)
-                break;
-
-            currentNode = this->child[currentNode];
-            queue.push(currentNode);
-        }
-
-        while(!queue.empty())
-            std::cout << this->keys[static_cast<int>(queue.front())];
+            currentNode = queue.front();
+            queue.pop();
+        } while(currentNode != 0);
 
         putchar(10);
     }
