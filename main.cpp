@@ -11,12 +11,11 @@
 // A B C + D E * * F + *
 
 int main(){
-    treeNodeRS<char> *node;
+    treeNodeRS<char> *node = createNode<char>('a');
 
-    node->info = 'a';
-    node->left = NULL;
-    node->right = NULL;
-    node->parent = NULL;
+    insertChild(node, 'B');
+    insertSibling(node, 'C');
+    insertSibling(node, 'D');
 }
 
 /* ******************************************************************************** */

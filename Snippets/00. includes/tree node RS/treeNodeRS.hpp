@@ -4,14 +4,30 @@
 
 #include <iostream>
 
-#include "../tree node/treeNode.hpp"
+/* ******************************************************************************** */
+
+template<typename T>
+    struct treeNodeRS {
+        T value;
+
+        treeNodeRS<T> *child;
+        treeNodeRS<T> *sibling;
+        treeNodeRS<T> *parent;
+    };
 
 /* ******************************************************************************** */
 
 template<typename T>
-    struct treeNodeRS : public treeNode<T> {
-        treeNode<T> *parent;
-    };
+    treeNodeRS<T> *createNode(T);
+
+template<typename T>
+    void insertChild(treeNodeRS<T>*, T);
+
+template<typename T>
+    void insertSibling(treeNodeRS<T>*, T);
+
+template<typename T>
+    void levelOrderTraversal(treeNodeRS<T>*);
 
 /* ******************************************************************************** */
 
