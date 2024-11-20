@@ -21,27 +21,28 @@ template<>
 /* ******************************************************************************** */
 
 template<>
-    void insertChild(treeNodeRS<char> *node, char value){
+    treeNodeRS<char>* insertChild(treeNodeRS<char> *node, char value){
         auto x = createNode<char>(value);
-        x->parent = node;
         node->child = x;
+        return x;
     }
 
 /* ******************************************************************************** */
 
 template<>
-    void insertSibling(treeNodeRS<char> *node, char value){
+    treeNodeRS<char>* insertSibling(treeNodeRS<char> *parent, treeNodeRS<char> *node, char value){
         auto x = createNode<char>(value);
 
         auto it = node;
 
         while(it->sibling != NULL){
             it = it->sibling;
-            it->parent = NULL;
         }
 
         it->sibling = x;
-        it->sibling->parent = node;
+        it->sibling->parent = parent;
+
+        return it->sibling;
     }
 
 /* ******************************************************************************** */

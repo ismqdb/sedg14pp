@@ -22,10 +22,10 @@ template<typename T>
     treeNodeRS<T> *createNode(T);
 
 template<typename T>
-    void insertChild(treeNodeRS<T>*, T);
+    treeNodeRS<T>* insertChild(treeNodeRS<T>*, T);
 
 template<typename T>
-    void insertSibling(treeNodeRS<T>*, T);
+    treeNodeRS<T>* insertSibling(treeNodeRS<T>*, treeNodeRS<T>*, T);
 
 template<typename T>
     void levelOrderTraversal(treeNodeRS<T>*);
