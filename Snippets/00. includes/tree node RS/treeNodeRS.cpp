@@ -5,8 +5,8 @@
 /* ******************************************************************************** */
 
 template<typename T>
-    void visit(treeNodeRS<T> node){
-        std::cout << node->info << ' ';
+    void visit(treeNodeRS<T> *node){
+        std::cout << node->value << ' ';
     }
 
 /* ******************************************************************************** */
@@ -50,6 +50,27 @@ template<>
 template<>
     void levelOrderTraversal(treeNodeRS<char> *node){
         std::queue<treeNodeRS<char>*> queue;
+        treeNodeRS<char>* t;
+
+        queue.push(node);
+
+        while(1){
+            node = queue.front();
+            queue.pop();
+
+            t = node;
+
+            visit<char>(t);
+            std::flush(std::cout);
+
+            while(t->sibling != NULL){
+                t = t->sibling;
+                queue.push(t);
+            }
+
+            if(node->child)
+                queue.push(node->child);
+        }
     }
 
 /* ******************************************************************************** */
