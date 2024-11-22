@@ -26,6 +26,10 @@ int main(){
     auto l1 = insertSibling(t1, m1, 'L');
     auto e3 = insertSibling(t1, m1, 'E');
 
+    auto x = insertChild(e3, 'X');
+    auto y = insertSibling(e3, x, 'y');
+    auto z = insertSibling(e3, y, 'z');
+
     levelOrderTraversal(node);
 }
 
