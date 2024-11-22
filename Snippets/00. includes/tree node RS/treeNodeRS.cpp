@@ -50,27 +50,36 @@ template<>
 template<>
     void levelOrderTraversal(treeNodeRS<char> *node){
         std::queue<treeNodeRS<char>*> queue;
-        treeNodeRS<char>* t;
+        treeNodeRS<char> *temp1, *temp2;
 
         queue.push(node);
 
-        while(1){
+        while(!queue.empty()){
             node = queue.front();
             queue.pop();
 
-            t = node;
-
-            visit<char>(t);
+            visit<char>(node);
             std::flush(std::cout);
 
-            while(t->sibling != NULL){
-                t = t->sibling;
-                queue.push(t);
+            if(node->sibling){
+                temp1 = node;
+                while(1){
+                    temp2 = temp1->sibling;
+                    temp1->sibling = NULL;
+                    queue.push(temp2);
+
+                    if(!temp2->sibling)
+                        break;
+
+                    temp1 = temp2;
+                }
             }
 
             if(node->child)
                 queue.push(node->child);
         }
+
+        std::cout << '\n';
     }
 
 /* ******************************************************************************** */
