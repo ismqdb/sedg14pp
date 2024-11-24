@@ -15,7 +15,7 @@
 
 template<typename T>
     struct treeNode {
-        T info;
+        T value;
         treeNode* left;
         treeNode* right;
     };

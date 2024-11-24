@@ -7,7 +7,7 @@
 
 template<typename T>
     void visit(treeNode<T> node){
-        std::cout << node->info << ' ';
+        std::cout << node->value << ' ';
     }
 
 /* ******************************************************************************** */
@@ -75,7 +75,7 @@ int drawBinaryTreeRecursiveDriver(){
     std::cout << std::endl;
     for(int pos = 0, printed = 0; pos < screenWidth; pos++){
         if(pairs[printed].second == pos)
-            std::cout << pairs[printed++].first->info;
+            std::cout << pairs[printed++].first->value;
         else
             std::cout << ' ';
     }

@@ -15,16 +15,6 @@ int main(){
 
     auto a1 = insertChild(root, 'A');
     auto r1 = insertSibling(root, a1, 'R');
-    auto e2 = insertSibling(root, a1, 'E');
-
-    auto a2 = insertChild(a1, 'A');
-    auto s1 = insertSibling(a1, a2, 'S');
-    auto t1 = insertSibling(a1, a2, 'T');
-
-    auto m1 = insertChild(t1, 'M');
-    auto p1 = insertSibling(t1, m1, 'P');
-    auto l1 = insertSibling(t1, m1, 'L');
-    auto e3 = insertSibling(t1, m1, 'E');
 
     int result = 0;
     externalPathLengthRS(root, 0, result);
