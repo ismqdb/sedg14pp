@@ -33,7 +33,7 @@ template<typename T>
     void levelOrderTraversal(treeNodeRS<T>*);
 
 template<typename T>
-    void externalPathLength(treeNodeRS<T>*, int, int&);
+    void externalPathLengthRS(treeNodeRS<T>*, int, int&);
 
 /* ******************************************************************************** */
 

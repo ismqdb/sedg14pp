@@ -85,8 +85,21 @@ template<>
 /* ******************************************************************************** */
 
 template<>
-    void externalPathLength(treeNodeRS<char>* t, int level, int &result){
-        
+    void externalPathLengthRS(treeNodeRS<char>* t, int level, int &result){
+        if(!t) return;
+
+        if(t->child || t->sibling)
+            level++;
+
+        if(t->child)
+            externalPathLengthRS(t->child, level, result);
+        else
+            result += level;
+
+        if(t->sibling)
+            externalPathLengthRS(t->sibling, level, result);
+        else
+            result += level;
     }
 
 /* ******************************************************************************** */
