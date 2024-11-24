@@ -11,11 +11,11 @@
 // A B C + D E * * F + *
 
 int main(){
-    treeNodeRS<char> *node = createNode<char>('E');
+    treeNodeRS<char> *root = createNode<char>('E');
 
-    auto a1 = insertChild(node, 'A');
-    auto r1 = insertSibling(node, a1, 'R');
-    auto e2 = insertSibling(node, a1, 'E');
+    auto a1 = insertChild(root, 'A');
+    auto r1 = insertSibling(root, a1, 'R');
+    auto e2 = insertSibling(root, a1, 'E');
 
     auto a2 = insertChild(a1, 'A');
     auto s1 = insertSibling(a1, a2, 'S');
@@ -30,7 +30,8 @@ int main(){
     auto y = insertSibling(e3, x, 'y');
     auto z = insertSibling(e3, y, 'z');
 
-    levelOrderTraversal(node);
+    int result = 0;
+    externalPathLength(root, 0, result);
 }
 
 /* ******************************************************************************** */

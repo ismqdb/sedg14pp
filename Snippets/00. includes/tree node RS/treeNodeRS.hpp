@@ -5,6 +5,8 @@
 #include <iostream>
 #include <queue>
 
+#include "../parse tree/parseTree.hpp"
+
 /* ******************************************************************************** */
 
 template<typename T>
@@ -29,6 +31,9 @@ template<typename T>
 
 template<typename T>
     void levelOrderTraversal(treeNodeRS<T>*);
+
+template<typename T>
+    void externalPathLength(treeNodeRS<T>*, int, int&);
 
 /* ******************************************************************************** */
 
