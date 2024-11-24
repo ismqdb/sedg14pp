@@ -4,22 +4,21 @@
 #include <stack>
 #include <queue>
 
-#include "Snippets/00. includes/tree node RS/treeNodeRS.hpp"
+#include "Snippets/20. ruler/20. ruler.hpp"
 
 /* ******************************************************************************** */
 
 // A B C + D E * * F + *
 
 int main(){
-    treeNodeRS<char> *root = createNode<char>('E');
+    rulePreorder(0, 8, 3);
+    putchar(10);
 
-    auto a1 = insertChild(root, 'A');
-    auto r1 = insertSibling(root, a1, 'R');
+    ruleInorder(0, 8, 3);
+    putchar(10);
 
-    int result = 0;
-    externalPathLengthRS(root, 0, result);
-
-    std::cout << result << '\n';
+    ruleIterative(0, 8, 3);
+    putchar(10);
 }
 
 /* ******************************************************************************** */
