@@ -10,24 +10,30 @@
 
 /* ******************************************************************************** */
 
-void f1(stackA<int>& stack){
-    for(int i = 0; i < 10; i++)
+void f1(std::promise<int>& p1, stackA<int>& stack){
+    for(int i = p1.get_future().get(); i < 10; i++)
         stack.push(i);
 }
 
-void f2(stackA<int> &stack){
-    for(int i = 100; i < 110; i++)
+void f2(std::promise<int>& p2, stackA<int> &stack){
+    for(int i = p2.get_future().get(); i < 110; i++)
         stack.push(i);
 }
 
 int main(){
     stackA<int> stack;
 
-    std::thread t1(f1, std::ref(stack));
-    std::thread t2(f2, std::ref(stack));
+    std::promise<int> p1;
+    p1.set_value(1);
 
-    t1.join();
-    t2.join();
+    std::promise<int> p2;
+    p2.set_value(100);
+
+    auto t1 = std::async(f1, std::ref(p1), std::ref(stack));
+    auto t2 = std::async(f2, std::ref(p2), std::ref(stack));
+
+    t1.wait();
+    t2.wait();
 
     while(!stack.isEmpty()){
         std::cout << stack.top() << '\n';
