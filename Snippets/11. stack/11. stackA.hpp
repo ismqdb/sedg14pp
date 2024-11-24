@@ -5,6 +5,8 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <mutex>
+#include <condition_variable>
 
 #include "./11. stack.hpp"
 
@@ -23,7 +25,9 @@ template<typename T>
             bool isEmpty() override;
         private:
             std::vector<T> stack;
-            int p;
+            int currentIndex;
+            std::mutex mtx;
+            std::condition_variable condVar;
     };
 
 /* ******************************************************************************** */

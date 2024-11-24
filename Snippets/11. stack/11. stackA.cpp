@@ -6,29 +6,32 @@
 
 template<typename T>
     bool stackA<T>::isEmpty(){
-        return !p;
+        std::lock_guard<std::mutex> lock(this->mtx);
+        return currentIndex <= 0;
     }
 
 /* ******************************************************************************** */
 
 template<typename T>
     void stackA<T>::push(T v){
+        std::lock_guard<std::mutex> lock(this->mtx);
         this->stack.push_back(v);
-        p++;
+        currentIndex++;
+        this->condVar.notify_one();
     }
 
 template<typename T>
     void stackA<T>::pop(){
-        if(p > 0){
-            p--;
-            this->stack.pop_back();
-        }
+        std::unique_lock<std::mutex> lock(this->mtx);
+        condVar.wait(lock, [this]{return this->currentIndex > -1;});
+        currentIndex--;
+        this->stack.pop_back();
     }
 
 template<typename T>
     T& stackA<T>::top(){
         if(!isEmpty())
-            return stack[p-1];
+            return std::ref(stack[this->currentIndex-1]);
         else
             throw "Top(): empty stack.";
     }
@@ -37,12 +40,12 @@ template<typename T>
 
 template<typename T>
     stackA<T>::stackA(){
-        p = 0;
+        currentIndex = 0;
     }
 
 template<typename T>
     stackA<T>::~stackA(){
-        p = 0;
+        currentIndex = 0;
     }
 
 /* ******************************************************************************** */
