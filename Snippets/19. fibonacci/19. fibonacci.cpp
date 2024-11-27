@@ -36,10 +36,53 @@ int fibonacciRR1(int n){
     if(n <= 1)
         return 1;
     
-    int n1 = fibonacciRR1(n-1);
-    int n2 = fibonacciRR1(n-2);
+    std::stack<int> stack;
 
-    return n1+n2;
+    for(int i = n; i >= 2; i--)
+        stack.push(i);
+
+    stack.push(1);
+
+    while(stack.size() > 1){
+        int n1 = stack.top();
+        stack.pop();
+
+        int n2 = stack.top();
+        stack.pop();
+
+        stack.push(n1+n2);
+    }  
+
+    return stack.top();  
+}
+
+/* ******************************************************************************** */
+
+int fibonacciRR2(int n){
+    if(n < 0)
+        return -1;
+
+    if(n <= 1)
+        return 1;
+    
+    std::stack<int> stack;
+    int array[n+2];
+
+    for(int i = n; i >= 2; i--)
+        stack.push(i);
+
+    stack.push(1);
+
+    array[0] = array[1] = 1;
+
+    for(int i = 2; !stack.empty(); i++){
+        int n1 = stack.top();
+        stack.pop();
+
+        array[i] = n1+array[i-1];
+    }  
+
+    return array[n]; 
 }
 
 /* ******************************************************************************** */

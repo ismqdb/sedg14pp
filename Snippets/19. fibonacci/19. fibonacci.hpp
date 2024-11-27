@@ -2,11 +2,14 @@
 
 #pragma once
 
+#include <stack>
+
 /* ******************************************************************************** */
 
 int fibonacciRecursive(int);
 int fibonacciIterative(int);
 
 int fibonacciRR1(int);
+int fibonacciRR2(int);
 
 /* ******************************************************************************** */
