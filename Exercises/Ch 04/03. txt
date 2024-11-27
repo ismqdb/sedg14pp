@@ -1,0 +1,3 @@
+External path length of a right-sibling tree is calculated in the same way as for regular binary tree, because right-sibling and binary tree representations are the same, only their interpretation is different.
+
+externalPathLengthRS() implements functionality to calculate external path len of right-sibling tree.
