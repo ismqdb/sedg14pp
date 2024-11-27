@@ -9,6 +9,3 @@
 #include "../../13. queue array/13. queue_a.h"
 
 tree_node* build_parse_tree();
-int is_new_level(int*, int);
-void draw_binary_tree_iterative(tree_node*);
-void draw_binary_tree_recursive(tree_node*);

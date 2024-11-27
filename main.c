@@ -7,7 +7,7 @@
 
 int main(){
     tree_node *t = build_parse_tree();
-    draw_binary_tree_iterative(t);
+    
 }
 
 // A B C + D E * * F + *
