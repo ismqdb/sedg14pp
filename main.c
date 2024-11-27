@@ -3,10 +3,10 @@
 #include <string.h>
 #include <math.h>
 
-#include "Snippets/00. includes/parse tree/parse_tree.h"
+#include "Snippets/00. includes/tree node/tree_node.h"
 
 int main(){
-    tree_node *t = build_parse_tree();
+    drawBinaryTreeRecursiveDriver();
     
 }
 

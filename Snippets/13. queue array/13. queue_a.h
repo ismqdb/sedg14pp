@@ -10,7 +10,7 @@ typedef struct queue_a {
     data_type type;
     union {
         int* integer;
-        tree_node **tree_node;
+        struct tree_node **tree_node;
         struct tree_node_rs **tree_node_rs;
     } data;
     int head;
@@ -20,11 +20,11 @@ typedef struct queue_a {
 } queue_a;
 
 void queue_a_put_int(queue_a*, int);
-void queue_a_put_tree_node(queue_a*, tree_node*);
+void queue_a_put_tree_node(queue_a*, struct tree_node*);
 void queue_a_put_tree_node_rs(queue_a*, struct tree_node_rs*);
 
 int queue_a_get_int(queue_a*);
-tree_node* queue_a_get_tree_node(queue_a*);
+struct tree_node* queue_a_get_tree_node(queue_a*);
 struct tree_node_rs* queue_a_get_tree_node_rs(queue_a*);
 
 queue_a queue_a_init(data_type, int);
