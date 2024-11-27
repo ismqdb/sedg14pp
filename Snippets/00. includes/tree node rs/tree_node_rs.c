@@ -10,7 +10,7 @@ void visit_tree_node_rs(struct tree_node_rs *node){
 
 /* ******************************************************************************** */
 
-struct tree_node_rs* createNode(int value){
+struct tree_node_rs* create_node(int value){
     struct tree_node_rs *t = malloc(sizeof(struct tree_node_rs));
     t->value.integer = value;
     return t;
@@ -18,16 +18,16 @@ struct tree_node_rs* createNode(int value){
 
 /* ******************************************************************************** */
 
-struct tree_node_rs* insertChild(struct tree_node_rs* node, int value){
-    struct tree_node_rs *x = createNode(value);
+struct tree_node_rs* insert_child(struct tree_node_rs* node, int value){
+    struct tree_node_rs *x = create_node(value);
     node->child = x;
     return x;
 }
 
 /* ******************************************************************************** */
 
-struct tree_node_rs* insertSibling(struct tree_node_rs *parent, struct tree_node_rs *node, int value){
-    struct tree_node_rs *x = createNode(value);
+struct tree_node_rs* insert_sibling(struct tree_node_rs *parent, struct tree_node_rs *node, int value){
+    struct tree_node_rs *x = create_node(value);
 
     struct tree_node_rs *it = node;
 
@@ -43,7 +43,7 @@ struct tree_node_rs* insertSibling(struct tree_node_rs *parent, struct tree_node
 
 /* ******************************************************************************** */
 
-void levelOrderTraversal(struct tree_node_rs *node){
+void level_order_traversal(struct tree_node_rs *node){
     queue_a queue = queue_a_init(INT, 50);
     struct tree_node_rs *temp1, *temp2;
 
@@ -77,19 +77,19 @@ void levelOrderTraversal(struct tree_node_rs *node){
 
 /* ******************************************************************************** */
 
-void externalPathLengthRS(struct tree_node_rs *t, int level, int *result){
+void external_path_length_rs(struct tree_node_rs *t, int level, int *result){
     if(!t) return;
 
     if(t->child || t->sibling)
         level++;
 
     if(t->child)
-        externalPathLengthRS(t->child, level, result);
+        external_path_length_rs(t->child, level, result);
     else
         result += level;
 
     if(t->sibling)
-        externalPathLengthRS(t->sibling, level, result);
+        external_path_length_rs(t->sibling, level, result);
     else
         result += level;
 }

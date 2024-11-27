@@ -22,12 +22,12 @@ struct tree_node_rs {
 /* ******************************************************************************** */
 
 
-struct tree_node_rs* createNode(int);
-struct tree_node_rs* insertChild(struct tree_node_rs*, int);
-struct tree_node_rs* insertSibling(struct tree_node_rs*, struct tree_node_rs*, int);
+struct tree_node_rs* create_node(int);
+struct tree_node_rs* insert_child(struct tree_node_rs*, int);
+struct tree_node_rs* insert_sibling(struct tree_node_rs*, struct tree_node_rs*, int);
 
-void levelOrderTraversal(struct tree_node_rs*);
-void externalPathLengthRS(struct tree_node_rs*, int, int*);
+void level_order_traversal(struct tree_node_rs*);
+void external_path_length_rs(struct tree_node_rs*, int, int*);
 
 /* ******************************************************************************** */
 
