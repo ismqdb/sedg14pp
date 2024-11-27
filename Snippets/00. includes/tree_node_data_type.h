@@ -3,5 +3,5 @@
 typedef enum {
     INT,
     TREE_NODE,
-    N_ARY_TREE
+    TREE_NODE_RS
 } data_type;

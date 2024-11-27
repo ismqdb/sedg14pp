@@ -4,6 +4,7 @@
         "18b. binary_tree_rs.h": "c",
         "tree_node_rs.h": "c",
         "array.h": "c",
-        "12. stack_a.h": "c"
+        "12. stack_a.h": "c",
+        "13. queue_a.h": "c"
     }
 }

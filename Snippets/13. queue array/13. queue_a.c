@@ -16,6 +16,14 @@ void queue_a_put_tree_node(queue_a *queue, tree_node *v){
     queue->data.tree_node[queue->tail++] = v;
 }
 
+void queue_a_put_tree_node_rs(queue_a *queue, struct tree_node_rs *v){
+    if(queue->tail == queue->current_size){
+        queue->current_size += queue->chunk_size;
+        queue->data.tree_node_rs = (struct tree_node_rs**)realloc(queue->data.tree_node_rs, queue->current_size*sizeof(struct tree_node_rs));
+    }
+    queue->data.tree_node_rs[queue->tail++] = v;
+}
+
 int queue_a_get_int(queue_a *queue){
     int t = queue->data.integer[queue->head++];
     if(queue->head == queue->tail){
@@ -27,6 +35,15 @@ int queue_a_get_int(queue_a *queue){
 
 tree_node* queue_a_get_tree_node(queue_a *queue){
     tree_node *t = queue->data.tree_node[queue->head++];
+    if(queue->head == queue->tail){
+        queue->head = 0;
+        queue->tail = 0;
+    }
+    return t;
+}
+
+struct tree_node_rs* queue_a_get_tree_node_rs(queue_a *queue){
+    struct tree_node_rs *t = queue->data.tree_node_rs[queue->head++];
     if(queue->head == queue->tail){
         queue->head = 0;
         queue->tail = 0;
@@ -50,6 +67,10 @@ queue_a queue_a_init(data_type type, int size){
         case TREE_NODE:
             queue.data.tree_node = (tree_node**)malloc(queue.current_size*sizeof(tree_node));
         break;
+
+        case TREE_NODE_RS:
+            queue.data.tree_node_rs = (struct tree_node_rs**)malloc(queue.current_size*sizeof(struct tree_node_rs));
+        break;
     }
 
     queue.head = 0;
@@ -72,6 +93,10 @@ void queue_a_deinit(queue_a *queue){
 
         case TREE_NODE:
             free(queue->data.tree_node);
+        break;
+
+        case TREE_NODE_RS:
+            free(queue->data.tree_node_rs);
         break;
 
     }
