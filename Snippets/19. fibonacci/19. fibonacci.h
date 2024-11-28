@@ -15,5 +15,6 @@ int fibonacci_iterative(int);
 
 int fibonacci_rr1(int);
 int fibonacci_rr2(int);
+int fibonaccI_rr3(int);
 
 /* ******************************************************************************** */

@@ -70,7 +70,7 @@ int fibonacci_rr2(int n){
 
     stack_a_push_int(&stack, 1);
 
-    array[0] = array[1] = 1;
+    array[0] = 1;
 
     for(int i = 2; !stack_a_is_empty(&stack); i++){
         int n1 = stack_a_pop_int(&stack);
