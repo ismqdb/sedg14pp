@@ -22,7 +22,7 @@ void tree_node_deinit(tree_node*);
 void tree_node_visit(tree_node*);
 
 
-void drawBinaryTreeRecursive(tree_node*, struct tnode_pair**, int, int);
-void externalPathLength(tree_node*, int, int*);
-int drawBinaryTreeRecursiveDriver();
-void visit(tree_node);
+int draw_binary_tree_recursive(tree_node*, struct tnode_pair**, int, int);
+void external_path_length(tree_node*, int, int*);
+int draw_binary_tree_recursive_driver();
+void visit_tree_node(tree_node);

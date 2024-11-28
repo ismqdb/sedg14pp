@@ -6,7 +6,7 @@
 #include "Snippets/00. includes/tree node/tree_node.h"
 
 int main(){
-    drawBinaryTreeRecursiveDriver();
+    draw_binary_tree_recursive_driver();
     
 }
 
