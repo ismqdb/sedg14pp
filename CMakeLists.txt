@@ -33,7 +33,8 @@ add_executable(sedg14 main.c
     "Snippets/19. fibonacci/19. fibonacci.c"
     "Snippets/20. ruler/20. ruler.c"
     "Snippets/21. fractal/21. fractal.c"
-    "Snippets/22. recursion removal/22. recursion_removal.c"
+    "Snippets/22. recursion removal/22. recursion_removal_preorder.c"
+    "Snippets/22. recursion removal/22. recursion_removal_inorder.c"
 )
 
 target_link_libraries(sedg14 m) # Link libmath
