@@ -27,7 +27,7 @@ int ruler_mark_height(int num){
 void rule_level_order(int left, int right, int tree_height){
     for(int i = 1, j = 1; i <= tree_height; i++, j <<= 1)
         for(int t = 0; t <= (left + right)/j; t++)
-            mark(left + j + t * (j+j), ruler_mark_height(i));
+            mark(left + j + t * (j+j), i);
 }
 
 /* ******************************************************************************** */
