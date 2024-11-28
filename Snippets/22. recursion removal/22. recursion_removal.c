@@ -1,4 +1,8 @@
+/* ******************************************************************************** */
+
 #include "./22. recursion_removal.h"
+
+/* ******************************************************************************** */
 
 void traverse_preorder(tree_node *t){
     if(t != NULL){
@@ -7,6 +11,8 @@ void traverse_preorder(tree_node *t){
         traverse_preorder(t->right);
     }
 }
+
+/* ******************************************************************************** */
 
 void remove_recursion_1(tree_node *t){
     l:
@@ -20,6 +26,8 @@ void remove_recursion_1(tree_node *t){
     x:
         ;
 }
+
+/* ******************************************************************************** */
 
 void remove_recursion_2(tree_node *t){
     stack_a stack = stack_a_init(TREE_NODE, 50);
@@ -42,6 +50,8 @@ void remove_recursion_2(tree_node *t){
         stack_a_deinit(&stack);
 }
 
+/* ******************************************************************************** */
+
 void remove_recursion_3(tree_node *t){
     stack_a stack = stack_a_init(TREE_NODE, 50);
 
@@ -62,6 +72,8 @@ void remove_recursion_3(tree_node *t){
         stack_a_deinit(&stack);
 }
 
+/* ******************************************************************************** */
+
 void remove_recursion_4(tree_node *t){
     stack_a stack = stack_a_init(TREE_NODE, 50);
 
@@ -79,3 +91,5 @@ void remove_recursion_4(tree_node *t){
 
     stack_a_deinit(&stack);
 }
+
+/* ******************************************************************************** */

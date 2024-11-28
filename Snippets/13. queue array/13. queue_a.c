@@ -1,4 +1,8 @@
+/* ******************************************************************************** */
+
 #include "./13. queue_a.h"
+
+/* ******************************************************************************** */
 
 void queue_a_put_int(queue_a *queue, int v){
     if(queue->tail == queue->current_size){
@@ -8,6 +12,8 @@ void queue_a_put_int(queue_a *queue, int v){
     queue->data.integer[queue->tail++] = v;
 }
 
+/* ******************************************************************************** */
+
 void queue_a_put_tree_node(queue_a *queue, tree_node *v){
     if(queue->tail == queue->current_size){
         queue->current_size += queue->chunk_size;
@@ -16,6 +22,8 @@ void queue_a_put_tree_node(queue_a *queue, tree_node *v){
     queue->data.tree_node[queue->tail++] = v;
 }
 
+/* ******************************************************************************** */
+
 void queue_a_put_tree_node_rs(queue_a *queue, struct tree_node_rs *v){
     if(queue->tail == queue->current_size){
         queue->current_size += queue->chunk_size;
@@ -23,6 +31,8 @@ void queue_a_put_tree_node_rs(queue_a *queue, struct tree_node_rs *v){
     }
     queue->data.tree_node_rs[queue->tail++] = v;
 }
+
+/* ******************************************************************************** */
 
 int queue_a_get_int(queue_a *queue){
     int t = queue->data.integer[queue->head++];
@@ -33,6 +43,8 @@ int queue_a_get_int(queue_a *queue){
     return t;
 }
 
+/* ******************************************************************************** */
+
 tree_node* queue_a_get_tree_node(queue_a *queue){
     tree_node *t = queue->data.tree_node[queue->head++];
     if(queue->head == queue->tail){
@@ -42,6 +54,8 @@ tree_node* queue_a_get_tree_node(queue_a *queue){
     return t;
 }
 
+/* ******************************************************************************** */
+
 struct tree_node_rs* queue_a_get_tree_node_rs(queue_a *queue){
     struct tree_node_rs *t = queue->data.tree_node_rs[queue->head++];
     if(queue->head == queue->tail){
@@ -50,6 +64,8 @@ struct tree_node_rs* queue_a_get_tree_node_rs(queue_a *queue){
     }
     return t;
 }
+
+/* ******************************************************************************** */
 
 queue_a queue_a_init(data_type type, int size){
     queue_a queue;
@@ -78,9 +94,13 @@ queue_a queue_a_init(data_type type, int size){
     return queue;
 }
 
+/* ******************************************************************************** */
+
 int queue_a_is_empty(queue_a *queue){
     return queue->head == queue->tail;
 }
+
+/* ******************************************************************************** */
 
 void queue_a_deinit(queue_a *queue){
     queue->head = 0;
@@ -101,3 +121,5 @@ void queue_a_deinit(queue_a *queue){
 
     }
 }
+
+/* ******************************************************************************** */

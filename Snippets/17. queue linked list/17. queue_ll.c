@@ -1,4 +1,8 @@
+/* ******************************************************************************** */
+
 #include "./17. queue_ll.h"
+
+/* ******************************************************************************** */
 
 queue_a queue_ll_init(){
     queue_a queue;
@@ -6,6 +10,8 @@ queue_a queue_ll_init(){
 
     return queue;
 }
+
+/* ******************************************************************************** */
 
 void queue_ll_put(queue_a *queue, int value){
     node *item = node_alloc(value);
@@ -23,6 +29,8 @@ void queue_ll_put(queue_a *queue, int value){
     (*p) = item;
 }
 
+/* ******************************************************************************** */
+
 node* queue_ll_get(queue_a *queue){
     node *item = queue->head;
 
@@ -30,9 +38,13 @@ node* queue_ll_get(queue_a *queue){
     return item;
 }
 
+/* ******************************************************************************** */
+
 int queue_ll_is_empty(queue_a *queue){
     return queue->head == NULL;
 }
+
+/* ******************************************************************************** */
 
 int queue_ll_main(){
     queue_a queue = queue_ll_init();
@@ -49,3 +61,5 @@ int queue_ll_main(){
 
     putchar(10);
 }
+
+/* ******************************************************************************** */

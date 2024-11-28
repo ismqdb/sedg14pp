@@ -1,4 +1,8 @@
+/* ******************************************************************************** */
+
 #include "./09. linked_list.h"
+
+/* ******************************************************************************** */
 
 linked_list list_initialize(){
     linked_list list;
@@ -12,11 +16,15 @@ linked_list list_initialize(){
     return list;
 }
 
+/* ******************************************************************************** */
+
 void delete_next(node *t){
     node *x = t->next;
     t->next = t->next->next;
     node_dealloc(x);
 }
+
+/* ******************************************************************************** */
 
 node* insert_after(int v, node *t){
     if(t == NULL)
@@ -29,6 +37,8 @@ node* insert_after(int v, node *t){
     return x;
 }
 
+/* ******************************************************************************** */
+
 node* move_next_to_front(linked_list list, node *t){
     node *temp = t->next;
     t->next = t->next->next;
@@ -37,6 +47,8 @@ node* move_next_to_front(linked_list list, node *t){
     list.head->next = temp;
     return temp;
 }
+
+/* ******************************************************************************** */
 
 void exchange(node *t, node *u){
     node *temp = t->next;
@@ -49,3 +61,5 @@ void exchange(node *t, node *u){
 
     u->next = temp;
 }
+
+/* ******************************************************************************** */

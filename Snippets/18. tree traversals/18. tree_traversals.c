@@ -1,4 +1,8 @@
+/* ******************************************************************************** */
+
 #include "./18. tree_traversals.h"
+
+/* ******************************************************************************** */
 
 void level_order(tree_node *t){
     queue_a queue = queue_a_init(TREE_NODE, 50);
@@ -20,6 +24,8 @@ void level_order(tree_node *t){
     queue_a_deinit(&queue);
 }
 
+/* ******************************************************************************** */
+
 void pre_order(tree_node *t){
     stack_a stack = stack_a_init(TREE_NODE, 50);
 
@@ -39,6 +45,8 @@ void pre_order(tree_node *t){
 
     stack_a_deinit(&stack);
 }
+
+/* ******************************************************************************** */
 
 void in_order(tree_node *t){
     stack_a stack = stack_a_init(TREE_NODE, 50);
@@ -65,6 +73,8 @@ void in_order(tree_node *t){
     stack_a_deinit(&stack);
 }
 
+/* ******************************************************************************** */
+
 void post_order(tree_node *t){
     stack_a stack = stack_a_init(TREE_NODE, 50);
     tree_node *temp;
@@ -88,6 +98,8 @@ void post_order(tree_node *t){
     stack_a_deinit(&stack);
 }
 
+/* ******************************************************************************** */
+
 void pre_order_iterative(tree_node *t){
     stack_a stack = stack_a_init(TREE_NODE, 50);
 
@@ -104,6 +116,8 @@ void pre_order_iterative(tree_node *t){
     }
 }
 
+/* ******************************************************************************** */
+
 void pre_order_recursive(tree_node *t){
     if(t != NULL){
         tree_node_visit(t);
@@ -112,6 +126,8 @@ void pre_order_recursive(tree_node *t){
     }
 }
 
+/* ******************************************************************************** */
+
 void in_order_recursive(tree_node *t){
     if(t != NULL){
         pre_order_recursive(t->left);
@@ -119,3 +135,5 @@ void in_order_recursive(tree_node *t){
         pre_order_recursive(t->right);
     }
 }
+
+/* ******************************************************************************** */

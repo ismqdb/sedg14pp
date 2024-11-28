@@ -1,4 +1,8 @@
+/* ******************************************************************************** */
+
 #include "./10. parallel_array.h"
+
+/* ******************************************************************************** */
 
 parallel_array init_parallel_array(int size){
     parallel_array array;
@@ -16,14 +20,20 @@ parallel_array init_parallel_array(int size){
     return array;
 }
 
+/* ******************************************************************************** */
+
 void deinit_parallel_array(parallel_array *array){
     free(array->key);
     free(array->next);
 }
 
+/* ******************************************************************************** */
+
 void parallel_array_delete_next(parallel_array *array, char t){
     array->next[t] = array->next[array->next[t]];
 }
+
+/* ******************************************************************************** */
 
 char parallel_array_insert_after(parallel_array *array, char newValue, char existing){
     array->key[array->current] = newValue;
@@ -33,6 +43,8 @@ char parallel_array_insert_after(parallel_array *array, char newValue, char exis
 
     return array->current++;
 }
+
+/* ******************************************************************************** */
 
 void parallel_array_print_all(parallel_array *array){
     char x = array->next[array->head];
@@ -44,6 +56,8 @@ void parallel_array_print_all(parallel_array *array){
 
     putchar(10);
 }
+
+/* ******************************************************************************** */
 
 int parallel_array_main(){
     parallel_array array = init_parallel_array(10);
@@ -64,3 +78,5 @@ int parallel_array_main(){
 
     parallel_array_print_all(&array);
 }
+
+/* ******************************************************************************** */

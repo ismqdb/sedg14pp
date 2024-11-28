@@ -1,8 +1,14 @@
+/* ******************************************************************************** */
+
 #include "./15. dl_list.h"
+
+/* ******************************************************************************** */
 
 dll_node* dl_list_alloc(){
     return (dll_node*)malloc(sizeof(dll_node));
 }
+
+/* ******************************************************************************** */
 
 dl_list dl_list_init(){
     dl_list dl_list;
@@ -17,10 +23,14 @@ dl_list dl_list_init(){
     dl_list.tail->next = dl_list.tail;
 }
 
+/* ******************************************************************************** */
+
 void dl_list_deinit(dl_list list){
     free(list.head);
     free(list.tail);
 }
+
+/* ******************************************************************************** */
 
 dll_node* dl_list_insert_after(dll_node *node, int value){
     dll_node *new = dl_list_alloc();
@@ -33,7 +43,11 @@ dll_node* dl_list_insert_after(dll_node *node, int value){
     return new;
 }
 
+/* ******************************************************************************** */
+
 void dl_list_remove_next(dll_node *node){
     node->next = node->next->next;
     node->next->prev = node;
 }
+
+/* ******************************************************************************** */

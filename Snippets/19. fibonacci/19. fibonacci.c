@@ -1,4 +1,8 @@
+/* ******************************************************************************** */
+
 #include "./19. fibonacci.h"
+
+/* ******************************************************************************** */
 
 int fibonacci_recursive(int n){
     if(n < 0)
@@ -10,6 +14,8 @@ int fibonacci_recursive(int n){
     return fibonacci_recursive(n-1) + fibonacci_recursive(n-2);
 }
 
+/* ******************************************************************************** */
+
 int fibonacci_iterative(int n){
     int i;
     int array[n+2];
@@ -20,3 +26,5 @@ int fibonacci_iterative(int n){
         
     return array[n];
 }
+
+/* ******************************************************************************** */

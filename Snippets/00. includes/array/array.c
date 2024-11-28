@@ -1,4 +1,8 @@
+/* ******************************************************************************** */
+
 #include "./array.h"
+
+/* ******************************************************************************** */
 
 array create_array(data_type type){
     array a;
@@ -16,6 +20,8 @@ array create_array(data_type type){
     return a;
 }
 
+/* ******************************************************************************** */
+
 void destroy_array(array *a){
     a->current_size = 0;
 
@@ -26,6 +32,8 @@ void destroy_array(array *a){
     }
 }
 
+/* ******************************************************************************** */
+
 int insert_int(array *a, int value){
     if(a->current_size == a->allocated_size){
         a->allocated_size += 25;
@@ -34,3 +42,5 @@ int insert_int(array *a, int value){
     a->data.ints[a->current_size] = value;
     a->current_size++;
 }
+
+/* ******************************************************************************** */
