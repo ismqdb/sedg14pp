@@ -13,7 +13,7 @@ int fibonacci_iterative(int);
 
 /* ******************************************************************************** */
 
-int fibonacciRR2(int);
-int fibonacciRR2(int);
+int fibonacci_rr1(int);
+int fibonacci_rr2(int);
 
 /* ******************************************************************************** */

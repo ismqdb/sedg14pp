@@ -29,7 +29,7 @@ int fibonacci_iterative(int n){
 
 /* ******************************************************************************** */
 
-int fibonacciRR1(int n){
+int fibonacci_rr1(int n){
     if(n < 0)
         return -1;
 
@@ -55,7 +55,7 @@ int fibonacciRR1(int n){
 
 /* ******************************************************************************** */
 
-int fibonacciRR2(int n){
+int fibonacci_rr2(int n){
     if(n < 0)
         return -1;
 
