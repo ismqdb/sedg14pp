@@ -12,7 +12,7 @@ void level_order(treeNode *t){
     while(!queue_a_is_empty(&queue)){
         t = queue_a_get_tree_node(&queue);
         
-        tree_node_visit(t);
+        visitTreeNode(t);
 
         if(t->left != NULL)
             queue_a_put_tree_node(&queue, t->left);
@@ -34,7 +34,7 @@ void pre_order(treeNode *t){
     while(!stackArrayIsEmpty(&stack)){
         t = stackArrayPopTreeNode(&stack);
 
-        tree_node_visit(t);
+        visitTreeNode(t);
 
         if(t->right != NULL)
             stackArrayPushTreeNode(&stack, t->right);
@@ -59,7 +59,7 @@ void in_order(treeNode *t){
             stackArrayPushTreeNode(&stack, t);
             t = temp;
         } else {
-            tree_node_visit(t);
+            visitTreeNode(t);
             t = stackArrayPopTreeNode(&stack);
             stackArrayPopTreeNode(&stack);
             
@@ -87,13 +87,13 @@ void post_order(treeNode *t){
             stackArrayPushTreeNode(&stack, temp);
             t = t->left;
         } else {
-            tree_node_visit(t);
+            visitTreeNode(t);
             t = stackArrayPopTreeNode(&stack);
             stackArrayPopTreeNode(&stack);
         }
     } while(!stackArrayIsEmpty(&stack));
 
-    tree_node_visit(t);
+    visitTreeNode(t);
 
     stackArrayDeinit(&stack);
 }
@@ -109,7 +109,7 @@ void pre_order_iterative(treeNode *t){
         t = stackArrayPopTreeNode(&stack);
 
         while(t != NULL){
-            tree_node_visit(t);
+            visitTreeNode(t);
             stackArrayPushTreeNode(&stack, t->right);
             t = t->left;
         }
@@ -120,7 +120,7 @@ void pre_order_iterative(treeNode *t){
 
 void pre_order_recursive(treeNode *t){
     if(t != NULL){
-        tree_node_visit(t);
+        visitTreeNode(t);
         pre_order_recursive(t->left);
         pre_order_recursive(t->right);
     }
@@ -131,7 +131,7 @@ void pre_order_recursive(treeNode *t){
 void in_order_recursive(treeNode *t){
     if(t != NULL){
         pre_order_recursive(t->left);
-        tree_node_visit(t);
+        visitTreeNode(t);
         pre_order_recursive(t->right);
     }
 }

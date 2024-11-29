@@ -1,6 +1,6 @@
 /* ******************************************************************************** */
 
-#include "./parse_tree.h"
+#include "./parseTree.h"
 
 /* ******************************************************************************** */
 
@@ -19,7 +19,7 @@ treeNode* build_parse_tree(){
         if(c == '(' || c == ')' || c == ' ')
             continue;
 
-        x = tree_node_init_char(c);
+        x = treeNodeInitChar(c);
 
         if(c == '+' || c == '*'){
             if(!stackArrayIsEmpty(&stack)){

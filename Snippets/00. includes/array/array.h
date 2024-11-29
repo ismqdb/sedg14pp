@@ -22,16 +22,16 @@ typedef struct array {
         int *ints;
     } data;
 
-    int current_size;
-    int allocated_size;
-    int block_size;
+    int currentSize;
+    int allocatedSize;
+    int blockSize;
 } array;
 
 /* ******************************************************************************** */
 
-array create_array(treeNodeDataType);
-void destroy_array(array*);
-int insert_int(array*, int);
+array createArray(treeNodeDataType);
+void destroyArray(array*);
+int insertInt(array*, int);
 
 /* ******************************************************************************** */
 

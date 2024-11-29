@@ -62,6 +62,9 @@
         "tree_node.h": "c",
         "parse_tree.h": "c",
         "masssuicide.h": "c",
-        "postfix.h": "c"
+        "postfix.h": "c",
+        "22. recursion_removal_inorder.h": "c",
+        "parsetree.h": "c",
+        "treenode.h": "c"
     }
 }

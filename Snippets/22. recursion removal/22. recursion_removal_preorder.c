@@ -6,7 +6,7 @@
 
 void traverse_preorder(treeNode *t){
     if(t != NULL){
-        tree_node_visit(t);
+        visitTreeNode(t);
         traverse_preorder(t->left);
         traverse_preorder(t->right);
     }
@@ -18,7 +18,7 @@ void remove_recursion_1(treeNode *t){
     l:
         if(t == NULL)
             goto x;
-        tree_node_visit(t);
+        visitTreeNode(t);
         remove_recursion_1(t->left);
         t = t->right;
         goto l;
@@ -35,7 +35,7 @@ void remove_recursion_2(treeNode *t){
     l:
         if(t == NULL)
             goto s;
-        tree_node_visit(t);
+        visitTreeNode(t);
         stackArrayPushTreeNode(&stack, t->right);
         t = t->left;
         goto l;
@@ -57,7 +57,7 @@ void remove_recursion_3(treeNode *t){
 
     l:
         while(t != NULL){
-            tree_node_visit(t);
+            visitTreeNode(t);
             stackArrayPushTreeNode(&stack, t->right);
             t = t->left;
         }
@@ -83,7 +83,7 @@ void remove_recursion_4(treeNode *t){
         t = stackArrayPopTreeNode(&stack);
 
         while(t != NULL){
-           tree_node_visit(t); 
+           visitTreeNode(t); 
            stackArrayPushTreeNode(&stack, t->right);
            t = t->left;
         }

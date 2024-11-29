@@ -9,7 +9,7 @@
 
 /* ******************************************************************************** */
 
-#include "../parse tree/parse_tree.h"
+#include "../parse tree/parseTree.h"
 
 /* ******************************************************************************** */
 
@@ -28,16 +28,18 @@ struct tnodePair {
 
 /* ******************************************************************************** */
 
-treeNode* tree_node_init();
-treeNode* tree_node_init_char(char);
-
-void tree_node_deinit(treeNode*);
-void tree_node_visit(treeNode*);
+treeNode* treeNodeInit();
+treeNode* treeNodeInitChar(char);
 
 /* ******************************************************************************** */
 
-int draw_binary_tree_recursive(treeNode*, struct tnodePair**, int, int);
-void external_path_length(treeNode*, int, int*);
-int draw_binary_tree_recursive_driver();
+void treeNodeDeinit(treeNode*);
+
+/* ******************************************************************************** */
+
+int binaryTreeDrawRecursive(treeNode*, struct tnodePair**, int, int);
+void externalPathLenTreeNode(treeNode*, int, int*);
+int binaryTreeDrawRecursiveDriver();
+void visitTreeNode(treeNode*);
 
 /* ******************************************************************************** */

@@ -4,16 +4,16 @@
 
 /* ******************************************************************************** */
 
-array create_array(treeNodeDataType type){
+array createArray(treeNodeDataType type){
     array a;
 
-    a.current_size = 0;
-    a.block_size = 25;
-    a.allocated_size = a.block_size;
+    a.currentSize = 0;
+    a.blockSize = 25;
+    a.allocatedSize = a.blockSize;
     
     switch(type){
         case INT:
-            a.data.ints = heapAllocSized(int, a.current_size);
+            a.data.ints = heapAllocSized(int, a.currentSize);
         break;
     }
 
@@ -22,8 +22,8 @@ array create_array(treeNodeDataType type){
 
 /* ******************************************************************************** */
 
-void destroy_array(array *a){
-    a->current_size = 0;
+void destroyArray(array *a){
+    a->currentSize = 0;
 
     switch(a->type){
         case INT:
@@ -34,13 +34,13 @@ void destroy_array(array *a){
 
 /* ******************************************************************************** */
 
-int insert_int(array *a, int value){
-    if(a->current_size == a->allocated_size){
-        a->allocated_size += 25;
-        a->data.ints = heapRealloc(int, a->data.ints, a->allocated_size);
+int insertInt(array *a, int value){
+    if(a->currentSize == a->allocatedSize){
+        a->allocatedSize += 25;
+        a->data.ints = heapRealloc(int, a->data.ints, a->allocatedSize);
     }
-    a->data.ints[a->current_size] = value;
-    a->current_size++;
+    a->data.ints[a->currentSize] = value;
+    a->currentSize++;
 }
 
 /* ******************************************************************************** */

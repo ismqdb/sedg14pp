@@ -9,8 +9,8 @@
 /* ******************************************************************************** */
 
 #include "../00. includes/treeNodeDataType.h"
-#include "../00. includes/tree node/tree_node.h"
-#include "../00. includes/tree node rs/tree_node_rs.h"
+#include "../00. includes/tree node/treeNode.h"
+#include "../00. includes/tree node RS/treeNodeRS.h"
 
 /* ******************************************************************************** */
 

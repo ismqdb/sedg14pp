@@ -8,8 +8,8 @@
 
 /* ******************************************************************************** */
 
-#include "../00. includes/tree node/tree_node.h"
-#include "../00. includes/parse tree/parse_tree.h"
+#include "../00. includes/tree node/treeNode.h"
+#include "../00. includes/parse tree/parseTree.h"
 
 /* ******************************************************************************** */
 

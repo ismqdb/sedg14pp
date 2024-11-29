@@ -6,11 +6,11 @@ enable_testing()
 
 add_executable(sedg14 main.c 
     "Snippets/00. includes/array/array.c"
-    "Snippets/00. includes/dll node/dll_node.c"
+    "Snippets/00. includes/node DLL/nodeDLL.c"
     "Snippets/00. includes/node/node.c"
-    "Snippets/00. includes/tree node/tree_node.c"
-    "Snippets/00. includes/tree node rs/tree_node_rs.c"
-    "Snippets/00. includes/parse tree/parse_tree.c"
+    "Snippets/00. includes/tree node/treeNode.c"
+    "Snippets/00. includes/tree node RS/treeNodeRS.c"
+    "Snippets/00. includes/parse tree/parseTree.c"
     "Snippets/00. includes/mass suicide/massSuicide.c"
     "Snippets/00. includes/postfix/postfix.c"
 

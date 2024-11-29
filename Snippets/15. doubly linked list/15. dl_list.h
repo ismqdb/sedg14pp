@@ -4,21 +4,21 @@
 
 /* ******************************************************************************** */
 
-#include "../00. includes/dll node/dll_node.h"
+#include "../00. includes/node DLL/nodeDLL.h"
 
 /* ******************************************************************************** */
 
 typedef struct dl_list {
-    dll_node *head;
-    dll_node *tail;
+    struct nodeDLL *head;
+    struct nodeDLL *tail;
 } dl_list;
 
 /* ******************************************************************************** */
 
-dll_node* dl_list_alloc();
+struct nodeDLL* nodeDLLAlloc();
 dl_list dl_list_init();
 void dl_list_deinit(dl_list);
-dll_node* dl_list_insert_after(dll_node*, int);
-void dl_list_remove_next(dll_node*);
+struct nodeDLL* dl_list_insert_after(struct nodeDLL*, int);
+void dl_list_remove_next(struct nodeDLL*);
 
 /* ******************************************************************************** */

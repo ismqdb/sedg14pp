@@ -15,7 +15,7 @@ void in_order_rr0(treeNode *t){
             stackArrayPushTreeNode(&stack, t);
             t = temp;
         } else {
-            tree_node_visit(t);
+            visitTreeNode(t);
             t = stackArrayPopTreeNode(&stack);
             stackArrayPopTreeNode(&stack);
             
