@@ -12,7 +12,7 @@ array create_array(treeNodeDataType type){
     a.allocated_size = a.block_size;
     
     switch(type){
-        case integer:
+        case INT:
             a.data.ints = heapAllocSized(int, a.current_size);
         break;
     }
@@ -26,7 +26,7 @@ void destroy_array(array *a){
     a->current_size = 0;
 
     switch(a->type){
-        case integer:
+        case INT:
             free(a->data.ints);
         break;
     }

@@ -13,17 +13,17 @@
 
 /* ******************************************************************************** */
 
-#include "../12. stack array/12. stack_a.h"
+#include "../12. stack array/12. stackArray.h"
 #include "../13. queue array/13. queue_a.h"
 
 /* ******************************************************************************** */
 
-void level_order(tree_node*);
-void pre_order(tree_node*);
-void in_order(tree_node*);
-void post_order(tree_node*);
-void pre_order_iterative(tree_node*);
-void pre_order_recursive(tree_node*);
-void in_order_recursive(tree_node*);
+void level_order(treeNode*);
+void pre_order(treeNode*);
+void in_order(treeNode*);
+void post_order(treeNode*);
+void pre_order_iterative(treeNode*);
+void pre_order_recursive(treeNode*);
+void in_order_recursive(treeNode*);
 
 /* ******************************************************************************** */

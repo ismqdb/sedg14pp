@@ -13,27 +13,35 @@
 
 /* ******************************************************************************** */
 
-typedef struct stack_a {
+typedef struct stackArray {
     treeNodeDataType type;
     union {
         int* integer;
-        struct tree_node** tree_node;
+        struct treeNode** treeNode;
     } data;
     int p;
-    int current_size;
-    int chunk_size;
-} stack_a;
+    int currentSize;
+    int chunkSize;
+} stackArray;
 
 /* ******************************************************************************** */
 
-void stack_a_push_int(stack_a*, int);
-void stack_a_push_tree_node(stack_a*, struct tree_node*);
-int stack_a_pop_int(stack_a*);
-struct tree_node* stack_a_pop_tree_node(stack_a*);
-stack_a stack_a_init(treeNodeDataType, int);
-void stack_a_deinit(stack_a*);
-int stack_a_is_empty(stack_a*);
+void stackArrayPushInt(stackArray*, int);
+void stackArrayPushTreeNode(stackArray*, struct treeNode*);
 
-int stack_a_size(stack_a*);
+/* ******************************************************************************** */
+
+int stackArrayPopInt(stackArray*);
+struct treeNode* stackArrayPopTreeNode(stackArray*);
+
+/* ******************************************************************************** */
+
+stackArray stackArrayInit(treeNodeDataType, int);
+void stackArrayDeinit(stackArray*);
+
+/* ******************************************************************************** */
+
+int stackArrayIsEmpty(stackArray*);
+int stackArraySize(stackArray*);
 
 /* ******************************************************************************** */

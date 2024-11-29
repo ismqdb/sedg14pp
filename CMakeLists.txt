@@ -23,7 +23,7 @@ add_executable(sedg14 main.c
     "Snippets/10. parallel array/10. parallel_array.c"
     "Snippets/11. stack linked list/11. stack_ll.c"
     "Snippets/11a. postfix/11a. postfix.c"
-    "Snippets/12. stack array/12. stack_a.c"
+    "Snippets/12. stack array/12. stackArray.c"
     "Snippets/13. queue array/13. queue_a.c"
     "Snippets/14. 2d/14. 2d.c"
     "Snippets/15. doubly linked list/15. dl_list.c"

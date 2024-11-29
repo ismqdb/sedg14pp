@@ -1,86 +1,86 @@
 /* ******************************************************************************** */
 
-#include "./12. stack_a.h"
+#include "./12. stackArray.h"
 
 /* ******************************************************************************** */
 
-void stack_a_push_int(stack_a *stack, int v){
-    if(stack->p == stack->current_size){
-        stack->current_size += stack->chunk_size;
-        stack->data.integer = (int*)realloc(stack->data.integer, stack->current_size*sizeof(int));
+void stackArrayPushInt(stackArray *stack, int v){
+    if(stack->p == stack->currentSize){
+        stack->currentSize += stack->chunkSize;
+        stack->data.integer = (int*)realloc(stack->data.integer, stack->currentSize*sizeof(int));
     }
     stack->data.integer[stack->p++] = v;
 }
 
 /* ******************************************************************************** */
 
-void stack_a_push_tree_node(stack_a *stack, tree_node* t_node){
-    if(stack->p == stack->current_size){
-        stack->current_size += stack->chunk_size;
-        stack->data.tree_node = (tree_node**)realloc(stack->data.tree_node, stack->current_size*sizeof(tree_node));
+void stackArrayPushTreeNode(stackArray *stack, treeNode* t_node){
+    if(stack->p == stack->currentSize){
+        stack->currentSize += stack->chunkSize;
+        stack->data.treeNode = (treeNode**)realloc(stack->data.treeNode, stack->currentSize*sizeof(treeNode));
     }
-    stack->data.tree_node[stack->p++] = t_node;
+    stack->data.treeNode[stack->p++] = t_node;
 }
 
 /* ******************************************************************************** */
 
-int stack_a_pop_int(stack_a *stack){
+int stackArrayPopInt(stackArray *stack){
     return stack->data.integer[--stack->p];
 }
 
 /* ******************************************************************************** */
 
-tree_node* stack_a_pop_tree_node(stack_a *stack){
-    return stack->data.tree_node[--stack->p];
+treeNode* stackArrayPopTreeNode(stackArray *stack){
+    return stack->data.treeNode[--stack->p];
 }
 
 /* ******************************************************************************** */
 
-stack_a stack_a_init(treeNodeDataType type, int size){
-    stack_a stack;
-    stack.current_size = 0;
-    stack.chunk_size = 25;
+stackArray stackArrayInit(treeNodeDataType type, int size){
+    stackArray stack;
+    stack.currentSize = 0;
+    stack.chunkSize = 25;
     stack.type = type;
 
     switch(type){
-        case integer:
+        case INT:
             stack.data.integer = (int*)malloc(size*sizeof(int));
             break;
-        case treeNode:
-            stack.data.tree_node = (tree_node**)malloc(size*sizeof(tree_node));
+        case TREE_NODE:
+            stack.data.treeNode = (treeNode**)malloc(size*sizeof(treeNode));
             break;
     }
 
     stack.p = 0;
-    stack.current_size += size;
+    stack.currentSize += size;
 
     return stack;
 }
 
 /* ******************************************************************************** */
 
-void stack_a_deinit(stack_a *stack){
+void stackArrayDeinit(stackArray *stack){
     stack->p = 0;
 
     switch(stack->type){
-        case integer:
+        case INT:
             free(stack->data.integer);
             break;
-        case treeNode:
-            free(stack->data.tree_node);
+        case TREE_NODE:
+            free(stack->data.treeNode);
             break;
     }
 }
 
 /* ******************************************************************************** */
 
-int stack_a_is_empty(stack_a *stack){
+int stackArrayIsEmpty(stackArray *stack){
     return !stack->p;
 }
 
 /* ******************************************************************************** */
 
-int stack_a_size(stack_a *stack){
+int stackArraySize(stackArray *stack){
     return stack->p > 0 ? stack->p - 1 : 0;
 }
 

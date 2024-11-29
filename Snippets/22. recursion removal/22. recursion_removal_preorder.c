@@ -4,7 +4,7 @@
 
 /* ******************************************************************************** */
 
-void traverse_preorder(tree_node *t){
+void traverse_preorder(treeNode *t){
     if(t != NULL){
         tree_node_visit(t);
         traverse_preorder(t->left);
@@ -14,7 +14,7 @@ void traverse_preorder(tree_node *t){
 
 /* ******************************************************************************** */
 
-void remove_recursion_1(tree_node *t){
+void remove_recursion_1(treeNode *t){
     l:
         if(t == NULL)
             goto x;
@@ -29,67 +29,67 @@ void remove_recursion_1(tree_node *t){
 
 /* ******************************************************************************** */
 
-void remove_recursion_2(tree_node *t){
-    stack_a stack = stack_a_init(treeNode, 50);
+void remove_recursion_2(treeNode *t){
+    stackArray stack = stackArrayInit(TREE_NODE, 50);
 
     l:
         if(t == NULL)
             goto s;
         tree_node_visit(t);
-        stack_a_push_tree_node(&stack, t->right);
+        stackArrayPushTreeNode(&stack, t->right);
         t = t->left;
         goto l;
 
     s:
-        if(stack_a_is_empty(&stack))
+        if(stackArrayIsEmpty(&stack))
             goto x;
-        t = stack_a_pop_tree_node(&stack);
+        t = stackArrayPopTreeNode(&stack);
         goto l;
 
     x: 
-        stack_a_deinit(&stack);
+        stackArrayDeinit(&stack);
 }
 
 /* ******************************************************************************** */
 
-void remove_recursion_3(tree_node *t){
-    stack_a stack = stack_a_init(treeNode, 50);
+void remove_recursion_3(treeNode *t){
+    stackArray stack = stackArrayInit(TREE_NODE, 50);
 
     l:
         while(t != NULL){
             tree_node_visit(t);
-            stack_a_push_tree_node(&stack, t->right);
+            stackArrayPushTreeNode(&stack, t->right);
             t = t->left;
         }
 
-        if(stack_a_is_empty(&stack))
+        if(stackArrayIsEmpty(&stack))
             goto x;
 
-        t = stack_a_pop_tree_node(&stack);
+        t = stackArrayPopTreeNode(&stack);
         goto l;
 
     x: 
-        stack_a_deinit(&stack);
+        stackArrayDeinit(&stack);
 }
 
 /* ******************************************************************************** */
 
-void remove_recursion_4(tree_node *t){
-    stack_a stack = stack_a_init(treeNode, 50);
+void remove_recursion_4(treeNode *t){
+    stackArray stack = stackArrayInit(TREE_NODE, 50);
 
-    stack_a_push_tree_node(&stack, t);
+    stackArrayPushTreeNode(&stack, t);
 
-    while(!stack_a_is_empty(&stack)){
-        t = stack_a_pop_tree_node(&stack);
+    while(!stackArrayIsEmpty(&stack)){
+        t = stackArrayPopTreeNode(&stack);
 
         while(t != NULL){
            tree_node_visit(t); 
-           stack_a_push_tree_node(&stack, t->right);
+           stackArrayPushTreeNode(&stack, t->right);
            t = t->left;
         }
     }
 
-    stack_a_deinit(&stack);
+    stackArrayDeinit(&stack);
 }
 
 /* ******************************************************************************** */

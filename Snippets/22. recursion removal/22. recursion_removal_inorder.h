@@ -10,9 +10,9 @@
 
 #include "../00. includes/tree node/tree_node.h"
 #include "../00. includes/parse tree/parse_tree.h"
-#include "../12. stack array/12. stack_a.h"
+#include "../12. stack array/12. stackArray.h"
 #include "../13. queue array/13. queue_a.h"
 
 /* ******************************************************************************** */
 
-void in_order_rr0(tree_node*);
+void in_order_rr0(treeNode*);

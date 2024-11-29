@@ -13,31 +13,31 @@
 
 /* ******************************************************************************** */
 
-typedef struct tree_node {
+typedef struct treeNode {
     char info;
-    struct tree_node* left;
-    struct tree_node* right;
-} tree_node;
+    struct treeNode* left;
+    struct treeNode* right;
+} treeNode;
 
 /* ******************************************************************************** */
 
-struct tnode_pair {
-    struct tree_node *node;
+struct tnodePair {
+    struct treeNode *node;
     int index;
 };
 
 /* ******************************************************************************** */
 
-tree_node* tree_node_init();
-tree_node* tree_node_init_char(char);
-void tree_node_deinit(tree_node*);
-void tree_node_visit(tree_node*);
+treeNode* tree_node_init();
+treeNode* tree_node_init_char(char);
+
+void tree_node_deinit(treeNode*);
+void tree_node_visit(treeNode*);
 
 /* ******************************************************************************** */
 
-int draw_binary_tree_recursive(tree_node*, struct tnode_pair**, int, int);
-void external_path_length(tree_node*, int, int*);
+int draw_binary_tree_recursive(treeNode*, struct tnodePair**, int, int);
+void external_path_length(treeNode*, int, int*);
 int draw_binary_tree_recursive_driver();
-void visit_tree_node(tree_node);
 
 /* ******************************************************************************** */

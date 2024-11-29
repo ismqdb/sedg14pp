@@ -4,11 +4,11 @@
 
 /* ******************************************************************************** */
 
-tree_node* build_parse_tree(){
-    tree_node *x;
+treeNode* build_parse_tree(){
+    treeNode *x;
     char c;
 
-    stack_a stack = stack_a_init(treeNode, 50);
+    stackArray stack = stackArrayInit(TREE_NODE, 50);
 
     while(1){
         c = getchar();
@@ -22,18 +22,18 @@ tree_node* build_parse_tree(){
         x = tree_node_init_char(c);
 
         if(c == '+' || c == '*'){
-            if(!stack_a_is_empty(&stack)){
-                x->right = stack_a_pop_tree_node(&stack);
+            if(!stackArrayIsEmpty(&stack)){
+                x->right = stackArrayPopTreeNode(&stack);
             }
-            if(!stack_a_is_empty(&stack)){
-                x->left = stack_a_pop_tree_node(&stack);
+            if(!stackArrayIsEmpty(&stack)){
+                x->left = stackArrayPopTreeNode(&stack);
             }
         }
 
-        stack_a_push_tree_node(&stack, x);
+        stackArrayPushTreeNode(&stack, x);
     }
 
-    tree_node *returnValue = stack_a_pop_tree_node(&stack);
+    treeNode *returnValue = stackArrayPopTreeNode(&stack);
     return returnValue;
 }
 

@@ -4,29 +4,29 @@
 
 /* ******************************************************************************** */
 
-void in_order_rr0(tree_node *t){
-    stack_a stack = stack_a_init(treeNode, 50);
-    tree_node *temp;
+void in_order_rr0(treeNode *t){
+    stackArray stack = stackArrayInit(TREE_NODE, 50);
+    treeNode *temp;
     
     do {
         if(t->left != NULL){
             temp = t->left;
             t->left = NULL;
-            stack_a_push_tree_node(&stack, t);
+            stackArrayPushTreeNode(&stack, t);
             t = temp;
         } else {
             tree_node_visit(t);
-            t = stack_a_pop_tree_node(&stack);
-            stack_a_pop_tree_node(&stack);
+            t = stackArrayPopTreeNode(&stack);
+            stackArrayPopTreeNode(&stack);
             
             if(t->right != NULL){
-                stack_a_push_tree_node(&stack, t->right);
+                stackArrayPushTreeNode(&stack, t->right);
                 t->right = NULL;
             }
         }
-    } while(stack_a_is_empty(&stack));
+    } while(stackArrayIsEmpty(&stack));
 
-    stack_a_deinit(&stack);
+    stackArrayDeinit(&stack);
 }
 
 /* ******************************************************************************** */

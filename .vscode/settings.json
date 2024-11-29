@@ -57,6 +57,9 @@
         "text_encoding": "c",
         "typeinfo": "c",
         "variant": "c",
-        "01. gcd.h": "c"
+        "01. gcd.h": "c",
+        "12. stackarray.h": "c",
+        "tree_node.h": "c",
+        "parse_tree.h": "c"
     }
 }

@@ -44,7 +44,7 @@ struct tree_node_rs* insert_sibling(struct tree_node_rs *parent, struct tree_nod
 /* ******************************************************************************** */
 
 void level_order_traversal(struct tree_node_rs *node){
-    queue_a queue = queue_a_init(integer, 50);
+    queue_a queue = queue_a_init(INT, 50);
     struct tree_node_rs *temp1, *temp2;
 
     queue_a_put_tree_node_rs(&queue, node);
