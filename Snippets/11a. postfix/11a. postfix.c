@@ -8,7 +8,7 @@ array get_postfix(){
     char c;
     stack_ll stack_ll = stack_ll_init();
 
-    array array = create_array(INT);
+    array array = create_array(integer);
 
     while(1){
         int readResult = scanf("%1c", &c);

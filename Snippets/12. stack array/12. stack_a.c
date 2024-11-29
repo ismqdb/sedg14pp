@@ -36,17 +36,17 @@ tree_node* stack_a_pop_tree_node(stack_a *stack){
 
 /* ******************************************************************************** */
 
-stack_a stack_a_init(data_type type, int size){
+stack_a stack_a_init(treeNodeDataType type, int size){
     stack_a stack;
     stack.current_size = 0;
     stack.chunk_size = 25;
     stack.type = type;
 
     switch(type){
-        case INT:
+        case integer:
             stack.data.integer = (int*)malloc(size*sizeof(int));
             break;
-        case TREE_NODE:
+        case treeNode:
             stack.data.tree_node = (tree_node**)malloc(size*sizeof(tree_node));
             break;
     }
@@ -63,10 +63,10 @@ void stack_a_deinit(stack_a *stack){
     stack->p = 0;
 
     switch(stack->type){
-        case INT:
+        case integer:
             free(stack->data.integer);
             break;
-        case TREE_NODE:
+        case treeNode:
             free(stack->data.tree_node);
             break;
     }

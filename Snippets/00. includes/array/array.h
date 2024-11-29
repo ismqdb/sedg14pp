@@ -10,13 +10,13 @@
 
 /* ******************************************************************************** */
 
-#include "../tree_node_data_type.h"
-#include "../alloc_macros.h"
+#include "../treeNodeDataType.h"
+#include "../allocMacros.h"
 
 /* ******************************************************************************** */
 
 typedef struct array {
-    data_type type;
+    treeNodeDataType type;
 
     union {
         int *ints;
@@ -29,7 +29,7 @@ typedef struct array {
 
 /* ******************************************************************************** */
 
-array create_array(data_type);
+array create_array(treeNodeDataType);
 void destroy_array(array*);
 int insert_int(array*, int);
 

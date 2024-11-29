@@ -1,6 +1,6 @@
 /* ******************************************************************************** */
 
-#define heap_alloc_sized(type, size) ((type*)malloc(size*sizeof(type)))
-#define heap_realloc(type, data, size) (data = (type*)realloc(data, size*sizeof(type)))
+#define heapAllocSized(type, size) ((type*)malloc(size*sizeof(type)))
+#define heapRealloc(type, data, size) (data = (type*)realloc(data, size*sizeof(type)))
 
 /* ******************************************************************************** */

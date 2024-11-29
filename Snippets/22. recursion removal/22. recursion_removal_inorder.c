@@ -5,7 +5,7 @@
 /* ******************************************************************************** */
 
 void in_order_rr0(tree_node *t){
-    stack_a stack = stack_a_init(TREE_NODE, 50);
+    stack_a stack = stack_a_init(treeNode, 50);
     tree_node *temp;
     
     do {

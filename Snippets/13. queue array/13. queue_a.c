@@ -67,7 +67,7 @@ struct tree_node_rs* queue_a_get_tree_node_rs(queue_a *queue){
 
 /* ******************************************************************************** */
 
-queue_a queue_a_init(data_type type, int size){
+queue_a queue_a_init(treeNodeDataType type, int size){
     queue_a queue;
     queue.chunk_size = 25;
     queue.current_size = 0;
@@ -76,15 +76,15 @@ queue_a queue_a_init(data_type type, int size){
     queue.current_size = size;
 
     switch(type){
-        case INT:
+        case integer:
             queue.data.integer = (int*)malloc(queue.current_size*sizeof(int));
         break;
 
-        case TREE_NODE:
+        case treeNode:
             queue.data.tree_node = (tree_node**)malloc(queue.current_size*sizeof(tree_node));
         break;
 
-        case TREE_NODE_RS:
+        case treeNodeRS:
             queue.data.tree_node_rs = (struct tree_node_rs**)malloc(queue.current_size*sizeof(struct tree_node_rs));
         break;
     }
@@ -107,15 +107,15 @@ void queue_a_deinit(queue_a *queue){
     queue->tail = 0;
 
     switch(queue->type){
-        case INT:
+        case integer:
             free(queue->data.integer);
         break;
 
-        case TREE_NODE:
+        case treeNode:
             free(queue->data.tree_node);
         break;
 
-        case TREE_NODE_RS:
+        case treeNodeRS:
             free(queue->data.tree_node_rs);
         break;
 

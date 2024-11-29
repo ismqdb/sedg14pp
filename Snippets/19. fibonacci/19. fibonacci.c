@@ -36,7 +36,7 @@ int fibonacci_rr1(int n){
     if(n <= 1)
         return 1;
     
-    stack_a stack = stack_a_init(INT, 50);
+    stack_a stack = stack_a_init(integer, 50);
 
     for(int i = n; i >= 2; i--)
         stack_a_push_int(&stack, i);
@@ -62,7 +62,7 @@ int fibonacci_rr2(int n){
     if(n <= 1)
         return 1;
     
-    stack_a stack = stack_a_init(INT, 50);
+    stack_a stack = stack_a_init(integer, 50);
     int array[n+2];
 
     for(int i = n; i >= 2; i--)

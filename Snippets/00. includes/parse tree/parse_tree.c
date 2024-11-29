@@ -8,7 +8,7 @@ tree_node* build_parse_tree(){
     tree_node *x;
     char c;
 
-    stack_a stack = stack_a_init(TREE_NODE, 50);
+    stack_a stack = stack_a_init(treeNode, 50);
 
     while(1){
         c = getchar();

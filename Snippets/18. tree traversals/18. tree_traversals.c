@@ -5,7 +5,7 @@
 /* ******************************************************************************** */
 
 void level_order(tree_node *t){
-    queue_a queue = queue_a_init(TREE_NODE, 50);
+    queue_a queue = queue_a_init(treeNode, 50);
 
     queue_a_put_tree_node(&queue, t);
 
@@ -27,7 +27,7 @@ void level_order(tree_node *t){
 /* ******************************************************************************** */
 
 void pre_order(tree_node *t){
-    stack_a stack = stack_a_init(TREE_NODE, 50);
+    stack_a stack = stack_a_init(treeNode, 50);
 
     stack_a_push_tree_node(&stack, t);
 
@@ -49,7 +49,7 @@ void pre_order(tree_node *t){
 /* ******************************************************************************** */
 
 void in_order(tree_node *t){
-    stack_a stack = stack_a_init(TREE_NODE, 50);
+    stack_a stack = stack_a_init(treeNode, 50);
     tree_node *temp;
     
     do {
@@ -76,7 +76,7 @@ void in_order(tree_node *t){
 /* ******************************************************************************** */
 
 void post_order(tree_node *t){
-    stack_a stack = stack_a_init(TREE_NODE, 50);
+    stack_a stack = stack_a_init(treeNode, 50);
     tree_node *temp;
 
     do {
@@ -101,7 +101,7 @@ void post_order(tree_node *t){
 /* ******************************************************************************** */
 
 void pre_order_iterative(tree_node *t){
-    stack_a stack = stack_a_init(TREE_NODE, 50);
+    stack_a stack = stack_a_init(treeNode, 50);
 
     stack_a_push_tree_node(&stack, t);
 

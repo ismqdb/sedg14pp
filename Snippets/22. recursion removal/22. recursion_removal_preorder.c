@@ -30,7 +30,7 @@ void remove_recursion_1(tree_node *t){
 /* ******************************************************************************** */
 
 void remove_recursion_2(tree_node *t){
-    stack_a stack = stack_a_init(TREE_NODE, 50);
+    stack_a stack = stack_a_init(treeNode, 50);
 
     l:
         if(t == NULL)
@@ -53,7 +53,7 @@ void remove_recursion_2(tree_node *t){
 /* ******************************************************************************** */
 
 void remove_recursion_3(tree_node *t){
-    stack_a stack = stack_a_init(TREE_NODE, 50);
+    stack_a stack = stack_a_init(treeNode, 50);
 
     l:
         while(t != NULL){
@@ -75,7 +75,7 @@ void remove_recursion_3(tree_node *t){
 /* ******************************************************************************** */
 
 void remove_recursion_4(tree_node *t){
-    stack_a stack = stack_a_init(TREE_NODE, 50);
+    stack_a stack = stack_a_init(treeNode, 50);
 
     stack_a_push_tree_node(&stack, t);
 
