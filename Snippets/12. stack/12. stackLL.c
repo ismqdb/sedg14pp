@@ -1,11 +1,11 @@
 /* ******************************************************************************** */
 
-#include "./11. stack_ll.h"
+#include "./12. stackLL.h"
 
 /* ******************************************************************************** */
 
-stack_ll stack_ll_init(){
-    stack_ll stack;
+struct stackLL stackLLInit(){
+    struct stackLL stack;
     
     stack.head = nodeAlloc();
     stack.tail = nodeAlloc();
@@ -19,19 +19,19 @@ stack_ll stack_ll_init(){
 
 /* ******************************************************************************** */
 
-void stack_ll_push_int(stack_ll stack, int v){
+void stackLLPushInt(struct stackLL *stack, int v){
     node *t = nodeAlloc();
     t->key = v;
-    t->next = stack.head->next;
-    stack.head->next = t; 
+    t->next = stack->head->next;
+    stack->head->next = t; 
 }
 
 /* ******************************************************************************** */
 
-int stack_ll_pop_int(stack_ll stack){
+int stackLLPopInt(struct stackLL *stack){
     int x;
-    node *t = stack.head->next;
-    stack.head->next = t->next;
+    node *t = stack->head->next;
+    stack->head->next = t->next;
     x = t->key;
     free(t);
     return x;
@@ -39,8 +39,8 @@ int stack_ll_pop_int(stack_ll stack){
 
 /* ******************************************************************************** */
 
-int stack_ll_is_empty(stack_ll stack){
-    return stack.head->next == stack.tail;
+int stackLLIsEmpty(struct stackLL *stack){
+    return stack->head->next == stack->tail;
 }
 
 /* ******************************************************************************** */

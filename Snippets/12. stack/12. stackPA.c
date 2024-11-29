@@ -1,11 +1,11 @@
 /* ******************************************************************************** */
 
-#include "./16. stack_pa.h"
+#include "./12. stackPA.h"
 
 /* ******************************************************************************** */
 
-stack_pa stack_pa_init(int size){
-    stack_pa stack;
+struct stackPA stackPAInit(int size){
+    struct stackPA stack;
 
     stack.key_array = malloc(size*sizeof(node*));
     stack.next = (int*)malloc(size*sizeof(int));
@@ -22,7 +22,7 @@ stack_pa stack_pa_init(int size){
 
 /* ******************************************************************************** */
 
-void stack_pa_push(stack_pa *stack, int v){
+void stackPAPushInt(struct stackPA *stack, int v){
     node *new = nodeAllocInt(v);
     stack->key_array[stack->current] = new;
 
@@ -34,14 +34,14 @@ void stack_pa_push(stack_pa *stack, int v){
 
 /* ******************************************************************************** */
 
-int stack_pa_is_empty(stack_pa *stack){
+int stackPAIsEmpty(struct stackPA *stack){
     return stack->current == 2;
 }
 
 /* ******************************************************************************** */
 
-node* stack_pa_pop(stack_pa *stack){
-    if(stack_pa_is_empty(stack))
+node* stackPAPopNode(struct stackPA *stack){
+    if(stackPAIsEmpty(stack))
         return NULL;
 
     node *ret = stack->key_array[stack->next[stack->head]];
@@ -55,7 +55,7 @@ node* stack_pa_pop(stack_pa *stack){
 
 /* ******************************************************************************** */
 
-void stack_pa_deinit(stack_pa *stack){
+void stackPADeinit(struct stackPA *stack){
     stack->next[stack->head] = 0;
     stack->next[stack->tail] = 0;
 
@@ -64,24 +64,6 @@ void stack_pa_deinit(stack_pa *stack){
     stack->current = 0;
 
     free(stack->key_array);
-}
-
-/* ******************************************************************************** */
-
-int stack_pa_main(){
-    int stack_size = 250;
-
-    stack_pa stack = stack_pa_init(stack_size);
-
-    for(int i = 0; i < stack_size; i++)
-        stack_pa_push(&stack, i*10);
-
-    for(int i = 0; i < stack_size; i++)
-        printf("%d\n", stack_pa_pop(&stack)->key);
-
-    stack_pa_deinit(&stack);
-
-    putchar(10);
 }
 
 /* ******************************************************************************** */

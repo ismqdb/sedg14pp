@@ -5,25 +5,35 @@
 /* ******************************************************************************** */
 
 #include <stdio.h>
-#include <ctype.h>
+#include <stdlib.h>
 
 /* ******************************************************************************** */
 
-#include "../00. includes/array/array.h"
 #include "../00. includes/node/node.h"
 
 /* ******************************************************************************** */
 
-typedef struct stack_ll {
-    node *head;
-    node *tail;
-} stack_ll;
+struct stackPA {
+    node **key_array;
+    int *next;
+    int current, head, tail;
+};
 
 /* ******************************************************************************** */
 
-stack_ll stack_ll_init();
-void stack_ll_push_int(stack_ll, int);
-int stack_ll_pop_int(stack_ll);
-int stack_ll_is_empty(stack_ll);
+struct stackPA stackPAInit(int);
+void stackPADeinit(struct stackPA*);
+
+/* ******************************************************************************** */
+
+void stackPAPushInt(struct stackPA*, int);
+
+/* ******************************************************************************** */
+
+node* stackPAPopNode(struct stackPA*);
+
+/* ******************************************************************************** */
+
+int stackPAIsEmpty(struct stackPA*);
 
 /* ******************************************************************************** */
