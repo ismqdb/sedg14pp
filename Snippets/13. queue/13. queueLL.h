@@ -13,16 +13,24 @@
 
 /* ******************************************************************************** */
 
-typedef struct queue_a {
+struct queueArray {
     node *head;
-} queue_a;
+};
 
 /* ******************************************************************************** */
 
-queue_a queue_ll_init();
-void queue_ll_put(queue_a*, int);
-node* queue_ll_get(queue_a*);
-int queue_ll_is_empty(queue_a*);
-int queue_ll_main();
+struct queueArray queueLLInit();
+
+/* ******************************************************************************** */
+
+void queueLLPutInt(struct queueArray*, int);
+
+/* ******************************************************************************** */
+
+node* queueLLGetNode(struct queueArray*);
+
+/* ******************************************************************************** */
+
+int queueLLIsEmpty(struct queueArray*);
 
 /* ******************************************************************************** */

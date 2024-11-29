@@ -27,10 +27,11 @@ add_executable(sedg14 main.c
     "Snippets/12. stack/12. stackArray.c"
     "Snippets/12. stack/12. stackPA.c"
 
-    "Snippets/13. queue array/13. queue_a.c"
+    "Snippets/13. queue/13. queueArray.c"
+    "Snippets/13. queue/13. queueLL.c"
+
     "Snippets/14. 2d/14. 2d.c"
     "Snippets/15. doubly linked list/15. dl_list.c"
-    "Snippets/17. queue linked list/17. queue_ll.c"
     "Snippets/18. tree traversals/18. tree_traversals.c"
     "Snippets/19. fibonacci/19. fibonacci.c"
     "Snippets/20. ruler/20. ruler.c"

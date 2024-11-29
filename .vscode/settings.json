@@ -65,6 +65,7 @@
         "postfix.h": "c",
         "22. recursion_removal_inorder.h": "c",
         "parsetree.h": "c",
-        "treenode.h": "c"
+        "treenode.h": "c",
+        "13. queuearray.h": "c"
     }
 }

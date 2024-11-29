@@ -5,23 +5,23 @@
 /* ******************************************************************************** */
 
 void level_order(treeNode *t){
-    queue_a queue = queue_a_init(TREE_NODE, 50);
+    queueArray queue = queueArrayInit(TREE_NODE, 50);
 
-    queue_a_put_tree_node(&queue, t);
+    queueArrayPutTreeNode(&queue, t);
 
-    while(!queue_a_is_empty(&queue)){
-        t = queue_a_get_tree_node(&queue);
+    while(!queueArrayIsEmpty(&queue)){
+        t = queueArrayGetTreeNode(&queue);
         
         visitTreeNode(t);
 
         if(t->left != NULL)
-            queue_a_put_tree_node(&queue, t->left);
+            queueArrayPutTreeNode(&queue, t->left);
 
         if(t->right != NULL)
-            queue_a_put_tree_node(&queue, t->right);
+            queueArrayPutTreeNode(&queue, t->right);
     }
 
-    queue_a_deinit(&queue);
+    queueArrayDeinit(&queue);
 }
 
 /* ******************************************************************************** */

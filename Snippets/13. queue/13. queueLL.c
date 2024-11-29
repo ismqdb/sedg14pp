@@ -1,11 +1,11 @@
 /* ******************************************************************************** */
 
-#include "./17. queue_ll.h"
+#include "./13. queueLL.h"
 
 /* ******************************************************************************** */
 
-queue_a queue_ll_init(){
-    queue_a queue;
+struct queueArray queueLLInit(){
+    struct queueArray queue;
     queue.head = NULL;
 
     return queue;
@@ -13,7 +13,7 @@ queue_a queue_ll_init(){
 
 /* ******************************************************************************** */
 
-void queue_ll_put(queue_a *queue, int value){
+void queueLLPutInt(struct queueArray *queue, int value){
     node *item = nodeAlloc(value);
     node **p = &queue->head;
 
@@ -31,7 +31,7 @@ void queue_ll_put(queue_a *queue, int value){
 
 /* ******************************************************************************** */
 
-node* queue_ll_get(queue_a *queue){
+node* queueLLGetNode(struct queueArray *queue){
     node *item = queue->head;
 
     queue->head = queue->head->next;
@@ -40,26 +40,8 @@ node* queue_ll_get(queue_a *queue){
 
 /* ******************************************************************************** */
 
-int queue_ll_is_empty(queue_a *queue){
+int queueLLIsEmpty(struct queueArray *queue){
     return queue->head == NULL;
-}
-
-/* ******************************************************************************** */
-
-int queue_ll_main(){
-    queue_a queue = queue_ll_init();
-
-    int size = 5;
-
-    for(int i = 0; i < size; i++)
-        queue_ll_put(&queue, i*i);
-
-    for(int i = 0; i < size; i++)
-        printf("%d\n", queue_ll_get(&queue)->key);
-
-    printf("%s\n", queue_ll_is_empty(&queue) ? "Queue is empty." : "Queue is not empty.");
-
-    putchar(10);
 }
 
 /* ******************************************************************************** */
