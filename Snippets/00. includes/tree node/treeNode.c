@@ -4,22 +4,22 @@
 
 /* ******************************************************************************** */
 
-treeNode* treeNodeInit(){
-    treeNode *n = (treeNode*)malloc(sizeof(treeNode));
+struct treeNode* treeNodeInit(){
+    struct treeNode *n = (struct treeNode*)malloc(sizeof(struct treeNode));
     return n;
 };
 
-treeNode* treeNodeInitChar(char c){
-    treeNode *n = (treeNode*)malloc(sizeof(treeNode));
+struct treeNode* treeNodeInitChar(char c){
+    struct treeNode *n = (struct treeNode*)malloc(sizeof(struct treeNode));
     n->info = c;
     return n;
 };
 
-void treeNodeDeinit(treeNode *n){
+void treeNodeDeinit(struct treeNode *n){
     free(n);
 }
 
-void visitTreeNode(treeNode *t){
+void visitTreeNode(struct treeNode *t){
     if(t == NULL)
         return;
     
@@ -28,7 +28,7 @@ void visitTreeNode(treeNode *t){
 
 /* ******************************************************************************** */
 
-int tnode_compare(const void *t1, const void *t2){
+int tnodeCompare(const void *t1, const void *t2){
     struct tnodePair *d1 = *(struct tnodePair**)t1;
     struct tnodePair *d2 = *(struct tnodePair**)t2;
 
@@ -63,17 +63,17 @@ int binaryTreeDrawRecursive(struct treeNode* t, struct tnodePair **pairs, int le
 
 /* ******************************************************************************** */
 
-void externalPathLenTreeNode(treeNode *t, int level, int *len){
+void externalPathLenstruct(struct treeNode *t, int level, int *len){
     if(t->left || t->right)
         level++;
 
     if(t->left)
-        externalPathLenTreeNode(t->left, level, len);
+        externalPathLenstruct(t->left, level, len);
     else
         len += level;
 
     if(t->right)
-        externalPathLenTreeNode(t->right, level, len);
+        externalPathLenstruct(t->right, level, len);
     else
         len += level;
 }
@@ -83,12 +83,12 @@ void externalPathLenTreeNode(treeNode *t, int level, int *len){
 int binaryTreeDrawRecursiveDriver(){
     int screenWidth = 80;
 
-    treeNode *t = build_parse_tree();
+    struct treeNode *t = buildParseTree();
     struct tnodePair **pairs = (struct tnodePair**)calloc(20, sizeof(struct tnodePair**));
 
     int k = binaryTreeDrawRecursive(t, pairs, 0, screenWidth);
 
-    qsort(pairs, k, sizeof(struct tnodePair*), tnode_compare);
+    qsort(pairs, k, sizeof(struct tnodePair*), tnodeCompare);
 
     putchar(10);
     for(int pos = 0, printed = 0; pos < screenWidth; pos++){

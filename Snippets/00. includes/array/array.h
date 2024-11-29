@@ -15,7 +15,7 @@
 
 /* ******************************************************************************** */
 
-typedef struct array {
+struct array {
     treeNodeDataType type;
 
     union {
@@ -25,13 +25,13 @@ typedef struct array {
     int currentSize;
     int allocatedSize;
     int blockSize;
-} array;
+};
 
 /* ******************************************************************************** */
 
-array createArray(treeNodeDataType);
-void destroyArray(array*);
-int insertInt(array*, int);
+struct array createArray(treeNodeDataType);
+void destroyArray(struct array*);
+int insertInt(struct array*, int);
 
 /* ******************************************************************************** */
 

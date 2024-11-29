@@ -4,9 +4,9 @@
 
 /* ******************************************************************************** */
 
-void in_order_rr0(treeNode *t){
+void inOrderRR0(struct treeNode *t){
     stackArray stack = stackArrayInit(TREE_NODE, 50);
-    treeNode *temp;
+    struct treeNode *temp;
     
     do {
         if(t->left != NULL){

@@ -14,10 +14,10 @@ void stackArrayPushInt(stackArray *stack, int v){
 
 /* ******************************************************************************** */
 
-void stackArrayPushTreeNode(stackArray *stack, treeNode* t_node){
+void stackArrayPushTreeNode(stackArray *stack, struct treeNode* t_node){
     if(stack->p == stack->currentSize){
         stack->currentSize += stack->chunkSize;
-        stack->data.treeNode = (treeNode**)realloc(stack->data.treeNode, stack->currentSize*sizeof(treeNode));
+        stack->data.treeNode = (struct treeNode**)realloc(stack->data.treeNode, stack->currentSize*sizeof(struct treeNode));
     }
     stack->data.treeNode[stack->p++] = t_node;
 }
@@ -30,7 +30,7 @@ int stackArrayPopInt(stackArray *stack){
 
 /* ******************************************************************************** */
 
-treeNode* stackArrayPopTreeNode(stackArray *stack){
+struct treeNode* stackArrayPopTreeNode(stackArray *stack){
     return stack->data.treeNode[--stack->p];
 }
 
@@ -47,7 +47,7 @@ stackArray stackArrayInit(treeNodeDataType type, int size){
             stack.data.integer = (int*)malloc(size*sizeof(int));
             break;
         case TREE_NODE:
-            stack.data.treeNode = (treeNode**)malloc(size*sizeof(treeNode));
+            stack.data.treeNode = (struct treeNode**)malloc(size*sizeof(struct treeNode));
             break;
     }
 

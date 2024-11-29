@@ -4,22 +4,22 @@
 
 /* ******************************************************************************** */
 
-void traverse_preorder(treeNode *t){
+void preOrderRR0(struct treeNode *t){
     if(t != NULL){
         visitTreeNode(t);
-        traverse_preorder(t->left);
-        traverse_preorder(t->right);
+        preOrderRR0(t->left);
+        preOrderRR0(t->right);
     }
 }
 
 /* ******************************************************************************** */
 
-void remove_recursion_1(treeNode *t){
+void preOrderRR1(struct treeNode *t){
     l:
         if(t == NULL)
             goto x;
         visitTreeNode(t);
-        remove_recursion_1(t->left);
+        preOrderRR1(t->left);
         t = t->right;
         goto l;
     
@@ -29,7 +29,7 @@ void remove_recursion_1(treeNode *t){
 
 /* ******************************************************************************** */
 
-void remove_recursion_2(treeNode *t){
+void preOrderRR2(struct treeNode *t){
     stackArray stack = stackArrayInit(TREE_NODE, 50);
 
     l:
@@ -52,7 +52,7 @@ void remove_recursion_2(treeNode *t){
 
 /* ******************************************************************************** */
 
-void remove_recursion_3(treeNode *t){
+void preOrderRR3(struct treeNode *t){
     stackArray stack = stackArrayInit(TREE_NODE, 50);
 
     l:
@@ -74,7 +74,7 @@ void remove_recursion_3(treeNode *t){
 
 /* ******************************************************************************** */
 
-void remove_recursion_4(treeNode *t){
+void preOrderRR4(struct treeNode *t){
     stackArray stack = stackArrayInit(TREE_NODE, 50);
 
     stackArrayPushTreeNode(&stack, t);

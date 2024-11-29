@@ -4,8 +4,8 @@
 
 /* ******************************************************************************** */
 
-array createArray(treeNodeDataType type){
-    array a;
+struct array createArray(treeNodeDataType type){
+    struct array a;
 
     a.currentSize = 0;
     a.blockSize = 25;
@@ -22,7 +22,7 @@ array createArray(treeNodeDataType type){
 
 /* ******************************************************************************** */
 
-void destroyArray(array *a){
+void destroyArray(struct array *a){
     a->currentSize = 0;
 
     switch(a->type){
@@ -34,7 +34,7 @@ void destroyArray(array *a){
 
 /* ******************************************************************************** */
 
-int insertInt(array *a, int value){
+int insertInt(struct array *a, int value){
     if(a->currentSize == a->allocatedSize){
         a->allocatedSize += 25;
         a->data.ints = heapRealloc(int, a->data.ints, a->allocatedSize);

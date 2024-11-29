@@ -15,10 +15,10 @@
 
 /* ******************************************************************************** */
 
-void traverse_pre_order();
-void remove_recursion_1(treeNode*);
-void remove_recursion_2(treeNode*);
-void remove_recursion_3(treeNode*);
-void remove_recursion_4(treeNode*);
+void preOrderRR0(struct treeNode*);
+void preOrderRR1(struct treeNode*);
+void preOrderRR2(struct treeNode*);
+void preOrderRR3(struct treeNode*);
+void preOrderRR4(struct treeNode*);
 
 /* ******************************************************************************** */

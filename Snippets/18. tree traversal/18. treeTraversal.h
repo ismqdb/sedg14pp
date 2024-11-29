@@ -18,12 +18,12 @@
 
 /* ******************************************************************************** */
 
-void levelOrder(treeNode*);
-void preOrder(treeNode*);
-void inOrder(treeNode*);
-void postOrder(treeNode*);
-void preOrderIterative(treeNode*);
-void preOrderRecursive(treeNode*);
-void inOrderRecursive(treeNode*);
+void levelOrder(struct treeNode*);
+void preOrder(struct treeNode*);
+void inOrder(struct treeNode*);
+void postOrder(struct treeNode*);
+void preOrderIterative(struct treeNode*);
+void preOrderRecursive(struct treeNode*);
+void inOrderRecursive(struct treeNode*);
 
 /* ******************************************************************************** */

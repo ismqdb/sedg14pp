@@ -4,11 +4,11 @@
 
 /* ******************************************************************************** */
 
-array getPostfix(){
+struct array getPostfix(){
     char c;
     struct stackLL stack = stackLLInit();
 
-    array array = createArray(INT);
+    struct array array = createArray(INT);
 
     while(1){
         int readResult = scanf("%1c", &c);
@@ -44,7 +44,7 @@ array getPostfix(){
 
 /* ******************************************************************************** */
 
-int evaluate(array *array){
+int evaluate(struct array *array){
     char c;
     int x;
     int sum = 0;

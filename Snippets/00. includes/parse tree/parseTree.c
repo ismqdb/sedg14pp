@@ -4,8 +4,8 @@
 
 /* ******************************************************************************** */
 
-treeNode* build_parse_tree(){
-    treeNode *x;
+struct treeNode* buildParseTree(){
+    struct treeNode *x;
     char c;
 
     stackArray stack = stackArrayInit(TREE_NODE, 50);
@@ -33,7 +33,7 @@ treeNode* build_parse_tree(){
         stackArrayPushTreeNode(&stack, x);
     }
 
-    treeNode *returnValue = stackArrayPopTreeNode(&stack);
+    struct treeNode *returnValue = stackArrayPopTreeNode(&stack);
     return returnValue;
 }
 
