@@ -4,6 +4,8 @@
 
 /* ******************************************************************************** */
 
-struct nodeDLL* nodeDLLAlloc();
+struct nodeDLL* nodeDLLAlloc(){
+    return (struct nodeDLL*)malloc(sizeof(struct nodeDLL));
+}
 
 /* ******************************************************************************** */

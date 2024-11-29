@@ -1,38 +1,32 @@
 /* ******************************************************************************** */
 
-#include "./15. dl_list.h"
+#include "./09. listDL.h"
 
 /* ******************************************************************************** */
 
-struct nodeDLL* nodeDLLAlloc(){
-    return (struct nodeDLL*)malloc(sizeof(struct nodeDLL));
+struct listDL listDLInit(){
+    struct listDL list;
+
+    list.head = nodeDLLAlloc();
+    list.tail = nodeDLLAlloc();
+
+    list.head->prev = list.head;
+    list.head->next = list.tail;
+
+    list.tail->prev = list.head;
+    list.tail->next = list.tail;
 }
 
 /* ******************************************************************************** */
 
-dl_list dl_list_init(){
-    dl_list dl_list;
-
-    dl_list.head = nodeDLLAlloc();
-    dl_list.tail = nodeDLLAlloc();
-
-    dl_list.head->prev = dl_list.head;
-    dl_list.head->next = dl_list.tail;
-
-    dl_list.tail->prev = dl_list.head;
-    dl_list.tail->next = dl_list.tail;
+void listDLDeinit(struct listDL *list){
+    free(list->head);
+    free(list->tail);
 }
 
 /* ******************************************************************************** */
 
-void dl_list_deinit(dl_list list){
-    free(list.head);
-    free(list.tail);
-}
-
-/* ******************************************************************************** */
-
-struct nodeDLL* dl_list_insert_after(struct nodeDLL *node, int value){
+struct nodeDLL* listDLInsertAfter(struct nodeDLL *node, int value){
     struct nodeDLL *new = nodeDLLAlloc();
     new->key = value;
 
@@ -45,7 +39,7 @@ struct nodeDLL* dl_list_insert_after(struct nodeDLL *node, int value){
 
 /* ******************************************************************************** */
 
-void dl_list_remove_next(struct nodeDLL *node){
+void listDLRemoveNext(struct nodeDLL *node){
     node->next = node->next->next;
     node->next->prev = node;
 }

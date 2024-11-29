@@ -13,17 +13,20 @@
 
 /* ******************************************************************************** */
 
-typedef struct linked_list {
+struct list {
     node *head;
-    node *z;
-} linked_list;
+    node *tail;
+};
 
 /* ******************************************************************************** */
 
-linked_list list_initialize();
-void delete_next(node*);
-node* insert_after(int, node*);
-node* move_next_to_front(linked_list, node*);
-void exchange(node*, node*);
+struct list list_initialize();
+
+/* ******************************************************************************** */
+
+void listDeleteNext(node*);
+node* listInsertAfter(int, node*);
+node* listMoveNextToFront(struct list*, struct node*);
+void listExchange(node*, node*);
 
 /* ******************************************************************************** */

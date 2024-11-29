@@ -20,7 +20,10 @@ add_executable(sedg14 main.c
     "Snippets/05. binary/05. binary.c"
     "Snippets/06. greatest ints/06. greatest_ints.c"
     "Snippets/08. sieve/08. sieve.c"
-    "Snippets/09. linked list/09. linked_list.c"
+
+    "Snippets/09. list/09. list.c"
+    "Snippets/09. list/09. listDL.c"
+
     "Snippets/10. parallel array/10. parallel_array.c"
 
     "Snippets/12. stack/12. stackLL.c"
@@ -31,7 +34,6 @@ add_executable(sedg14 main.c
     "Snippets/13. queue/13. queueLL.c"
 
     "Snippets/14. 2d/14. 2d.c"
-    "Snippets/15. doubly linked list/15. dl_list.c"
     "Snippets/18. tree traversals/18. tree_traversals.c"
     "Snippets/19. fibonacci/19. fibonacci.c"
     "Snippets/20. ruler/20. ruler.c"

@@ -1,17 +1,17 @@
 /* ******************************************************************************** */
 
-#include "./09. linked_list.h"
+#include "./09. list.h"
 
 /* ******************************************************************************** */
 
-linked_list list_initialize(){
-    linked_list list;
+list list_initialize(){
+    list list;
 
     list.head = nodeAlloc();
-    list.z = nodeAlloc();
+    list.tail = nodeAlloc();
 
-    list.head->next = list.z;
-    list.z->next = list.z;
+    list.head->next = list.tail;
+    list.tail->next = list.tail;
 
     return list;
 }
@@ -39,7 +39,7 @@ node* insert_after(int v, node *t){
 
 /* ******************************************************************************** */
 
-node* move_next_to_front(linked_list list, node *t){
+node* move_next_to_front(list list, node *t){
     node *temp = t->next;
     t->next = t->next->next;
     
