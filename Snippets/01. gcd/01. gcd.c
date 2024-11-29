@@ -30,7 +30,7 @@ unsigned long long gcd(unsigned long long u, unsigned long long v){
 
 /* ******************************************************************************** */
 
-unsigned long long gcd_mod(unsigned long long u, unsigned long long v){
+unsigned long long gcdMod(unsigned long long u, unsigned long long v){
     unsigned long long t;
 
     //u = abs(u);
@@ -48,8 +48,8 @@ unsigned long long gcd_mod(unsigned long long u, unsigned long long v){
 
 /* ******************************************************************************** */
 
-unsigned long long gcd_3(unsigned long long x, unsigned long long y, unsigned long long z){
-    return gcd_mod(gcd_mod(x,y), z);
+unsigned long long gcd3(unsigned long long x, unsigned long long y, unsigned long long z){
+    return gcdMod(gcdMod(x,y), z);
 }
 
 void main_gcd(){

@@ -14,7 +14,7 @@ static void swap(int *x, int *y){
 
 /* ******************************************************************************** */
 
-static int gcd_mod(int u, int v){
+static int gcdMod(int u, int v){
     int t;
 
     u = abs(u);
@@ -31,7 +31,7 @@ static int gcd_mod(int u, int v){
 /* ******************************************************************************** */
 
 fraction reduce(fraction x){
-    int gcd = gcd_mod(x.numerator, x.denominator);
+    int gcd = gcdMod(x.numerator, x.denominator);
 
     x.numerator /= gcd;
     x.denominator /= gcd;

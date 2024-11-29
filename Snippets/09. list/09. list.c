@@ -4,7 +4,7 @@
 
 /* ******************************************************************************** */
 
-struct list list_initialize(){
+struct list listInit(){
     struct list list;
 
     list.head = nodeAlloc();

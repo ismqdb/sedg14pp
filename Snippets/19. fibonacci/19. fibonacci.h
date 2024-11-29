@@ -8,13 +8,13 @@
 
 /* ******************************************************************************** */
 
-int fibonacci_recursive(int);
-int fibonacci_iterative(int);
+int fibonacciRecursive(int);
+int fibonacciIterative(int);
 
 /* ******************************************************************************** */
 
-int fibonacci_rr1(int);
-int fibonacci_rr2(int);
-int fibonaccI_rr3(int);
+int fibonacciRR1(int);
+int fibonacciRR2(int);
+int fibonaccIRR3(int);
 
 /* ******************************************************************************** */

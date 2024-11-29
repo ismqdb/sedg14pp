@@ -4,19 +4,19 @@
 
 /* ******************************************************************************** */
 
-int fibonacci_recursive(int n){
+int fibonacciRecursive(int n){
     if(n < 0)
         return -1;
 
     if(n <= 1)
         return 1;
     
-    return fibonacci_recursive(n-1) + fibonacci_recursive(n-2);
+    return fibonacciRecursive(n-1) + fibonacciRecursive(n-2);
 }
 
 /* ******************************************************************************** */
 
-int fibonacci_iterative(int n){
+int fibonacciIterative(int n){
     int i;
     int array[n+2];
     array[0] = array[1] = 1;
@@ -29,7 +29,7 @@ int fibonacci_iterative(int n){
 
 /* ******************************************************************************** */
 
-int fibonacci_rr1(int n){
+int fibonacciRR1(int n){
     if(n < 0)
         return -1;
 
@@ -55,7 +55,7 @@ int fibonacci_rr1(int n){
 
 /* ******************************************************************************** */
 
-int fibonacci_rr2(int n){
+int fibonacciRR2(int n){
     if(n < 0)
         return -1;
 

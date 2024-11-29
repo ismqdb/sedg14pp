@@ -18,13 +18,13 @@ add_executable(sedg14 main.c
     "Snippets/03. fraction/03. fraction.c"
     "Snippets/04. convert/04. convert.c"
     "Snippets/05. binary/05. binary.c"
-    "Snippets/06. greatest ints/06. greatest_ints.c"
+    "Snippets/06. greatest ints/06. greatestInts.c"
     "Snippets/08. sieve/08. sieve.c"
 
     "Snippets/09. list/09. list.c"
     "Snippets/09. list/09. listDL.c"
 
-    "Snippets/10. parallel array/10. parallel_array.c"
+    "Snippets/10. parray/10. parray.c"
 
     "Snippets/12. stack/12. stackLL.c"
     "Snippets/12. stack/12. stackArray.c"
@@ -34,12 +34,13 @@ add_executable(sedg14 main.c
     "Snippets/13. queue/13. queueLL.c"
 
     "Snippets/14. 2d/14. 2d.c"
-    "Snippets/18. tree traversals/18. tree_traversals.c"
+    "Snippets/18. tree traversal/18. treeTraversal.c"
     "Snippets/19. fibonacci/19. fibonacci.c"
     "Snippets/20. ruler/20. ruler.c"
     "Snippets/21. fractal/21. fractal.c"
-    "Snippets/22. recursion removal/22. recursion_removal_preorder.c"
-    "Snippets/22. recursion removal/22. recursion_removal_inorder.c"
+
+    "Snippets/22. recursion removal/22. recursionRemovalPreOrder.c"
+    "Snippets/22. recursion removal/22. recursionRemovalInOrder.c"
 )
 
 target_link_libraries(sedg14 m) # Link libmath

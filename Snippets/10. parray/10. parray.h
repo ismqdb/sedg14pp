@@ -9,21 +9,23 @@
 
 /* ******************************************************************************** */
 
-typedef struct parallel_array {
+struct parray {
     char *key;
     char *next;
     int current;
     int head;
     int tail; 
-} parallel_array;
+};
 
 /* ******************************************************************************** */
 
-parallel_array init_parallel_array(int);
-void deinit_parallel_array(parallel_array*);
-void parallel_array_delete_next(parallel_array*, char);
-char parallel_array_insert_after(parallel_array*, char, char);
-void parallel_array_print_all(parallel_array*);
-int parallel_array_main();
+struct parray parrayInit(int);
+void parrayDeinit(struct parray*);
+
+/* ******************************************************************************** */
+
+void parrayDeleteNext(struct parray*, char);
+char parrayInsertAfter(struct parray*, char, char);
+void parrayPrintAll(struct parray*);
 
 /* ******************************************************************************** */

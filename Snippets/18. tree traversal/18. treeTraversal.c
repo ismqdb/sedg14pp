@@ -1,10 +1,10 @@
 /* ******************************************************************************** */
 
-#include "./18. tree_traversals.h"
+#include "./18. treeTraversal.h"
 
 /* ******************************************************************************** */
 
-void level_order(treeNode *t){
+void levelOrder(treeNode *t){
     queueArray queue = queueArrayInit(TREE_NODE, 50);
 
     queueArrayPutTreeNode(&queue, t);
@@ -26,7 +26,7 @@ void level_order(treeNode *t){
 
 /* ******************************************************************************** */
 
-void pre_order(treeNode *t){
+void preOrder(treeNode *t){
     stackArray stack = stackArrayInit(TREE_NODE, 50);
 
     stackArrayPushTreeNode(&stack, t);
@@ -48,7 +48,7 @@ void pre_order(treeNode *t){
 
 /* ******************************************************************************** */
 
-void in_order(treeNode *t){
+void inOrder(treeNode *t){
     stackArray stack = stackArrayInit(TREE_NODE, 50);
     treeNode *temp;
     
@@ -75,7 +75,7 @@ void in_order(treeNode *t){
 
 /* ******************************************************************************** */
 
-void post_order(treeNode *t){
+void postOrder(treeNode *t){
     stackArray stack = stackArrayInit(TREE_NODE, 50);
     treeNode *temp;
 
@@ -100,7 +100,7 @@ void post_order(treeNode *t){
 
 /* ******************************************************************************** */
 
-void pre_order_iterative(treeNode *t){
+void preOrderIterative(treeNode *t){
     stackArray stack = stackArrayInit(TREE_NODE, 50);
 
     stackArrayPushTreeNode(&stack, t);
@@ -118,21 +118,21 @@ void pre_order_iterative(treeNode *t){
 
 /* ******************************************************************************** */
 
-void pre_order_recursive(treeNode *t){
+void preOrderRecursive(treeNode *t){
     if(t != NULL){
         visitTreeNode(t);
-        pre_order_recursive(t->left);
-        pre_order_recursive(t->right);
+        preOrderRecursive(t->left);
+        preOrderRecursive(t->right);
     }
 }
 
 /* ******************************************************************************** */
 
-void in_order_recursive(treeNode *t){
+void inOrderRecursive(treeNode *t){
     if(t != NULL){
-        pre_order_recursive(t->left);
+        preOrderRecursive(t->left);
         visitTreeNode(t);
-        pre_order_recursive(t->right);
+        preOrderRecursive(t->right);
     }
 }
 
