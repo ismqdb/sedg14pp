@@ -4,13 +4,13 @@
 
 /* ******************************************************************************** */
 
-node* node_alloc(){
+node* nodeAlloc(){
     return (node*)malloc(sizeof(node*));
 }
 
 /* ******************************************************************************** */
 
-node* node_alloc_int(int value){
+node* nodeAllocInt(int value){
     node *n = (node*)malloc(sizeof(node*));
     n->key = value;
     return n;
@@ -18,7 +18,7 @@ node* node_alloc_int(int value){
 
 /* ******************************************************************************** */
 
-void node_dealloc(node *node){
+void nodeDealloc(node *node){
     if(node != NULL)
         free(node);
 }

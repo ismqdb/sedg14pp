@@ -7,8 +7,8 @@
 linked_list list_initialize(){
     linked_list list;
 
-    list.head = node_alloc();
-    list.z = node_alloc();
+    list.head = nodeAlloc();
+    list.z = nodeAlloc();
 
     list.head->next = list.z;
     list.z->next = list.z;
@@ -21,7 +21,7 @@ linked_list list_initialize(){
 void delete_next(node *t){
     node *x = t->next;
     t->next = t->next->next;
-    node_dealloc(x);
+    nodeDealloc(x);
 }
 
 /* ******************************************************************************** */
@@ -30,7 +30,7 @@ node* insert_after(int v, node *t){
     if(t == NULL)
         return NULL;
 
-    node *x = node_alloc();
+    node *x = nodeAlloc();
     x->key = v;
     x->next = t->next;
     t->next = x;

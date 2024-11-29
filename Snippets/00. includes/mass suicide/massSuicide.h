@@ -13,7 +13,7 @@
 
 /* ******************************************************************************** */
 
-void mass_suicide(int, int);
-int mass_suicide_array(int, int);
+void massSuicideLinkedList(int, int);
+int massSuicideArray(int, int);
 
 /* ******************************************************************************** */

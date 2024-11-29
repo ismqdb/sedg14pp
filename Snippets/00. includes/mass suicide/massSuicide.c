@@ -4,7 +4,7 @@
 
 /* ******************************************************************************** */
 
-void mass_suicide(int n, int m){
+void massSuicideLinkedList(int n, int m){
     if(n <= 0 || m <= 0)
         return;
 
@@ -14,12 +14,12 @@ void mass_suicide(int n, int m){
     int i;
     node *head;
 
-    node *t = node_alloc();
+    node *t = nodeAlloc();
     t->key = 0;
     head = t;
 
     for(i = 0; i < n; i++){
-        t->next = node_alloc();
+        t->next = nodeAlloc();
         t = t->next;
         t->key = (i+1);
     }
@@ -40,7 +40,7 @@ void mass_suicide(int n, int m){
 
 /* ******************************************************************************** */
 
-int mass_suicide_array(int n, int m){
+int massSuicideArray(int n, int m){
     if(n <= 0 || m <= 0)
         return -1;
 

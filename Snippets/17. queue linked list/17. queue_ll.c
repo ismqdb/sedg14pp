@@ -14,7 +14,7 @@ queue_a queue_ll_init(){
 /* ******************************************************************************** */
 
 void queue_ll_put(queue_a *queue, int value){
-    node *item = node_alloc(value);
+    node *item = nodeAlloc(value);
     node **p = &queue->head;
 
     if(queue->head == NULL){

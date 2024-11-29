@@ -16,8 +16,8 @@ typedef struct node {
 
 /* ******************************************************************************** */
 
-node* node_alloc();
-node* node_alloc_int(int);
-void node_dealloc(node*);
+node* nodeAlloc();
+node* nodeAllocInt(int);
+void nodeDealloc(node*);
 
 /* ******************************************************************************** */
