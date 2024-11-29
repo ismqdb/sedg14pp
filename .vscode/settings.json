@@ -60,6 +60,8 @@
         "01. gcd.h": "c",
         "12. stackarray.h": "c",
         "tree_node.h": "c",
-        "parse_tree.h": "c"
+        "parse_tree.h": "c",
+        "masssuicide.h": "c",
+        "postfix.h": "c"
     }
 }
