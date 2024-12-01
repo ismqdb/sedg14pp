@@ -13,24 +13,24 @@
 
 /* ******************************************************************************** */
 
-struct queueArray {
-    node *head;
+struct queueLL {
+    struct node *head;
 };
 
 /* ******************************************************************************** */
 
-struct queueArray queueLLInit();
+struct queueLL queueLLInit();
 
 /* ******************************************************************************** */
 
-void queueLLPutInt(struct queueArray*, int);
+void queueLLPutInt(struct queueLL*, int);
 
 /* ******************************************************************************** */
 
-node* queueLLGetNode(struct queueArray*);
+struct node* queueLLGetNode(struct queueLL*);
 
 /* ******************************************************************************** */
 
-int queueLLIsEmpty(struct queueArray*);
+int queueLLIsEmpty(struct queueLL*);
 
 /* ******************************************************************************** */

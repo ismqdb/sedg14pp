@@ -18,19 +18,19 @@ struct list listInit(){
 
 /* ******************************************************************************** */
 
-void listDeleteNext(node *t){
-    node *x = t->next;
+void listDeleteNext(struct node *t){
+    struct node *x = t->next;
     t->next = t->next->next;
     nodeDealloc(x);
 }
 
 /* ******************************************************************************** */
 
-node* listInsertAfter(int v, node *t){
+struct node* listInsertAfter(int v, struct node *t){
     if(t == NULL)
         return NULL;
 
-    node *x = nodeAlloc();
+    struct node *x = nodeAlloc();
     x->key = v;
     x->next = t->next;
     t->next = x;
@@ -39,8 +39,8 @@ node* listInsertAfter(int v, node *t){
 
 /* ******************************************************************************** */
 
-node* listMoveNextToFront(struct list *list, node *t){
-    node *temp = t->next;
+struct node* listMoveNextToFront(struct list *list, struct node *t){
+    struct node *temp = t->next;
     t->next = t->next->next;
     
     temp->next = list->head->next;
@@ -50,8 +50,8 @@ node* listMoveNextToFront(struct list *list, node *t){
 
 /* ******************************************************************************** */
 
-void listExchange(node *t, node *u){
-    node *temp = t->next;
+void listExchange(struct node *t, struct node *u){
+    struct node *temp = t->next;
     
     t->next = t->next->next;
     temp->next = u->next->next;

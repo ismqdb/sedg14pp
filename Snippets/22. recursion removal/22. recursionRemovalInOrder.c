@@ -5,7 +5,7 @@
 /* ******************************************************************************** */
 
 void inOrderRR0(struct treeNode *t){
-    stackArray stack = stackArrayInit(TREE_NODE, 50);
+    struct stackArray stack = stackArrayInit(TREE_NODE, 50);
     struct treeNode *temp;
     
     do {

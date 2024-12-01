@@ -14,7 +14,7 @@
 /* ******************************************************************************** */
 
 struct stackPA {
-    node **key_array;
+    struct node **keyArray;
     int *next;
     int current, head, tail;
 };
@@ -30,7 +30,7 @@ void stackPAPushInt(struct stackPA*, int);
 
 /* ******************************************************************************** */
 
-node* stackPAPopNode(struct stackPA*);
+struct node* stackPAPopNode(struct stackPA*);
 
 /* ******************************************************************************** */
 

@@ -14,8 +14,8 @@
 /* ******************************************************************************** */
 
 struct list {
-    node *head;
-    node *tail;
+    struct node *head;
+    struct node *tail;
 };
 
 /* ******************************************************************************** */
@@ -24,9 +24,9 @@ struct list listInit();
 
 /* ******************************************************************************** */
 
-void listDeleteNext(node*);
-node* listInsertAfter(int, node*);
-node* listMoveNextToFront(struct list*, struct node*);
-void listExchange(node*, node*);
+void listDeleteNext(struct node*);
+struct node* listInsertAfter(int, struct node*);
+struct node* listMoveNextToFront(struct list*, struct node*);
+void listExchange(struct node*, struct node*);
 
 /* ******************************************************************************** */

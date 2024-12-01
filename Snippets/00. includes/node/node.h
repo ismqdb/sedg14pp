@@ -9,15 +9,15 @@
 
 /* ******************************************************************************** */
 
-typedef struct node {
+struct node {
     int key;
     struct node *next;
-} node;
+};
 
 /* ******************************************************************************** */
 
-node* nodeAlloc();
-node* nodeAllocInt(int);
-void nodeDealloc(node*);
+struct node* nodeAlloc();
+struct node* nodeAllocInt(int);
+void nodeDealloc(struct node*);
 
 /* ******************************************************************************** */

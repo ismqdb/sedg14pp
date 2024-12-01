@@ -4,7 +4,7 @@
 
 /* ******************************************************************************** */
 
-void stackArrayPushInt(stackArray *stack, int v){
+void stackArrayPushInt(struct stackArray *stack, int v){
     if(stack->p == stack->currentSize){
         stack->currentSize += stack->chunkSize;
         stack->data.integer = (int*)realloc(stack->data.integer, stack->currentSize*sizeof(int));
@@ -14,7 +14,7 @@ void stackArrayPushInt(stackArray *stack, int v){
 
 /* ******************************************************************************** */
 
-void stackArrayPushTreeNode(stackArray *stack, struct treeNode* t_node){
+void stackArrayPushTreeNode(struct stackArray *stack, struct treeNode* t_node){
     if(stack->p == stack->currentSize){
         stack->currentSize += stack->chunkSize;
         stack->data.treeNode = (struct treeNode**)realloc(stack->data.treeNode, stack->currentSize*sizeof(struct treeNode));
@@ -24,20 +24,20 @@ void stackArrayPushTreeNode(stackArray *stack, struct treeNode* t_node){
 
 /* ******************************************************************************** */
 
-int stackArrayPopInt(stackArray *stack){
+int stackArrayPopInt(struct stackArray *stack){
     return stack->data.integer[--stack->p];
 }
 
 /* ******************************************************************************** */
 
-struct treeNode* stackArrayPopTreeNode(stackArray *stack){
+struct treeNode* stackArrayPopTreeNode(struct stackArray *stack){
     return stack->data.treeNode[--stack->p];
 }
 
 /* ******************************************************************************** */
 
-stackArray stackArrayInit(treeNodeDataType type, int size){
-    stackArray stack;
+struct stackArray stackArrayInit(treeNodeDataType type, int size){
+    struct stackArray stack;
     stack.currentSize = 0;
     stack.chunkSize = 25;
     stack.type = type;
@@ -59,7 +59,7 @@ stackArray stackArrayInit(treeNodeDataType type, int size){
 
 /* ******************************************************************************** */
 
-void stackArrayDeinit(stackArray *stack){
+void stackArrayDeinit(struct stackArray *stack){
     stack->p = 0;
 
     switch(stack->type){
@@ -74,13 +74,13 @@ void stackArrayDeinit(stackArray *stack){
 
 /* ******************************************************************************** */
 
-int stackArrayIsEmpty(stackArray *stack){
+int stackArrayIsEmpty(struct stackArray *stack){
     return !stack->p;
 }
 
 /* ******************************************************************************** */
 
-int stackArraySize(stackArray *stack){
+int stackArraySize(struct stackArray *stack){
     return stack->p > 0 ? stack->p - 1 : 0;
 }
 

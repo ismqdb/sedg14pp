@@ -44,7 +44,7 @@ struct treeNodeRS* insertSibling(struct treeNodeRS *parent, struct treeNodeRS *n
 /* ******************************************************************************** */
 
 void treeNodeRSLevelOrderTraversal(struct treeNodeRS *node){
-    queueArray queue = queueArrayInit(INT, 50);
+    struct queueArray queue = queueArrayInit(INT, 50);
     struct treeNodeRS *temp1, *temp2;
 
     queueArrayPutTreeNodeRS(&queue, node);

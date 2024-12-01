@@ -14,7 +14,7 @@
 
 /* ******************************************************************************** */
 
-typedef struct queueArray {
+struct queueArray {
     treeNodeDataType type;
     union {
         int* integer;
@@ -25,27 +25,27 @@ typedef struct queueArray {
     int tail;
     int chunk_size;
     int current_size;
-} queueArray;
+};
 
 /* ******************************************************************************** */
 
-void queueArrayPutInt(queueArray*, int);
-void queueArrayPutTreeNode(queueArray*, struct treeNode*);
-void queueArrayPutTreeNodeRS(queueArray*, struct treeNodeRS*);
+void queueArrayPutInt(struct queueArray*, int);
+void queueArrayPutTreeNode(struct queueArray*, struct treeNode*);
+void queueArrayPutTreeNodeRS(struct queueArray*, struct treeNodeRS*);
 
 /* ******************************************************************************** */
 
-int queueArrayGetInt(queueArray*);
-struct treeNode* queueArrayGetTreeNode(queueArray*);
-struct treeNodeRS* queueArrayGetTreeNodeRS(queueArray*);
+int queueArrayGetInt(struct queueArray*);
+struct treeNode* queueArrayGetTreeNode(struct queueArray*);
+struct treeNodeRS* queueArrayGetTreeNodeRS(struct queueArray*);
 
 /* ******************************************************************************** */
 
-queueArray queueArrayInit(treeNodeDataType, int);
-void queueArrayDeinit(queueArray*);
+struct queueArray queueArrayInit(treeNodeDataType, int);
+void queueArrayDeinit(struct queueArray*);
 
 /* ******************************************************************************** */
 
-int queueArrayIsEmpty(queueArray*);
+int queueArrayIsEmpty(struct queueArray*);
 
 /* ******************************************************************************** */

@@ -36,7 +36,7 @@ int fibonacciRR1(int n){
     if(n <= 1)
         return 1;
     
-    stackArray stack = stackArrayInit(INT, 50);
+    struct stackArray stack = stackArrayInit(INT, 50);
 
     for(int i = n; i >= 2; i--)
         stackArrayPushInt(&stack, i);
@@ -62,7 +62,7 @@ int fibonacciRR2(int n){
     if(n <= 1)
         return 1;
     
-    stackArray stack = stackArrayInit(INT, 50);
+    struct stackArray stack = stackArrayInit(INT, 50);
     int array[n+2];
 
     for(int i = n; i >= 2; i--)

@@ -5,7 +5,7 @@
 /* ******************************************************************************** */
 
 void levelOrder(struct treeNode *t){
-    queueArray queue = queueArrayInit(TREE_NODE, 50);
+    struct queueArray queue = queueArrayInit(TREE_NODE, 50);
 
     queueArrayPutTreeNode(&queue, t);
 
@@ -27,7 +27,7 @@ void levelOrder(struct treeNode *t){
 /* ******************************************************************************** */
 
 void preOrder(struct treeNode *t){
-    stackArray stack = stackArrayInit(TREE_NODE, 50);
+    struct stackArray stack = stackArrayInit(TREE_NODE, 50);
 
     stackArrayPushTreeNode(&stack, t);
 
@@ -49,7 +49,7 @@ void preOrder(struct treeNode *t){
 /* ******************************************************************************** */
 
 void inOrder(struct treeNode *t){
-    stackArray stack = stackArrayInit(TREE_NODE, 50);
+    struct stackArray stack = stackArrayInit(TREE_NODE, 50);
     struct treeNode *temp;
     
     do {
@@ -76,7 +76,7 @@ void inOrder(struct treeNode *t){
 /* ******************************************************************************** */
 
 void postOrder(struct treeNode *t){
-    stackArray stack = stackArrayInit(TREE_NODE, 50);
+    struct stackArray stack = stackArrayInit(TREE_NODE, 50);
     struct treeNode *temp;
 
     do {
@@ -101,7 +101,7 @@ void postOrder(struct treeNode *t){
 /* ******************************************************************************** */
 
 void preOrderIterative(struct treeNode *t){
-    stackArray stack = stackArrayInit(TREE_NODE, 50);
+    struct stackArray stack = stackArrayInit(TREE_NODE, 50);
 
     stackArrayPushTreeNode(&stack, t);
 

@@ -30,7 +30,7 @@ void preOrderRR1(struct treeNode *t){
 /* ******************************************************************************** */
 
 void preOrderRR2(struct treeNode *t){
-    stackArray stack = stackArrayInit(TREE_NODE, 50);
+    struct stackArray stack = stackArrayInit(TREE_NODE, 50);
 
     l:
         if(t == NULL)
@@ -53,7 +53,7 @@ void preOrderRR2(struct treeNode *t){
 /* ******************************************************************************** */
 
 void preOrderRR3(struct treeNode *t){
-    stackArray stack = stackArrayInit(TREE_NODE, 50);
+    struct stackArray stack = stackArrayInit(TREE_NODE, 50);
 
     l:
         while(t != NULL){
@@ -75,7 +75,7 @@ void preOrderRR3(struct treeNode *t){
 /* ******************************************************************************** */
 
 void preOrderRR4(struct treeNode *t){
-    stackArray stack = stackArrayInit(TREE_NODE, 50);
+    struct stackArray stack = stackArrayInit(TREE_NODE, 50);
 
     stackArrayPushTreeNode(&stack, t);
 

@@ -13,7 +13,7 @@
 
 /* ******************************************************************************** */
 
-typedef struct stackArray {
+struct stackArray {
     treeNodeDataType type;
     union {
         int* integer;
@@ -22,26 +22,26 @@ typedef struct stackArray {
     int p;
     int currentSize;
     int chunkSize;
-} stackArray;
+};
 
 /* ******************************************************************************** */
 
-void stackArrayPushInt(stackArray*, int);
-void stackArrayPushTreeNode(stackArray*, struct treeNode*);
+void stackArrayPushInt(struct stackArray*, int);
+void stackArrayPushTreeNode(struct stackArray*, struct treeNode*);
 
 /* ******************************************************************************** */
 
-int stackArrayPopInt(stackArray*);
-struct treeNode* stackArrayPopTreeNode(stackArray*);
+int stackArrayPopInt(struct stackArray*);
+struct treeNode* stackArrayPopTreeNode(struct stackArray*);
 
 /* ******************************************************************************** */
 
-stackArray stackArrayInit(treeNodeDataType, int);
-void stackArrayDeinit(stackArray*);
+struct stackArray stackArrayInit(treeNodeDataType, int);
+void stackArrayDeinit(struct stackArray*);
 
 /* ******************************************************************************** */
 
-int stackArrayIsEmpty(stackArray*);
-int stackArraySize(stackArray*);
+int stackArrayIsEmpty(struct stackArray*);
+int stackArraySize(struct stackArray*);
 
 /* ******************************************************************************** */

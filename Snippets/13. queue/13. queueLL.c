@@ -4,8 +4,8 @@
 
 /* ******************************************************************************** */
 
-struct queueArray queueLLInit(){
-    struct queueArray queue;
+struct queueLL queueLLInit(){
+    struct queueLL queue;
     queue.head = NULL;
 
     return queue;
@@ -13,9 +13,9 @@ struct queueArray queueLLInit(){
 
 /* ******************************************************************************** */
 
-void queueLLPutInt(struct queueArray *queue, int value){
-    node *item = nodeAlloc(value);
-    node **p = &queue->head;
+void queueLLPutInt(struct queueLL *queue, int value){
+    struct node *item = nodeAlloc(value);
+    struct node **p = &queue->head;
 
     if(queue->head == NULL){
         queue->head = item;
@@ -23,7 +23,6 @@ void queueLLPutInt(struct queueArray *queue, int value){
     }
 
     while((*p) != NULL)
-        //*p = (*p)->next;
         p = &(*p)->next;
 
     (*p) = item;
@@ -31,8 +30,8 @@ void queueLLPutInt(struct queueArray *queue, int value){
 
 /* ******************************************************************************** */
 
-node* queueLLGetNode(struct queueArray *queue){
-    node *item = queue->head;
+struct node* queueLLGetNode(struct queueLL *queue){
+    struct node *item = queue->head;
 
     queue->head = queue->head->next;
     return item;
@@ -40,7 +39,7 @@ node* queueLLGetNode(struct queueArray *queue){
 
 /* ******************************************************************************** */
 
-int queueLLIsEmpty(struct queueArray *queue){
+int queueLLIsEmpty(struct queueLL *queue){
     return queue->head == NULL;
 }
 

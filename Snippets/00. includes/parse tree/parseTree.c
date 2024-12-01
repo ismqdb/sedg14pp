@@ -8,7 +8,7 @@ struct treeNode* buildParseTree(){
     struct treeNode *x;
     char c;
 
-    stackArray stack = stackArrayInit(TREE_NODE, 50);
+    struct stackArray stack = stackArrayInit(TREE_NODE, 50);
 
     while(1){
         c = getchar();

@@ -12,9 +12,9 @@ void massSuicideLinkedList(int n, int m){
         return;
 
     int i;
-    node *head;
+    struct node *head;
 
-    node *t = nodeAlloc();
+    struct node *t = nodeAlloc();
     t->key = 0;
     head = t;
 

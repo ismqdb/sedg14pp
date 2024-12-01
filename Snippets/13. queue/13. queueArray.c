@@ -4,7 +4,7 @@
 
 /* ******************************************************************************** */
 
-void queueArrayPutInt(queueArray *queue, int v){
+void queueArrayPutInt(struct queueArray *queue, int v){
     if(queue->tail == queue->current_size){
         queue->current_size += queue->chunk_size;
         queue->data.integer = (int*)realloc(queue->data.integer, queue->current_size*sizeof(int));
@@ -14,7 +14,7 @@ void queueArrayPutInt(queueArray *queue, int v){
 
 /* ******************************************************************************** */
 
-void queueArrayPutTreeNode(queueArray *queue, struct treeNode *v){
+void queueArrayPutTreeNode(struct queueArray *queue, struct treeNode *v){
     if(queue->tail == queue->current_size){
         queue->current_size += queue->chunk_size;
         queue->data.treeNode = (struct treeNode**)realloc(queue->data.treeNode, queue->current_size*sizeof(struct treeNode));
@@ -24,7 +24,7 @@ void queueArrayPutTreeNode(queueArray *queue, struct treeNode *v){
 
 /* ******************************************************************************** */
 
-void queueArrayPutTreeNodeRS(queueArray *queue, struct treeNodeRS *v){
+void queueArrayPutTreeNodeRS(struct queueArray *queue, struct treeNodeRS *v){
     if(queue->tail == queue->current_size){
         queue->current_size += queue->chunk_size;
         queue->data.tree_node_rs = (struct treeNodeRS**)realloc(queue->data.tree_node_rs, queue->current_size*sizeof(struct treeNodeRS));
@@ -34,7 +34,7 @@ void queueArrayPutTreeNodeRS(queueArray *queue, struct treeNodeRS *v){
 
 /* ******************************************************************************** */
 
-int queueArrayGetInt(queueArray *queue){
+int queueArrayGetInt(struct queueArray *queue){
     int t = queue->data.integer[queue->head++];
     if(queue->head == queue->tail){
         queue->head = 0;
@@ -45,7 +45,7 @@ int queueArrayGetInt(queueArray *queue){
 
 /* ******************************************************************************** */
 
-struct treeNode* queueArrayGetTreeNode(queueArray *queue){
+struct treeNode* queueArrayGetTreeNode(struct queueArray *queue){
     struct treeNode *t = queue->data.treeNode[queue->head++];
     if(queue->head == queue->tail){
         queue->head = 0;
@@ -56,7 +56,7 @@ struct treeNode* queueArrayGetTreeNode(queueArray *queue){
 
 /* ******************************************************************************** */
 
-struct treeNodeRS* queueArrayGetTreeNodeRS(queueArray *queue){
+struct treeNodeRS* queueArrayGetTreeNodeRS(struct queueArray *queue){
     struct treeNodeRS *t = queue->data.tree_node_rs[queue->head++];
     if(queue->head == queue->tail){
         queue->head = 0;
@@ -67,8 +67,8 @@ struct treeNodeRS* queueArrayGetTreeNodeRS(queueArray *queue){
 
 /* ******************************************************************************** */
 
-queueArray queueArrayInit(treeNodeDataType type, int size){
-    queueArray queue;
+struct queueArray queueArrayInit(treeNodeDataType type, int size){
+    struct queueArray queue;
     queue.chunk_size = 25;
     queue.current_size = 0;
     queue.type = type;
@@ -96,13 +96,13 @@ queueArray queueArrayInit(treeNodeDataType type, int size){
 
 /* ******************************************************************************** */
 
-int queueArrayIsEmpty(queueArray *queue){
+int queueArrayIsEmpty(struct queueArray *queue){
     return queue->head == queue->tail;
 }
 
 /* ******************************************************************************** */
 
-void queueArrayDeinit(queueArray *queue){
+void queueArrayDeinit(struct queueArray *queue){
     queue->head = 0;
     queue->tail = 0;
 
