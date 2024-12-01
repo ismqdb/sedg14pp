@@ -14,7 +14,7 @@ int fibonacciIterative(int);
 /* ******************************************************************************** */
 
 int fibonacciRR1(int);
-int fibonacciRR2(int);
+int fibonaccIRR2(int);
 int fibonaccIRR3(int);
 
 /* ******************************************************************************** */

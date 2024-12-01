@@ -31,7 +31,7 @@ void inOrderRR0(struct treeNode *t){
 
 /* ******************************************************************************** */
 
-void inOrderRR0(struct treeNode *t){
+void inOrderRR1(struct treeNode *t){
 
 }
 
