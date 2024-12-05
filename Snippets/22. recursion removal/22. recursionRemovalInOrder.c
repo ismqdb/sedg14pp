@@ -17,15 +17,15 @@ void inOrderRR0(struct treeNode *t){
         } else {
             visitTreeNode(t);
             t = stackArrayPopTreeNode(&stack);
-            stackArrayPopTreeNode(&stack);
             
             if(t->right != NULL){
                 stackArrayPushTreeNode(&stack, t->right);
                 t->right = NULL;
             }
         }
-    } while(stackArrayIsEmpty(&stack));
+    } while(!stackArrayIsEmpty(&stack));
 
+    visitTreeNode(t);
     stackArrayDeinit(&stack);
 }
 

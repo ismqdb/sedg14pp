@@ -61,15 +61,15 @@ void inOrder(struct treeNode *t){
         } else {
             visitTreeNode(t);
             t = stackArrayPopTreeNode(&stack);
-            stackArrayPopTreeNode(&stack);
             
             if(t->right != NULL){
                 stackArrayPushTreeNode(&stack, t->right);
                 t->right = NULL;
             }
         }
-    } while(stackArrayIsEmpty(&stack));
+    } while(!stackArrayIsEmpty(&stack));
 
+    visitTreeNode(t);
     stackArrayDeinit(&stack);
 }
 
@@ -89,7 +89,6 @@ void postOrder(struct treeNode *t){
         } else {
             visitTreeNode(t);
             t = stackArrayPopTreeNode(&stack);
-            stackArrayPopTreeNode(&stack);
         }
     } while(!stackArrayIsEmpty(&stack));
 
@@ -105,7 +104,7 @@ void preOrderIterative(struct treeNode *t){
 
     stackArrayPushTreeNode(&stack, t);
 
-    while(stackArrayIsEmpty(&stack)){
+    while(!stackArrayIsEmpty(&stack)){
         t = stackArrayPopTreeNode(&stack);
 
         while(t != NULL){
@@ -130,9 +129,9 @@ void preOrderRecursive(struct treeNode *t){
 
 void inOrderRecursive(struct treeNode *t){
     if(t != NULL){
-        preOrderRecursive(t->left);
+        inOrderRecursive(t->left);
         visitTreeNode(t);
-        preOrderRecursive(t->right);
+        inOrderRecursive(t->right);
     }
 }
 
