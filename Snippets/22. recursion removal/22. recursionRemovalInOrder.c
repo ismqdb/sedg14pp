@@ -5,28 +5,11 @@
 /* ******************************************************************************** */
 
 void inOrderRR0(struct treeNode *t){
-    struct stackArray stack = stackArrayInit(TREE_NODE, 50);
-    struct treeNode *temp;
-    
-    do {
-        if(t->left != NULL){
-            temp = t->left;
-            t->left = NULL;
-            stackArrayPushTreeNode(&stack, t);
-            t = temp;
-        } else {
-            visitTreeNode(t);
-            t = stackArrayPopTreeNode(&stack);
-            
-            if(t->right != NULL){
-                stackArrayPushTreeNode(&stack, t->right);
-                t->right = NULL;
-            }
-        }
-    } while(!stackArrayIsEmpty(&stack));
-
-    visitTreeNode(t);
-    stackArrayDeinit(&stack);
+    if(t != NULL){
+        inOrderRR0(t->left);
+        visitTreeNode(t);
+        inOrderRR0(t->right);
+    }
 }
 
 /* ******************************************************************************** */
