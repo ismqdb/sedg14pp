@@ -11,6 +11,9 @@ int main(){
 
     inOrderRR0(t);
     putchar(10);
+
+    inOrderRR1(t);
+    putchar(10);
 }
 
 // A B C + D E * * F + *

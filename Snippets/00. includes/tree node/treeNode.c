@@ -24,6 +24,7 @@ void visitTreeNode(struct treeNode *t){
         return;
     
     printf("%c ", t->info);
+    fflush(stdout);
 }
 
 /* ******************************************************************************** */
