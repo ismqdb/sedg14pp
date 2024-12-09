@@ -4,17 +4,6 @@
 
 /* ******************************************************************************** */
 
-int fibonacciRecursive(int n){
-    if(n < 0)
-        return -1;
-
-    if(n <= 1)
-        return 1;
-    
-    return fibonacciRecursive(n-1) + fibonacciRecursive(n-2);
-}
-
-/* ******************************************************************************** */
 
 int fibonacciIterative(int n){
     int i;
@@ -25,6 +14,18 @@ int fibonacciIterative(int n){
         array[i] = array[i-1] + array[i-2];
         
     return array[n];
+}
+
+/* ******************************************************************************** */
+
+int fibonacciRecursive(int n){
+    if(n < 0)
+        return -1;
+
+    if(n <= 1)
+        return 1;
+    
+    return fibonacciRecursive(n-1) + fibonacciRecursive(n-2);
 }
 
 /* ******************************************************************************** */
