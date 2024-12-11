@@ -64,17 +64,17 @@ int binaryTreeDrawRecursive(struct treeNode* t, struct tnodePair **pairs, int le
 
 /* ******************************************************************************** */
 
-void externalPathLenstruct(struct treeNode *t, int level, int *len){
+void externalPathLenTreeNode(struct treeNode *t, int level, int *len){
     if(t->left || t->right)
         level++;
 
     if(t->left)
-        externalPathLenstruct(t->left, level, len);
+        externalPathLenTreeNode(t->left, level, len);
     else
         len += level;
 
     if(t->right)
-        externalPathLenstruct(t->right, level, len);
+        externalPathLenTreeNode(t->right, level, len);
     else
         len += level;
 }
@@ -92,13 +92,13 @@ int binaryTreeDrawRecursiveDriver(){
     qsort(pairs, k, sizeof(struct tnodePair*), tnodeCompare);
 
     putchar(10);
+
     for(int pos = 0, printed = 0; pos < screenWidth; pos++){
-        if(pairs[printed] == NULL){
+        if(pairs[printed] == NULL)
             continue;
-        }
 
         if(pairs[printed]->index == pos)
-            printf("%c", (pairs[printed++]->node->info));
+            printf("%c", pairs[printed++]->node->info);
         else
             putchar(' ');
     }
