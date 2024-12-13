@@ -13,6 +13,7 @@ add_executable(sedg14 main.c
     "Snippets/00. includes/parse tree/parseTree.c"
     "Snippets/00. includes/mass suicide/massSuicide.c"
     "Snippets/00. includes/postfix/postfix.c"
+    "Snippets/00. includes/point/point.c"
 
     "Snippets/01. gcd/01. gcd.c"
     "Snippets/03. fraction/03. fraction.c"
