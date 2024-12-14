@@ -30,19 +30,19 @@ unsigned long long gcd(unsigned long long u, unsigned long long v){
 
 /* ******************************************************************************** */
 
-unsigned long long gcdRecursive(unsigned long long u, unsigned long long v){
+unsigned long long gcdRecursive(unsigned long long *u, unsigned long long *v){
     unsigned long long t;
 
-    u = abs(u);
-    v = abs(v);
+    *u = abs(*u);
+    *v = abs(*v);
 
-    if(u > 0){
-        if(u < v)
-            swap(&u, &v);
-        u = u-v;
+    if(*u > 0){
+        if(*u < *v)
+            swap(u, v);
+        *u %= *v;
         gcdRecursive(u, v);
     }
-    return v;
+    return *v;
 }
 
 /* ******************************************************************************** */
