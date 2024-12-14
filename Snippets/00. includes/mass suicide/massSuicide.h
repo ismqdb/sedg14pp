@@ -13,7 +13,10 @@
 
 /* ******************************************************************************** */
 
-void massSuicideLinkedList(int, int);
 int massSuicideArray(int, int);
+void massSuicideLinkedList(int, int);
+
+void massSuicideRecursiveDriver(int, int);
+int massSuicideRecursive(struct node*, int);
 
 /* ******************************************************************************** */
