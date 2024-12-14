@@ -6,17 +6,16 @@
 #include <math.h>
 #include <assert.h>
 
-#include "./Snippets/00. includes/mass suicide/massSuicide.h"
+#include "./Snippets/01. gcd/01. gcd.h"
 
 /* ******************************************************************************** */
 
 int main(){
-    int n = 0xa;
-    int m = 5;
+    int x = 200;
+    int y = 175;
 
-    massSuicideArray(n, m);
-    massSuicideLinkedList(n, m);
-    massSuicideRecursiveDriver(n, m);
+    printf("%d\n", gcd(x, y));
+    printf("%d\n", gcd(x, y));
 }
 
 /* ******************************************************************************** */
