@@ -21,7 +21,7 @@ struct stackArray stackArrayInit(treeNodeDataType type, int size){
 
     stack.p = 0;
     stack.currentSize += size;
-    
+
     pthread_mutex_init(&stack.dataMutex, NULL);
     pthread_mutex_init(&stack.ptrMutex, NULL);
     pthread_cond_init(&stack.hasDataCondVar, NULL);
@@ -79,8 +79,10 @@ void stackArrayPushTreeNode(struct stackArray *stack, struct treeNode* tnode){
 
 int stackArrayPopInt(struct stackArray *stack){
     pthread_mutex_lock(&stack->dataMutex);
+
     if(stackArrayIsEmpty(stack))
         pthread_cond_wait(&stack->hasDataCondVar, &stack->dataMutex);
+
     int value = stack->data.integer[--stack->p];
     pthread_mutex_unlock(&stack->dataMutex);
 
@@ -91,7 +93,10 @@ int stackArrayPopInt(struct stackArray *stack){
 
 struct treeNode* stackArrayPopTreeNode(struct stackArray *stack){
     pthread_mutex_lock(&stack->dataMutex);
-    pthread_cond_wait(&stack->hasDataCondVar, &stack->dataMutex);
+
+    if(stackArrayIsEmpty(stack))
+        pthread_cond_wait(&stack->hasDataCondVar, &stack->dataMutex);
+        
     struct treeNode* tnode = stack->data.treeNode[--stack->p];
     pthread_mutex_unlock(&stack->dataMutex);
 
