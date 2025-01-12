@@ -13,6 +13,7 @@
 #include "../00. includes/tree node/treeNode.h"
 
 #include "../00. includes/allocMacros.h"
+#include "../00. includes/errorMacros.h"
 
 /* ******************************************************************************** */
 
@@ -27,7 +28,7 @@ struct stackArray {
     int chunkSize;
 
     pthread_mutex_t mutex;
-    pthread_cond_t emptyCondVar;
+    pthread_cond_t hasDataCondVar;
 };
 
 /* ******************************************************************************** */
