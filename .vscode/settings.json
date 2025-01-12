@@ -67,6 +67,7 @@
         "parsetree.h": "c",
         "treenode.h": "c",
         "13. queuearray.h": "c",
-        "22. recursionremovalpreorder.h": "c"
+        "22. recursionremovalpreorder.h": "c",
+        "ratio": "cpp"
     }
 }

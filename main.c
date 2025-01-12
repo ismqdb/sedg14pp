@@ -6,6 +6,8 @@
 #include <math.h>
 #include <assert.h>
 
+#include "Snippets/12. stack/12. stackArray.h"
+
 /* ******************************************************************************** */
 
 int main(){

@@ -5,11 +5,14 @@
 /* ******************************************************************************** */
 
 #include <stdlib.h>
+#include <pthread.h>
 
 /* ******************************************************************************** */
 
 #include "../00. includes/treeNodeDataType.h"
 #include "../00. includes/tree node/treeNode.h"
+
+#include "../00. includes/allocMacros.h"
 
 /* ******************************************************************************** */
 
@@ -22,6 +25,9 @@ struct stackArray {
     int p;
     int currentSize;
     int chunkSize;
+
+    pthread_mutex_t mutex;
+    pthread_cond_t emptyCondVar;
 };
 
 /* ******************************************************************************** */
