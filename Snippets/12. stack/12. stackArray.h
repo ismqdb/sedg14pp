@@ -27,7 +27,8 @@ struct stackArray {
     int currentSize;
     int chunkSize;
 
-    pthread_mutex_t mutex;
+    pthread_mutex_t dataMutex;
+    pthread_mutex_t ptrMutex;
     pthread_cond_t hasDataCondVar;
 };
 
