@@ -1,0 +1,2 @@
+They both have constant running times, ie the worst case. 
+So, the ratio of their running times is constant too - n^2/log n.

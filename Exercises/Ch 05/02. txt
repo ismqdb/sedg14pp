@@ -1,0 +1,5 @@
+The running time of the first algorithms is always the same. 
+The running time of the second algorithm might fluctuate, ie it could have better running time.
+
+So, if both of them have worst case running time, their ratio is n^2/log n.
+However, second algorithm might have better running time, so their ratio could decrease.
