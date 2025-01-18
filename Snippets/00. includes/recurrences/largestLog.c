@@ -1,12 +1,6 @@
 /* ******************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <math.h>
-#include <assert.h>
-
-#include "Snippets/12. stack/12. stackArray.h"
+#include "largestLog.h"
 
 /* ******************************************************************************** */
 
@@ -14,15 +8,11 @@
 
 /* ******************************************************************************** */
 
-int largest(int x){
+int largestLog(int x){
     if(x < 2)
         return 0;
     else
-        return largest(x>>1) + 1;
-}
-
-int main(){
-    printf("%d\n", largest(LIMIT));
+        return largestLog(x>>1) + 1;
 }
 
 /* ******************************************************************************** */

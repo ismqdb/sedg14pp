@@ -15,6 +15,9 @@ add_executable(sedg14 main.c
     "Snippets/00. includes/postfix/postfix.c"
     "Snippets/00. includes/point/point.c"
 
+    "Snippets/00. includes/recurrences/halfInput.c"
+    "Snippets/00. includes/recurrences/largestLog.c"
+
     "Snippets/01. gcd/01. gcd.c"
     "Snippets/03. fraction/03. fraction.c"
     "Snippets/04. convert/04. convert.c"
