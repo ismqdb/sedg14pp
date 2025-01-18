@@ -4,11 +4,8 @@
 
 /* ******************************************************************************** */
 
-void sieve(int size){
-    if(size < 2){
-        fprintf(stderr, "Sieve: less than 2 elements.\n");
-        return;
-    }
+int sieve(int size){
+    assert(size >= 2);
 
     int i,j;
     
@@ -23,11 +20,11 @@ void sieve(int size){
                 a[i*j] = 0;
 
     for(i = 1; i < size; i++)
-        if(a[i])
-            printf("%4d\n", i);
-
-    putchar(10);
-    free(a);
+        if(a[i]){
+            int result = a[i];
+            free(a);
+            return result;
+        }
 }
 
 /* ******************************************************************************** */
