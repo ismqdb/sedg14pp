@@ -51,6 +51,7 @@ add_executable(sedg14 main.c
 target_link_libraries(sedg14 m) # Link libmath
 
 #target_compile_options(sedg14 PRIVATE -Wall -Wextra)
+target_compile_options(sedg14 PRIVATE -g3)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
