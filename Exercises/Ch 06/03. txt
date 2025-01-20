@@ -1,0 +1,5 @@
+15 microseconds for size of 5.
+
+The algorithm has nlogn running time. 
+
+The closest approximation I came up with is n*lg(n)/100, for n > 100.

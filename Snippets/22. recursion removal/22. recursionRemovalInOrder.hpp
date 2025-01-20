@@ -2,23 +2,24 @@
 
 #pragma once
 
-#include <iostream>
+/* ******************************************************************************** */
+
+#include <stdio.h>
+
+/* ******************************************************************************** */
+
+#include "../00. includes/tree node/treeNode.hpp"
+#include "../00. includes/parse tree/parseTree.hpp"
+
+#include <stack>
+#include <queue>
 
 /* ******************************************************************************** */
 
 template<typename T>
-    struct node {
-        public:
-            node(T, node<T>*);
-            node(){}
+    void inOrderRR0(treeNode<T>*);
 
-        T key;
-        node<T> *next;
-    };
-
-/* ******************************************************************************** */
-
-template struct node<char>;
-template struct node<int>;
+template<typename T>
+    void inOrderRR1(treeNode<T>*);
 
 /* ******************************************************************************** */

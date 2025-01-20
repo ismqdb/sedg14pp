@@ -1,0 +1,3 @@
+My guess was one second in the worst case, which was right. 
+
+The running time is a fraction of a second, around 1/500 of a second.

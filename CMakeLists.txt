@@ -7,10 +7,14 @@ enable_testing()
 add_executable(sedg14pp main.cpp
     "Snippets/00. includes/node/node.cpp"
     "Snippets/00. includes/tree node/treeNode.cpp"
-        "Snippets/00. includes/tree node RS/treeNodeRS.cpp"
+    "Snippets/00. includes/tree node RS/treeNodeRS.cpp"
     "Snippets/00. includes/parse tree/parseTree.cpp"
     "Snippets/00. includes/postfix/postfix.cpp"
     "Snippets/00. includes/mass suicide/massSuicide.cpp"
+    "Snippets/00. includes/point/point.cpp"
+
+    "Snippets/00. includes/recurrences/halfInput.cpp"
+    "Snippets/00. includes/recurrences/largestLog.cpp"
 
     "Snippets/01. gcd/01. gcd.cpp"
     "Snippets/03. fraction/03. fraction.cpp"
@@ -35,7 +39,10 @@ add_executable(sedg14pp main.cpp
     "Snippets/19. fibonacci/19. fibonacci.cpp"
     "Snippets/20. ruler/20. ruler.cpp"
     "Snippets/21. fractal/21. fractal.cpp"
-    "Snippets/22. recursion removal/22. recursionRemoval.cpp"
+
+    "Snippets/22. recursion removal/22. recursionRemovalPreOrder.cpp"
+    "Snippets/22. recursion removal/22. recursionRemovalInOrder.cpp"
+    "Snippets/22. recursion removal/22. recursionRemovalPostOrder.cpp"
 )
 
 target_link_libraries(sedg14pp m) # Link libmath

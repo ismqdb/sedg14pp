@@ -1,27 +1,27 @@
 /* ******************************************************************************** */
 
-#include "./22. recursionRemoval.hpp"
+#include "./22. recursionRemovalPreOrder.hpp"
 
 /* ******************************************************************************** */
 
 template<typename T>
-    void traversePreorder(treeNode<T> *t){
+    void preOrderRR0(treeNode<T> *t){
         if(t != NULL){
-            visit(t);
-            traverse_preorder(t->left);
-            traverse_preorder(t->right);
+            visitTreeNode(t);
+            preOrderRR0(t->left);
+            preOrderRR0(t->right);
         }
     }
 
 /* ******************************************************************************** */
 
 template<typename T>
-    void removeRecursion1(treeNode<T> *t){
+    void preOrderRR1(treeNode<T> *t){
         l:
             if(t == NULL)
                 goto x;
-            visit(t);
-            removeRecursion1(t->left);
+            visitTreeNode(t);
+            preOrderRR1(t->left);
             t = t->right;
             goto l;
         
@@ -32,14 +32,14 @@ template<typename T>
 /* ******************************************************************************** */
 
 template<typename T>
-    void removeRecursion2(treeNode<T> *t){
-        std::stack<treeNode<T>*> stack;
+    void preOrderRR2(treeNode<T> *t){
+        std::stack<treeNode<T>> stack;
 
         l:
             if(t == NULL)
                 goto s;
-            visit(t);
-            stack.push(t->right);
+            visitTreeNode(t);
+            stack.push(t);
             t = t->left;
             goto l;
 
@@ -51,18 +51,18 @@ template<typename T>
             goto l;
 
         x: 
-            ;
+            stackArrayDeinit(&stack);
     }
 
 /* ******************************************************************************** */
 
 template<typename T>
-    void removeRecursion3(treeNode<T> *t){
-        std::stack<treeNode<T>*> stack;
+    void preOrderRR3(treeNode<T> *t){
+        std::stack<treeNode<T>> stack;
 
         l:
             while(t != NULL){
-                visit(t);
+                visitTreeNode(t);
                 stack.push(t->right);
                 t = t->left;
             }
@@ -75,23 +75,23 @@ template<typename T>
             goto l;
 
         x: 
-            ;
+            stackArrayDeinit(&stack);
     }
 
 /* ******************************************************************************** */
 
 template<typename T>
-    void removeRecursion4(treeNode<T> *t){
-        std::stack<treeNode<T>*> stack;
+    void preOrderRR4(treeNode<T> *t){
+        std::stack<treeNode<T>> stack;
 
-        stack.push(t);
+        stack.push(t->right);
 
-        while(!stack.empty()){
+        while(!stack.empty){
             t = stack.top();
             stack.pop();
 
             while(t != NULL){
-                visit(t); 
+                visitTreeNode(t); 
                 stack.push(t->right);
                 t = t->left;
             }

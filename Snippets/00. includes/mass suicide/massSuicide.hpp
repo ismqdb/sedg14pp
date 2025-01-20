@@ -8,7 +8,12 @@
 
 /* ******************************************************************************** */
 
-void massSuicide(int, int);
 int massSuicideArray(int, int);
+
+template<typename T>
+    void massSuicideLinkedList(int, int);
+
+void massSuicideRecursiveDriver(int, int);
+int massSuicideRecursive(node<int>*, int);
 
 /* ******************************************************************************** */

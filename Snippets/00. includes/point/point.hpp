@@ -2,23 +2,26 @@
 
 #pragma once
 
+/* ******************************************************************************** */
+
 #include <iostream>
+#include <cassert>
 
 /* ******************************************************************************** */
 
-template<typename T>
-    struct node {
-        public:
-            node(T, node<T>*);
-            node(){}
+struct point {
+    point(int, int);
+    point();
 
-        T key;
-        node<T> *next;
-    };
+    int x;
+    int y;
+};
 
 /* ******************************************************************************** */
 
-template struct node<char>;
-template struct node<int>;
+bool isSamePoint(point*, point*);
+point *middlePoint(point*, point*);
+void drawPoint(point*);
+void lineSegment(point*, point*);
 
 /* ******************************************************************************** */

@@ -2,23 +2,20 @@
 
 #pragma once
 
-#include <iostream>
+/* ******************************************************************************** */
+
+#define errorAbort(code,text) do { \
+    fprintf (stderr, "%s at \"%s\":%d: %s\n", \
+        text, __FILE__, __LINE__, strerror (code)); \
+    abort (); \
+    } while (0)
 
 /* ******************************************************************************** */
 
-template<typename T>
-    struct node {
-        public:
-            node(T, node<T>*);
-            node(){}
-
-        T key;
-        node<T> *next;
-    };
-
-/* ******************************************************************************** */
-
-template struct node<char>;
-template struct node<int>;
+#define errnoAbort(text) do { \
+    fprintf (stderr, "%s at \"%s\":%d: %s\n", \
+        text, __FILE__, __LINE__, strerror (errno)); \
+    abort (); \
+    } while (0)
 
 /* ******************************************************************************** */

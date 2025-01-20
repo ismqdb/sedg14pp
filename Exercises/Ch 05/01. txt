@@ -1,0 +1,5 @@
+The proposed running times are upper limits (worst case).
+Yet, they can fluctuate, ie have better running time. 
+
+So, at both algorithms having worst case scenario, their ratio is n^2/log n.
+But, if their running times are different, their ratio can move in either direction.
