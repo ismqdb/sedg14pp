@@ -7,6 +7,8 @@
 #include <limits>
 #include <chrono>
 
+#include "08. sieve.hpp"
+
 /* ******************************************************************************** */
 
 int sieve(int size){
@@ -36,14 +38,13 @@ int sieve(int size){
 
 /* ******************************************************************************** */
 
-int sieveUnbounded(){
+sieveResult sieveUnbounded(){
     unsigned long long i;
     unsigned long long j;
 
     std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
 
-    size_t size = //std::numeric_limits<unsigned long long>::max();
-    30000000;
+    size_t size = 30000000;
 
     std::vector<int> vec(pow(10, 9));
 
@@ -63,9 +64,47 @@ int sieveUnbounded(){
 
     std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
 
-    std::cout << std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count() / 1000000.0 << " seconds";
+    double d = std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count() / 1000000.0;
 
-    return biggestIdx;
+    sieveResult result;
+    result.idx = biggestIdx;
+    result.seconds = d;
+
+    return result;
+}
+
+/* ******************************************************************************** */
+
+sieveResult sieveOptimized(){
+    unsigned long long i;
+    unsigned long long j;
+
+    std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
+
+    size_t size = 30000000;
+
+    std::vector<int> vec(pow(10, 9));
+
+    for(vec[1] = 0, i = 2; i < size; i++)
+        vec[i] = 1;
+
+    //
+
+    int biggestIdx = 0;
+
+    for(i = 1; i < size; i++)
+        if(vec[i])
+            biggestIdx = i;
+
+    std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
+
+    double d = std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count() / 1000000.0;
+
+    sieveResult result;
+    result.idx = biggestIdx;
+    result.seconds = d;
+
+    return result;
 }
 
 /* ******************************************************************************** */
