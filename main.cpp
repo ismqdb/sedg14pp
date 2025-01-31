@@ -9,7 +9,11 @@
 /* ******************************************************************************** */
 
 int main(){
-    sieveUnbounded();
+    sieveResult x = sieveUnbounded();
+    sieveResult y = sieveOptimized();
+
+    std::cout << "Sieve: " << x.seconds << "\tseconds, biggest idx: " << x.idx << ".\n";
+    std::cout << "Sieve: " << y.seconds << "\tseconds, biggest idx: " << y.idx << ".\n";
 }
 
 /* ******************************************************************************** */
