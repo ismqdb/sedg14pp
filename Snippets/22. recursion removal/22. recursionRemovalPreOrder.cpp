@@ -99,3 +99,23 @@ template<>
     }
 
 /* ******************************************************************************** */
+
+template<>
+    void preOrderRR4Inline(treeNode<char> *t){
+        stackA<treeNode<char>*> stack{};
+
+        stack.push(t->right);
+
+        while(!stack.isEmpty()){
+            t = stack.top();
+            stack.pop();
+
+            while(t != NULL){
+                visit(t); 
+                stack.push(t->right);
+                t = t->left;
+            }
+        }
+    }
+
+/* ******************************************************************************** */

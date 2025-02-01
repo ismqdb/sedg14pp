@@ -2,12 +2,21 @@
 
 #pragma once
 
+/* ******************************************************************************** */
+
+#define INL
+
+/* ******************************************************************************** */
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
 #include <mutex>
 #include <condition_variable>
 
+/* ******************************************************************************** */
+
+#include "../00. includes/tree node/treeNode.hpp"
 #include "./11. stack.hpp"
 
 /* ******************************************************************************** */
@@ -34,5 +43,6 @@ template<typename T>
 
 template class stackA<int>;
 template class stackA<char>;
+template class stackA<treeNode<char>*>;
 
 /* ******************************************************************************** */

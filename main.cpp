@@ -29,7 +29,7 @@ int main(){
 
     std::cout << "Pre order iterative:\t\t" << x1 * pow(10, 9) << " n seconds.\n";
     std::cout << "Pre order recursive:\t\t" << x2 * pow(10, 9) << " n seconds.\n";
-    std::cout << "Pre order RR:\t\t\t\t" << x3 * pow(10, 9) << " n seconds.\n";
+    std::cout << "Pre order RR inline:\t\t" << x3 * pow(10, 9) << " n seconds.\n";
 }
 
 /* ******************************************************************************** */
