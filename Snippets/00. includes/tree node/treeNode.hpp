@@ -34,6 +34,12 @@ template<typename T>
 int drawBinaryTreeRecursiveDriver();
 
 template<typename T>
-    void visit(treeNode<T>);
+    void visit(treeNode<T>*);
+
+/* ******************************************************************************** */
+
+template struct treeNode<char>;
+
+template<> void visit(treeNode<char>*);
 
 /* ******************************************************************************** */

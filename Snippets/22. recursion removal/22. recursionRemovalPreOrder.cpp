@@ -80,18 +80,18 @@ template<typename T>
 
 /* ******************************************************************************** */
 
-template<typename T>
-    void preOrderRR4(treeNode<T> *t){
-        std::stack<treeNode<T>> stack;
+template<>
+    void preOrderRR4(treeNode<char> *t){
+        std::stack<treeNode<char>*> stack{};
 
         stack.push(t->right);
 
-        while(!stack.empty){
+        while(!stack.empty()){
             t = stack.top();
             stack.pop();
 
             while(t != NULL){
-                visitTreeNode(t); 
+                visit(t); 
                 stack.push(t->right);
                 t = t->left;
             }

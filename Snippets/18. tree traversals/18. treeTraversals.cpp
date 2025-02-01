@@ -5,8 +5,8 @@
 /* ******************************************************************************** */
 
 template<typename T>
-    void levelOrderTraversal(node<T> *t){
-        std::queue<node<T>*> queue;
+    void levelOrderTraversal(treeNode<T> *t){
+        std::queue<treeNode<T>*> queue;
 
         queue.push(t);
 
@@ -26,9 +26,9 @@ template<typename T>
 
 /* ******************************************************************************** */
 
-template<typename T>
-    void preorderTraversal(node<T> *t){
-        std::stack<node<T>*> stack{};
+template<>
+    void preorderTraversal(treeNode<char> *t){
+        std::stack<treeNode<char>*> stack{};
 
         stack.push(t);
 
@@ -46,10 +46,12 @@ template<typename T>
         }
     }
 
+/* ******************************************************************************** */
+
 template<typename T>
-    void inorderTraversal(node<T> *t){
-        std::stack<node<T>*> stack{};
-        node<T> *temp;
+    void inorderTraversal(treeNode<T> *t){
+        std::stack<treeNode<T>*> stack{};
+        treeNode<T> *temp;
         
         do {
             if(t->left != NULL){
@@ -70,10 +72,12 @@ template<typename T>
         } while(!stack.empty());
     }
 
+/* ******************************************************************************** */
+
 template<typename T>
-    void postorderTraversal(node<T> *t){
-        std::stack<node<T>*> stack{};
-        node<T> *temp;
+    void postorderTraversal(treeNode<T> *t){
+        std::stack<treeNode<T>*> stack{};
+        treeNode<T> *temp;
 
         do {
             if(t->left != NULL && t->right != NULL){
@@ -94,38 +98,39 @@ template<typename T>
 
 /* ******************************************************************************** */
 
-template<typename T>
-    void preOrderIterative(treeNode<T> *t){
-        std::stack<treeNode<T>*> stack{};
+template<>
+    void preorderIterative(treeNode<char> *t){
+        std::stack<treeNode<char>*> stack{};
 
         stack.push(t);
 
-        while(stack_a_is_empty(&stack)){
-            t = stack.pop();
+        while(!stack.empty()){
+            t = stack.top();
+            stack.pop();
 
             while(t != NULL){
-                treeNodeVisit(t);
+                visit(t);
                 stack.push(t->right);
                 t = t->left;
             }
         }
     }
 
-template<typename T>
-    void prerderRecursive(treeNode<T> *t){
+template<>
+    void preorderRecursive(treeNode<char> *t){
         if(t != NULL){
-            treeNodeVisit(t);
-            pre_order_recursive(t->left);
-            pre_order_recursive(t->right);
+            visit(t);
+            preorderRecursive(t->left);
+            preorderRecursive(t->right);
         }
     }
 
 template<typename T>
     void inorderRecursive(treeNode<T> *t){
         if(t != NULL){
-            pre_order_recursive(t->left);
-            treeNodeVisit(t);
-            pre_order_recursive(t->right);
+            inorderRecursive(t->left);
+            visit(t);
+            inorderRecursive(t->right);
         }
     }
 

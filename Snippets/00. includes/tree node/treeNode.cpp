@@ -5,8 +5,8 @@
 
 /* ******************************************************************************** */
 
-template<typename T>
-    void visit(treeNode<T> node){
+template<>
+    void visit(treeNode<char>* node){
         std::cout << node->value << ' ';
     }
 

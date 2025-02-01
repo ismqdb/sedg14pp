@@ -6,30 +6,35 @@
 #include <stack>
 #include <queue>
 
-#include "../00. includes/node/node.hpp"
 #include "../00. includes/tree node/treeNode.hpp"
 
 /* ******************************************************************************** */
 
 template<typename T>
-    void levelOrderTraversal(node<T>*);
+    void levelOrderTraversal(treeNode<T>*);
 
 template<typename T>
-    void preorderTraversal(node<T>*);
+    void preorderTraversal(treeNode<T>*);
 
 template<typename T>
-    void inorderTraversal(node<T>*);
+    void inorderTraversal(treeNode<T>*);
 
 template<typename T>
-    void postorderTraversal(node<T>*);
+    void postorderTraversal(treeNode<T>*);
 
 template<typename T>
-    void preOrderIterative(treeNode<T>*);
+    void preorderIterative(treeNode<T>*);
 
 template<typename T>
     void preorderRecursive(treeNode<T>*);
 
 template<typename T>
     void inorderRecursive(treeNode<T>*);
+
+/* ******************************************************************************** */
+
+template<> void preorderTraversal<char>(treeNode<char>*);
+template<> void preorderIterative<char>(treeNode<char>*);
+template<> void preorderRecursive<char>(treeNode<char>*);
 
 /* ******************************************************************************** */
