@@ -8,7 +8,7 @@ template<typename T>
     void inOrderRR0(treeNode<T> *t){
         if(t != NULL){
             inOrderRR0(t->left);
-            visitTreeNode(t);
+            visit(t);
             inOrderRR0(t->right);
         }
     }
@@ -30,7 +30,7 @@ template<typename T>
         r:
             t = stack.top();
             stack.pop();
-            visitTreeNode(t);
+            visit(t);
 
             if(t->right == NULL){
                 if(stack.empty())

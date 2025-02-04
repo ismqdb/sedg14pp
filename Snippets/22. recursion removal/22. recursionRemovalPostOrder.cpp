@@ -9,7 +9,7 @@ template<typename T>
         if(t != NULL){
             postOrderRR0(t->left);
             postOrderRR0(t->right);
-            visitTreeNode(t);
+            visit(t);
         }
     }
 
@@ -34,7 +34,7 @@ template<typename T>
 
             if(t->right == NULL){
                 if(stack.empty()){
-                    visitTreeNode(t);
+                    visit(t);
                     goto x;
                 }
             }
@@ -46,7 +46,7 @@ template<typename T>
                 goto l;
             }
 
-            visitTreeNode(t);
+            visit(t);
             goto r;
 
         x:
