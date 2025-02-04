@@ -15,7 +15,7 @@
 
 void testStackA(){
     stackA<int> stack{};
-    int limit = pow(10, 6);
+    int limit = pow(10, 7);
 
     for(int i = 0; i < limit; i++)
         stack.push(i);
@@ -26,18 +26,7 @@ void testStackA(){
 
 void testStackL(){
     stackL<int> stack{};
-    int limit = pow(10, 6);
-
-    for(int i = 0; i < limit; i++)
-        stack.push(i);
-
-    while(!stack.isEmpty())
-        stack.pop();
-}
-
-void testStackPA(){
-    stackPA<int> stack{};
-    int limit = pow(10, 6);
+    int limit = pow(10, 7);
 
     for(int i = 0; i < limit; i++)
         stack.push(i);
@@ -53,11 +42,9 @@ int main(){
 
     runningTime(testStackA(), x1);
     runningTime(testStackL(), x2);
-    runningTime(testStackPA(), x3);
 
     std::cout << "Stack array: " << x1 << ".\n";
     std::cout << "Stack linked list: " << x2 << ".\n";
-    std::cout << "Stack parallel array: " << x3 << ".\n";
 }
 
 /* ******************************************************************************** */
