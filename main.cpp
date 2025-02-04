@@ -7,44 +7,23 @@
 
 #include "Snippets/00. includes/runningTimeMacros.hpp"
 
-#include "Snippets/11. stack/11. stackA.hpp"
-#include "Snippets/11. stack/11. stackL.hpp"
-#include "Snippets/11. stack/11. stackPA.hpp"
+#include "Snippets/20. ruler/20. ruler.hpp"
 
 /* ******************************************************************************** */
-
-void testStackA(){
-    stackA<int> stack{};
-    int limit = pow(10, 7);
-
-    for(int i = 0; i < limit; i++)
-        stack.push(i);
-
-    while(!stack.isEmpty())
-        stack.pop();
-}
-
-void testStackL(){
-    stackL<int> stack{};
-    int limit = pow(10, 7);
-
-    for(int i = 0; i < limit; i++)
-        stack.push(i);
-
-    while(!stack.isEmpty())
-        stack.pop();
-}
 
 int main(){
     double x1;
     double x2;
-    double x3;
+    
+    int left = 0;
+    int right = pow(2, 16);
+    int height = 12;
 
-    runningTime(testStackA(), x1);
-    runningTime(testStackL(), x2);
+    runningTime(ruleIterative(left, right, height), x1);
+    runningTime(ruleInorder(left, right, height), x2);
 
-    std::cout << "Stack array: " << x1 << ".\n";
-    std::cout << "Stack linked list: " << x2 << ".\n";
+    std::cout << "\n\nIterative: " << x1 * 1000 << ".\n";
+    std::cout << "Recursive: " << x2 * 1000 << ".\n";
 }
 
 /* ******************************************************************************** */
