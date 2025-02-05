@@ -26,8 +26,8 @@ int rulerMarkHeight(int num){
 
 /* ******************************************************************************** */
 
-void ruleLevelOrder(int left, int right, int tree_height){
-    for(int i = 1, j = 1; i <= tree_height; i++, j <<= 1)
+void ruleLevelOrder(int left, int right, int treeHeight){
+    for(int i = 1, j = 1; i <= treeHeight; i++, j <<= 1)
         for(int t = 0; t <= (left + right)/j; t++)
             mark(left + j + t * (j+j), i);
         std::cout << std::endl;
