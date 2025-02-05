@@ -11,4 +11,6 @@
 void sort3(int[], int);
 void sort3Driver();
 
+void selectionSort(int[], int);
+
 /* ******************************************************************************** */
