@@ -5,6 +5,8 @@
 /* ******************************************************************************** */
 
 void sort3(int a[], int n){
+    assert(n == 3);
+
     int t;
 
     if(a[1] > a[2]){
@@ -28,12 +30,13 @@ void sort3(int a[], int n){
 
 #define maxn 100
 
-void sort3Driver(){
+void sort3_driver(){
     int n;
     int i;
     int a[maxn];
 
     n = 0;
+    assert(n <= maxn);
 
     while(std::cin >> a[n+1])
         n++;
@@ -41,8 +44,11 @@ void sort3Driver(){
     a[0] = 0;
     sort3(a, n);
 
-    for(i = 0; i <= n; i++)
+    for(i = 0; i <= n; i++){
+        if(i < n)
+            assert(a[i] < a[i+1]);
         std::cout << a[i] << ' ';
+    }
 
     std::cout << '\n';
 }
@@ -63,6 +69,38 @@ void selectionSort(int a[], int n){
         a[min] = a[i];
         a[i] = t;
     }
+}
+
+/* ******************************************************************************** */
+
+void insertionSort(int a[], int n){
+    int v;
+    int j;
+
+    for(int i = 2; i <= n; i++){
+        v = a[i];
+        j = i;
+
+        while(a[j-1] > v){
+            a[j] = a[j-1];
+            j--;
+        }
+        a[j] = v;
+    }
+}
+
+/* ******************************************************************************** */
+
+void bubbleSort(int a[], int n){
+    int t;
+
+    for(int i = n; i >= 1; i--)
+        for(int j = 2; j <= i; j++)
+            if(a[j-1] > a[j]){
+                t = a[j-1];
+                a[j-1] = a[j];
+                a[j] = t;
+            }
 }
 
 /* ******************************************************************************** */

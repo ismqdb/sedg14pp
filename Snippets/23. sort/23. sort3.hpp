@@ -5,12 +5,15 @@
 /* ******************************************************************************** */
 
 #include <iostream>
+#include <cassert>
 
 /* ******************************************************************************** */
 
 void sort3(int[], int);
-void sort3Driver();
+void sort3_driver();
 
 void selectionSort(int[], int);
+void insertionSort(int[], int);
+void bubbleSort(int[], int);
 
 /* ******************************************************************************** */
