@@ -66,6 +66,8 @@
         "format": "cpp",
         "span": "cpp",
         "text_encoding": "cpp",
-        "future": "cpp"
+        "future": "cpp",
+        "chrono": "cpp",
+        "iomanip": "cpp"
     }
 }

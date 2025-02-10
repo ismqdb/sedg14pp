@@ -3,6 +3,11 @@
 #include "result.hpp"
 
 /* ******************************************************************************** */
+template<typename T>
+    result<T>::result(std::optional<T> val, std::optional<std::string> err){
+        this->error_message_ = err;
+        this->value_ = val;
+    }
 
 template <typename T>
     result<T> result<T>::success(T value) {
