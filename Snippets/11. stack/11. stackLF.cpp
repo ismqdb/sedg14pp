@@ -6,7 +6,7 @@
 
 template<typename T>
     stackLF<T>::stackLF(){
-
+        
     }
 
 template<typename T>
@@ -16,9 +16,9 @@ template<typename T>
 
 /* ******************************************************************************** */
 
-template<typename T>
-    void stackLF<T>::push(T v){
-        node<T>* newNode = new node<T>(v);
+template<>
+    void stackLF<int>::push(int v){
+        node<int>* newNode = new node<int>(v);
 
         newNode->next = head.load(std::memory_order::relaxed);
 

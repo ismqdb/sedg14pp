@@ -30,6 +30,7 @@ add_executable(sedg14pp main.cpp
     "Snippets/11. stack/11. stackL.cpp"
     "Snippets/11. stack/11. stackA.cpp"
     "Snippets/11. stack/11. stackPA.cpp"
+    "Snippets/11. stack/11. stackLF.cpp"
 
     "Snippets/13. queue/13. queueA.cpp"
     "Snippets/13. queue/13. queueL.cpp"

@@ -9,6 +9,7 @@
 template<typename T>
     struct node {
         public:
+            node(T);
             node(T, node<T>*);
             node(){}
 
