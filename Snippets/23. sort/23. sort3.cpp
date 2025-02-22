@@ -95,7 +95,7 @@ void bubbleSort(int a[], int n){
     int t;
 
     for(int i = n; i >= 1; i--)
-        for(int j = 2; j <= i; j++)
+        for(int j = 0; j <= i; j++)
             if(a[j-1] > a[j]){
                 t = a[j-1];
                 a[j-1] = a[j];
