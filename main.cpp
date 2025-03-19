@@ -5,21 +5,20 @@
 #include <thread>
 #include <cmath>
 
-#include "Snippets/23. sort/23. sort3.hpp"
-
-#include "Snippets/00. includes/result/result.hpp"
+#include "Snippets/11. stack/11. stackLF.hpp"
 
 /* ******************************************************************************** */
 
-result<int> increment(int x){
-    return result<int>::success(x+1);
-}
-
 int main(){
-    int a[] = {1, 5, 7, 6, 3};
-    selectionSort(a, 5);
+    stackLF<int> stack{};
 
-    std::cout << increment(5).value() << '\n';
+    for(int i = 0; i < 10; i++)
+        stack.push(i*10);
+
+    for(int i = 0; i < 10; i++){
+        std::cout << stack.top() << '\n';
+        stack.pop();
+    }
 }
 
 /* ******************************************************************************** */
