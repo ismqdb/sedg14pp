@@ -6,17 +6,18 @@
 
 void selectionSort(int a[], int n){
     int min;
-    int t;
+    int temp;
 
     for(int i = 0; i < n; i++){
         min = i;
-        for(int j = i+1; j <= n; j++)
-            if(a[j] < a[min])
-                min = j;
 
-        t = a[min];
-        a[min] = a[i];
-        a[i] = t;
+        for(int k = i; k < n; k++)
+            if(a[k] < a[min])
+                min = k;
+
+        temp = a[i];
+        a[i] = a[min];
+        a[min] = temp;
     }
 }
 
