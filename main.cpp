@@ -5,20 +5,20 @@
 #include <thread>
 #include <cmath>
 
-#include "Snippets/11. stack/11. stackLF.hpp"
+#include "Snippets/00. includes/rand/rand.hpp"
+#include "Snippets/23. sort/23. sort.hpp"
 
 /* ******************************************************************************** */
 
 int main(){
-    stackLF<int> stack{};
+    std::vector<int> vec = getRandVec(10, 0, 50);
+    selectionSort(vec.data(), vec.size());
 
-    for(int i = 0; i < 10; i++)
-        stack.push(i*10);
+   vec = getRandVec(10, 0, 50);
+   insertionSort(vec.data(), vec.size()); 
 
-    for(int i = 0; i < 10; i++){
-        std::cout << stack.top() << '\n';
-        stack.pop();
-    }
+   vec = getRandVec(10, 0, 50);
+   bubbleSort(vec.data(), vec.size()); 
 }
 
 /* ******************************************************************************** */

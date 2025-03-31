@@ -8,7 +8,7 @@ void selectionSort(int a[], int n){
     int min;
     int t;
 
-    for(int i = 1; i < n; i++){
+    for(int i = 0; i < n; i++){
         min = i;
         for(int j = i+1; j <= n; j++)
             if(a[j] < a[min])
@@ -26,7 +26,7 @@ void insertionSort(int a[], int n){
     int v;
     int j;
 
-    for(int i = 2; i <= n; i++){
+    for(int i = 1; i <= n; i++){
         v = a[i];
         j = i;
 
