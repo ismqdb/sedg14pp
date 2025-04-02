@@ -24,18 +24,15 @@ void selectionSort(int a[], int n){
 /* ******************************************************************************** */
 
 void insertionSort(int a[], int n){
-    int v;
-    int j;
-
     for(int i = 1; i <= n; i++){
-        v = a[i];
-        j = i;
+        int k = i;
+        int temp = a[k];
 
-        while(a[j-1] > v){
-            a[j] = a[j-1];
-            j--;
+        while(temp < a[k-1]){
+            a[k] = a[k-1];
+            k--;
         }
-        a[j] = v;
+        a[k] = temp;
     }
 }
 
