@@ -120,6 +120,8 @@ i32 massSuicideRecursive(node<i32> *t, i32 m){
 
         massSuicideRecursive(t, m);
     }
+
+    return 1;
 }
 
 /* ******************************************************************************** */

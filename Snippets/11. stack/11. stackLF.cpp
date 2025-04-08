@@ -55,7 +55,7 @@ template<typename T>
 
 template<typename T>
     bool stackLF<T>::isEmpty(){
-
+        return false;
     }
 
 /* ******************************************************************************** */
