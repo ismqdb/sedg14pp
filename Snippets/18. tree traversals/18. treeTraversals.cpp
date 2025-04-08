@@ -116,6 +116,8 @@ template<>
         }
     }
 
+/* ******************************************************************************** */
+
 template<>
     void preorderRecursive(treeNode<i8> *t){
         if(t != NULL){

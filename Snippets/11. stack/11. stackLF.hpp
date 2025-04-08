@@ -2,10 +2,14 @@
 
 #pragma once
 
+/* ******************************************************************************** */
+
 #include <iostream>
 #include <vector>
 #include <list>
 #include <atomic>
+
+/* ******************************************************************************** */
 
 #include "../00. includes/node/node.hpp"
 #include "../00. includes/types.hpp"

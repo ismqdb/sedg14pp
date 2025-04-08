@@ -26,6 +26,8 @@ template<typename T>
         this->condVar.notify_one();
     }
 
+/* ******************************************************************************** */
+
 template<typename T>
     #ifdef INL 
     inline 
@@ -36,6 +38,8 @@ template<typename T>
         currentIndex--;
         this->stack.pop_back();
     }
+
+/* ******************************************************************************** */
 
 template<typename T>
     #ifdef INL 

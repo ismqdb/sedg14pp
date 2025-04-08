@@ -11,6 +11,8 @@ void fraction::reduce(){
     this->denominator /= gcd;
 }
 
+/* ******************************************************************************** */
+
 void fraction::print(){
     if(numerator != 0 && denominator != 0)
         std::cout << numerator << '/' << denominator << '\n';
