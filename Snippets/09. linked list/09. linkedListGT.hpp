@@ -7,6 +7,7 @@
 #include <stddef.h>
 
 #include "../00. includes/node/node.hpp"
+#include "../00. includes/types.hpp"
 
 /* ******************************************************************************** */
 
@@ -36,7 +37,7 @@ template<typename T>
             node<T> *head;
             node<T> *cur;
             node<T>* prev;
-            int currentsize = 0;
+            i32 currentsize = 0;
     };
 
 /* ******************************************************************************** */

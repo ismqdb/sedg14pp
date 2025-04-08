@@ -6,10 +6,10 @@
 
 template<typename T>
     parallelArray<T>::parallelArray(){
-        int size = 50;
+        i32 size = 50;
 
         key = std::vector<T>(size+2);
-        next = std::vector<int>(size+2);
+        next = std::vector<i32>(size+2);
 
         head = 0;
         tail = 1;
@@ -25,21 +25,21 @@ template<typename T>
 }
 
 template<typename T>
-    T& parallelArray<T>::operator[](int index){
+    T& parallelArray<T>::operator[](i32 index){
         return this->key[index];
 }
 
 /* ******************************************************************************** */
 
 template<typename T>
-    void parallelArray<T>::deleteNext(int t){
+    void parallelArray<T>::deleteNext(i32 t){
         next[t] = next[next[t]];
     }
 
 /* ******************************************************************************** */
 
 template<typename T>
-    char parallelArray<T>::insertAfter(T newValue, int existing){
+    i8 parallelArray<T>::insertAfter(T newValue, i32 existing){
         if(existing < 0)
             throw;
 
@@ -62,7 +62,7 @@ template<typename T>
 
 template<typename T>
     void parallelArray<T>::printAll(){
-        char x = next[head];
+        i8 x = next[head];
 
         while(x != next[x]){
             std::cout << key[x] << '\n';
@@ -74,22 +74,22 @@ template<typename T>
 
 /* ******************************************************************************** */
 
-int parallelArrayDriver(){
-    parallelArray<char> parray{};
+i32 parallelArrayDriver(){
+    parallelArray<i8> parray{};
 
-    int s = parray.insertAfter('S', 0);
-    int l = parray.insertAfter('L', 0);
-    int a = parray.insertAfter('A', 0);
+    i32 s = parray.insertAfter('S', 0);
+    i32 l = parray.insertAfter('L', 0);
+    i32 a = parray.insertAfter('A', 0);
 
-    int i = parray.insertAfter('I', l);
-    int t = parray.insertAfter('T', s);
+    i32 i = parray.insertAfter('I', l);
+    i32 t = parray.insertAfter('T', s);
 
-    int n = parray.insertAfter('N', a);
-    int e = parray.insertAfter('E', n);
-    int w = parray.insertAfter('W', e);
+    i32 n = parray.insertAfter('N', a);
+    i32 e = parray.insertAfter('E', n);
+    i32 w = parray.insertAfter('W', e);
 
-    int b1 = parray.insertAfter(' ', a);
-    int b2 = parray.insertAfter(' ', w);
+    i32 b1 = parray.insertAfter(' ', a);
+    i32 b2 = parray.insertAfter(' ', w);
 
     parray.printAll();
 

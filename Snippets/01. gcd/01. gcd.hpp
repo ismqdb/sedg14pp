@@ -5,6 +5,8 @@
 #include <iostream>
 #include <cmath>
 
+#include "../00. includes/types.hpp"
+
 /* ******************************************************************************** */
 
 size_t gcd(size_t, size_t);

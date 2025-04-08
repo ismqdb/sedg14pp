@@ -5,10 +5,12 @@
 #include <iostream>
 #include <vector>
 
+#include "../00. includes/types.hpp"
+
 #include "../01. gcd/01. gcd.hpp"
 
 /* ******************************************************************************** */
 
-int calculate2dArray();
+i32 calculate2dArray();
 
 /* ******************************************************************************** */

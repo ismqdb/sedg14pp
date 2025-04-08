@@ -4,9 +4,11 @@
 
 #include <iostream>
 
+#include "../00. includes/types.hpp"
+
 /* ******************************************************************************** */
 
-void mark(int, int);
+void mark(i32, i32);
 
 /* ******************************************************************************** */
 
@@ -14,16 +16,16 @@ void mark(int, int);
 * Height of a individual mark of a ruler.
 * Implemented as a number of trailing zeroes of a number.
 */
-int rulerMarkHeight(int);
+i32 rulerMarkHeight(i32);
 
 /* ******************************************************************************** */
 
-void ruleLevelOrder(int, int, int);
-void rulePreorder(int, int, int);
-void ruleInorder(int, int, int);
+void ruleLevelOrder(i32, i32, i32);
+void rulePreorder(i32, i32, i32);
+void ruleInorder(i32, i32, i32);
 
 /* ******************************************************************************** */
 
-void ruleIterative(int, int, int);
+void ruleIterative(i32, i32, i32);
 
 /* ******************************************************************************** */

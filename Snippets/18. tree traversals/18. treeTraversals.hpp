@@ -6,6 +6,8 @@
 #include <stack>
 #include <queue>
 
+#include "../00. includes/types.hpp"
+
 #include "../00. includes/tree node/treeNode.hpp"
 
 /* ******************************************************************************** */
@@ -33,8 +35,8 @@ template<typename T>
 
 /* ******************************************************************************** */
 
-template<> void preorderTraversal<char>(treeNode<char>*);
-template<> void preorderIterative<char>(treeNode<char>*);
-template<> void preorderRecursive<char>(treeNode<char>*);
+template<> void preorderTraversal<i8>(treeNode<i8>*);
+template<> void preorderIterative<i8>(treeNode<i8>*);
+template<> void preorderRecursive<i8>(treeNode<i8>*);
 
 /* ******************************************************************************** */

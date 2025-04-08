@@ -5,7 +5,7 @@
 /* ******************************************************************************** */
 
 void fraction::reduce(){
-    int gcd = gcdMod(this->numerator, this->denominator);
+    i32 gcd = gcdMod(this->numerator, this->denominator);
 
     this->numerator /= gcd;
     this->denominator /= gcd;

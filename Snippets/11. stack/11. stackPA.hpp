@@ -5,6 +5,8 @@
 #include <iostream>
 #include <vector>
 
+#include "../00. includes/types.hpp"
+
 #include "./11. stack.hpp"
 #include "../10. parallel array/10. parallelArray.hpp"
 
@@ -23,11 +25,11 @@ template<typename T>
             bool isEmpty() override;
         private:
             parallelArray<T> data;
-            int current;
+            i32 current;
     };
 
 /* ******************************************************************************** */
 
-template class stackPA<int>;
+template class stackPA<i32>;
 
 /* ******************************************************************************** */

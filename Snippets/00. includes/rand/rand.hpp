@@ -7,9 +7,11 @@
 #include <random>
 #include <vector>
 
+#include "../types.hpp"
+
 /* ******************************************************************************** */
 
-int getRand(int, int);
-std::vector<int> getRandVec(int, int, int);
+i32 getRand(i32, i32);
+std::vector<i32> getRandVec(i32, i32, i32);
 
 /* ******************************************************************************** */

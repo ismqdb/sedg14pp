@@ -5,11 +5,11 @@
 /* ******************************************************************************** */
 
 template<>
-    treeNode<char>* buildParseTree(){
-        treeNode<char> *x;
-        char c;
+    treeNode<i8>* buildParseTree(){
+        treeNode<i8> *x;
+        i8 c;
 
-        std::stack<treeNode<char>*> stack{};
+        std::stack<treeNode<i8>*> stack{};
 
         while(1){
             c = getchar();
@@ -20,7 +20,7 @@ template<>
             if(c == '(' || c == ')' || c == ' ')
                 continue;
 
-            x = new treeNode<char>{c};
+            x = new treeNode<i8>{c};
 
             if(c == '+' || c == '*'){
                 if(!stack.empty()){
@@ -36,7 +36,7 @@ template<>
             stack.push(x);
         }
 
-        treeNode<char> *returnValue = stack.top();
+        treeNode<i8> *returnValue = stack.top();
         stack.pop();
         return returnValue;
     }

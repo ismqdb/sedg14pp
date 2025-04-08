@@ -4,14 +4,14 @@
 
 /* ******************************************************************************** */
 
-void selectionSort(int a[], int n){
-    int min;
-    int temp;
+void selectionSort(i32 a[], i32 n){
+    i32 min;
+    i32 temp;
 
-    for(int i = 0; i < n; i++){
+    for(i32 i = 0; i < n; i++){
         min = i;
 
-        for(int k = i; k < n; k++)
+        for(i32 k = i; k < n; k++)
             if(a[k] < a[min])
                 min = k;
 
@@ -23,10 +23,10 @@ void selectionSort(int a[], int n){
 
 /* ******************************************************************************** */
 
-void insertionSort(int a[], int n){
-    for(int i = 1; i <= n; i++){
-        int k = i;
-        int temp = a[k];
+void insertionSort(i32 a[], i32 n){
+    for(i32 i = 1; i <= n; i++){
+        i32 k = i;
+        i32 temp = a[k];
 
         while(temp < a[k-1]){
             a[k] = a[k-1];
@@ -38,11 +38,11 @@ void insertionSort(int a[], int n){
 
 /* ******************************************************************************** */
 
-void bubbleSort(int a[], int n){
-    int t;
+void bubbleSort(i32 a[], i32 n){
+    i32 t;
 
-    for(int i = n; i >= 1; i--)
-        for(int j = 0; j <= i; j++)
+    for(i32 i = n; i >= 1; i--)
+        for(i32 j = 0; j <= i; j++)
             if(a[j-1] > a[j]){
                 t = a[j-1];
                 a[j-1] = a[j];

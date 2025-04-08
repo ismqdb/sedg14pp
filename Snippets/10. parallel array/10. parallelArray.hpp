@@ -5,6 +5,8 @@
 #include <iostream>
 #include <vector>
 
+#include "../00. includes/types.hpp"
+
 /* ******************************************************************************** */
 
 template<typename T>
@@ -13,27 +15,27 @@ template<typename T>
             parallelArray();
             ~parallelArray();
 
-            void deleteNext(int);
-            char insertAfter(T, int);
+            void deleteNext(i32);
+            i8 insertAfter(T, i32);
             void printAll();
 
             bool empty();
 
-            T& operator[](int);
+            T& operator[](i32);
         private:
             std::vector<T> key;
-            std::vector<int> next;
-            int current;
-            int head;
-            int tail;
+            std::vector<i32> next;
+            i32 current;
+            i32 head;
+            i32 tail;
     };
 
 /* ******************************************************************************** */
 
-int parallelArrayDriver();
+i32 parallelArrayDriver();
 
 /* ******************************************************************************** */
 
-template class parallelArray<int>;
+template class parallelArray<i32>;
 
 /* ******************************************************************************** */

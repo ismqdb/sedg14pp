@@ -4,6 +4,8 @@
 
 #include <iostream>
 
+#include "../types.hpp"
+
 /* ******************************************************************************** */
 
 template<typename T>
@@ -19,7 +21,7 @@ template<typename T>
 
 /* ******************************************************************************** */
 
-template struct node<char>;
-template struct node<int>;
+template struct node<i8>;
+template struct node<i32>;
 
 /* ******************************************************************************** */

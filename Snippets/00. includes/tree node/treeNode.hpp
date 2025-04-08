@@ -11,6 +11,8 @@
 #include <vector>
 #include <algorithm>
 
+#include "../types.hpp"
+
 /* ******************************************************************************** */
 
 template<typename T>
@@ -25,21 +27,21 @@ template<typename T>
 template<typename T>
     void drawBinaryTreeRecursive(
         treeNode<T>*,
-        std::vector<std::pair<treeNode<T>*, int>>&,
-        int, int);
+        std::vector<std::pair<treeNode<T>*, i32>>&,
+        i32, i32);
 
 template<typename T>
-    void externalPathLength(treeNode<T>*, int, int&);
+    void externalPathLength(treeNode<T>*, i32, i32&);
 
-int drawBinaryTreeRecursiveDriver();
+i32 drawBinaryTreeRecursiveDriver();
 
 template<typename T>
     void visit(treeNode<T>*);
 
 /* ******************************************************************************** */
 
-template struct treeNode<char>;
+template struct treeNode<i8>;
 
-template<> void visit(treeNode<char>*);
+template<> void visit(treeNode<i8>*);
 
 /* ******************************************************************************** */

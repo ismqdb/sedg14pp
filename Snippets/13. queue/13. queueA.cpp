@@ -11,7 +11,7 @@ template<typename T>
 
 template<typename T>
     T& queueA<T>::get(){
-        int t = storage.front();
+        i32 t = storage.front();
         storage.erase(storage.begin());
         return t;
     }

@@ -4,10 +4,10 @@
 
 /* ******************************************************************************** */
 
-int convert(){
-    char c;
-    unsigned long long value = 0;
-    int pow = 1;
+i32 convert(){
+    i8 c;
+    size_t value = 0;
+    i32 pow = 1;
 
     std::string input{};
 

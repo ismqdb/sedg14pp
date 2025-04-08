@@ -12,8 +12,8 @@ template<typename T>
 /* ******************************************************************************** */
 
 template<>
-    treeNodeRS<char> *createNode(char value){
-        treeNodeRS<char> *t = new treeNodeRS<char>;
+    treeNodeRS<i8> *createNode(i8 value){
+        treeNodeRS<i8> *t = new treeNodeRS<i8>;
         t->value = value;
         return t;
     }
@@ -21,8 +21,8 @@ template<>
 /* ******************************************************************************** */
 
 template<>
-    treeNodeRS<char>* insertChild(treeNodeRS<char> *node, char value){
-        auto x = createNode<char>(value);
+    treeNodeRS<i8>* insertChild(treeNodeRS<i8> *node, i8 value){
+        auto x = createNode<i8>(value);
         node->child = x;
         return x;
     }
@@ -30,8 +30,8 @@ template<>
 /* ******************************************************************************** */
 
 template<>
-    treeNodeRS<char>* insertSibling(treeNodeRS<char> *parent, treeNodeRS<char> *node, char value){
-        auto x = createNode<char>(value);
+    treeNodeRS<i8>* insertSibling(treeNodeRS<i8> *parent, treeNodeRS<i8> *node, i8 value){
+        auto x = createNode<i8>(value);
 
         auto it = node;
 
@@ -48,9 +48,9 @@ template<>
 /* ******************************************************************************** */
 
 template<>
-    void levelOrderTraversal(treeNodeRS<char> *node){
-        std::queue<treeNodeRS<char>*> queue;
-        treeNodeRS<char> *temp1, *temp2;
+    void levelOrderTraversal(treeNodeRS<i8> *node){
+        std::queue<treeNodeRS<i8>*> queue;
+        treeNodeRS<i8> *temp1, *temp2;
 
         queue.push(node);
 
@@ -58,7 +58,7 @@ template<>
             node = queue.front();
             queue.pop();
 
-            visit<char>(node);
+            visit<i8>(node);
             std::flush(std::cout);
 
             if(node->sibling){
@@ -85,7 +85,7 @@ template<>
 /* ******************************************************************************** */
 
 template<>
-    void externalPathLengthRS(treeNodeRS<char>* t, int level, int &result){
+    void externalPathLengthRS(treeNodeRS<i8>* t, i32 level, i32 &result){
         if(!t) return;
 
         if(t->child || t->sibling)

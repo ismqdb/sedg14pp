@@ -6,6 +6,7 @@
 #include <vector>
 
 #include "../00. includes/node/node.hpp"
+#include "../00. includes/types.hpp"
 
 /* ******************************************************************************** */
 

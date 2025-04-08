@@ -2,14 +2,16 @@
 
 #pragma once
 
+#include "../00. includes/types.hpp"
+
 #include <stack>
 
 /* ******************************************************************************** */
 
-int fibonacciRecursive(int);
-int fibonacciIterative(int);
+i32 fibonacciRecursive(i32);
+i32 fibonacciIterative(i32);
 
-int fibonacciRR1(int);
-int fibonacciRR2(int);
+i32 fibonacciRR1(i32);
+i32 fibonacciRR2(i32);
 
 /* ******************************************************************************** */

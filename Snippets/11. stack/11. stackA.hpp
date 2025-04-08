@@ -18,6 +18,7 @@
 
 #include "../00. includes/tree node/treeNode.hpp"
 #include "./11. stack.hpp"
+#include "../00. includes/types.hpp"
 
 /* ******************************************************************************** */
 
@@ -34,15 +35,15 @@ template<typename T>
             bool isEmpty() override;
         private:
             std::vector<T> stack;
-            int currentIndex;
+            i32 currentIndex;
             std::mutex mtx;
             std::condition_variable condVar;
     };
 
 /* ******************************************************************************** */
 
-template class stackA<int>;
-template class stackA<char>;
-template class stackA<treeNode<char>*>;
+template class stackA<i32>;
+template class stackA<i8>;
+template class stackA<treeNode<i8>*>;
 
 /* ******************************************************************************** */

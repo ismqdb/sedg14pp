@@ -6,18 +6,19 @@
 #include <cmath>
 
 #include "../01. gcd/01. gcd.hpp"
+#include "../00. includes/types.hpp"
 
 /* ******************************************************************************** */
 
 class fraction {
     public:
-        fraction(int num, int denom) : 
+        fraction(i32 num, i32 denom) : 
             numerator{num}, denominator{denom}{}
         void reduce();
         void print();
     private:
-        int numerator;
-        int denominator;
+        i32 numerator;
+        i32 denominator;
 };
 
 /* ******************************************************************************** */

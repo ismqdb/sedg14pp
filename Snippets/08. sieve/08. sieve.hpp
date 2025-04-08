@@ -6,16 +6,18 @@
 #include <cmath>
 #include <vector>
 
+#include "../00. includes/types.hpp"
+
 /* ******************************************************************************** */
 
 struct sieveResult {
-    double seconds;
+    f64 seconds;
     size_t idx;
 };
 
 /* ******************************************************************************** */
 
-int sieve(int);
+i32 sieve(i32);
 sieveResult sieveUnbounded();
 sieveResult sieveOptimized();
 

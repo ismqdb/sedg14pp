@@ -22,7 +22,7 @@ template<typename T>
 /* ******************************************************************************** */
 
 template<typename T>
-    node<T>* doublyLinkedList<T>::insertAfter(node<T> *existingNode, int value){
+    node<T>* doublyLinkedList<T>::insertAfter(node<T> *existingNode, i32 value){
         node<T> *newNode = new node<T>{value};
         newNode->key = value;
 

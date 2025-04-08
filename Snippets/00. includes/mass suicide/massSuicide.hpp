@@ -5,15 +5,16 @@
 #include <iostream>
 
 #include "../node/node.hpp"
+#include "../types.hpp"
 
 /* ******************************************************************************** */
 
-int massSuicideArray(int, int);
+i32 massSuicideArray(i32, i32);
 
 template<typename T>
-    void massSuicideLinkedList(int, int);
+    void massSuicideLinkedList(i32, i32);
 
-void massSuicideRecursiveDriver(int, int);
-int massSuicideRecursive(node<int>*, int);
+void massSuicideRecursiveDriver(i32, i32);
+i32 massSuicideRecursive(node<i32>*, i32);
 
 /* ******************************************************************************** */

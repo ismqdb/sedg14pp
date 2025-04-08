@@ -6,10 +6,10 @@
 /* ******************************************************************************** */
 
 std::string getPostfix(){
-    char c;
-    char *number;
+    i8 c;
+    i8 *number;
     
-    stackA<char> stack{};
+    stackA<i8> stack{};
     std::string output{};
 
     while(1){
@@ -22,7 +22,7 @@ std::string getPostfix(){
             continue;
 
         if(c == ')'){
-            output += (char)stack.top();
+            output += (i8)stack.top();
             stack.pop();
             output += ' ';
             continue;
@@ -48,7 +48,7 @@ std::string getPostfix(){
     }
 
     while(!stack.isEmpty()){
-        output += (char)stack.top();
+        output += (i8)stack.top();
         stack.pop();
     }
 
@@ -62,7 +62,7 @@ template<typename Type, typename Func>
         return f(a, b);
     }
 
-bool isOperator(char c){
+bool isOperator(i8 c){
     switch(c){
         case '+':
         case '-':
@@ -75,16 +75,16 @@ bool isOperator(char c){
 
 /* ******************************************************************************** */
 
-int evaluate(std::string& input){
-    char c;
-    int x;
-    int sum = 0;
+i32 evaluate(std::string& input){
+    i8 c;
+    i32 x;
+    i32 sum = 0;
 
-    int left, right;
+    i32 left, right;
 
-    stackA<char> stack{};
+    stackA<i8> stack{};
 
-    for(int i = 0; i < input.size(); i++){
+    for(i32 i = 0; i < input.size(); i++){
         c = input[i];
 
         if(c == ' ')
@@ -128,7 +128,7 @@ int evaluate(std::string& input){
         stack.push(x);
     }
 
-    int retValue = stack.top();
+    i32 retValue = stack.top();
     stack.pop();
     return retValue;
 }
@@ -141,7 +141,7 @@ int evaluate(std::string& input){
 void postfixDriver(){
     //std::string postfix = getPostfix();
     std::string postfix{"3 6 + 2 4 - * 7 + "};
-    int result = evaluate(postfix);
+    i32 result = evaluate(postfix);
 
     std::cout << result << '\n';
 }

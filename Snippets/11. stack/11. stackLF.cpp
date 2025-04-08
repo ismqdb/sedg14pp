@@ -17,8 +17,8 @@ template<typename T>
 /* ******************************************************************************** */
 
 template<>
-    void stackLF<int>::push(int v){
-        node<int>* newNode = new node<int>(v);
+    void stackLF<i32>::push(i32 v){
+        node<i32>* newNode = new node<i32>(v);
 
         newNode->next = head.load(std::memory_order::relaxed);
 
@@ -27,13 +27,13 @@ template<>
     }
 
 template<>
-    int& stackLF<int>::top(){
+    i32& stackLF<i32>::top(){
         return head.load()->key;
     }
 
 template<>
-    void stackLF<int>::pop(){
-        node<int> *newNode = head.load();
+    void stackLF<i32>::pop(){
+        node<i32> *newNode = head.load();
 
         while(!head.compare_exchange_strong(newNode, newNode->next,
         std::memory_order::seq_cst));

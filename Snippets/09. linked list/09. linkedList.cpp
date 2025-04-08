@@ -29,7 +29,7 @@ template<typename T>
     }
 
 template<typename T>
-    node<T>* linkedList<T>::insertAfter(int v, node<T> *t){
+    node<T>* linkedList<T>::insertAfter(i32 v, node<T> *t){
         if(t == NULL)
             return NULL;
 

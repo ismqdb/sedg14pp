@@ -4,17 +4,17 @@
 
 /* ******************************************************************************** */
 
-void binary(int num){
+void binary(i32 num){
     std::string output{};
-    int formatVar = 0;
+    i32 formatVar = 0;
 
     while(num>0){
-        output += static_cast<char>(num%2);
+        output += static_cast<i8>(num%2);
         num/=2;
     }
 
-    std::for_each(output.rbegin(), output.rend(), [&formatVar](char c){
-        std::cout << static_cast<int>(c);
+    std::for_each(output.rbegin(), output.rend(), [&formatVar](i8 c){
+        std::cout << static_cast<i32>(c);
         formatVar++;
         if(formatVar % 4 == 0)
             std::cout << ' ';

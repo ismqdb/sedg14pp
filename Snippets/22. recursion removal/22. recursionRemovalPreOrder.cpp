@@ -81,8 +81,8 @@ template<typename T>
 /* ******************************************************************************** */
 
 template<>
-    void preOrderRR4(treeNode<char> *t){
-        std::stack<treeNode<char>*> stack{};
+    void preOrderRR4(treeNode<i8> *t){
+        std::stack<treeNode<i8>*> stack{};
 
         stack.push(t);
 
@@ -101,8 +101,8 @@ template<>
 /* ******************************************************************************** */
 
 template<>
-    void preOrderRR4Inline(treeNode<char> *t){
-        stackA<treeNode<char>*> stack{};
+    void preOrderRR4Inline(treeNode<i8> *t){
+        stackA<treeNode<i8>*> stack{};
 
         stack.push(t);
 

@@ -8,6 +8,8 @@
 
 /* ******************************************************************************** */
 
+#include "../00. includes/types.hpp"
+
 #include "../00. includes/tree node/treeNode.hpp"
 #include "../00. includes/parse tree/parseTree.hpp"
 
@@ -38,7 +40,7 @@ template<typename T>
 
 /* ******************************************************************************** */
 
-template<> void preOrderRR4<char>(treeNode<char>*);
-template<> void preOrderRR4Inline<char>(treeNode<char>*);
+template<> void preOrderRR4<i8>(treeNode<i8>*);
+template<> void preOrderRR4Inline<i8>(treeNode<i8>*);
 
 /* ******************************************************************************** */

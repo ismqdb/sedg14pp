@@ -27,8 +27,8 @@ template<typename T>
 /* ******************************************************************************** */
 
 template<>
-    void preorderTraversal(treeNode<char> *t){
-        std::stack<treeNode<char>*> stack{};
+    void preorderTraversal(treeNode<i8> *t){
+        std::stack<treeNode<i8>*> stack{};
 
         stack.push(t);
 
@@ -99,8 +99,8 @@ template<typename T>
 /* ******************************************************************************** */
 
 template<>
-    void preorderIterative(treeNode<char> *t){
-        std::stack<treeNode<char>*> stack{};
+    void preorderIterative(treeNode<i8> *t){
+        std::stack<treeNode<i8>*> stack{};
 
         stack.push(t);
 
@@ -117,7 +117,7 @@ template<>
     }
 
 template<>
-    void preorderRecursive(treeNode<char> *t){
+    void preorderRecursive(treeNode<i8> *t){
         if(t != NULL){
             visit(t);
             preorderRecursive(t->left);

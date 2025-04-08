@@ -8,10 +8,12 @@
 #include <cmath>
 #include <ctime>
 
+#include "../types.hpp"
+
 /* ******************************************************************************** */
 
-int largestLogRecursive(int);
-int largestLogIterative(int);
+i32 largestLogRecursive(i32);
+i32 largestLogIterative(i32);
 void compareLogs();
 
 /* ******************************************************************************** */
