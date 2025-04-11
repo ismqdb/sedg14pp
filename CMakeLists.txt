@@ -51,6 +51,8 @@ add_executable(sedg14pp main.cpp
     "Snippets/23. sort/23. sort3.cpp"
 )
 
+add_executable(simd simd.cpp)
+
 target_link_libraries(sedg14pp m) # Link libmath
 
 target_compile_options(sedg14pp PRIVATE 
@@ -60,7 +62,3 @@ target_compile_options(sedg14pp PRIVATE
     #-pedantic 
     -std=c++20
 )
-
-set(CPACK_PROJECT_NAME ${PROJECT_NAME})
-set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
-include(CPack)
