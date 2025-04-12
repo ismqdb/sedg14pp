@@ -14,11 +14,13 @@
 
 int main(){
     std::vector<i32> vec = getRandVec(10, 0, 50);
-    i32 sortHelp[10];
-    insertionSortLargeRecord(vec.data(), sortHelp, vec.size());
+    i32 sortIndexes[10];
+    insertionSortLargeRecord(vec.data(), sortIndexes, vec.size());
 
     for(i32 i = 0; i < vec.size(); i++)
-        std::cout << vec[sortHelp[i]] << ' ';
+        std::cout << vec[sortIndexes[i]] << ' ';
+
+    putchar(10);
 }
 
 /* ******************************************************************************** */

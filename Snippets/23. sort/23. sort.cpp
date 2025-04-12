@@ -56,16 +56,21 @@ void insertionSortLargeRecord(i32 array[], i32 indexes[], i32 size){
     i32 v;
     i32 j;
 
-    for(i32 i = 0; i <= size; i++)
+    for(i32 i = 0; i < size; i++)
         indexes[i] = i;
 
-    for(i32 i = 2; i <= size; i++){
+    for(i32 i = 0; i < size; i++){
         v = indexes[i];
         j = i;
 
         while(array[indexes[j-1]] > array[v]){
             indexes[j] = indexes[j-1];
             j--;
+
+            if(j < 0){
+                j++;
+                break;
+            }
         }
         indexes[j] = v;
     }
