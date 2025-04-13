@@ -13,11 +13,13 @@
 /* ******************************************************************************** */
 
 int main(){
-    std::vector<i32> vec = getRandVec(10, 0, 50);
-    i32 sortIndexes[10];
-    insertionSortLargeRecord(vec.data(), sortIndexes, vec.size());
+    enum {vecSize = 10};
 
-    for(i32 i = 0; i < vec.size(); i++)
+    std::vector<i32> vec = getRandVec(vecSize, 0, 50);
+    i32 sortIndexes[vecSize];
+    insertionSortLargeRecord(vec.data(), sortIndexes, vecSize);
+
+    for(i32 i = 0; i < vecSize; i++)
         std::cout << vec[sortIndexes[i]] << ' ';
 
     putchar(10);
