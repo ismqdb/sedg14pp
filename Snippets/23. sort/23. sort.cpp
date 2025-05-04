@@ -4,6 +4,20 @@
 
 /* ******************************************************************************** */
 
+void bubbleSort(i32 array[], i32 size){
+    i32 temp;
+
+    for(i32 i = size; i >= 1; i--)
+        for(i32 j = 0; j <= i; j++)
+            if(array[j-1] > array[j]){
+                temp = array[j-1];
+                array[j-1] = array[j];
+                array[j] = temp;
+            }
+}
+
+/* ******************************************************************************** */
+
 void selectionSort(i32 array[], i32 size){
     i32 min;
     i32 temp;
@@ -38,20 +52,6 @@ void insertionSort(i32 array[], i32 size){
 
 /* ******************************************************************************** */
 
-void bubbleSort(i32 array[], i32 size){
-    i32 temp;
-
-    for(i32 i = size; i >= 1; i--)
-        for(i32 j = 0; j <= i; j++)
-            if(array[j-1] > array[j]){
-                temp = array[j-1];
-                array[j-1] = array[j];
-                array[j] = temp;
-            }
-}
-
-/* ******************************************************************************** */
-
 void insertionSortLargeRecord(i32 array[], i32 indexes[], i32 size){
     i32 v;
     i32 j;
@@ -63,16 +63,53 @@ void insertionSortLargeRecord(i32 array[], i32 indexes[], i32 size){
         v = indexes[i];
         j = i;
 
-        while(array[indexes[j-1]] > array[v]){
+        while(j > 0 && array[indexes[j-1]] > array[v]){
             indexes[j] = indexes[j-1];
             j--;
-
-            if(j < 0){
-                j++;
-                break;
-            }
         }
         indexes[j] = v;
+    }
+}
+
+/* ******************************************************************************** */
+
+void insertionSortPointers(i32 array[], i32 *indexes[], i32 size){
+    int *v;
+    int j;
+
+    for(int i = 0; i < size; i++)
+        indexes[i] = &array[i];
+
+    for(int i = 0; i < size; i++){
+        v = indexes[i];
+        j = i;
+
+        while(*indexes[j-1] > *v){
+            indexes[j] = indexes[j-1];
+            j--;
+        }
+        indexes[j] = v;
+    }
+}
+
+/* ******************************************************************************** */
+
+void insitu(i32 array[], i32 indexes[], i32 size){
+    int j;
+    int k;
+    int t;
+
+    for(int i = 0; i < size; i++){
+        t = array[i];
+        k = i;
+
+        do {
+            j = k;
+            array[j] = array[indexes[j]];
+            k = indexes[j];
+            indexes[j] = j;
+        } while(k != i);
+        array[j] = t;
     }
 }
 

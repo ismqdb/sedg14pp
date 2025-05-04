@@ -13,9 +13,13 @@
 
 /* ******************************************************************************** */
 
+void bubbleSort(i32[], i32);
 void selectionSort(i32[], i32);
+
 void insertionSort(i32[], i32);
 void insertionSortLargeRecord(i32[], i32[], i32);
-void bubbleSort(i32[], i32);
+void insertionSortPointers(i32[], i32*[], i32);
+
+void insitu(i32[], i32[], i32);
 
 /* ******************************************************************************** */
