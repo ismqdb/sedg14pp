@@ -99,18 +99,19 @@ void insitu(i32 array[], i32 indexes[], i32 size){
     int k;
     int t;
 
-    for(int i = 0; i < size; i++){
-        t = array[i];
-        k = i;
+    for(int i = 0; i < size; i++)
+        if(indexes[i] != i){
+            t = indexes[i];
+            k = i;
 
-        do {
-            j = k;
-            array[j] = array[indexes[j]];
-            k = indexes[j];
-            indexes[j] = j;
-        } while(k != i);
-        array[j] = t;
-    }
+            do {
+                j = k;
+                indexes[j] = array[indexes[j]];
+                k = indexes[j];
+                indexes[j] = j;
+            } while (k != i);
+            indexes[j] = t;
+        }
 }
 
 /* ******************************************************************************** */
