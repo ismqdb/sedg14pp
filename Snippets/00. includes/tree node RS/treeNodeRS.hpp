@@ -39,14 +39,14 @@ template<typename T>
 /* ******************************************************************************** */
 
 template<typename T>
-    void levelOrderTraversal(treeNodeRS<T>*);
+    none levelOrderTraversal(treeNodeRS<T>*);
 
 template<typename T>
-    void externalPathLengthRS(treeNodeRS<T>*, i32, i32&);
+    none externalPathLengthRS(treeNodeRS<T>*, i32, i32&);
 
 /* ******************************************************************************** */
 
 template<typename T>
-    void visit(treeNodeRS<T>*);
+    none visit(treeNodeRS<T>*);
 
 /* ******************************************************************************** */

@@ -34,7 +34,7 @@ template<typename T>
     }
 
 template<typename T>
-    void doublyLinkedList<T>::removeNext(node<T> *node){
+    none doublyLinkedList<T>::removeNext(node<T> *node){
         node->next = node->next->next;
         node->next->prev = node;
     }

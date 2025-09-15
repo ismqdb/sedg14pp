@@ -16,9 +16,9 @@
 /* ******************************************************************************** */
 
 template<typename T>
-    void postOrderRR0(treeNode<T>*);
+    none postOrderRR0(treeNode<T>*);
 
 template<typename T>
-    void postOrderRR1(treeNode<T>*);
+    none postOrderRR1(treeNode<T>*);
 
 /* ******************************************************************************** */

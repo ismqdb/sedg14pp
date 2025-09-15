@@ -21,17 +21,17 @@ template<typename T>
             ~linkedList();
 
             size_t size();
-            void print();
+            none print();
 
-            void insertBefore(node<T>*, node<T>*);
+            none insertBefore(node<T>*, node<T>*);
 
-            void exchange(node<T>*, node<T>*);
+            none exchange(node<T>*, node<T>*);
 
-            void append(node<T>*);
-            void prepend(node<T>*);
+            none append(node<T>*);
+            none prepend(node<T>*);
 
-            void removeCS101(node<T>*);
-            void removeElegant(node<T>*);
+            none removeCS101(node<T>*);
+            none removeElegant(node<T>*);
 
         private:
             node<T>** findIndirect(node<T>*);

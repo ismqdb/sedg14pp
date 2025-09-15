@@ -25,7 +25,7 @@ struct point {
 
 bool isSamePoint(point*, point*);
 point *middlePoint(point*, point*);
-void drawPoint(point*);
-void lineSegment(point*, point*);
+none drawPoint(point*);
+none lineSegment(point*, point*);
 
 /* ******************************************************************************** */

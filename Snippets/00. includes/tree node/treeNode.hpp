@@ -28,23 +28,23 @@ template<typename T>
 /* ******************************************************************************** */
 
 template<typename T>
-    void drawBinaryTreeRecursive(
+    none drawBinaryTreeRecursive(
         treeNode<T>*,
         std::vector<std::pair<treeNode<T>*, i32>>&,
         i32, i32);
 
 template<typename T>
-    void externalPathLength(treeNode<T>*, i32, i32&);
+    none externalPathLength(treeNode<T>*, i32, i32&);
 
 i32 drawBinaryTreeRecursiveDriver();
 
 template<typename T>
-    void visit(treeNode<T>*);
+    none visit(treeNode<T>*);
 
 /* ******************************************************************************** */
 
 template struct treeNode<i8>;
 
-template<> void visit(treeNode<i8>*);
+template<> none visit(treeNode<i8>*);
 
 /* ******************************************************************************** */

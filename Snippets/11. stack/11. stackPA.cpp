@@ -17,7 +17,7 @@ template<typename T>
 /* ******************************************************************************** */
 
 template<typename T>
-    void stackPA<T>::push(T v){
+    none stackPA<T>::push(T v){
         this->data.insertAfter(v, this->current++);
     }
 
@@ -27,7 +27,7 @@ template<typename T>
     }
 
 template<typename T>
-    void stackPA<T>::pop(){
+    none stackPA<T>::pop(){
         if(isEmpty())
             throw;
 

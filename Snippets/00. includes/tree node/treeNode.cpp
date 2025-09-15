@@ -6,14 +6,14 @@
 /* ******************************************************************************** */
 
 template<>
-    void visit(treeNode<i8>* node){
+    none visit(treeNode<i8>* node){
         std::cout << node->value << ' ';
     }
 
 /* ******************************************************************************** */
 
 template<typename T>
-    void drawBinaryTreeRecursive(
+    none drawBinaryTreeRecursive(
         treeNode<T>* t,
         std::vector<std::pair<treeNode<T>*, i32>>& pairs,
         i32 left, i32 right){
@@ -38,7 +38,7 @@ template<typename T>
 /* ******************************************************************************** */
 
 template<typename T>
-    void externalPathLength(treeNode<T>* t, i32 level, i32& len){
+    none externalPathLength(treeNode<T>* t, i32 level, i32& len){
         if(t->left || t->right)
             level++;
 

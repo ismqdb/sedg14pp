@@ -4,7 +4,7 @@
 
 /* ******************************************************************************** */
 
-void insertionSort(i32 array[], i32 size){
+none insertionSort(i32 array[], i32 size){
     for(i32 i = 1; i <= size; i++){
         i32 k = i;
         i32 temp = array[k];
@@ -19,7 +19,7 @@ void insertionSort(i32 array[], i32 size){
 
 /* ******************************************************************************** */
 
-void insertionSortLargeRecord(i32 array[], i32 indexes[], i32 size){
+none insertionSortLargeRecord(i32 array[], i32 indexes[], i32 size){
     i32 v;
     i32 j;
 
@@ -40,7 +40,7 @@ void insertionSortLargeRecord(i32 array[], i32 indexes[], i32 size){
 
 /* ******************************************************************************** */
 
-void insertionSortPointers(i32 array[], i32 *indexes[], i32 size){
+none insertionSortPointers(i32 array[], i32 *indexes[], i32 size){
     i32 *v;
     i32 j;
 
@@ -61,7 +61,7 @@ void insertionSortPointers(i32 array[], i32 *indexes[], i32 size){
 
 /* ******************************************************************************** */
 
-void insitu(i32 array[], i32 indexes[], i32 size){
+none insitu(i32 array[], i32 indexes[], i32 size){
     i32 j;
     i32 k;
     i32 t;

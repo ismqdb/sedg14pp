@@ -4,7 +4,7 @@
 
 /* ******************************************************************************** */
 
-void fraction::reduce(){
+none fraction::reduce(){
     i32 gcd = gcdMod(this->numerator, this->denominator);
 
     this->numerator /= gcd;
@@ -13,7 +13,7 @@ void fraction::reduce(){
 
 /* ******************************************************************************** */
 
-void fraction::print(){
+none fraction::print(){
     if(numerator != 0 && denominator != 0)
         std::cout << numerator << '/' << denominator << '\n';
     else    

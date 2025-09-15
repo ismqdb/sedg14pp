@@ -13,7 +13,7 @@ template<typename T>
         public:
             ~queue(){}
 
-            void put(T) = 0;
+            none put(T) = 0;
             T& get() = 0;
             bool isEmpty() = 0;
     };

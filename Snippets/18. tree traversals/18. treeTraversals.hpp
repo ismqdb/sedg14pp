@@ -17,30 +17,30 @@
 /* ******************************************************************************** */
 
 template<typename T>
-    void levelOrderTraversal(treeNode<T>*);
+    none levelOrderTraversal(treeNode<T>*);
 
 template<typename T>
-    void preorderTraversal(treeNode<T>*);
+    none preorderTraversal(treeNode<T>*);
 
 template<typename T>
-    void inorderTraversal(treeNode<T>*);
+    none inorderTraversal(treeNode<T>*);
 
 template<typename T>
-    void postorderTraversal(treeNode<T>*);
+    none postorderTraversal(treeNode<T>*);
 
 template<typename T>
-    void preorderIterative(treeNode<T>*);
+    none preorderIterative(treeNode<T>*);
 
 template<typename T>
-    void preorderRecursive(treeNode<T>*);
+    none preorderRecursive(treeNode<T>*);
 
 template<typename T>
-    void inorderRecursive(treeNode<T>*);
+    none inorderRecursive(treeNode<T>*);
 
 /* ******************************************************************************** */
 
-template<> void preorderTraversal<i8>(treeNode<i8>*);
-template<> void preorderIterative<i8>(treeNode<i8>*);
-template<> void preorderRecursive<i8>(treeNode<i8>*);
+template<> none preorderTraversal<i8>(treeNode<i8>*);
+template<> none preorderIterative<i8>(treeNode<i8>*);
+template<> none preorderRecursive<i8>(treeNode<i8>*);
 
 /* ******************************************************************************** */

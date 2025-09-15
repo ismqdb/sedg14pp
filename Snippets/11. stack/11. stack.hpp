@@ -4,13 +4,17 @@
 
 /* ******************************************************************************** */
 
+#include "../00. includes/types.hpp"
+
+/* ******************************************************************************** */
+
 template<typename T>
     class stack {
         public:
             virtual ~stack(){}
 
-            virtual void push(T) = 0;
-            virtual void pop() = 0;
+            virtual none push(T) = 0;
+            virtual none pop() = 0;
             virtual T& top() = 0;
 
             virtual bool isEmpty() = 0;

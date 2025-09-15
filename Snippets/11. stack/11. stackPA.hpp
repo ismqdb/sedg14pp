@@ -22,9 +22,9 @@ template<typename T>
             stackPA();
             ~stackPA() override;
 
-            void push(T) override;
+            none push(T) override;
             T& top() override;
-            void pop() override;
+            none pop() override;
 
             bool isEmpty() override;
         private:

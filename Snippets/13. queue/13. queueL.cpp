@@ -17,7 +17,7 @@ template<typename T>
 /* ******************************************************************************** */
 
 template<typename T>
-    void queueL<T>::put(T value){
+    none queueL<T>::put(T value){
         this->data.push_back(value);
     }
 

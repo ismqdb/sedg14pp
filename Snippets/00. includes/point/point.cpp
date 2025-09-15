@@ -33,13 +33,13 @@ point* middlePoint(point *pt1, point *pt2){
 
 /* ******************************************************************************** */
 
-void drawPoint(point *pt){
+none drawPoint(point *pt){
     
 }
 
 /* ******************************************************************************** */
 
-void lineSegment(point *pt1, point *pt2){
+none lineSegment(point *pt1, point *pt2){
     if(!isSamePoint(pt1, pt2)){
         point *m = middlePoint(pt1, pt2);
         drawPoint(m);

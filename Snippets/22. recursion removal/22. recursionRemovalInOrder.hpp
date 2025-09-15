@@ -16,9 +16,9 @@
 /* ******************************************************************************** */
 
 template<typename T>
-    void inOrderRR0(treeNode<T>*);
+    none inOrderRR0(treeNode<T>*);
 
 template<typename T>
-    void inOrderRR1(treeNode<T>*);
+    none inOrderRR1(treeNode<T>*);
 
 /* ******************************************************************************** */

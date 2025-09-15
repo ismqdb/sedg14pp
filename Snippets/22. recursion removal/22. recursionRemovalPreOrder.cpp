@@ -5,7 +5,7 @@
 /* ******************************************************************************** */
 
 template<typename T>
-    void preOrderRR0(treeNode<T> *t){
+    none preOrderRR0(treeNode<T> *t){
         if(t != NULL){
             visit(t);
             preOrderRR0(t->left);
@@ -16,7 +16,7 @@ template<typename T>
 /* ******************************************************************************** */
 
 template<typename T>
-    void preOrderRR1(treeNode<T> *t){
+    none preOrderRR1(treeNode<T> *t){
         l:
             if(t == NULL)
                 goto x;
@@ -32,7 +32,7 @@ template<typename T>
 /* ******************************************************************************** */
 
 template<typename T>
-    void preOrderRR2(treeNode<T> *t){
+    none preOrderRR2(treeNode<T> *t){
         std::stack<treeNode<T>> stack;
 
         l:
@@ -57,7 +57,7 @@ template<typename T>
 /* ******************************************************************************** */
 
 template<typename T>
-    void preOrderRR3(treeNode<T> *t){
+    none preOrderRR3(treeNode<T> *t){
         std::stack<treeNode<T>> stack;
 
         l:
@@ -81,7 +81,7 @@ template<typename T>
 /* ******************************************************************************** */
 
 template<>
-    void preOrderRR4(treeNode<i8> *t){
+    none preOrderRR4(treeNode<i8> *t){
         std::stack<treeNode<i8>*> stack{};
 
         stack.push(t);
@@ -101,7 +101,7 @@ template<>
 /* ******************************************************************************** */
 
 template<>
-    void preOrderRR4Inline(treeNode<i8> *t){
+    none preOrderRR4Inline(treeNode<i8> *t){
         stackA<treeNode<i8>*> stack{};
 
         stack.push(t);

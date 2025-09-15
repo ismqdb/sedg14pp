@@ -138,7 +138,7 @@ i32 evaluate(std::string& input){
 // (((3 + 6) * (2 - 4)) + 7)
 // "3 6 + 2 4 - * 7 + "
 
-void postfixDriver(){
+none postfixDriver(){
     //std::string postfix = getPostfix();
     std::string postfix{"3 6 + 2 4 - * 7 + "};
     i32 result = evaluate(postfix);

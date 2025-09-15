@@ -16,6 +16,6 @@
 
 i32 largestLogRecursive(i32);
 i32 largestLogIterative(i32);
-void compareLogs();
+none compareLogs();
 
 /* ******************************************************************************** */

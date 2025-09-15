@@ -5,7 +5,7 @@
 /* ******************************************************************************** */
 
 template<typename T>
-    void linkedList<T>::removeCS101(node<T> *target){
+    none linkedList<T>::removeCS101(node<T> *target){
         cur = this->head;
         prev = NULL;
 
@@ -20,7 +20,7 @@ template<typename T>
     }
 
 template<typename T>
-    void linkedList<T>::removeElegant(node<T> *target){
+    none linkedList<T>::removeElegant(node<T> *target){
         node<T> **p = findIndirect(target);
         *p = target->next;
     }
@@ -28,7 +28,7 @@ template<typename T>
 /* ******************************************************************************** */
 
 template<typename T>
-    void linkedList<T>::exchange(node<T> *t, node<T> *u){
+    none linkedList<T>::exchange(node<T> *t, node<T> *u){
         if(t == NULL || u == NULL || t > u)
             throw;
 
@@ -68,7 +68,7 @@ template<typename T>
 /* ******************************************************************************** */
 
 template<typename T>
-    void linkedList<T>::insertBefore(node<T> *before, node<T> *item){
+    none linkedList<T>::insertBefore(node<T> *before, node<T> *item){
         node<T> **p = findIndirect(before);
         *p = item;
         item->next = before;
@@ -99,7 +99,7 @@ template<typename T>
 /* ******************************************************************************** */
 
 template<typename T>
-    void linkedList<T>::append(node<T> *item){
+    none linkedList<T>::append(node<T> *item){
         if(this->head == NULL){
             this->head = item;
             this->currentsize++;
@@ -116,7 +116,7 @@ template<typename T>
     }
 
 template<typename T>
-    void linkedList<T>::prepend(node<T> *item){
+    none linkedList<T>::prepend(node<T> *item){
         node<T> **p = &this->head;
 
         item->next = *p;
@@ -132,7 +132,7 @@ template<typename T>
     }
 
 template<typename T>
-    void linkedList<T>::print(){
+    none linkedList<T>::print(){
         node<T> *temp = this->head;
 
         while(temp != NULL){

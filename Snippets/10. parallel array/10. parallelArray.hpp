@@ -19,9 +19,9 @@ template<typename T>
             parallelArray();
             ~parallelArray();
 
-            void deleteNext(i32);
+            none deleteNext(i32);
             i8 insertAfter(T, i32);
-            void printAll();
+            none printAll();
 
             bool empty();
 

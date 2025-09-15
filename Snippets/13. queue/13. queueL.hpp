@@ -19,7 +19,7 @@ template<typename T>
             queueL();
             ~queueL() override;
 
-            void put(T) override;
+            none put(T) override;
             T& get() override;
             bool isEmpty() override;
         private:

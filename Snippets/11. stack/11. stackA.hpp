@@ -18,6 +18,7 @@
 
 #include "../00. includes/tree node/treeNode.hpp"
 #include "./11. stack.hpp"
+
 #include "../00. includes/types.hpp"
 
 /* ******************************************************************************** */
@@ -28,8 +29,8 @@ template<typename T>
             stackA();
             ~stackA() override;
 
-            void push(T) override;
-            void pop() override;
+            none push(T) override;
+            none pop() override;
             T& top() override;
 
             bool isEmpty() override;

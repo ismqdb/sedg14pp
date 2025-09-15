@@ -32,7 +32,7 @@ template<typename T>
 /* ******************************************************************************** */
 
 template<typename T>
-    void parallelArray<T>::deleteNext(i32 t){
+    none parallelArray<T>::deleteNext(i32 t){
         next[t] = next[next[t]];
     }
 
@@ -61,7 +61,7 @@ template<typename T>
 /* ******************************************************************************** */
 
 template<typename T>
-    void parallelArray<T>::printAll(){
+    none parallelArray<T>::printAll(){
         i8 x = next[head];
 
         while(x != next[x]){

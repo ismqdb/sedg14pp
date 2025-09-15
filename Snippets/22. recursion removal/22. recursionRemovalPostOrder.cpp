@@ -5,7 +5,7 @@
 /* ******************************************************************************** */
 
 template<typename T>
-    void postOrderRR0(treeNode<T> *t){
+    none postOrderRR0(treeNode<T> *t){
         if(t != NULL){
             postOrderRR0(t->left);
             postOrderRR0(t->right);
@@ -16,7 +16,7 @@ template<typename T>
 /* ******************************************************************************** */
 
 template<typename T>
-    void postOrderRR1(treeNode<T> *t){
+    none postOrderRR1(treeNode<T> *t){
         std::stack<T> stack;
         treeNode<T> *temp;
 

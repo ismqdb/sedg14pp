@@ -5,7 +5,7 @@
 /* ******************************************************************************** */
 
 template<typename T>
-    void inOrderRR0(treeNode<T> *t){
+    none inOrderRR0(treeNode<T> *t){
         if(t != NULL){
             inOrderRR0(t->left);
             visit(t);
@@ -16,7 +16,7 @@ template<typename T>
 /* ******************************************************************************** */
 
 template<typename T>
-    void inOrderRR1(treeNode<T> *t){
+    none inOrderRR1(treeNode<T> *t){
         std::stack<treeNode<T>> stack;
 
         l:

@@ -19,7 +19,7 @@ template<typename T>
     #ifdef INL 
     inline 
     #endif 
-    void stackA<T>::push(T v){
+    none stackA<T>::push(T v){
         std::lock_guard<std::mutex> lock(this->mtx);
         this->stack.push_back(v);
         currentIndex++;
@@ -32,7 +32,7 @@ template<typename T>
     #ifdef INL 
     inline 
     #endif 
-    void stackA<T>::pop(){
+    none stackA<T>::pop(){
         std::unique_lock<std::mutex> lock(this->mtx);
         condVar.wait(lock, [this]{return this->currentIndex > -1;});
         currentIndex--;

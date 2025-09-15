@@ -20,10 +20,10 @@ template<typename T>
             linkedList();
             ~linkedList();
 
-            void deleteNext(node<T>*);
+            none deleteNext(node<T>*);
             node<T>* insertAfter(int, node<T>*);
             node<T>* moveNextToFront(node<T>*);
-            void exchange(node<T>*, node<T>*);
+            none exchange(node<T>*, node<T>*);
         private:
             node<T>* head;
             node<T>* tail;

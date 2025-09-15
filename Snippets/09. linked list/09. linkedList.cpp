@@ -22,7 +22,7 @@ template<typename T>
 /* ******************************************************************************** */
 
 template<typename T>
-    void linkedList<T>::deleteNext(node<T> *t){
+    none linkedList<T>::deleteNext(node<T> *t){
         node<T> *x = t->next;
         t->next = t->next->next;
         delete(x);
@@ -51,7 +51,7 @@ template<typename T>
     }
 
 template<typename T>
-    void linkedList<T>::exchange(node<T> *t, node<T> *u){
+    none linkedList<T>::exchange(node<T> *t, node<T> *u){
         node<T> *temp = t->next;
         
         t->next = t->next->next;

@@ -18,8 +18,8 @@ class fraction {
     public:
         fraction(i32 num, i32 denom) : 
             numerator{num}, denominator{denom}{}
-        void reduce();
-        void print();
+        none reduce();
+        none print();
     private:
         i32 numerator;
         i32 denominator;

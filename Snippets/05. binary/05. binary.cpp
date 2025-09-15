@@ -4,7 +4,7 @@
 
 /* ******************************************************************************** */
 
-void binary(i32 num){
+none binary(i32 num){
     std::string output{};
     i32 formatVar = 0;
 

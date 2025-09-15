@@ -5,7 +5,7 @@
 /* ******************************************************************************** */
 
 template<typename T>
-    void queueA<T>::put(T v){
+    none queueA<T>::put(T v){
         this->storage.push_back(v);
     }
 

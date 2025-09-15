@@ -24,6 +24,6 @@ template<typename Type, typename Func>
 
 bool isOperator(i8);
 i32 evaluate(std::string&);
-void postfixDriver();
+none postfixDriver();
 
 /* ******************************************************************************** */

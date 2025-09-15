@@ -39,7 +39,7 @@ size_t gcd3(size_t x, size_t y, size_t z){
 
 /* ******************************************************************************** */
 
-void driverGCD(){
+none driverGCD(){
     size_t x, y;
     while(std::cin >> x >> y)
         if(x>0 && y>0)

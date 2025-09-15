@@ -5,7 +5,7 @@
 /* ******************************************************************************** */
 
 template<typename T>
-    void visit(treeNodeRS<T> *node){
+    none visit(treeNodeRS<T> *node){
         std::cout << node->value << ' ';
     }
 
@@ -48,7 +48,7 @@ template<>
 /* ******************************************************************************** */
 
 template<>
-    void levelOrderTraversal(treeNodeRS<i8> *node){
+    none levelOrderTraversal(treeNodeRS<i8> *node){
         std::queue<treeNodeRS<i8>*> queue;
         treeNodeRS<i8> *temp1, *temp2;
 
@@ -85,7 +85,7 @@ template<>
 /* ******************************************************************************** */
 
 template<>
-    void externalPathLengthRS(treeNodeRS<i8>* t, i32 level, i32 &result){
+    none externalPathLengthRS(treeNodeRS<i8>* t, i32 level, i32 &result){
         if(!t) return;
 
         if(t->child || t->sibling)

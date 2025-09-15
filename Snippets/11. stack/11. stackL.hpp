@@ -21,8 +21,8 @@ template<typename T>
             stackL();
             ~stackL() override;
 
-            void push(T) override;
-            void pop() override;
+            none push(T) override;
+            none pop() override;
             T& top() override;
 
             bool isEmpty() override;

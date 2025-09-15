@@ -21,7 +21,7 @@ template<typename T>
             queueA();
             ~queueA() override;
 
-            void put(T) override;
+            none put(T) override;
             T& get() override;
             bool isEmpty() override;
     private:

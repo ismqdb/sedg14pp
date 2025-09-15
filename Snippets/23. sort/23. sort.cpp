@@ -4,7 +4,7 @@
 
 /* ******************************************************************************** */
 
-void bubbleSort(i32 array[], i32 size){
+none bubbleSort(i32 array[], i32 size){
     i32 temp;
 
     for(i32 i = size; i >= 1; i--)
@@ -18,7 +18,7 @@ void bubbleSort(i32 array[], i32 size){
 
 /* ******************************************************************************** */
 
-void selectionSort(i32 array[], i32 size){
+none selectionSort(i32 array[], i32 size){
     i32 min;
     i32 temp;
 

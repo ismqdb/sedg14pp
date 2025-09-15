@@ -20,26 +20,26 @@
 /* ******************************************************************************** */
 
 template<typename T>
-    void preOrderRR0(treeNode<T>*);
+    none preOrderRR0(treeNode<T>*);
 
 template<typename T>
-    void preOrderRR1(treeNode<T>*);
+    none preOrderRR1(treeNode<T>*);
 
 template<typename T>
-    void preOrderRR2(treeNode<T>*);
+    none preOrderRR2(treeNode<T>*);
 
 template<typename T>
-    void preOrderRR3(treeNode<T>*);
+    none preOrderRR3(treeNode<T>*);
 
 template<typename T>
-    void preOrderRR4(treeNode<T>*);
+    none preOrderRR4(treeNode<T>*);
 
 template<typename T>
-    void preOrderRR4Inline(treeNode<T>*);
+    none preOrderRR4Inline(treeNode<T>*);
 
 /* ******************************************************************************** */
 
-template<> void preOrderRR4<i8>(treeNode<i8>*);
-template<> void preOrderRR4Inline<i8>(treeNode<i8>*);
+template<> none preOrderRR4<i8>(treeNode<i8>*);
+template<> none preOrderRR4Inline<i8>(treeNode<i8>*);
 
 /* ******************************************************************************** */

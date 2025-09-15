@@ -5,7 +5,7 @@
 /* ******************************************************************************** */
 
 template<typename T>
-    void levelOrderTraversal(treeNode<T> *t){
+    none levelOrderTraversal(treeNode<T> *t){
         std::queue<treeNode<T>*> queue;
 
         queue.push(t);
@@ -27,7 +27,7 @@ template<typename T>
 /* ******************************************************************************** */
 
 template<>
-    void preorderTraversal(treeNode<i8> *t){
+    none preorderTraversal(treeNode<i8> *t){
         std::stack<treeNode<i8>*> stack{};
 
         stack.push(t);
@@ -49,7 +49,7 @@ template<>
 /* ******************************************************************************** */
 
 template<typename T>
-    void inorderTraversal(treeNode<T> *t){
+    none inorderTraversal(treeNode<T> *t){
         std::stack<treeNode<T>*> stack{};
         treeNode<T> *temp;
         
@@ -75,7 +75,7 @@ template<typename T>
 /* ******************************************************************************** */
 
 template<typename T>
-    void postorderTraversal(treeNode<T> *t){
+    none postorderTraversal(treeNode<T> *t){
         std::stack<treeNode<T>*> stack{};
         treeNode<T> *temp;
 
@@ -99,7 +99,7 @@ template<typename T>
 /* ******************************************************************************** */
 
 template<>
-    void preorderIterative(treeNode<i8> *t){
+    none preorderIterative(treeNode<i8> *t){
         std::stack<treeNode<i8>*> stack{};
 
         stack.push(t);
@@ -119,7 +119,7 @@ template<>
 /* ******************************************************************************** */
 
 template<>
-    void preorderRecursive(treeNode<i8> *t){
+    none preorderRecursive(treeNode<i8> *t){
         if(t != NULL){
             visit(t);
             preorderRecursive(t->left);
@@ -128,7 +128,7 @@ template<>
     }
 
 template<typename T>
-    void inorderRecursive(treeNode<T> *t){
+    none inorderRecursive(treeNode<T> *t){
         if(t != NULL){
             inorderRecursive(t->left);
             visit(t);
