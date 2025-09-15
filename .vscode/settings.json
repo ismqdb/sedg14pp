@@ -68,6 +68,9 @@
         "text_encoding": "cpp",
         "future": "cpp",
         "chrono": "cpp",
-        "iomanip": "cpp"
+        "iomanip": "cpp",
+        "queue": "cpp",
+        "ranges": "cpp",
+        "stack": "cpp"
     }
 }

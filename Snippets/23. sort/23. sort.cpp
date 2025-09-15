@@ -37,81 +37,27 @@ void selectionSort(i32 array[], i32 size){
 
 /* ******************************************************************************** */
 
-void insertionSort(i32 array[], i32 size){
-    for(i32 i = 1; i <= size; i++){
-        i32 k = i;
-        i32 temp = array[k];
-
-        while(temp < array[k-1]){
-            array[k] = array[k-1];
-            k--;
-        }
-        array[k] = temp;
-    }
-}
-
-/* ******************************************************************************** */
-
-void insertionSortLargeRecord(i32 array[], i32 indexes[], i32 size){
-    i32 v;
+none shellSort(i8 array[], i32 size){
+    i32 i;
     i32 j;
+    i32 h;
+    i32 temp;
 
-    for(i32 i = 0; i < size; i++)
-        indexes[i] = i;
+    for(h = 1; h <= size/9; h = 3*h+1)
+        ;
 
-    for(i32 i = 0; i < size; i++){
-        v = indexes[i];
-        j = i;
+    for(; h > 0; h /= 3){
+        for(i = h; i < size; i++){
+            temp = array[i];
+            j = i;
 
-        while(j > 0 && array[indexes[j-1]] > array[v]){
-            indexes[j] = indexes[j-1];
-            j--;
+            while(j>h && array[j-h]>temp){
+                array[j] = array[j-h];
+                j -= h;
+            }
+            array[j] = temp;
         }
-        indexes[j] = v;
     }
-}
-
-/* ******************************************************************************** */
-
-void insertionSortPoi32ers(i32 array[], i32 *indexes[], i32 size){
-    i32 *v;
-    i32 j;
-
-    for(i32 i = 0; i < size; i++)
-        indexes[i] = &array[i];
-
-    for(i32 i = 0; i < size; i++){
-        v = indexes[i];
-        j = i;
-
-        while(*indexes[j-1] > *v){
-            indexes[j] = indexes[j-1];
-            j--;
-        }
-        indexes[j] = v;
-    }
-}
-
-/* ******************************************************************************** */
-
-void insitu(i32 array[], i32 indexes[], i32 size){
-    i32 j;
-    i32 k;
-    i32 t;
-
-    for(i32 i = 0; i < size; i++)
-        if(indexes[i] != i){
-            t = indexes[i];
-            k = i;
-
-            do {
-                j = k;
-                indexes[j] = array[indexes[j]];
-                k = indexes[j];
-                indexes[j] = j;
-            } while (k != i);
-            indexes[j] = t;
-        }
 }
 
 /* ******************************************************************************** */
