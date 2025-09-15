@@ -7,7 +7,6 @@ enable_testing()
 add_executable(sedg14pp main.cpp
     "Snippets/00. includes/node/node.cpp"
     "Snippets/00. includes/tree node/treeNode.cpp"
-    "Snippets/00. includes/tree node RS/treeNodeRS.cpp"
     "Snippets/00. includes/parse tree/parseTree.cpp"
     "Snippets/00. includes/postfix/postfix.cpp"
     "Snippets/00. includes/mass suicide/massSuicide.cpp"
