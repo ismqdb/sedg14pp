@@ -21,7 +21,7 @@ template<typename T>
             ~linkedList();
 
             none deleteNext(node<T>*);
-            node<T>* insertAfter(int, node<T>*);
+            node<T>* insertAfter(i32, node<T>*);
             node<T>* moveNextToFront(node<T>*);
             none exchange(node<T>*, node<T>*);
         private:

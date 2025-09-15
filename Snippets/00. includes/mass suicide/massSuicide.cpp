@@ -62,14 +62,14 @@ template<typename T>
 
         i32 i;
 
-        node<char> *t = new node<char>{};
-        node<char> *head = new node<char>{};
+        node<u8> *t = new node<u8>{};
+        node<u8> *head = new node<u8>{};
 
         t->key = 0;
         head = t;
 
         for(i = 0; i < n; i++){
-            t->next = new node<char>{};
+            t->next = new node<u8>{};
             t = t->next;
             t->key = (i+1);
         }

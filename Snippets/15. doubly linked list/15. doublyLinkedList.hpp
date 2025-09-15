@@ -19,7 +19,7 @@ template<typename T>
             doublyLinkedList();
             ~doublyLinkedList();
 
-            node<T>* insertAfter(node<T>*, int);
+            node<T>* insertAfter(node<T>*, i32);
             none removeNext(node<T>*);
         private:
             node<T> *head;

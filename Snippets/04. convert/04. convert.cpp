@@ -17,7 +17,7 @@ i32 convert(){
         input += c;
     }
 
-    std::for_each(input.rbegin(), input.rend(), [&pow, &value](char c){
+    std::for_each(input.rbegin(), input.rend(), [&pow, &value](u8 c){
         value += (pow * (c - '0'));
         pow *= 10;
     });
