@@ -25,21 +25,20 @@ none simpledc(i32 size){
 // N records
 // keys: [0, M-1]
 
-none distrCount(i32 *a, i32 N, i32 M){
+none distrCount(i8 *a, i32 N, i32 M){
     i32 count[M];
     i32 b[N];
 
     memset(count, 0, M*sizeof(i32));
-    memset(b, 0, N*sizeof(i32));
+    memset(b, 0, N*sizeof(i8));
 
     for(i32 i = 0; i < N; i++)
         count[a[i]]++;
 
-    for(i32 i = 0; i < M; i++)
-        count[i] = count[i-1] + count[i];
-
-    for(i32 i = N-1; i > 0; i--)
-        b[count[a[i]]--] = a[i];
+    for(i32 i = N-1; i > 0; i--){
+        b[count[a[i]]] = a[i];
+        count[a[i]]--;
+    }
     
     for(i32 i = 1; i <= N; i++)
         a[i] = b[i];
