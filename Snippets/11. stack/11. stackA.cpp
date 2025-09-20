@@ -1,8 +1,4 @@
-/* ******************************************************************************** */
-
 #include "./11. stackA.hpp"
-
-/* ******************************************************************************** */
 
 template<typename T>
     #ifdef INL 
@@ -12,8 +8,6 @@ template<typename T>
         std::lock_guard<std::mutex> lock(this->mtx);
         return currentIndex <= 0;
     }
-
-/* ******************************************************************************** */
 
 template<typename T>
     #ifdef INL 
@@ -26,8 +20,6 @@ template<typename T>
         this->condVar.notify_one();
     }
 
-/* ******************************************************************************** */
-
 template<typename T>
     #ifdef INL 
     inline 
@@ -38,8 +30,6 @@ template<typename T>
         currentIndex--;
         this->stack.pop_back();
     }
-
-/* ******************************************************************************** */
 
 template<typename T>
     #ifdef INL 
@@ -52,8 +42,6 @@ template<typename T>
             throw "Top(): empty stack.";
     }
 
-/* ******************************************************************************** */
-
 template<typename T>
     stackA<T>::stackA(){
         currentIndex = 0;
@@ -63,5 +51,3 @@ template<typename T>
     stackA<T>::~stackA(){
         currentIndex = 0;
     }
-
-/* ******************************************************************************** */

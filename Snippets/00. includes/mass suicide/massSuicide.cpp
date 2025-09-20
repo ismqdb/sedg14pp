@@ -1,8 +1,4 @@
-/* ******************************************************************************** */
-
 #include "./massSuicide.hpp"
-
-/* ******************************************************************************** */
 
 i32 massSuicideArray(i32 n, i32 m){
     if(n <= 0 || m <= 0)
@@ -50,8 +46,6 @@ i32 massSuicideArray(i32 n, i32 m){
     return 1;
 }
 
-/* ******************************************************************************** */
-
 template<typename T>
     none massSuicideLinkedList(i32 n, i32 m){
         if(n <= 0 || m <= 0)
@@ -88,8 +82,6 @@ template<typename T>
         printf("%d\n", t->key);
     }
 
-/* ******************************************************************************** */
-
 none massSuicideRecursiveDriver(i32 n, i32 m){
     i32 i;
     struct node<i32> *head;
@@ -104,8 +96,6 @@ none massSuicideRecursiveDriver(i32 n, i32 m){
     massSuicideRecursive(t, 5);    
     putchar(10);
 }
-
-/* ******************************************************************************** */
 
 i32 massSuicideRecursive(node<i32> *t, i32 m){
     if(t != t->next){
@@ -123,5 +113,3 @@ i32 massSuicideRecursive(node<i32> *t, i32 m){
 
     return 1;
 }
-
-/* ******************************************************************************** */

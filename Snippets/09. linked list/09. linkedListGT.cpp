@@ -1,8 +1,4 @@
-/* ******************************************************************************** */
-
 #include "09. linkedListGT.hpp"
-
-/* ******************************************************************************** */
 
 template<typename T>
     none linkedList<T>::removeCS101(node<T> *target){
@@ -24,8 +20,6 @@ template<typename T>
         node<T> **p = findIndirect(target);
         *p = target->next;
     }
-
-/* ******************************************************************************** */
 
 template<typename T>
     none linkedList<T>::exchange(node<T> *t, node<T> *u){
@@ -65,16 +59,12 @@ template<typename T>
         t->next = rightNext;
     }
 
-/* ******************************************************************************** */
-
 template<typename T>
     none linkedList<T>::insertBefore(node<T> *before, node<T> *item){
         node<T> **p = findIndirect(before);
         *p = item;
         item->next = before;
     }
-
-/* ******************************************************************************** */
 
 template<typename T>
     node<T>** linkedList<T>::findIndirect(node<T> *target){
@@ -95,8 +85,6 @@ template<typename T>
         else
             return p;
     }
-
-/* ******************************************************************************** */
 
 template<typename T>
     none linkedList<T>::append(node<T> *item){
@@ -124,8 +112,6 @@ template<typename T>
         this->currentsize++;
     }
 
-/* ******************************************************************************** */
-
 template<typename T>
     size_t linkedList<T>::size(){
         return this->currentsize;
@@ -143,8 +129,6 @@ template<typename T>
         putchar(10);
     }
 
-/* ******************************************************************************** */
-
 template<typename T>
     linkedList<T>::linkedList(){
         head = NULL;
@@ -158,5 +142,3 @@ template<typename T>
         delete(cur);
         delete(prev);
     }
-
-/* ******************************************************************************** */
