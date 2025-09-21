@@ -7,4 +7,4 @@
 
 none simpledc(i32);
 
-none distrCount(i8*, i32, i32);
+none distrCount(i32*, i32, i32);
