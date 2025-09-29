@@ -48,6 +48,7 @@ add_executable(sedg14pp main.cpp
 
     "Snippets/23. sort/23. sort.cpp"
     "Snippets/23. sort/23. sort3.cpp"
+    "Snippets/23. sort/23. sort4.cpp"
     "Snippets/23. sort/23. insSort.cpp"
     "Snippets/23. sort/23. dcount.cpp"
 )
