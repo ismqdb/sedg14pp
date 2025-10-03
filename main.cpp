@@ -13,16 +13,20 @@
 /* ******************************************************************************** */
 
 i32 main(){
-    enum {size = 10};
+    enum {noOfElems = 18};
 
-    enum {maxKeys = 100};
+    enum {maxKeys = 16};
 
-    i8 elems[size] = {
-        'A', 'B', 'C', 'D', 'E',
-        'E', 'D', 'C', 'B', 'A'
+    i32 elems[noOfElems] = {
+        0xA, 0xB, 0xC, 0xD, 0xE, 0xF,
+        0xF, 0xE, 0xD, 0xC, 0xB, 0xA,
+        0xA, 0xB, 0xC, 0xD, 0xE, 0xF
     };
 
-    distrCount(elems, size, maxKeys);
-}
+    distrCount(elems, noOfElems, maxKeys);
 
-/* ******************************************************************************** */
+    for(i32 i = 0; i < noOfElems; i++)
+        std::cout << elems[i] << ' ';
+
+    putchar(10);
+}
