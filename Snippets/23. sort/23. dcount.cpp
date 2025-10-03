@@ -22,8 +22,8 @@ none simpledc(i32 size){
 
 /* ******************************************************************************** */
 
-// N records
-// keys: [0, M-1]
+// noOfElems records
+// keys: [0, maxKey-1]
 
 none distrCount(i32 *in, i32 noOfElems, i32 maxKey){
     i32 count[maxKey];
@@ -35,18 +35,16 @@ none distrCount(i32 *in, i32 noOfElems, i32 maxKey){
     for(i32 i = 0; i < noOfElems; i++)
         count[in[i]]++;
 
-    for(i32 i = N-1; i > 0; i--){
-        b[count[a[i]]] = a[i];
-        count[a[i]]--;
+    for(i32 j = 0; j < maxKey; j++)
+        count[j] = count[j-1] + count[j];
+
+    for(i32 i = noOfElems-1; i > -1; i--){
+        out[count[in[i]]-1] = in[i];
+        count[in[i]]--;
     }
     
-    for(i32 i = 1; i <= N; i++)
-        a[i] = b[i];
-
-    for(i32 i = 0; i < M; i++)
-        std::cout << count[i] << ' ';
-        
-    putchar(10);
+    for(i32 i = 0; i < noOfElems; i++)
+        in[i] = out[i];
 }
 
 /* ******************************************************************************** */
