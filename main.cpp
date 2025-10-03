@@ -23,10 +23,7 @@ i32 main(){
         0xA, 0xB, 0xC, 0xD, 0xE, 0xF
     };
 
-    distrCount(elems, noOfElems, maxKeys);
-
-    for(i32 i = 0; i < noOfElems; i++)
-        std::cout << elems[i] << ' ';
-
-    putchar(10);
+    distrCount(elems, size, maxKeys);
 }
+
+/* ******************************************************************************** */
