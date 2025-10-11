@@ -8,21 +8,21 @@
 
 /* ******************************************************************************** */
 
-#include "Snippets/23. sort/23. dcount.hpp"
+#include "Snippets/23. sort/23. sort.hpp"
+#include "Snippets/23. sort/23. insSort.hpp"
 
 /* ******************************************************************************** */
 
 i32 main(){
-    enum {size = 10};
+    enum {noOfElems = 10};
+    
+    signed char a[noOfElems];
 
-    enum {maxKeys = 100};
+    for(int i = noOfElems-1; i > -1; i--){
+        a[noOfElems-i-1] = i;
+    }
 
-    i8 elems[size] = {
-        'A', 'B', 'C', 'D', 'E',
-        'E', 'D', 'C', 'B', 'A'
-    };
-
-    distrCount(elems, size, maxKeys);
+    shellSort(a, noOfElems);
 }
 
 /* ******************************************************************************** */
