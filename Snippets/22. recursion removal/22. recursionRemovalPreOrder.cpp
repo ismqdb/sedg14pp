@@ -1,4 +1,8 @@
+/* ******************************************************************************** */
+
 #include "./22. recursionRemovalPreOrder.hpp"
+
+/* ******************************************************************************** */
 
 template<typename T>
     none preOrderRR0(treeNode<T> *t){
@@ -8,6 +12,8 @@ template<typename T>
             preOrderRR0(t->right);
         }
     }
+
+/* ******************************************************************************** */
 
 template<typename T>
     none preOrderRR1(treeNode<T> *t){
@@ -22,6 +28,8 @@ template<typename T>
         x:
             ;
     }
+
+/* ******************************************************************************** */
 
 template<typename T>
     none preOrderRR2(treeNode<T> *t){
@@ -46,6 +54,8 @@ template<typename T>
             ;
     }
 
+/* ******************************************************************************** */
+
 template<typename T>
     none preOrderRR3(treeNode<T> *t){
         std::stack<treeNode<T>> stack;
@@ -68,6 +78,8 @@ template<typename T>
             ;
     }
 
+/* ******************************************************************************** */
+
 template<>
     none preOrderRR4(treeNode<i8> *t){
         std::stack<treeNode<i8>*> stack{};
@@ -86,6 +98,8 @@ template<>
         }
     }
 
+/* ******************************************************************************** */
+
 template<>
     none preOrderRR4Inline(treeNode<i8> *t){
         stackA<treeNode<i8>*> stack{};
@@ -103,3 +117,5 @@ template<>
             }
         }
     }
+
+/* ******************************************************************************** */

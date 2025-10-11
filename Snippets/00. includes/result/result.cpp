@@ -1,4 +1,8 @@
+/* ******************************************************************************** */
+
 #include "result.hpp"
+
+/* ******************************************************************************** */
 template<typename T>
     result<T>::result(std::optional<T> val, std::optional<std::string> err){
         this->error_message_ = err;
@@ -10,15 +14,21 @@ template <typename T>
         return result(value, std::nullopt);
     }
 
+/* ******************************************************************************** */
+
 template <typename T>
     result<T> result<T>::error(std::string error_message) {
         return result(std::nullopt, error_message);
     }
 
+/* ******************************************************************************** */
+
 template <typename T>
     bool result<T>::isSuccess() const {
         return value_.has_value();
     }
+
+/* ******************************************************************************** */
 
 template <typename T>
     const T& result<T>::value() const {
@@ -28,6 +38,8 @@ template <typename T>
         return value_.value();
     }
 
+/* ******************************************************************************** */
+
 template <typename T>
     const std::string& result<T>::errorMessage() const {
         if (isSuccess()) {
@@ -35,3 +47,5 @@ template <typename T>
         }
         return error_message_.value();
     }
+
+/* ******************************************************************************** */

@@ -1,4 +1,8 @@
+/* ******************************************************************************** */
+
 #include "./10. parallelArray.hpp"
+
+/* ******************************************************************************** */
 
 template<typename T>
     parallelArray<T>::parallelArray(){
@@ -25,10 +29,14 @@ template<typename T>
         return this->key[index];
 }
 
+/* ******************************************************************************** */
+
 template<typename T>
     none parallelArray<T>::deleteNext(i32 t){
         next[t] = next[next[t]];
     }
+
+/* ******************************************************************************** */
 
 template<typename T>
     i8 parallelArray<T>::insertAfter(T newValue, i32 existing){
@@ -43,10 +51,14 @@ template<typename T>
         return current++;
     }
 
+/* ******************************************************************************** */
+
 template<typename T>
     bool parallelArray<T>::empty(){
         return this->current == 2;
     }
+
+/* ******************************************************************************** */
 
 template<typename T>
     none parallelArray<T>::printAll(){
@@ -59,6 +71,8 @@ template<typename T>
 
         putchar(10);
     }
+
+/* ******************************************************************************** */
 
 i32 parallelArrayDriver(){
     parallelArray<i8> parray{};
@@ -81,3 +95,5 @@ i32 parallelArrayDriver(){
 
     return 1;
 }
+
+/* ******************************************************************************** */

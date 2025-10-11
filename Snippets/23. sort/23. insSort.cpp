@@ -1,4 +1,8 @@
+/* ******************************************************************************** */
+
 #include "./23. sort.hpp"
+
+/* ******************************************************************************** */
 
 none insertionSort(i32 array[], i32 size){
     for(i32 i = 1; i <= size; i++){
@@ -12,6 +16,8 @@ none insertionSort(i32 array[], i32 size){
         array[k] = temp;
     }
 }
+
+/* ******************************************************************************** */
 
 none insertionSortLargeRecord(i32 array[], i32 indexes[], i32 size){
     i32 v;
@@ -32,6 +38,8 @@ none insertionSortLargeRecord(i32 array[], i32 indexes[], i32 size){
     }
 }
 
+/* ******************************************************************************** */
+
 none insertionSortPointers(i32 array[], i32 *indexes[], i32 size){
     i32 *v;
     i32 j;
@@ -50,6 +58,8 @@ none insertionSortPointers(i32 array[], i32 *indexes[], i32 size){
         indexes[j] = v;
     }
 }
+
+/* ******************************************************************************** */
 
 none insitu(i32 array[], i32 indexes[], i32 size){
     i32 j;
@@ -70,3 +80,5 @@ none insitu(i32 array[], i32 indexes[], i32 size){
             indexes[j] = t;
         }
 }
+
+/* ******************************************************************************** */

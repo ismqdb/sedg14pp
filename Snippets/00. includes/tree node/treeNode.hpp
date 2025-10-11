@@ -1,4 +1,8 @@
+/* ******************************************************************************** */
+
 #pragma once
+
+/* ******************************************************************************** */
 
 #include <iostream>
 #include <cmath>
@@ -8,7 +12,11 @@
 #include <vector>
 #include <algorithm>
 
+/* ******************************************************************************** */
+
 #include "../types.hpp"
+
+/* ******************************************************************************** */
 
 template<typename T>
     struct treeNode {
@@ -16,6 +24,8 @@ template<typename T>
         treeNode* left;
         treeNode* right;
     };
+
+/* ******************************************************************************** */
 
 template<typename T>
     none drawBinaryTreeRecursive(
@@ -31,6 +41,10 @@ i32 drawBinaryTreeRecursiveDriver();
 template<typename T>
     none visit(treeNode<T>*);
 
+/* ******************************************************************************** */
+
 template struct treeNode<i8>;
 
 template<> none visit(treeNode<i8>*);
+
+/* ******************************************************************************** */

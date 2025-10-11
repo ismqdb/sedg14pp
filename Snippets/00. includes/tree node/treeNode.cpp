@@ -1,10 +1,16 @@
+/* ******************************************************************************** */
+
 #include "./treeNode.hpp"
 #include "../parse tree/parseTree.hpp"
+
+/* ******************************************************************************** */
 
 template<>
     none visit(treeNode<i8>* node){
         std::cout << node->value << ' ';
     }
+
+/* ******************************************************************************** */
 
 template<typename T>
     none drawBinaryTreeRecursive(
@@ -29,6 +35,8 @@ template<typename T>
             }
     }
 
+/* ******************************************************************************** */
+
 template<typename T>
     none externalPathLength(treeNode<T>* t, i32 level, i32& len){
         if(t->left || t->right)
@@ -44,6 +52,8 @@ template<typename T>
         else
             len += level;
     }
+
+/* ******************************************************************************** */
 
 i32 drawBinaryTreeRecursiveDriver(){
     i32 screenWidth = 80;
@@ -75,3 +85,5 @@ i32 drawBinaryTreeRecursiveDriver(){
 
     return 1;
 }
+
+/* ******************************************************************************** */

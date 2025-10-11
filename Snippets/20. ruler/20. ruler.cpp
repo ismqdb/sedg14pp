@@ -1,8 +1,14 @@
+/* ******************************************************************************** */
+
 #include "./20. ruler.hpp"
+
+/* ******************************************************************************** */
 
 none mark(i32 position, i32 size){
     std::cout << position << ", " << size << " | "; 
 }
+
+/* ******************************************************************************** */
 
 i32 rulerMarkHeight(i32 num){
     if(num < 1)
@@ -18,12 +24,16 @@ i32 rulerMarkHeight(i32 num){
     return count;
 }
 
+/* ******************************************************************************** */
+
 none ruleLevelOrder(i32 left, i32 right, i32 treeHeight){
     for(i32 i = 1, j = 1; i <= treeHeight; i++, j <<= 1)
         for(i32 t = 0; t <= (left + right)/j; t++)
             mark(left + j + t * (j+j), i);
         std::cout << std::endl;
 }
+
+/* ******************************************************************************** */
 
 none rulePreorder(i32 left, i32 right, i32 height){
     i32 middle = (left+right)/2;
@@ -35,6 +45,8 @@ none rulePreorder(i32 left, i32 right, i32 height){
     }
 }
 
+/* ******************************************************************************** */
+
 none ruleInorder(i32 left, i32 right, i32 height){
     i32 middle = (left+right)/2;
 
@@ -45,7 +57,11 @@ none ruleInorder(i32 left, i32 right, i32 height){
     }
 }
 
+/* ******************************************************************************** */
+
 none ruleIterative(i32 left, i32 right, i32 height){
     for(i32 i = 1; i < (right-left); i++)
         mark(i, rulerMarkHeight(i));
 }
+
+/* ******************************************************************************** */

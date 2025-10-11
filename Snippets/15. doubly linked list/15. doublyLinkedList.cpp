@@ -1,4 +1,8 @@
+/* ******************************************************************************** */
+
 #include "./15. doublyLinkedList.hpp"
+
+/* ******************************************************************************** */
 
 template<typename T>
     doublyLinkedList<T>::doublyLinkedList(){
@@ -14,6 +18,8 @@ template<typename T>
         delete(head);
         delete(tail);
     }
+
+/* ******************************************************************************** */
 
 template<typename T>
     node<T>* doublyLinkedList<T>::insertAfter(node<T> *existingNode, i32 value){
@@ -32,3 +38,5 @@ template<typename T>
         node->next = node->next->next;
         node->next->prev = node;
     }
+
+/* ******************************************************************************** */

@@ -1,4 +1,8 @@
+/* ******************************************************************************** */
+
 #include "./18. treeTraversals.hpp"
+
+/* ******************************************************************************** */
 
 template<typename T>
     none levelOrderTraversal(treeNode<T> *t){
@@ -20,6 +24,8 @@ template<typename T>
         }
     }
 
+/* ******************************************************************************** */
+
 template<>
     none preorderTraversal(treeNode<i8> *t){
         std::stack<treeNode<i8>*> stack{};
@@ -39,6 +45,8 @@ template<>
                 stack.push(t->left);
         }
     }
+
+/* ******************************************************************************** */
 
 template<typename T>
     none inorderTraversal(treeNode<T> *t){
@@ -64,6 +72,8 @@ template<typename T>
         } while(!stack.empty());
     }
 
+/* ******************************************************************************** */
+
 template<typename T>
     none postorderTraversal(treeNode<T> *t){
         std::stack<treeNode<T>*> stack{};
@@ -86,6 +96,8 @@ template<typename T>
         visit(t);
     }
 
+/* ******************************************************************************** */
+
 template<>
     none preorderIterative(treeNode<i8> *t){
         std::stack<treeNode<i8>*> stack{};
@@ -104,6 +116,8 @@ template<>
         }
     }
 
+/* ******************************************************************************** */
+
 template<>
     none preorderRecursive(treeNode<i8> *t){
         if(t != NULL){
@@ -121,3 +135,5 @@ template<typename T>
             inorderRecursive(t->right);
         }
     }
+
+/* ******************************************************************************** */
