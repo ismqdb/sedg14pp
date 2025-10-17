@@ -5,8 +5,8 @@
 /* ******************************************************************************** */
 
 none simpledc(i32 size){
-    i32 array[size];
-    i32 idx[size];
+    std::vector<i32> array{ size };
+    std::vector<i32> idx{ size };
 
     for(i32 i = 0; i < size; i++){
         array[i] = i;
@@ -24,11 +24,11 @@ none simpledc(i32 size){
 // keys: [0, maxKey-1]
 
 none distrCount(i32 *in, i32 noOfElems, i32 maxKey){
-    i32 count[maxKey];
-    i32 out[noOfElems];
+    std::vector<i32> count{ maxKey };
+    std::vector<i32> out{ noOfElems };
 
-    memset(count, 0, maxKey*sizeof(i32));
-    memset(out, 0, noOfElems*sizeof(i32));
+    //memset(count, 0, maxKey*sizeof(i32));
+    //memset(out, 0, noOfElems*sizeof(i32));
 
     for(i32 i = 0; i < noOfElems; i++)
         count[in[i]]++;

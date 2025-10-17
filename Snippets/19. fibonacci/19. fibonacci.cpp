@@ -18,7 +18,7 @@ i32 fibonacciRecursive(i32 n){
 
 i32 fibonacciIterative(i32 n){
     i32 i;
-    i32 array[n+2];
+    std::vector<i32> array{ n+2 };
     array[0] = array[1] = 1;
 
     for(i = 2; i <= n; i++)
@@ -66,7 +66,8 @@ i32 fibonacciRR2(i32 n){
         return 1;
     
     std::stack<i32> stack;
-    i32 array[n+2];
+    
+    std::vector<i32> array{ n };
 
     for(i32 i = n; i >= 2; i--)
         stack.push(i);

@@ -7,8 +7,8 @@
 size_t gcd(size_t u, size_t v){
     size_t t;
 
-    u = abs(u);
-    v = abs(v);
+    u = abs((i32)u);
+    v = abs((i32)v);
 
     while(u > 0){
         if(u < v)

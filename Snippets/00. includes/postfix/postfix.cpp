@@ -100,19 +100,19 @@ i32 evaluate(std::string& input){
 
             switch(c){
                 case '+':
-                    x = calculate(left, right, std::plus{});
+                    x = calculate(left, right, std::plus<i32>{});
                     break;
 
                 case '-':
-                    x = calculate(left, right, std::minus{});
+                    x = calculate(left, right, std::minus<i32>{});
                     break;
 
                 case '*':
-                    x = calculate(left, right, std::multiplies{});
+                    x = calculate(left, right, std::multiplies<i32>{});
                     break;
                 
                 case '/':
-                    x = calculate(left, right, std::divides{});
+                    x = calculate(left, right, std::divides<i32>{});
                     break;
 
                 default:

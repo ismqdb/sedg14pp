@@ -3,6 +3,7 @@
 #include "result.hpp"
 
 /* ******************************************************************************** */
+
 template<typename T>
     result<T>::result(std::optional<T> val, std::optional<std::string> err){
         this->error_message_ = err;
