@@ -60,7 +60,7 @@ target_compile_options(sedg14pp PRIVATE
     #-Wall 
     #-Werror 
     #-pedantic 
-    -std:c++20
+    /std:c++20
 )
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
