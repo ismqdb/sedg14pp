@@ -20,6 +20,8 @@ none simpledc(i32 size){
         std::cout << array[idx[i]] << ' ';
 }
 
+/* ******************************************************************************** */
+
 // noOfElems records
 // keys: [0, maxKey-1]
 
@@ -44,3 +46,5 @@ none distrCount(i32 *in, i32 noOfElems, i32 maxKey){
     for(i32 i = 0; i < noOfElems; i++)
         in[i] = out[i];
 }
+
+/* ******************************************************************************** */
