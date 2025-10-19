@@ -14,15 +14,17 @@
 /* ******************************************************************************** */
 
 i32 main(){
-    enum {noOfElems = 10};
+    enum {noOfElems = 12};
     
-    signed char a[noOfElems];
+    signed char in[noOfElems] = {
+        'E', 'A', 'S', 'Y',
+        'Q', 'U', 'E', 'S', 'T', 'I', 'O', 'N'
+    };
 
-    for(int i = noOfElems-1; i > -1; i--){
-        a[noOfElems-i-1] = i;
-    }
+    shellSort(in, noOfElems, 0);
 
-    shellSort(a, noOfElems);
+    for (int i = 0; i < noOfElems; i++)
+        std::cout << in[i] << '\n';
 }
 
 /* ******************************************************************************** */
