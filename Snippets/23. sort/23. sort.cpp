@@ -42,9 +42,13 @@ none shellSort(i8 array[], i32 size, i32 h){
     i32 j;
     i32 temp;
 
+    i32 hn = h;
+
     if(h <= 0)
         for(h = 1; h <= size/9; h = 3*h+1)
             ;
+
+    i32 iters = 0;
 
     while(h = hreduce(h)){
         for(i = h; i < size; i++){
@@ -54,10 +58,21 @@ none shellSort(i8 array[], i32 size, i32 h){
             while(j>=h && array[j-h]>temp){
                 array[j] = array[j-h];
                 j -= h;
+                goto success;
             }
+            iters++;
+            goto fail;
+
+            success:
             array[j] = temp;
+            iters++;
+
+            fail:
+            ;
         }
     }
+
+    std::cout << "h: " << hn << '\t' << "Iters:" << iters << '\n';
 }
 
 /* ******************************************************************************** */
