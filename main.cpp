@@ -14,15 +14,31 @@
 /* ******************************************************************************** */
 
 i32 main(){
-    enum {noOfElems = 12};
+    enum {noOfElems = 1000};
     
-    i8 in[noOfElems] = {
-        'E', 'A', 'S', 'Y',
-        'Q', 'U', 'E', 'S', 'T', 'I', 'O', 'N'
-    };
+    i8 in[noOfElems];
 
-    for(i32 i = 1; i < 12; i++)
-        shellSort(in, noOfElems, i);
+    std::vector<ssresult> iterations;
+
+    for (int i = 0; i < noOfElems; i++)
+        in[i] = noOfElems - i;
+
+    for (i32 i = 0; i < 64; i++) {
+        iterations.push_back(shellSort(in, noOfElems, i));
+    }
+
+    std::stable_sort(iterations.begin(), iterations.end(), [](ssresult x, ssresult y) {
+        return x.iters < y.iters;
+    });
+
+    for (i32 i = 0; i < iterations.size(); i++) {
+        std::cout 
+            << "h: "
+            << iterations[i].h 
+            << "\titers: " 
+            << iterations[i].iters 
+            << '\n';
+    }
 }
 
 /* ******************************************************************************** */

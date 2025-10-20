@@ -37,7 +37,7 @@ none selectionSort(i32 array[], i32 size){
 
 /* ******************************************************************************** */
 
-none shellSort(i8 array[], i32 size, i32 h){
+ssresult shellSort(i8 array[], i32 size, i32 h){
     i32 i;
     i32 j;
     i32 temp;
@@ -72,7 +72,10 @@ none shellSort(i8 array[], i32 size, i32 h){
         }
     }
 
-    std::cout << "h: " << hn << '\t' << "Iters:" << iters << '\n';
+    return ssresult{
+        .h = hn,
+        .iters = iters
+    };
 }
 
 /* ******************************************************************************** */
