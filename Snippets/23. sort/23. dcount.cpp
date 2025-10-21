@@ -49,8 +49,32 @@ none distrCount(i32 *in, i32 noOfElems, i32 maxKey){
 // noOfElems records
 // keys: n, m
 
-none distrCountBinary(i32* in, i32 noOfElems) {
-    
+none distrCountBinary(i32 *in, i32 noOfElems) {
+    std::vector<i32> count(2);
+    std::vector<i32> out(noOfElems);
+
+    i32 x = in[0];
+    i32 y = in[0];
+
+    for (i32 i = 0; i < noOfElems; i++) {
+        if (in[i] != x && in[i] != y)
+            y = in[i];
+        if (in[i] == in[0])
+            count[0]++;
+        else
+            count[1]++;
+    }
+
+    i32 counter = 0;
+
+    for (i32 i = 0; i < count[0]; i++, counter++)
+        out[counter] = x;
+
+    for (i32 i = 0; i < count[1]; i++, counter++)
+        out[counter] = y;
+
+    for (i32 i = 0; i < noOfElems; i++)
+        in[i] = out[i];
 }
 
 /* ******************************************************************************** */

@@ -8,37 +8,27 @@
 
 /* ******************************************************************************** */
 
-#include "Snippets/23. sort/23. sort.hpp"
-#include "Snippets/23. sort/23. insSort.hpp"
+#include "Snippets/23. sort/23. dcount.hpp"
 
 /* ******************************************************************************** */
 
 i32 main(){
-    enum {noOfElems = 1000};
-    
-    i8 in[noOfElems];
+    enum { noOfElems = 18 };
 
-    std::vector<ssresult> iterations;
+    i32 elems[noOfElems];
 
-    for (int i = 0; i < noOfElems; i++)
-        in[i] = noOfElems - i;
+    for (i32 i = 0; i < noOfElems; i++)
+        if (i % 2)
+            elems[i] = 3;
+        else
+            elems[i] = 5;
 
-    for (i32 i = 0; i < 64; i++) {
-        iterations.push_back(shellSort(in, noOfElems, i));
-    }
+    distrCountBinary(elems, noOfElems);
 
-    std::stable_sort(iterations.begin(), iterations.end(), [](ssresult x, ssresult y) {
-        return x.iters < y.iters;
-    });
+    for (i32 i = 0; i < noOfElems; i++)
+        std::cout << elems[i] << ' ';
 
-    for (i32 i = 0; i < iterations.size(); i++) {
-        std::cout 
-            << "h: "
-            << iterations[i].h 
-            << "\titers: " 
-            << iterations[i].iters 
-            << '\n';
-    }
+    putchar(10);
 }
 
 /* ******************************************************************************** */
