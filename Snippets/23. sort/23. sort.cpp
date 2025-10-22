@@ -37,18 +37,14 @@ none selectionSort(i32 array[], i32 size){
 
 /* ******************************************************************************** */
 
-ssresult shellSort(i8 array[], i32 size, i32 h){
+none shellSort(i8 array[], i32 size){
     i32 i;
     i32 j;
+    i32 h;
     i32 temp;
 
-    i32 hn = h;
-
-    if(h <= 0)
-        for(h = 1; h <= size/9; h = 3*h+1)
-            ;
-
-    i32 iters = 0;
+    for(h = 1; h <= size/9; h = 3*h+1)
+        ;
 
     while(h = hreduce(h)){
         for(i = h; i < size; i++){
@@ -58,24 +54,10 @@ ssresult shellSort(i8 array[], i32 size, i32 h){
             while(j>=h && array[j-h]>temp){
                 array[j] = array[j-h];
                 j -= h;
-                goto success;
             }
-            iters++;
-            goto fail;
-
-            success:
             array[j] = temp;
-            iters++;
-
-            fail:
-            ;
         }
     }
-
-    return ssresult{
-        .h = hn,
-        .iters = iters
-    };
 }
 
 /* ******************************************************************************** */
