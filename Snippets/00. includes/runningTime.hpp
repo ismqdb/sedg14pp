@@ -1,4 +1,8 @@
+/* ******************************************************************************** */
+
 #include <chrono>
+
+/* ******************************************************************************** */
 
 #define runningTimeMilliSeconds(function, result) do { \
     auto start = std::chrono::steady_clock::now(); \
@@ -8,3 +12,5 @@
     result = std::chrono::duration<double, std::milli>(diff).count(); \
     } \
 while(0)
+
+/* ******************************************************************************** */
