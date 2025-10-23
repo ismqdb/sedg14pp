@@ -4,12 +4,14 @@
 
 /* ******************************************************************************** */
 
-none shellSort(i8 array[], i32 size, std::vector<i32>(*func)(i32)) {
+i32 shellSort(i8 array[], i32 size, std::vector<i32>(*func)(i32)) {
     i32 i;
     i32 j;
     i32 temp;
 
     std::vector<i32> sequence = func(size);
+
+    auto start = std::chrono::steady_clock::now(); 
     
     for(i32 i = 0, h = sequence[i]; h > 0; i++) {
         for (i = h; i < size; i++) {
@@ -23,6 +25,11 @@ none shellSort(i8 array[], i32 size, std::vector<i32>(*func)(i32)) {
             array[j] = temp;
         }
     }
+
+    auto end = std::chrono::steady_clock::now();
+    auto diff = end - start;
+
+    return std::chrono::duration<double, std::milli>(diff).count();
 }
 
 /* ******************************************************************************** */
