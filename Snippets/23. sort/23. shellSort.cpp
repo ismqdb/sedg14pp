@@ -7,13 +7,11 @@
 none shellSort(i8 array[], i32 size) {
     i32 i;
     i32 j;
-    i32 h;
     i32 temp;
 
-    for (h = 1; h <= size / 9; h = 3 * h + 1)
-        ;
+    i32 h = shell_inc(size);
 
-    while (h = hreduce(h)) {
+    while (h = shell_dec(h)) {
         for (i = h; i < size; i++) {
             temp = array[i];
             j = i;
@@ -29,13 +27,24 @@ none shellSort(i8 array[], i32 size) {
 
 /* ******************************************************************************** */
 
-i32 hreduce(i32 in) {
+i32 shell_inc(i32 size) {
+    i32 h;
+
+    for (h = 1; h <= size / 9; h = 3 * h + 1)
+        ;
+
+    return h;
+}
+
+/* ******************************************************************************** */
+
+i32 shell_dec(i32 size) {
     i32 coef = 3;
 
-    if (in > 1 && (in / coef) == 0)
+    if (size > 1 && (size / coef) == 0)
         return 1;
     else
-        return in / coef;
+        return size / coef;
 }
 
 /* ******************************************************************************** */
