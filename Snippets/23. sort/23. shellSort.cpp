@@ -4,14 +4,14 @@
 
 /* ******************************************************************************** */
 
-none shellSort(i8 array[], i32 size) {
+none shellSort(i8 array[], i32 size, std::vector<i32>(*func)(i32)) {
     i32 i;
     i32 j;
     i32 temp;
 
-    i32 h = shell_inc(size);
-
-    while (h = shell_dec(h)) {
+    std::vector<i32> sequence = func(size);
+    
+    for(i32 i = 0, h = sequence[i]; h > 0; i++) {
         for (i = h; i < size; i++) {
             temp = array[i];
             j = i;
