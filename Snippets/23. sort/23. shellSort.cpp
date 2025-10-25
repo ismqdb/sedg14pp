@@ -4,7 +4,7 @@
 
 /* ******************************************************************************** */
 
-i32 shellSort(i8 array[], i32 size, std::vector<i32>(*func)(i32)) {
+i32 shellSort(i32 array[], i32 size, std::vector<i32>(*func)(i32)) {
     i32 i;
     i32 j;
     i32 temp;
