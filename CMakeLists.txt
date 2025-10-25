@@ -51,16 +51,16 @@ add_executable(sedg14pp main.cpp
     "Snippets/23. sort/23. sort4.cpp"
     "Snippets/23. sort/23. insSort.cpp"
     "Snippets/23. sort/23. dcount.cpp"
- "Snippets/23. sort/23. shellSort.cpp")
+    "Snippets/23. sort/23. shellSort.cpp"
+)
 
-# target_link_libraries(sedg14pp m) # Link libmath
+target_link_libraries(sedg14pp m) # Link libmath
 
 target_compile_options(sedg14pp PRIVATE 
     #-O0
     #-Wall 
     #-Werror 
     #-pedantic 
-    /std:c++20
 )
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
