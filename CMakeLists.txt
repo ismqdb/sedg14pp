@@ -52,6 +52,7 @@ add_executable(sedg14pp main.cpp
     "Snippets/23. sort/23. insSort.cpp"
     "Snippets/23. sort/23. dcount.cpp"
     "Snippets/23. sort/23. shellSort.cpp"
+    "Snippets/23. sort/23. qsort.cpp"
 )
 
 target_link_libraries(sedg14pp m) # Link libmath
