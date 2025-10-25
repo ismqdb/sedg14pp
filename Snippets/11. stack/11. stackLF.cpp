@@ -20,10 +20,10 @@ template<>
     none stackLF<i32>::push(i32 v){
         node<i32>* newNode = new node<i32>(v);
 
-        newNode->next = head.load(std::memory_order::relaxed);
+        newNode->next = head.load(std::memory_order_relaxed);
 
         while(!head.compare_exchange_strong(newNode->next, newNode, 
-            std::memory_order::release, std::memory_order::relaxed));
+            std::memory_order_release, std::memory_order_relaxed));
     }
 
 template<>
@@ -36,7 +36,7 @@ template<>
         node<i32> *newNode = head.load();
 
         while(!head.compare_exchange_strong(newNode, newNode->next,
-        std::memory_order::seq_cst));
+        std::memory_order_seq_cst));
     }
 
 /* ******************************************************************************** */
