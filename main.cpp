@@ -33,7 +33,7 @@ i32 main() {
     pfn.push_back(tokuda_seq);
 
     for (i32 i = 0; i < noOfArrays; i++) {
-        i32 time = shellSort(in[i], noOfElems, pfn[i]);
+        i32 time = shellSortTimed(in[i], noOfElems, pfn[i]);
         std::cout << time << '\n';
     }
 }
