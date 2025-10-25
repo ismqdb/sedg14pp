@@ -34,7 +34,7 @@ i32 shellSort(i32 array[], i32 size, std::vector<i32>(*func)(i32)) {
     auto end = std::chrono::steady_clock::now();
     auto diff = end - start;
 
-    return std::chrono::duration<double, std::milli>(diff).count();
+    return std::chrono::duration<double, std::micro>(diff).count();
 }
 
 /* ******************************************************************************** */

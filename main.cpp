@@ -14,7 +14,7 @@
 /* ******************************************************************************** */
 
 i32 main() {
-    enum { noOfElems = 1000 };
+    enum { noOfElems = 100000 };
     enum {noOfArrays = 6 };
 
     i32 in[noOfArrays][noOfElems];
