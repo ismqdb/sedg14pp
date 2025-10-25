@@ -3,3 +3,15 @@
 #include "23. qsort.hpp"
 
 /* ******************************************************************************** */
+
+none qsort(i32 array[], i32 left, i32 right){
+    i32 i;
+
+    if(right > left){
+        i = partition(left, right);
+        qsort(array, left, i-1);
+        qsort(array, i+1, right);
+    }
+}
+
+/* ******************************************************************************** */
