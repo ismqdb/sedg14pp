@@ -13,7 +13,11 @@ i32 shellSort(i32 array[], i32 size, std::vector<i32>(*func)(i32)) {
 
     auto start = std::chrono::steady_clock::now(); 
     
-    for(i32 seq_iter = sequence.size()-1, h = sequence[seq_iter]; h > 0; seq_iter++) {
+    for(
+        i32 seq_iter = sequence.size()-1, h = sequence[seq_iter]; 
+        seq_iter > -1; 
+        seq_iter--
+    ) {
         h = sequence[seq_iter];
         for (i = h; i < size; i++) {
             temp = array[i];
