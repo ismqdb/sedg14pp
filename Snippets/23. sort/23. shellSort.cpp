@@ -4,7 +4,8 @@
 
 /* ******************************************************************************** */
 
-i32 shellSortTimed(i32 array[], i32 size, std::vector<i32>(*func)(i32)) {
+i32 shellSortTimed(i32 array[], i32 size, std::vector<i32>(*func)(i32)) 
+{
     i32 i;
     i32 j;
     i32 temp;
@@ -13,17 +14,21 @@ i32 shellSortTimed(i32 array[], i32 size, std::vector<i32>(*func)(i32)) {
 
     auto start = std::chrono::steady_clock::now(); 
     
-    for(
+    for
+    (
         i32 seq_iter = sequence.size()-1, h = sequence[seq_iter]; 
         seq_iter > -1; 
         seq_iter--
-    ) {
+    ) 
+    {
         h = sequence[seq_iter];
-        for (i = h; i < size; i++) {
+        for (i = h; i < size; i++) 
+        {
             temp = array[i];
             j = i;
 
-            while (j >= h && array[j - h] > temp) {
+            while (j >= h && array[j - h] > temp) 
+            {
                 array[j] = array[j - h];
                 j -= h;
             }
@@ -39,7 +44,8 @@ i32 shellSortTimed(i32 array[], i32 size, std::vector<i32>(*func)(i32)) {
 
 /* ******************************************************************************** */
 
-none shellSort(i8 array[], i32 size){
+none shellSort(i8 array[], i32 size)
+{
     i32 i;
     i32 j;
     i32 h;
@@ -49,11 +55,13 @@ none shellSort(i8 array[], i32 size){
         ;
 
     for(; h > 0; h /= 3){
-        for(i = h; i < size; i++){
+        for(i = h; i < size; i++)
+        {
             temp = array[i];
             j = i;
 
-            while(j>=h && array[j-h]>temp){
+            while(j>=h && array[j-h]>temp)
+            {
                 array[j] = array[j-h];
                 j -= h;
             }
@@ -64,7 +72,8 @@ none shellSort(i8 array[], i32 size){
 
 /* ******************************************************************************** */
 
-std::vector<i32> shell_seq(i32 size) {
+std::vector<i32> shell_seq(i32 size) 
+{
     std::vector<i32> vec;
     i32 h;
 
@@ -76,11 +85,13 @@ std::vector<i32> shell_seq(i32 size) {
 
 /* ******************************************************************************** */
 
-std::vector<i32> knuth_seq(i32 size) {
+std::vector<i32> knuth_seq(i32 size) 
+{
     std::vector<i32> vec;
     i32 h = 1;
 
-    for (i32 i = 0; h <= size / 9; i++) {
+    for (i32 i = 0; h <= size / 9; i++) 
+    {
         vec.push_back(h);
         h = pow(3, i) / 2;
     }
@@ -90,11 +101,13 @@ std::vector<i32> knuth_seq(i32 size) {
 
 /* ******************************************************************************** */
 
-std::vector<i32> hibbard_seq(i32 size) {
+std::vector<i32> hibbard_seq(i32 size) 
+{
     std::vector<i32> vec;
     i32 h = 1;
 
-    for (i32 i = 0; h <= size / 9; i++) {
+    for (i32 i = 0; h <= size / 9; i++) 
+    {
         vec.push_back(h);
         h = pow(2, i) - 1;
     }
@@ -104,11 +117,13 @@ std::vector<i32> hibbard_seq(i32 size) {
 
 /* ******************************************************************************** */
 
-std::vector<i32> sedg_seq_1(i32 size) {
+std::vector<i32> sedg_seq_1(i32 size) 
+{
     std::vector<i32> vec;
     i32 h = 1;
 
-    for (i32 i = 0; h <= size / 9; i++) {
+    for (i32 i = 0; h <= size / 9; i++) 
+    {
         vec.push_back(h);
         h = 9 * pow(2, i) - 9 * pow(2, i / 2) + 1;
     }
@@ -118,11 +133,13 @@ std::vector<i32> sedg_seq_1(i32 size) {
 
 /* ******************************************************************************** */
 
-std::vector<i32> sedg_seq_2(i32 size) {
+std::vector<i32> sedg_seq_2(i32 size) 
+{
     std::vector<i32> vec;
     i32 h = 1;
 
-    for (i32 i = 0; h <= size / 9; i++) {
+    for (i32 i = 0; h <= size / 9; i++) 
+    {
         vec.push_back(h);
         h = pow(4, i) - 3 * pow(2, i) + 1;
     }
@@ -132,11 +149,13 @@ std::vector<i32> sedg_seq_2(i32 size) {
 
 /* ******************************************************************************** */
 
-std::vector<i32> tokuda_seq(i32 size) {
+std::vector<i32> tokuda_seq(i32 size) 
+{
     std::vector<i32> vec;
     i32 h = 1;
 
-    for (i32 i = 0; h <= size / 9; i++) {
+    for (i32 i = 0; h <= size / 9; i++) 
+    {
         vec.push_back(h);
         h = ceil(2.25 * h);
     }
