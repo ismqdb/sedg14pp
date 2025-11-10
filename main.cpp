@@ -15,12 +15,12 @@
 
 i32 main() 
 {
-    enum {noOfElems = 100};
+    enum {noOfElems = 10};
 
-    i32 array[noOfElems];
-
-    for(i32 i = 0; i < noOfElems; i++)
-        array[i] = noOfElems-i;
+    i32 array[noOfElems] = {
+        1, 5, 3, 7, 9, 
+        10, 11, 0, 9, 2
+    };
 
     qsort(array, 0, noOfElems-1);
 
