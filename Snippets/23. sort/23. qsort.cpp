@@ -6,32 +6,32 @@
 
 none qsort(i32 array[], i32 left, i32 right){
     i32 i;
-    i32 v;
+    i32 pivot;
     i32 j;
-    i32 t;
+    i32 temp;
 
     if(right > left){
-        v = array[right];
+        pivot = array[right];
         i = left-1;
         j = right;
 
         while(1){
-            while(array[++i] < v)
+            while(array[++i] < pivot)
                 ;
             
-            while(array[--j] > v)
+            while(array[--j] > pivot)
                 ;
 
             if(i>=j) break;
 
-            t = array[i];
+            temp = array[i];
             array[i] = array[j];
-            array[j] = t;
+            array[j] = temp;
         }
 
-        t = array[i];
+        temp = array[i];
         array[i] = array[right];
-        array[right] = t;
+        array[right] = temp;
 
         qsort(array, left, i-1);
         qsort(array, i+1, right);
