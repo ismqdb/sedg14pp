@@ -11,7 +11,7 @@ add_executable(sedg14pp main.cpp
     "Snippets/00. includes/postfix/postfix.cpp"
     "Snippets/00. includes/mass suicide/massSuicide.cpp"
     "Snippets/00. includes/point/point.cpp"
-    "Snippets/00. includes/result/result.cpp"
+    #"Snippets/00. includes/result/result.cpp"
     "Snippets/00. includes/rand/rand.cpp"
 
     "Snippets/00. includes/recurrences/halfInput.cpp"
