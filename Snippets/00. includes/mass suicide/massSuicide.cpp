@@ -92,9 +92,9 @@ template<typename T>
 
 none massSuicideRecursiveDriver(i32 n, i32 m){
     i32 i;
-    struct node<i32> *head;
+    struct node<i32> *head = NULL;
 
-    node<i32> *t = new node(0, t);
+    node<i32> *t = new node<i32>(0, t);
 
     for(i = 1; i < n; i++)
         t = new node<i32>(i, t->next);

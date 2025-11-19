@@ -1,8 +1,13 @@
 cmake_minimum_required(VERSION 3.10.0)
 project(sedg14 VERSION 0.1.0 LANGUAGES C CXX)
 
-include(CTest)
-enable_testing()
+# Enable Hot Reload for MSVC compilers if supported.
+if (POLICY CMP0141)
+  cmake_policy(SET CMP0141 NEW)
+  set(CMAKE_MSVC_DEBUG_INFORMATION_FORMAT "$<IF:$<AND:$<C_COMPILER_ID:MSVC>,$<CXX_COMPILER_ID:MSVC>>,$<$<CONFIG:Debug,RelWithDebInfo>:EditAndContinue>,$<$<CONFIG:Debug,RelWithDebInfo>:ProgramDatabase>>")
+endif()
+
+project ("sedg14pp")
 
 add_executable(sedg14pp main.cpp
     "Snippets/00. includes/node/node.cpp"
@@ -55,15 +60,8 @@ add_executable(sedg14pp main.cpp
     "Snippets/23. sort/23. qsort.cpp"
 )
 
-target_link_libraries(sedg14pp m) # Link libmath
+#target_link_libraries(sedg14pp m) # Link libmath
 
-target_compile_options(sedg14pp PRIVATE 
-    #-O0
-    #-Wall 
-    #-Werror 
-    #-pedantic 
-)
-
-set(CPACK_PROJECT_NAME ${PROJECT_NAME})
-set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
-include(CPack)
+if (CMAKE_VERSION VERSION_GREATER 3.12)
+  set_property(TARGET sedg14pp PROPERTY CXX_STANDARD 20)
+endif()
