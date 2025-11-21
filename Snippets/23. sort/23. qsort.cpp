@@ -50,3 +50,41 @@ none qsort(i32 array[], i32 left, i32 right){
 }
 
 /* ******************************************************************************** */
+
+none qsortRR(i32 array[], i32 size){
+    i32 i;
+    i32 l;
+    i32 r;
+
+    l = 1;
+    r = size;
+
+    std::stack<i32> stack;
+
+    while (1) {
+        while (r > l) {
+            i = partition(array, l, r);
+
+            if (i - l > r - i) {
+                stack.push(l);
+                stack.push(i - 1);
+                l = i + 1;
+            }
+            else {
+                stack.push(i + 1);
+                stack.push(r);
+                r = i - 1;
+            }
+        }
+        if (stack.empty())
+            break;
+        
+        r = stack.top();
+        stack.pop();
+
+        l = stack.top();
+        stack.pop();
+    }
+}
+
+/* ******************************************************************************** */
