@@ -63,7 +63,7 @@ none qsortRR(i32 array[], i32 size){
 
     while (1) {
         while (r > l) {
-            i = partition(array, l, r);
+            r = partition(array, l, r);
 
             if (i - l > r - i) {
                 stack.push(l);
