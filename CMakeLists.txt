@@ -19,6 +19,8 @@ add_executable(sedg14pp main.cpp
     #"Snippets/00. includes/result/result.cpp"
     "Snippets/00. includes/rand/rand.cpp"
 
+    "Snippets/00. includes/lru/lru.cpp"
+
     "Snippets/00. includes/recurrences/halfInput.cpp"
     "Snippets/00. includes/recurrences/largestLog.cpp"
 
@@ -58,7 +60,7 @@ add_executable(sedg14pp main.cpp
     "Snippets/23. sort/23. dcount.cpp"
     "Snippets/23. sort/23. shellSort.cpp"
     "Snippets/23. sort/23. qsort.cpp"
-)
+ "Snippets/00. includes/lru/lru.cpp")
 
 #target_link_libraries(sedg14pp m) # Link libmath
 
