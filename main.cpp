@@ -6,6 +6,8 @@
 #include <cmath>
 #include <vector>
 #include <functional>
+#include <atomic>
+#include <cassert>
 
 /* ******************************************************************************** */
 
@@ -14,17 +16,20 @@
 /* ******************************************************************************** */
 
 i32 main(){
-    enum {noOfElems = 10};
+	class Foo {};
 
-    i32 array[noOfElems] = {
-        1, 5, 3, 7, 9, 
-        10, 11, 0, 9, 2
-    };
+	Foo someArray[5];
 
-    qsort(array, 0, noOfElems-1);
+	std::atomic<Foo*> p(someArray);
 
-    for(i32 i = 0; i < noOfElems; i++)
-        std::cout << array[i] << '\n';
+	Foo* x = p.fetch_add(2);
+	assert(x == someArray);
+	assert(p.load() == &someArray[2]);
+
+	x = (p -= 1);
+
+	assert(x == &someArray[1]);
+	assert(p.load() == &someArray[1]);
 }
 
 /* ******************************************************************************** */
