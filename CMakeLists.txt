@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10.0)
-project(sedg14 VERSION 0.1.0 LANGUAGES C CXX)
+project(sedg14pp VERSION 0.1.0 LANGUAGES C CXX)
 
 # Enable Hot Reload for MSVC compilers if supported.
 if (POLICY CMP0141)
