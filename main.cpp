@@ -21,7 +21,7 @@ i32 main(){
         10, 11, 0, 9, 2
     };
 
-    qsort(array, 0, noOfElems-1);
+    qsortRR(array, noOfElems);
 
     for(i32 i = 0; i < noOfElems; i++)
         std::cout << array[i] << '\n';

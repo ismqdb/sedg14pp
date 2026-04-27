@@ -56,14 +56,14 @@ none qsortRR(i32 array[], i32 size){
     i32 l;
     i32 r;
 
-    l = 1;
-    r = size;
+    l = 0;
+    r = size-1;
 
     std::stack<i32> stack;
 
     while (1) {
         while (r > l) {
-            r = partition(array, l, r);
+            i = partition(array, l, r);
 
             if (i - l > r - i) {
                 stack.push(l);
